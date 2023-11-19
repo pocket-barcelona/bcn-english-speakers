@@ -1,0 +1,72 @@
+---
+import Container from "../../components/Container.astro";
+// import Link from "../../components/UI/Link.astro";
+import Dropdown from "./Dropdown.astro";
+import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import { menuItems } from "./navItems"
+---
+
+<div class="bg-[#191919] py-4 fixed z-[99999] top-0 left-0 right-0">
+  <Container>
+    <header class="flex flex-col lg:flex-row justify-between items-center">
+      <Astronav>
+
+        <div class="flex w-full lg:w-auto items-center justify-between">
+          <a href="/" class="text-xl"
+            ><span class="font-medium text-white">Pocket</span>
+            {' '}<span
+              class="text-[#FAFF13]">Barcelona</span
+            >
+          </a>
+          {/* BURGER MENU */}
+          <div class="block lg:hidden">
+            <MenuIcon class="w-5 h-5 text-white" />
+          </div>
+        </div>
+
+        <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
+          <ul class="flex flex-col lg:flex-row lg:gap-3">
+            {
+              menuItems.map((item, index) => (
+                <>
+                  {item.children && (
+                    <Dropdown
+                      title={item.title}
+                      children={item.children}
+                      lastItem={index === menuItems.length - 1}
+                    />
+                  )}
+  
+                  {!item.children && (
+                    <li>
+                      <a
+                        href={item.path}
+                        class="flex lg:px-3 py-2 items-center text-white hover:text-gray-200">
+                        <span> {item.title}</span>
+                        {item.badge && (
+                          <span class="ml-1 px-2 py-0.5 text-[10px] animate-pulse font-semibold uppercase text-white bg-indigo-600 rounded-full">
+                            New
+                          </span>
+                        )}
+                      </a>
+                    </li>
+                  )}
+                </>
+              ))
+            }
+          </ul>
+          <!-- <div class="lg:hidden flex items-center mt-3 gap-4">
+            <Link href="#" style="inverted" block size="md">Log in</Link>
+            <Link href="#" size="md" block>Sign up</Link>
+          </div> -->
+        </MenuItems>
+      </Astronav>
+      <!-- <div>
+        <div class="hidden lg:flex items-center gap-4">
+          <Link href="#" style="inverted">Log in</Link>
+          <Link href="#" size="md">Sign up</Link>
+        </div>
+      </div> -->
+    </header>
+  </Container>
+</div>
