@@ -19,10 +19,6 @@ const post = Astro.props;
 const { Content } = await post.render();
 ---
 
-<!-- <BlogPost {...post.data}>
-	<Content />
-</BlogPost> -->
-
 <style is:global>
   /* Unscoped, delivered as-is to the browser. */
   a { word-break: break-word; }

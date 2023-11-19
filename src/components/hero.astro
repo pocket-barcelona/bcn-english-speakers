@@ -1,10 +1,10 @@
 ---
-// import { Picture } from "astro-imagetools/components";
-// import {
-//   BackgroundImage,
-//   BackgroundPicture,
-//   ImageSupportDetection,
-// } from "astro-imagetools/components";
+import {
+  BackgroundImage,
+  BackgroundPicture,
+  ImageSupportDetection,
+  /* @ts-ignore */
+} from "astro-imagetools/components";
 
 import bcnImage from "assets/bcn-splash.jpg";
 import Link from "./ui/link.astro";
@@ -13,7 +13,7 @@ import Link from "./ui/link.astro";
 // grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24
 ---
 
-<!-- <BackgroundImage
+<BackgroundImage
   src="/src/assets/bcn-splash.jpg"
   artDirectives={[
     {
@@ -23,7 +23,7 @@ import Link from "./ui/link.astro";
   ]}
   breakpoints={[200, 400, 800, 1600]}
   backgroundSize="cover"
-> -->
+>
 
 <div class="relative overflow-hidden flex items-center justify-center px-[20px]">
   
@@ -67,7 +67,6 @@ import Link from "./ui/link.astro";
         </Link>
         <Link
           href="#"
-          href="https://web3templates.com/templates/astroship-starter-website-template-for-astro"
           target="_blank"
           class="flex gap-1 items-center justify-center"
           rel="noopener">

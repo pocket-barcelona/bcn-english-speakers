@@ -5,6 +5,13 @@ import { getCollection } from 'astro:content';
 import Layout from '../../layouts/layout.astro';
 import Container from '../../components/container.astro';
 import Sectionhead from "../../components/section-head.astro";
+import {
+  BackgroundImage,
+  BackgroundPicture,
+  Picture,
+  ImageSupportDetection,
+  /* @ts-ignore */
+} from "astro-imagetools/components";
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => a.data.publishDate.valueOf() - b.data.publishDate.valueOf()
@@ -28,10 +35,7 @@ const posts = (await getCollection('blog')).sort(
             <li>
               <a href={`/blog/${blogPostEntry.slug}`}>
                 <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
-                  {
-										/*
-									
-									<Picture
+                  <Picture
                     src={blogPostEntry.data.image.src as any}
                     alt={blogPostEntry.data.image.alt}
                     sizes="(max-width: 800px) 100vw, 800px"
@@ -41,7 +45,7 @@ const posts = (await getCollection('blog')).sort(
                     loading={index <= 2 ? "eager" : "lazy"}
                     decoding={index <= 2 ? "sync" : "async"}
                   />
-									*/}
+									
                   <div>
                     <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
                       {blogPostEntry.data.category}
