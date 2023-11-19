@@ -1,6 +1,9 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content';
-import BlogPost from '../../layouts/blog-post.astro';
+// import BlogPost from '../../layouts/blog-post.astro';
+import Layout from '../../layouts/layout.astro';
+import Container from '../../components/container.astro';
+
 export const prerender = true;
 
 export async function getStaticPaths() {
@@ -10,12 +13,62 @@ export async function getStaticPaths() {
 		props: post,
 	}));
 }
+
 type Props = CollectionEntry<'blog'>;
 
 const post = Astro.props;
 const { Content } = await post.render();
 ---
 
-<BlogPost {...post.data}>
+<!-- <BlogPost {...post.data}>
 	<Content />
-</BlogPost>
+</BlogPost> -->
+
+<style is:global>
+  /* Unscoped, delivered as-is to the browser. */
+  a { word-break: break-word; }
+</style>
+
+<Layout title={post.data.title}>
+  <Container>
+    <div class="mx-auto max-w-3xl mt-8 lg:mt-16">
+      <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
+        {post.data.category}
+      </span>
+      <h1
+        class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-1 lg:leading-tight">
+        {post.data.title}
+      </h1>
+      <div class="flex gap-2 mt-3 items-center flex-wrap md:flex-nowrap">
+        <span class="text-gray-400 whitespace-nowrap">
+          <span class="font-light italic">by</span>{' '}{post.data.author}
+        </span>
+        <span class="text-gray-400">•</span>
+        <time
+          class="text-gray-400 whitespace-nowrap"
+          datetime={post.data.publishDate.toISOString()}>
+          {post.data.publishDate.toDateString()}
+        </time>
+        <span class="text-gray-400 hidden md:block">•</span>
+        <div class="w-full md:w-auto flex flex-wrap gap-x-2">
+          {
+            post.data.tags.map((tag) => (
+              <span class="text-sm text-gray-500">#{tag}</span>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="mx-auto prose prose-md lg:prose-lg mt-6 max-w-3xl">
+      <Content />
+    </div>
+    <div class="text-center mt-8">
+      <a
+        href="/blog"
+        class="bg-gray-100 px-5 py-3 rounded-md hover:bg-gray-200 transition"
+        >← Back to Blog</a
+      >
+    </div>
+  </Container>
+</Layout>
