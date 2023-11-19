@@ -1,10 +1,7 @@
 ---
-import BaseHead from '../../components/basehead.astro';
-import Header from '../../components/header.astro';
-import Footer from '../../components/footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+// import BaseHead from '../../components/basehead.astro';
+// import FormattedDate from '../../components/formatted-date.astro';
 import { getCollection } from 'astro:content';
-import FormattedDate from '../../components/formatted-date.astro';
 import Layout from '../../layouts/layout.astro';
 import Container from '../../components/container.astro';
 import Sectionhead from "../../components/section-head.astro";
@@ -15,7 +12,7 @@ const posts = (await getCollection('blog')).sort(
 ---
 
 
-<Layout title="Blog">
+<Layout title={'Expat Articles'}>
   <Container>
     <Sectionhead>
       <Fragment slot="title">Articles for Expats</Fragment>
