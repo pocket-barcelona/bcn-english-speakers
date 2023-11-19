@@ -10,6 +10,13 @@ import { rehypeHeadingIds } from "@astrojs/markdown-remark";
 import { h, s } from "hastscript";
 import alpinejs from "@astrojs/alpinejs";
 import preact from "@astrojs/preact";
+import { defineConfig } from "astro/config";
+import mdx from "@astrojs/mdx";
+import sitemap from "@astrojs/sitemap";
+
+import tailwind from "@astrojs/tailwind";
+// import cloudflare from "@astrojs/cloudflare";
+// import { astroImageTools } from "astro-imagetools";
 
 // https://astro.build/config
 export default defineConfig({
