@@ -1,0 +1,80 @@
+---
+// import { Picture } from "astro-imagetools/components";
+// import {
+//   BackgroundImage,
+//   BackgroundPicture,
+//   ImageSupportDetection,
+// } from "astro-imagetools/components";
+
+import bcnImage from "assets/bcn-splash.jpg";
+import Link from "./ui/link.astro";
+
+// Picture tag sizes: https://webdesign.tutsplus.com/quick-tip-how-to-use-html5-picture-for-responsive-images--cms-21015t#toc-kl8w-using-sizes-to-control-image-layout
+// grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24
+---
+
+<!-- <BackgroundImage
+  src="/src/assets/bcn-splash.jpg"
+  artDirectives={[
+    {
+      src: "/src/assets/bcn-splash.jpg",
+      media: "(orientation: potrait)",
+    },
+  ]}
+  breakpoints={[200, 400, 800, 1600]}
+  backgroundSize="cover"
+> -->
+
+<div class="relative overflow-hidden flex items-center justify-center px-[20px]">
+  
+  <!-- <div class="absolute inset-0 w-full h-fit z-0">
+
+  </div> -->
+  <div class="z-[1] grid lg:grid-cols-2 place-items-center py-[14vw]">
+    <div class="py-6 md:order-1 hidden md:block">
+      <!-- <Picture
+        src={heroImage}
+        alt="Astronaut in the air"
+        widths={[200, 400, 600]}
+        aspectRatio="4:3"
+        sizes="(max-width: 800px) 100vw, 620px"
+        loading="eager"
+        format="avif"
+      /> -->
+    </div>
+    <div>
+      <h1
+        class="text-5xl lg:text-6xl xl:text-7xl font-semibold lg:tracking-tight xl:tracking-tighter text-white">
+        Pocket <span class="text-[#F6FB0F]">Barcelona</span><br /><span
+          class="font-normal text-3xl lg:text-4xl tracking-normal !leading-none">Powered by expats</span
+        >
+      </h1>
+
+      <!-- <p class="text-lg mt-4 text-slate-600 max-w-xl">
+        Experience <strong>Barcelona</strong> like a local!<wbr /> Checkout our blog, featuring articles written by the experts.
+      </p> -->
+
+      <div class="mt-24 flex flex-col sm:flex-row gap-3">
+        <Link
+          size="lg"
+          style="outline"
+          rel="noopener"
+          href="https://github.com/surjithctly/astroship"
+          class="flex gap-1 items-center justify-center"
+          target="_blank">
+          <!-- <Icon class="text-black w-4 h-4" name="bx:bxl-github" /> -->
+          GitHub Repo
+        </Link>
+        <Link
+          href="#"
+          href="https://web3templates.com/templates/astroship-starter-website-template-for-astro"
+          target="_blank"
+          class="flex gap-1 items-center justify-center"
+          rel="noopener">
+          <!-- <Icon class="text-white w-5 h-5" name="bx:bxs-cloud-download" /> -->
+          Download for Free
+        </Link>
+      </div>
+    </div>
+  </div>
+</div>
