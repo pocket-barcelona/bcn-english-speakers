@@ -31,7 +31,7 @@ const posts = (await getCollection('blog')).sort(
                     src={blogPostEntry.data.cover}
                     alt={blogPostEntry.data.coverAlt}
                     // sizes="(max-width: 800px) 100vw, 800px"
-                    class:list={"w-full rounded-md"}
+                    class:list={"w-full rounded-md aspect-video object-cover"}
                   />
 
                   <div>
