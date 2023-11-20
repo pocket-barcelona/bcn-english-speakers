@@ -1,23 +1,15 @@
 ---
-// import BaseHead from '../../components/basehead.astro';
-// import FormattedDate from '../../components/formatted-date.astro';
+import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/layout.astro';
 import Container from '../../components/container.astro';
 import Sectionhead from "../../components/section-head.astro";
-import {
-  BackgroundImage,
-  BackgroundPicture,
-  Picture,
-  ImageSupportDetection,
-  /* @ts-ignore */
-} from "astro-imagetools/components";
+// Images: https://docs.astro.build/en/guides/images/#images-in-content-collections
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => a.data.publishDate.valueOf() - b.data.publishDate.valueOf()
 );
 ---
-
 
 <Layout title={'Expat Articles'}>
   <Container>
@@ -31,21 +23,17 @@ const posts = (await getCollection('blog')).sort(
     <main class="mt-16">
       <ul class="grid gap-16 max-w-4xl mx-auto">
         {
-          posts.map((blogPostEntry, index) => (
+          posts.map((blogPostEntry, _index) => (
             <li>
               <a href={`/blog/${blogPostEntry.slug}`}>
                 <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
-                  <Picture
-                    src={blogPostEntry.data.image.src as any}
-                    alt={blogPostEntry.data.image.alt}
-                    sizes="(max-width: 800px) 100vw, 800px"
-                    attributes={{
-                      class: "w-full rounded-md"
-                    }}
-                    loading={index <= 2 ? "eager" : "lazy"}
-                    decoding={index <= 2 ? "sync" : "async"}
+									<Image
+                    src={blogPostEntry.data.cover}
+                    alt={blogPostEntry.data.coverAlt}
+                    // sizes="(max-width: 800px) 100vw, 800px"
+                    class:list={"w-full rounded-md"}
                   />
-									
+
                   <div>
                     <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
                       {blogPostEntry.data.category}

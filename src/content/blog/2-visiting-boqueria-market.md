@@ -2,10 +2,8 @@
 draft: false
 title: "A guide to visiting the Boqueria Market in Barcelona"
 snippet: "Barcelona’s most iconic and vibrant tourist market found on Las Ramblas in the heart of Barcelona."
-image: {
-    src: "https://barcelonasite.s3.eu-west-3.amazonaws.com/images/blog/2a568ac7-b09a-46e2-aeca-f61d05ac721a/boqueria-market-e4e6df3d.jpg",
-    alt: "Test"
-}
+cover: "../../assets/blog/2-boqueria-market/boqueria-market-e4e6df3d.jpg"
+coverAlt: "Boqueria Market"
 publishDate: "2023-11-01 11:39"
 category: "Guides"
 author: "BCN Expats"
@@ -21,17 +19,17 @@ A trip to Barcelona is hardly complete without a walk down Las Ramblas (a.k.a �
 
 La Boqueria is open from 8am until 8:30pm, and has a lot to offer. You might visit just to pick up a snack or fresh juice, or take away something fresh to eat later. There are also many stalls and bars selling hot and cold meals, such as paella, around the perimeter of the market – so it is possible to do lunch or dinner amongst the buzz and bustle of the day’s trade. Specialists selling fine oils, nuts and seasonings are a great source of inspiration for gifts, too.
 
-![Boqueria Market Bar](https://barcelonasite.s3.eu-west-3.amazonaws.com/images/blog/2a568ac7-b09a-46e2-aeca-f61d05ac721a/boqueria-market-bar-76e347aa.jpg)
+![Boqueria Market Bar](../../assets/blog/2-boqueria-market/boqueria-market-bar-76e347aa.jpg)
 
-![Boqueria Juice Bar](https://barcelonasite.s3.eu-west-3.amazonaws.com/images/blog/2a568ac7-b09a-46e2-aeca-f61d05ac721a/juice-bar-53f94a16.jpg)
+![Boqueria Juice Bar](../../assets/blog/2-boqueria-market/juice-bar-53f94a16.jpg)
 
 Due to the high number of visitors, especially in Peak Season (summer months), just like any busy tourist hotspot, it is wise to be vigilant with your valuables and your wallet, bag or purse. And don’t forget to be patient and polite with the sellers (especially if you’re still practicing your Spanish or Catalan). Point rather than touch at what you want to buy, and always ask before taking photographs or videos of people while they work.
 
-![Boqueria Market Stall](https://barcelonasite.s3.eu-west-3.amazonaws.com/images/blog/2a568ac7-b09a-46e2-aeca-f61d05ac721a/boqueria-market-stall-377e2920.jpg)
+![Boqueria Market Stall](../../assets/blog/2-boqueria-market/boqueria-market-stall-377e2920.jpg)
 
-![Boqueria Market Fruit](https://barcelonasite.s3.eu-west-3.amazonaws.com/images/blog/2a568ac7-b09a-46e2-aeca-f61d05ac721a/boqueria-market-stall-50217cab.jpg)
+![Boqueria Market Fruit](../../assets/blog/2-boqueria-market/boqueria-market-stall-50217cab.jpg)
 
-![Boqueria Market Stalls](https://barcelonasite.s3.eu-west-3.amazonaws.com/images/blog/2a568ac7-b09a-46e2-aeca-f61d05ac721a/boqueria-market-stalls-8dddc128.jpg)
+![Boqueria Market Stalls](../../assets/blog/2-boqueria-market/boqueria-market-stalls-8dddc128.jpg)
 
 
 ## Recommended
@@ -41,10 +39,10 @@ In order to browse at greater ease it’s best to come in the morning (the marke
 Alternatively, grab a plate of paella in the early evening and stroll round as the stalls wind down and make their final sales of the day.
 The displays of fish and seafood in the middle of the market are a must-see, and it is highly recommended to try the jamón ibérico and some of the cheeses on offer.
 
-![Boqueria Market inside](https://barcelonasite.s3.eu-west-3.amazonaws.com/images/blog/2a568ac7-b09a-46e2-aeca-f61d05ac721a/boqueria-market-inside-b9c1a253.jpg)
+![Boqueria Market inside](../../assets/blog/2-boqueria-market/boqueria-market-inside-b9c1a253.jpg)
 
 
-![Boqueria Market stalls](https://barcelonasite.s3.eu-west-3.amazonaws.com/images/blog/2a568ac7-b09a-46e2-aeca-f61d05ac721a/boqueria-market-stalls-89c055d8.jpg)
+![Boqueria Market stalls](../../assets/blog/2-boqueria-market/boqueria-market-stalls-89c055d8.jpg)
 
 
 ## A little background

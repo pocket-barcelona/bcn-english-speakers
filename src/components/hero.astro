@@ -1,19 +1,11 @@
 ---
-import {
-  BackgroundImage,
-  BackgroundPicture,
-  ImageSupportDetection,
-  /* @ts-ignore */
-} from "astro-imagetools/components";
-
-import bcnImage from "assets/bcn-splash.jpg";
 import Link from "./ui/link.astro";
+import bcnImage from "assets/bcn-splash.jpg";
 
 // Picture tag sizes: https://webdesign.tutsplus.com/quick-tip-how-to-use-html5-picture-for-responsive-images--cms-21015t#toc-kl8w-using-sizes-to-control-image-layout
-// grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24
 ---
 
-<BackgroundImage
+<!-- <BackgroundImage
   src="/src/assets/bcn-splash.jpg"
   artDirectives={[
     {
@@ -24,7 +16,9 @@ import Link from "./ui/link.astro";
   breakpoints={[200, 400, 800, 1600]}
   backgroundSize="cover"
 >
+-->
 
+BG image here
 <div class="relative overflow-hidden flex items-center justify-center px-[20px]">
   
   <!-- <div class="absolute inset-0 w-full h-fit z-0">

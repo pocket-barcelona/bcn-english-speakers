@@ -2,10 +2,8 @@
 draft: false
 title: "The Bunkers of El Carmel"
 snippet: "Secluded spot for unrivalled panoramas"
-image: {
-    src: "https://barcelonasite.s3.eu-west-3.amazonaws.com/images/blog/e7f5bb0a-66b6-44c3-b712-a31a00113822/bunkers-of-carmel-0403e5a4.jpg",
-    alt: "Bunkers of Carmel"
-}
+cover: "../../assets/blog/1-bunkers-of-carmel/bunkers-of-carmel-0403e5a4.jpg"
+coverAlt: "Bunkers of Carmel"
 publishDate: "2023-10-10 11:39"
 category: "Guides"
 author: "BCN Expats"
@@ -18,23 +16,23 @@ Some walking is required to reach the Bunkers, as they’re perched on the top o
 The nearest metro stops are Alfonso X (L4) and El Carmel (L5), which will then leave an additional 20 minutes or so by foot. The more adventurous might consider getting off at Maragall metro station (L4 & L5) and walking via Plaça Catala through the Guinardó Park and across the spine of the Turó de la Rovira (check a map to keep yourself on the right track).
 
 #### Guinardo Park
-![Guinardo Park](https://barcelonasite.s3.eu-west-3.amazonaws.com/images/blog/e7f5bb0a-66b6-44c3-b712-a31a00113822/guinardo-park-4146f5a3.jpg)
+![Guinardo Park](../../assets/blog/1-bunkers-of-carmel/guinardo-park-4146f5a3.jpg)
 
 
 #### Guinardo Park towards the bunkers
-![Guinardo Park towards the bunkers](https://barcelonasite.s3.eu-west-3.amazonaws.com/images/blog/e7f5bb0a-66b6-44c3-b712-a31a00113822/guinardo-park-towards-the-bunkers-7fcdf191.jpg)
+![Guinardo Park towards the bunkers](../../assets/blog/1-bunkers-of-carmel/guinardo-park-towards-the-bunkers-7fcdf191.jpg)
 
 
 There isn’t much overhead cover at the Bunkers themselves, so be wary of the sun when heading up, and consider timing your visit to coincide with the cooler hours of the day. You may want to pack food and drink with you, as there is plenty of space for picnicking and nowhere at the bunkers themselves to pick up refreshments (however during the summer you may find street merchants selling water and beer!
 
 #### Guinardo Park Viewpoint
-![Guinardo Park Viewpoint](https://barcelonasite.s3.eu-west-3.amazonaws.com/images/blog/e7f5bb0a-66b6-44c3-b712-a31a00113822/guinardo-park-viewpoint-9670ad7b.jpg)
+![Guinardo Park Viewpoint](../../assets/blog/1-bunkers-of-carmel/guinardo-park-viewpoint-9670ad7b.jpg)
 
 The Bunkers are typically quiet, but will naturally get busier with tourists and locals alike at weekends.
 
 
 
-![View from The Bunkers](https://barcelonasite.s3.eu-west-3.amazonaws.com/images/blog/e7f5bb0a-66b6-44c3-b712-a31a00113822/the-view-from-the-bunkers-bc202480.jpg)
+![View from The Bunkers](../../assets/blog/1-bunkers-of-carmel/the-view-from-the-bunkers-bc202480.jpg)
 
 
 
@@ -44,9 +42,9 @@ The Bunkers are one of the best places to watch both the sun rise to the east ov
 Don’t forget to capture the stunning vistas while you’re at it – there’s never been a better time to use ‘Panorama mode’ on your camera!
 
 #### Views from the Bunkers
-![Carmel Bunkers panoramic](https://barcelonasite.s3.eu-west-3.amazonaws.com/images/blog/e7f5bb0a-66b6-44c3-b712-a31a00113822/the-view-from-the-bunkers-923a409e.jpg)
-![Carmel Bunkers top](https://barcelonasite.s3.eu-west-3.amazonaws.com/images/blog/e7f5bb0a-66b6-44c3-b712-a31a00113822/the-view-from-the-bunkers-2e21176b.jpg)
-![View of Barcelona from bunkers](https://barcelonasite.s3.eu-west-3.amazonaws.com/images/blog/e7f5bb0a-66b6-44c3-b712-a31a00113822/the-view-from-the-bunkers-7c5238dc.jpg)
+![Carmel Bunkers panoramic](../../assets/blog/1-bunkers-of-carmel/the-view-from-the-bunkers-923a409e.jpg)
+![Carmel Bunkers top](../../assets/blog/1-bunkers-of-carmel/the-view-from-the-bunkers-2e21176b.jpg)
+![View of Barcelona from bunkers](../../assets/blog/1-bunkers-of-carmel/the-view-from-the-bunkers-7c5238dc.jpg)
 
 
 ## A little background
@@ -58,7 +56,7 @@ Thanks to its relatively obscure history the area is still off the beaten track 
 Park Güell sits next to Park Guinardó, so this must-see (with a mirador of its own) is within walking distance of The Bunkers. Give yourself about 20-30 minutes to get there by foot, or take the 24 bus from ‘Doctor Bové - Conca de Tremp’, a short walk from the Bunkers themselves.
 
 #### View of La Sagrada Familia
-![View of La Sagrada Familia](https://barcelonasite.s3.eu-west-3.amazonaws.com/images/blog/e7f5bb0a-66b6-44c3-b712-a31a00113822/view-of-sagrada-9e13650f.jpg)
+![View of La Sagrada Familia](../../assets/blog/1-bunkers-of-carmel/view-of-sagrada-9e13650f.jpg)
 
 #### View of Mount Tibidabo from the bunkers
-![View of Mount Tibidabo from the bunkers](https://barcelonasite.s3.eu-west-3.amazonaws.com/images/blog/e7f5bb0a-66b6-44c3-b712-a31a00113822/view-of-tibidabo-a2355f90.jpg)
+![View of Mount Tibidabo from the bunkers](../../assets/blog/1-bunkers-of-carmel/view-of-tibidabo-a2355f90.jpg)
