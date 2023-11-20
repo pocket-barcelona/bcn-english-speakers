@@ -2,17 +2,15 @@
 draft: false
 title: "Tapas on Carrer de Blai"
 snippet: "Bar-hopping along 500 metres of tapas heaven."
-image: {
-    src: "https://barcelonasite.s3.eu-west-3.amazonaws.com/images/blog/bb992b69-889b-46c3-affc-168269f9a43b/tapas-bar-on-carrer-blai-11b484aa.jpg",
-    alt: "Pintxos bar on Carrer Blai"
-}
+cover: "../../assets/blog/3-tapas-carrer-blai/tapas-bar-on-carrer-blai-11b484aa.jpg"
+coverAlt: "Pintxos bar on Carrer Blai"
 publishDate: "2023-11-01 11:39"
 category: "Gastro"
 author: "BCN Expats"
 tags: [carrer-blai,calle-blai,blai,tapas,montaditos,pintxos,poble-sec,food]
 ---
 
-![Tapas on Carrer Blai](https://barcelonasite.s3.eu-west-3.amazonaws.com/images/blog/bb992b69-889b-46c3-affc-168269f9a43b/tapas-bar-on-carrer-blai-11b484aa.jpg)
+![Tapas on Carrer Blai](../../assets/blog/3-tapas-carrer-blai/tapas-bar-on-carrer-blai-11b484aa.jpg)
 
 ## The essentials
 

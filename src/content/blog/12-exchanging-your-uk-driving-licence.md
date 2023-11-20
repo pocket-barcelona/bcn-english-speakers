@@ -2,17 +2,15 @@
 draft: false
 title: "Exchanging your UK driving licence for a Spanish one"
 snippet: "This guide is intended for people who have a UK driving licence and would like to exchange it for a Spanish in accordance with the new UK-Spain governmental agreements dated the 16th March 2023."
-image: {
-    src: "https://barcelonasite.s3.eu-west-3.amazonaws.com/images/blog/f67c8699-e6d6-4786-8804-8d187b641aa3/driving-7b2d9631.jpg",
-    alt: "Car photo"
-}
+cover: "../../assets/blog/12-exchanging-uk-driving-licence/driving-7b2d9631.jpg"
+coverAlt: "Car photo"
 publishDate: "2023-11-08 11:39"
 category: "Guides"
 author: "BCN Expats"
 tags: [driving,licence,license,exchange,dgt,idl,cita]
 ---
 
-![Driving photo](https://barcelonasite.s3.eu-west-3.amazonaws.com/images/blog/f67c8699-e6d6-4786-8804-8d187b641aa3/driving-7b2d9631.jpg)
+![Driving photo](../../assets/blog/12-exchanging-uk-driving-licence/driving-7b2d9631.jpg)
 
 This guide is intended for people who have a UK driving licence and would like to exchange it for a Spanish in accordance with the new UK-Spain governmental agreements dated the 16th March 2023. More information can be found here: <a href="https://www.gov.uk/guidance/living-in-spain#driving-in-spain" target="_blank">https://www.gov.uk/guidance/living-in-spain#driving-in-spain</a>.
 

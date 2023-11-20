@@ -2,10 +2,8 @@
 draft: false
 title: "A Guide to Barcelona’s Neighbourhoods"
 snippet: "Quite often when you move to a new city, you do not know where the best place to live is. In Barcelona you have a number of neighbourhoods and each has its own character and perks. It often depends a lot on what your personal circumstances are when it comes to choosing the right place to live. The city is divided into 10 districts, each with its own distinct character and attractions."
-image: {
-    src: "https://barcelonasite.s3.eu-west-3.amazonaws.com/images/blog/7b8a004c-cffd-47be-a75a-664fc87aa472/barcelona-skyline-464eda33.jpg",
-    alt: "Barcelona skyline"
-}
+cover: "../../assets/blog/7-barcelona-neighbourhoods/barcelona-skyline-464eda33.jpg"
+coverAlt: "Barcelona skyline"
 publishDate: "2023-11-01 11:39"
 category: "Guides"
 author: "BCN Expats"
@@ -15,7 +13,7 @@ tags: [barcelona, neighbourhoods, barrios, living]
 **Quite** often when you move to a new city, you do not know where the best place to live is. In Barcelona you have a number of neighbourhoods and each has its own character and perks. It often depends a lot on what your personal circumstances are when it comes to choosing the right place to live.
 The city is divided into 10 districts, each with its own distinct character and attractions. Here is a brief overview of some of the neighbourhoods of Barcelona:
 
-![Barcelona skyline](https://barcelonasite.s3.eu-west-3.amazonaws.com/images/blog/7b8a004c-cffd-47be-a75a-664fc87aa472/barcelona-skyline-464eda33.jpg)
+![Barcelona skyline](../../assets/blog/7-barcelona-neighbourhoods/barcelona-skyline-464eda33.jpg)
 
 1. Ciutat Vella (Old City): This is the historic centre of Barcelona and is home to many of the city's landmarks, such as the Gothic Quarter, the Picasso Museum, and the famous Las Ramblas boulevard. You can find the following areas in this neighbourhood.
 

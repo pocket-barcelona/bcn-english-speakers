@@ -2,10 +2,8 @@
 draft: false
 title: "Barcelona Travel Cards"
 snippet: "You have a few options when it comes to using public transport in Barcelona - and the tickets available represent great value when compared to other major European cities"
-image: {
-    src: "https://barcelonasite.s3.eu-west-3.amazonaws.com/images/blog/acb549fd-bcf4-455c-b855-9a5a6c9b3461/test-31d4375d.jpg",
-    alt: "Test"
-}
+cover: "../../assets/blog/6-barcelona-travel-cards/test-31d4375d.jpg"
+coverAlt: "Travel cards"
 publishDate: "2023-11-01 11:39"
 category: "Guides"
 author: "BCN Expats"

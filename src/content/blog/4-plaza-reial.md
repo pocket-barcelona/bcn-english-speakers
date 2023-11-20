@@ -2,17 +2,15 @@
 draft: false
 title: "Plaça Reial, a popular square for eating, drinking and dancing"
 snippet: "A bustling square in Barcelona's Gothic neighbourhood, perfect for enjoying a drink or a meal in the heart of Barcelona."
-image: {
-    src: "https://barcelonasite.s3.eu-west-3.amazonaws.com/images/blog/f8340485-67fa-416f-9e72-1b8cc3d3f6ec/plaza-reial-0e2ff3eb.jpg",
-    alt: "Palau Nacional"
-}
+cover: "../../assets/blog/4-plaza-reial/plaza-reial-0e2ff3eb.jpg"
+coverAlt: "Plaza Reial"
 publishDate: "2023-11-01 11:39"
 category: "Gastro"
 author: "BCN Expats"
 tags: [plaza,reial,gothic,old-town,eating,drinking,restaurant,centre,square]
 ---
 
-![Palau Nacional](https://barcelonasite.s3.eu-west-3.amazonaws.com/images/blog/f8340485-67fa-416f-9e72-1b8cc3d3f6ec/plaza-reial-0e2ff3eb.jpg)
+![Palau Nacional](../../assets/blog/4-plaza-reial/plaza-reial-0e2ff3eb.jpg)
 
 Found just off Las Ramblas, dropping in to Plaça Reial is a must – day or night. It offers a huge range of restaurants and bars, with plenty of outdoor seating to watch the world go by, and is complete with central fountain, fulsome palm trees, and lampposts designed by the famous Antoni Gaudí himself. In summer most restaurants won’t stop serving until after midnight, and the area is well regarded for its clubs and live music.
 

@@ -2,17 +2,15 @@
 draft: false
 title: "Palau Nacional - the Barcelona National Palace"
 snippet: "Magnificent Renaissance-style palace near to Plaça d'Espanya in Barcelona."
-image: {
-    src: "https://barcelonasite.s3.eu-west-3.amazonaws.com/images/blog/6fd7841a-76ce-4d63-9abd-beae05c5cd5a/palau-nacional-435154c4.jpg",
-    alt: "Palau Nacional"
-}
+cover: "../../assets/blog/5-palau-nacional/palau-nacional-435154c4.jpg"
+coverAlt: "Palau Nacional"
 publishDate: "2023-11-01 11:39"
 category: "Guides"
 author: "BCN Expats"
 tags: [palau-nacional,palace,mnac,montjuic,sants,buildings,architecture]
 ---
 
-![Palau Nacional](https://barcelonasite.s3.eu-west-3.amazonaws.com/images/blog/6fd7841a-76ce-4d63-9abd-beae05c5cd5a/palau-nacional-435154c4.jpg)
+![Palau Nacional](../../assets/blog/5-palau-nacional/palau-nacional-435154c4.jpg)
 
 ## The essentials
 

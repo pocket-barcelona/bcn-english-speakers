@@ -2,10 +2,8 @@
 draft: false
 title: "Getting Around Barcelona"
 snippet: "With so many travel options available in Barcelona it's important to know which is best"
-image: {
-    src: "/src/assets/blog/11-getting-around.webp",
-    alt: "Barcelona bicing bikes"
-}
+cover: "../../assets/blog/11-getting-around-barcelona/11-getting-around.webp"
+coverAlt: "Barcelona bicing bikes"
 publishDate: "2023-11-08 11:39"
 category: "Guides"
 author: "BCN Expats"
@@ -13,8 +11,7 @@ tags: [mobility, bicing, travel, transport, cycling, walking, bike, metro, bus, 
 ---
 
 
-
-![Bicing Bikes](/src/assets/blog/11-getting-around.webp)
+![Bicing Bikes](../../assets/blog/11-getting-around-barcelona/11-getting-around.webp)
 
 
 Barcelona is a big little city, which makes it the kind of place where bands would stop at a world tour, but small enough that you can walk around most of it in a day. Owing to its Mediterranean climate and 2,524 hours of sunshine each year (almost 7 hours per day) walking and cycling is a pleasant experience.

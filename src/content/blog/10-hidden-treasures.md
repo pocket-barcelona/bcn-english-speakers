@@ -2,17 +2,15 @@
 draft: false
 title: "Barcelona Unveiled: A Local's Guide to the City's Hidden Treasures"
 snippet: "Unmasking Barcelona: An Expedition Beyond the Tourist Map."
-image: {
-    src: "https://barcelonasite.s3.eu-west-3.amazonaws.com/images/blog/c477bb0c-b678-4bb9-a3ed-72327f1b2088/wall-of-kisses-ed9d0578.jpg",
-    alt: "Mural in Barcelona"
-}
+cover: "../../assets/blog/10-bcn-hidden-treasures/wall-of-kisses-ed9d0578.jpg"
+coverAlt: "Mural in Barcelona"
 publishDate: "2023-11-08 11:39"
 category: "Guides"
 author: "BCN Expats"
 tags: [barcelona,city-walks,hidden-treasure,secret-spots]
 ---
 
-![Hidden secrets](https://barcelonasite.s3.eu-west-3.amazonaws.com/images/blog/c477bb0c-b678-4bb9-a3ed-72327f1b2088/wall-of-kisses-ed9d0578.jpg)
+![Hidden secrets](../../assets/blog/10-bcn-hidden-treasures/wall-of-kisses-ed9d0578.jpg)
 
 As an iconic global city, Barcelona brims with world-renowned sights like La Sagrada Familia, Park Güell, and Casa Batlló. However, the true essence of the Catalan capital reveals itself not in its postcard-perfect monuments, but in its local secrets. This insider’s guide will take you beyond the tourist-laden streets, unearthing the city's most delightful hidden gems.
 
