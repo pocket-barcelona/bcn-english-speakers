@@ -1,7 +1,7 @@
 ---
 import Link from "./elements/link.astro";
-// import bcnImage from "assets/bcn-splash.jpg";
-
+import bcnImage from "../assets/bcn-splash.jpg";
+import { Picture } from "astro:assets";
 // Picture tag sizes: https://webdesign.tutsplus.com/quick-tip-how-to-use-html5-picture-for-responsive-images--cms-21015t#toc-kl8w-using-sizes-to-control-image-layout
 ---
 
@@ -17,14 +17,20 @@ import Link from "./elements/link.astro";
   backgroundSize="cover"
 >
 -->
-
-BG image here
-<div class="relative overflow-hidden flex items-center justify-center px-[20px]">
-  
-  <!-- <div class="absolute inset-0 w-full h-fit z-0">
-
-  </div> -->
-  <div class="z-[1] grid lg:grid-cols-2 place-items-center py-[14vw]">
+<div
+  class="relative overflow-hidden flex items-center justify-center px-[20px]"
+>
+  <div class="absolute inset-0 w-full h-fit z-0">
+    <Picture
+      src={bcnImage}
+      formats={["avif", "webp"]}
+      alt="Barcelona view"
+      pictureAttributes={{
+        class: "aspect-video",
+      }}
+    />
+  </div>
+  <div class="z-[1] grid lg:grid-cols-2 place-items-center py-[15vw] max-h-[92vh] min-h-[80vh]">
     <div class="py-6 md:order-1 hidden md:block">
       <!-- <Picture
         src={heroImage}
@@ -38,9 +44,11 @@ BG image here
     </div>
     <div>
       <h1
-        class="text-5xl lg:text-6xl xl:text-7xl font-semibold lg:tracking-tight xl:tracking-tighter text-white">
+        class="text-5xl lg:text-7xl xl:text-8xl font-semibold lg:tracking-tight xl:tracking-tighter text-white"
+      >
         Pocket <span class="text-[#F6FB0F]">Barcelona</span><br /><span
-          class="font-normal text-3xl lg:text-4xl tracking-normal !leading-none">Powered by expats</span
+          class="font-normal text-3xl lg:text-4xl tracking-normal !leading-none"
+          >Powered by expats</span
         >
       </h1>
 
@@ -52,23 +60,21 @@ BG image here
         <Link
           size="lg"
           style="outline"
-          rel="noopener"
-          href="https://github.com/surjithctly/astroship"
+          href="/blog"
           class="flex gap-1 items-center justify-center"
-          target="_blank">
+        >
           <!-- <Icon class="text-black w-4 h-4" name="bx:bxl-github" /> -->
-          GitHub Repo
+          View our blog
         </Link>
         <Link
-          href="#"
-          target="_blank"
+          href="/community"
           class="flex gap-1 items-center justify-center"
-          rel="noopener">
+        >
           <!-- <Icon class="text-white w-5 h-5" name="bx:bxs-cloud-download" /> -->
-          Download for Free
+
+          Join the community
         </Link>
       </div>
     </div>
   </div>
 </div>
-./ui-c/link.astro./elements/link.astro
