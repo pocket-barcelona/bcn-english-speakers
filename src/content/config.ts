@@ -9,8 +9,9 @@ const blogCollection = defineCollection({
     /** The cover image
      * https://docs.astro.build/en/guides/images/#images-in-content-collections
      */
-    cover: image().refine((img) => img.width >= 640, {
-      message: "Image width must be at least 640px",
+    cover: image().refine((img) => img.width >= 720, {
+      message: "Image width must be at least 720px",
+      
     }),
     coverAlt: z.string(),
     // Transform string to Date object

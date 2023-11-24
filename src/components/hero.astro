@@ -11,11 +11,10 @@ import { Picture } from "astro:assets";
   <div class="absolute inset-0 w-full h-fit z-0">
     <Picture
       src={bcnImage}
-      formats={["avif", "webp"]}
+      format="avif"
+      widths={[400, 1200]}
       alt="Barcelona view"
-      pictureAttributes={{
-        class: "aspect-video object-cover",
-      }}
+      quality={'mid'}
     />
   </div>
   <div class="z-[1] grid lg:grid-cols-2 md:place-items-center py-6 md:py-[15vw] max-h-[92vh] md:min-h-[80vh]">

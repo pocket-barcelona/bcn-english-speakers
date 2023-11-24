@@ -1,22 +1,24 @@
 ---
-import { Image } from 'astro:assets';
-import { getCollection } from 'astro:content';
-import Layout from '../../layouts/layout.astro';
-import Container from '../../components/page-container.astro';
+import { Image, Picture } from "astro:assets";
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/layout.astro";
+import Container from "../../components/page-container.astro";
 import Sectionhead from "../../components/section-head.astro";
-// Images: https://docs.astro.build/en/guides/images/#images-in-content-collections
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => a.data.publishDate.valueOf() - b.data.publishDate.valueOf()
-);
+// Images: https://docs.astro.build/en/guides/images/#images-in-content-collections
+// Using getImage() https://youtu.be/VsZ6feIU_bA?si=nyV2t1GsGbdaQh4t&t=760
+const posts = (await getCollection("blog")).sort((a, b) => {
+  return b.data.publishDate.valueOf() > a.data.publishDate.valueOf() ? 1 : -1;
+});
 ---
 
-<Layout title={'Expat Articles'}>
+<Layout title={"Expat Articles"}>
   <Container>
     <Sectionhead>
       <Fragment slot="title">Articles for Expats</Fragment>
       <Fragment slot="desc">
-        All articles written by <strong>local expats</strong>, who together have years of experience living in Barcelona!
+        All articles written by <strong>local expats</strong>, who together have
+        years of experience living in Barcelona!
       </Fragment>
     </Sectionhead>
 
@@ -27,18 +29,24 @@ const posts = (await getCollection('blog')).sort(
             <li>
               <a href={`/blog/${blogPostEntry.slug}`}>
                 <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
-									<Image
+                  <Image
                     src={blogPostEntry.data.cover}
                     alt={blogPostEntry.data.coverAlt}
-                    // sizes="(max-width: 800px) 100vw, 800px"
+                    sizes="(max-width: 767px) 700px, 428px"
                     class:list={"w-full rounded-md aspect-video object-cover"}
+                    decoding={'async'}
+                    widths={[700, 428]}
+                    // width={428}
+                    // height={240}
+                    quality={'mid'}
+                    loading={_index > 4 ? "lazy" : "eager"}
+                    format="avif"
                   />
 
                   <div>
                     <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
                       {blogPostEntry.data.category}
                     </span>
-
                     <h2 class="text-3xl font-semibold leading-snug tracking-tight mt-1 ">
                       {blogPostEntry.data.title}
                     </h2>
@@ -50,7 +58,8 @@ const posts = (await getCollection('blog')).sort(
                       <span class="text-gray-400">• </span>
                       <time
                         class="text-gray-400"
-                        datetime={blogPostEntry.data.publishDate.toISOString()}>
+                        datetime={blogPostEntry.data.publishDate.toISOString()}
+                      >
                         {blogPostEntry.data.publishDate.toDateString()}
                       </time>
                     </div>
