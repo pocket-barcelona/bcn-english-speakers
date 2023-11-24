@@ -21,7 +21,18 @@ const { Content } = await post.render();
 
 <style is:global>
   /* Unscoped, delivered as-is to the browser. */
-  a { word-break: break-word; }
+  a {
+    word-break: break-word;
+  }
+  .prose :where(a):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+    color: #f30303;
+    font-weight: 600;
+  }
+  .summary {
+    background-color: rgba(0, 0, 225, 0.1);
+    padding: 0.5rem 1rem;
+    border-left: 5px solid rgba(0, 0, 225, 0.25);
+  }
 </style>
 
 <Layout title={post.data.title}>
