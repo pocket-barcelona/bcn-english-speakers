@@ -5,6 +5,8 @@ import Layout from "../../layouts/layout.astro";
 import Container from "../../components/page-container.astro";
 import Sectionhead from "../../components/section-head.astro";
 
+// export const prerender = true;
+
 // Images: https://docs.astro.build/en/guides/images/#images-in-content-collections
 // Using getImage() https://youtu.be/VsZ6feIU_bA?si=nyV2t1GsGbdaQh4t&t=760
 const posts = (await getCollection("blog")).sort((a, b) => {
