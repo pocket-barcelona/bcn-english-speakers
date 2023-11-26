@@ -1,16 +1,18 @@
 ---
 draft: false
-title: "Barcelona Unveiled: A Local's Guide to the City's Hidden Treasures"
-snippet: "Unmasking Barcelona: An Expedition Beyond the Tourist Map."
-cover: "../../assets/blog/10-bcn-hidden-treasures/wall-of-kisses-ed9d0578.jpg"
-coverAlt: "Mural in Barcelona"
-publishDate: "2023-11-08 11:39"
-category: "Guides"
+title: "Unmasking Barcelona: An Expedition Beyond the Tourist Map"
+snippet: "As an iconic global city, Barcelona brims with world-renowned sights like La Sagrada Familia, Park Güell, and Casa Batlló. However, the true essence of the Catalan capital reveals itself not in its postcard-perfect monuments, but in its local secrets"
+cover: "../../assets/blog/24-unmasking-barcelona/unmasking-barcelona.webp"
+coverAlt: "Barcelona las ramblas"
+publishDate: "2023-11-14 11:39"
+category: "Going Out"
 author: "BCN Experts"
-tags: [barcelona,city-walks,hidden-treasure,secret-spots]
+tags: [barcelona,tourism,markets,hidden-gems,gaudi,las-ramblas,old-town]
 ---
 
-![Hidden secrets](../../assets/blog/10-bcn-hidden-treasures/wall-of-kisses-ed9d0578.jpg)
+![Barcelona las ramblas](../../assets/blog/24-unmasking-barcelona/unmasking-barcelona.webp)
+
+
 
 As an iconic global city, Barcelona brims with world-renowned sights like La Sagrada Familia, Park Güell, and Casa Batlló. However, the true essence of the Catalan capital reveals itself not in its postcard-perfect monuments, but in its local secrets. This insider’s guide will take you beyond the tourist-laden streets, unearthing the city's most delightful hidden gems.
 
@@ -103,7 +105,6 @@ If your visit falls in late June, don't miss the chance to experience the Sant J
 Each of these festivals provides a unique and unforgettable cultural experience, immersing you in the traditions and collective joy that characterize Barcelona's vibrant local scene. The unforgettable memories you'll create as you dance with the locals, marvel at the street decorations, and participate in age-old traditions will provide a deeper, more authentic appreciation of Barcelona's soul.
 
 Barcelona's famous sights are undeniably alluring, but the city's true magic lies in its local secrets—the enchanting, less-traveled spaces that offer a deeper understanding of its heart and soul. With this guide, you're equipped to uncover the hidden gems of Barcelona, immersing yourself in the city's authentic charm and experiencing Barcelona not as a mere visitor, but as a local. From neighborhood strolls to local festivals, prepare to embark on a captivating journey through Barcelona's less-traveled paths.
-
-## Summary
-
+Summary
 Barcelona's famous sights are undoubtedly worth visiting. Still, the city's magic lies in its local secrets – those enchanting, less-traveled spaces that offer a deeper understanding of its heart and soul. With this guide in hand, you're set to uncover the hidden gems of Barcelona, immersing yourself in the city's authentic charm.
+

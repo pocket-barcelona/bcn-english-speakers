@@ -6,7 +6,7 @@ cover: "../../assets/blog/8-best-coffees-in-poblenou/test-31d4375d.jpg"
 coverAlt: "Test"
 publishDate: "2023-11-01 11:39"
 category: "Gastro"
-author: "BCN Expats"
+author: "BCN Experts"
 tags: [coffee, barcelona]
 ---
 

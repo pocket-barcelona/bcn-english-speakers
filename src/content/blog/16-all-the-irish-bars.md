@@ -6,7 +6,7 @@ cover: "../../assets/blog/16-irish-bars/irish-bar.webp"
 coverAlt: "Irish bar atmosphere"
 publishDate: "2023-11-11 11:39"
 category: "Going Out"
-author: "BCN Expats"
+author: "BCN Experts"
 tags: [going-out,irish,irish-bar,bars]
 ---
 
@@ -28,7 +28,7 @@ tags: [going-out,irish,irish-bar,bars]
 ---
 
 The below is a comprehensive list of ALL the battle-tested Irish Bars in Barcelona!
-**Note: A lot of these are popular with expats and have been heavily tested! 🥳**
+**Note: A lot of these are popular with our local experts and have been heavily tested! 🥳**
 
 <p style="text-align: center;font-style:oblique;">(in no particular order)</p>
 
@@ -127,7 +127,7 @@ To do
 
 ## Scobies Irish Pub
 
-With Scobies you already begin to notice that you’re no longer in the Barcelona Old Town and instead you’ve ventured into the Eixample neighbourhood. If you want a bit of a break from shopping it’s worth a visit and this pub is often unknown to a lot of expats, in our experience. Still, the Guinness is solid.
+With Scobies you already begin to notice that you’re no longer in the Barcelona Old Town and instead you’ve ventured into the Eixample neighbourhood. If you want a bit of a break from shopping it’s worth a visit and this pub is often unknown to a lot of locals, in our experience. Still, the Guinness is solid.
 
 ## The James Joyce
 

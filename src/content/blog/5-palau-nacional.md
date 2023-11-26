@@ -6,7 +6,7 @@ cover: "../../assets/blog/5-palau-nacional/palau-nacional-435154c4.jpg"
 coverAlt: "Palau Nacional"
 publishDate: "2023-11-01 11:39"
 category: "Guides"
-author: "BCN Expats"
+author: "BCN Experts"
 tags: [palau-nacional,palace,mnac,montjuic,sants,buildings,architecture]
 ---
 

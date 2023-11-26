@@ -6,7 +6,7 @@ cover: "../../assets/blog/4-plaza-reial/plaza-reial-0e2ff3eb.jpg"
 coverAlt: "Plaza Reial"
 publishDate: "2023-11-01 11:39"
 category: "Gastro"
-author: "BCN Expats"
+author: "BCN Experts"
 tags: [plaza,reial,gothic,old-town,eating,drinking,restaurant,centre,square]
 ---
 

@@ -6,7 +6,7 @@ cover: "../../assets/blog/7-barcelona-neighbourhoods/barcelona-skyline-464eda33.
 coverAlt: "Barcelona skyline"
 publishDate: "2023-11-01 11:39"
 category: "Guides"
-author: "BCN Expats"
+author: "BCN Experts"
 tags: [barcelona, neighbourhoods, barrios, living]
 ---
 

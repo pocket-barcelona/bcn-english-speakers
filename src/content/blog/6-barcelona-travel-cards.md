@@ -6,7 +6,7 @@ cover: "../../assets/blog/6-barcelona-travel-cards/test-31d4375d.jpg"
 coverAlt: "Travel cards"
 publishDate: "2023-11-01 11:39"
 category: "Guides"
-author: "BCN Expats"
+author: "BCN Experts"
 tags: [travel, transport, metro, mobility]
 ---
 

@@ -6,7 +6,7 @@ cover: "../../assets/blog/13-mont-tibidabo/mont-tibidabo.webp"
 coverAlt: "Mount Tibidabo"
 publishDate: "2023-11-13 11:39"
 category: "Guides"
-author: "BCN Expats"
+author: "BCN Experts"
 tags: [walks,hikes,mount-tibidabo,collserola,mountain,christ]
 ---
 

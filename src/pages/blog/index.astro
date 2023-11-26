@@ -14,56 +14,63 @@ const posts = (await getCollection("blog")).sort((a, b) => {
 });
 ---
 
-<Layout title={"Expat Articles"}>
+<Layout title={"Expert Articles"}>
   <Container>
     <Sectionhead>
-      <Fragment slot="title">Articles for Expats</Fragment>
+      <Fragment slot="title">Articles by experts</Fragment>
       <Fragment slot="desc">
-        All articles written by <strong>local expats</strong>, who together have
-        years of experience living in Barcelona!
+        All articles written by <strong>local experts</strong>, who have lived in Barcelona for years.
       </Fragment>
     </Sectionhead>
 
     <main class="mt-16">
-      <ul class="grid gap-16 max-w-4xl mx-auto">
+      <ul class="grid gap-16 max-w-5xl mx-auto">
         {
           posts.map((blogPostEntry, _index) => (
             <li>
               <a href={`/blog/${blogPostEntry.slug}`}>
-                <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
+                <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center p-2">
                   <Image
                     src={blogPostEntry.data.cover}
                     alt={blogPostEntry.data.coverAlt}
                     sizes="(max-width: 767px) 700px, 428px"
                     class:list={"w-full rounded-md aspect-video object-cover"}
-                    decoding={'async'}
+                    decoding={"async"}
                     widths={[700, 428]}
-                    // width={428}
-                    // height={240}
-                    quality={'mid'}
+                    width={428}
+                    height={240}
+                    quality={"mid"}
                     loading={_index > 4 ? "lazy" : "eager"}
                     format="avif"
                   />
 
                   <div>
-                    <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
+                    <span class="text-blue-600 uppercase tracking-wider text-sm font-medium">
                       {blogPostEntry.data.category}
                     </span>
-                    <h2 class="text-3xl font-semibold leading-snug tracking-tight mt-1 ">
+                    <h2 class="text-3xl font-bold leading-snug tracking-tight mt-1 ">
                       {blogPostEntry.data.title}
                     </h2>
+                    <p class="text-base mt-4 line-clamp-3">
+                      {blogPostEntry.data.snippet}
+                    </p>
 
-                    <div class="flex gap-2 mt-3">
-                      <span class="text-gray-400">
+                    <div class="flex gap-2 mt-3 items-center">
+                      <span class="text-slate-400">
                         {blogPostEntry.data.author}
                       </span>
-                      <span class="text-gray-400">• </span>
+                      <span class="text-slate-400">• </span>
                       <time
-                        class="text-gray-400"
+                        class="text-slate-400"
                         datetime={blogPostEntry.data.publishDate.toISOString()}
                       >
                         {blogPostEntry.data.publishDate.toDateString()}
                       </time>
+                      {blogPostEntry.data.updatedDate && (
+                        <span class="inline-block px-2 py-1 text-xs uppercase text-black bg-yellow-300 rounded-md">
+                          Updated
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>

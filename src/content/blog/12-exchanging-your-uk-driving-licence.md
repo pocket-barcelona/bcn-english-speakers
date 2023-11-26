@@ -5,8 +5,9 @@ snippet: "This guide is intended for people who have a UK driving licence and wo
 cover: "../../assets/blog/12-exchanging-uk-driving-licence/driving-7b2d9631.jpg"
 coverAlt: "Car photo"
 publishDate: "2023-11-08 11:39"
+updatedDate: "2023-11-20 11:40"
 category: "Guides"
-author: "BCN Expats"
+author: "BCN Experts"
 tags: [driving,licence,license,exchange,dgt,idl,cita]
 ---
 

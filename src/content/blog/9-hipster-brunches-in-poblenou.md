@@ -6,7 +6,7 @@ cover: "../../assets/blog/9-hipster-brunches/brunch-3b313788.jpg"
 coverAlt: "Brunch image"
 publishDate: "2023-11-08 11:39"
 category: "Food"
-author: "BCN Expats"
+author: "BCN Experts"
 tags: [hipster,coffee,brunch,lunch,poblenou,poble-nou]
 ---
 

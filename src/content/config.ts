@@ -17,7 +17,7 @@ const blogCollection = defineCollection({
     // Transform string to Date object
     publishDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
-    author: z.string().default("BCN Expats"),
+    author: z.string().default("BCN Experts"),
     category: z.string(),
     tags: z.array(z.string()),
   }),

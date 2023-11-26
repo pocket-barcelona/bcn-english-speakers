@@ -20,7 +20,7 @@ export const menuItems: NavItem[] = [
   //   path: "/pricing",
   // },
   {
-    title: "Expat Blog",
+    title: "Expert Blog",
     path: "/blog",
   },
   {

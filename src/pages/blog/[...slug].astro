@@ -33,12 +33,15 @@ const { Content } = await post.render();
     padding: 0.5rem 1rem;
     border-left: 5px solid rgba(0, 0, 225, 0.25);
   }
+  img {
+    border-radius: 0.375rem;
+  }
 </style>
 
 <Layout title={post.data.title}>
   <Container>
     <div class="mx-auto max-w-3xl mt-8 lg:mt-16">
-      <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
+      <span class="text-blue-600 uppercase tracking-wider text-sm font-medium">
         {post.data.category}
       </span>
       <h1
@@ -46,20 +49,20 @@ const { Content } = await post.render();
         {post.data.title}
       </h1>
       <div class="flex gap-2 mt-3 items-center flex-wrap md:flex-nowrap">
-        <span class="text-gray-400 whitespace-nowrap">
+        <span class="text-slate-400 whitespace-nowrap">
           <span class="font-light italic">by</span>{' '}{post.data.author}
         </span>
-        <span class="text-gray-400">•</span>
+        <span class="text-slate-400">•</span>
         <time
-          class="text-gray-400 whitespace-nowrap"
+          class="text-slate-400 whitespace-nowrap"
           datetime={post.data.publishDate.toISOString()}>
           {post.data.publishDate.toDateString()}
         </time>
-        <span class="text-gray-400 hidden md:block">•</span>
+        <span class="text-slate-400 hidden md:block">•</span>
         <div class="w-full md:w-auto flex flex-wrap gap-x-2">
           {
             post.data.tags.map((tag) => (
-              <span class="text-sm text-gray-500">#{tag}</span>
+              <span class="text-sm text-slate-700">#{tag}</span>
             ))
           }
         </div>
