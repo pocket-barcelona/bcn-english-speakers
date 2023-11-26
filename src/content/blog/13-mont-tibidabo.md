@@ -59,7 +59,7 @@ From ‘Plaça del Tibidabo’, take the road which heads round to the left of t
 
 ### Route summary
 
-<div class="summary">
+<div class="info">
 
 **Ascent**: About 200m / **Descent**: About 500m.
 

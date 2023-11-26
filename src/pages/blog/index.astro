@@ -23,7 +23,7 @@ const posts = (await getCollection("blog")).sort((a, b) => {
       </Fragment>
     </Sectionhead>
 
-    <main class="mt-16">
+    <main class="mt-12 lg:mt-16">
       <ul class="grid gap-16 max-w-5xl mx-auto">
         {
           posts.map((blogPostEntry, _index) => (
