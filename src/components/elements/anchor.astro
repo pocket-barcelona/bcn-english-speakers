@@ -1,0 +1,28 @@
+---
+// Usage:
+// import Anchor from '../../components/elements/anchor.astro';
+// <Anchor href="http://www.test.com" target="_blank">My link</Anchor>
+
+interface Props {
+  href: string;
+  class?: string;
+  [x: string]: any;
+}
+
+const {
+  href,
+  class: className,
+  ...rest
+} = Astro.props;
+
+---
+
+<a
+  href={href}
+  {...rest}
+  class:list={[
+    "inline-block",
+    className,
+  ]}
+  ><slot />
+</a>
