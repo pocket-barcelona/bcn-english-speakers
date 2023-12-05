@@ -15,10 +15,6 @@ export const menuItems: NavItem[] = [
   //     { title: "404 Page", path: "/404" },
   //   ],
   // },
-  // {
-  //   title: "Pricing",
-  //   path: "/pricing",
-  // },
   {
     title: "Expert Blog",
     path: "/blog",
@@ -27,8 +23,8 @@ export const menuItems: NavItem[] = [
     title: "Community",
     path: "/community",
   },
-  {
-    title: "Contact",
-    path: "/contact",
-  },
+  // {
+  //   title: "Contact",
+  //   path: "/contact",
+  // },
 ];
