@@ -2,6 +2,7 @@
 import { type CollectionEntry, getCollection } from 'astro:content';
 import Layout from '../../layouts/layout.astro';
 import Container from '../../components/page-container.astro';
+import Tag from '../../components/elements/tag.astro';
 
 // export const prerender = true;
 
@@ -25,7 +26,7 @@ const { Content } = await post.render();
     word-break: break-word;
   }
   .prose :where(a):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-    color: #f30303;
+    color: #1212c4;
     font-weight: 600;
   }
   
@@ -37,24 +38,24 @@ const { Content } = await post.render();
     padding: 0.5rem 1rem;
     border-left: 5px solid;
   }
-  .info {
-    background-color: rgba(0, 0, 225, 0.1);
-    border-left-color: rgba(0, 0, 225, 0.25);
-  }
   .success {
-    background-color: rgba(0, 225, 0, 0.1);
+    background-color: rgba(0, 225, 0, 0.1);/* #00e100 */
     border-left-color: rgba(0, 225, 0, 0.25);
   }
+  .info {
+    background-color: rgba(18, 18, 196, 0.1); /* #1212c4 */
+    border-left-color: rgba(0, 0, 225, 0.25);
+  }
   .warning {
-    background-color: rgba(225, 225, 0, 0.1);
+    background-color: rgba(225, 225, 0, 0.1);/* #e1e100 */
     border-left-color: rgba(225, 225, 0, 0.25);
   }
   .danger {
-    background-color: rgba(155, 0, 0, 0.2);
+    background-color: rgba(155, 0, 0, 0.2);/* #9b0000 */
     border-left-color: rgba(155, 0, 0, 0.3);
   }
   .neutral {
-    background-color: rgba(120, 120, 120, 0.08);
+    background-color: rgba(120, 120, 120, 0.08);/* #787878 */
     border-left-color: rgba(120, 120, 120, 0.25);
   }
   img {
@@ -65,28 +66,28 @@ const { Content } = await post.render();
 <Layout title={post.data.title}>
   <Container>
     <div class="mx-auto max-w-3xl mt-8 lg:mt-16">
-      <span class="text-blue-600 uppercase tracking-wider text-sm font-medium">
+      <Tag color='info'>
         {post.data.category}
-      </span>
+      </Tag>
       <h1
         class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-1 lg:leading-tight">
         {post.data.title}
       </h1>
       <div class="flex gap-2 mt-3 items-center flex-wrap md:flex-nowrap">
-        <span class="text-slate-400 whitespace-nowrap">
+        <span class="text-slate-600 whitespace-nowrap">
           <span class="font-light italic">by</span>{' '}{post.data.author}
         </span>
-        <span class="text-slate-400">•</span>
+        <span class="text-slate-600">•</span>
         <time
-          class="text-slate-400 whitespace-nowrap"
+          class="text-slate-600 whitespace-nowrap"
           datetime={post.data.publishDate.toISOString()}>
           {post.data.publishDate.toDateString()}
         </time>
-        <span class="text-slate-400 hidden md:block">•</span>
+        <span class="text-slate-600 hidden md:block">•</span>
         <div class="w-full md:w-auto flex flex-wrap gap-x-2">
           {
             post.data.tags.map((tag) => (
-              <span class="text-sm text-slate-700">#{tag}</span>
+              <span class="text-sm text-slate-800">#{tag}</span>
             ))
           }
         </div>

@@ -4,8 +4,8 @@ import { getCollection } from "astro:content";
 import Layout from "../../layouts/layout.astro";
 import Container from "../../components/page-container.astro";
 import Sectionhead from "../../components/section-head.astro";
+import Tag from '../../components/elements/tag.astro';
 
-// export const prerender = true;
 
 // Images: https://docs.astro.build/en/guides/images/#images-in-content-collections
 // Using getImage() https://youtu.be/VsZ6feIU_bA?si=nyV2t1GsGbdaQh4t&t=760
@@ -24,12 +24,12 @@ const posts = (await getCollection("blog")).sort((a, b) => {
     </Sectionhead>
 
     <main class="mt-12 lg:mt-16">
-      <ul class="grid gap-16 max-w-5xl mx-auto">
+      <ul class="grid gap-4 lg:gap-16 max-w-5xl mx-auto">
         {
           posts.map((blogPostEntry, _index) => (
             <li>
               <a href={`/blog/${blogPostEntry.slug}`}>
-                <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center p-2">
+                <div class="grid md:grid-cols-2 gap-3 md:gap-8 items-center p-2">
                   <Image
                     src={blogPostEntry.data.cover}
                     alt={blogPostEntry.data.coverAlt}
@@ -40,41 +40,42 @@ const posts = (await getCollection("blog")).sort((a, b) => {
                     width={428}
                     height={240}
                     quality={"mid"}
-                    loading={_index > 4 ? "lazy" : "eager"}
+                    loading={_index >= 3 ? "lazy" : "eager"}
                     format="avif"
                   />
 
                   <div>
-                    <span class="text-blue-600 uppercase tracking-wider text-sm font-medium">
+                    <Tag color='info'>
                       {blogPostEntry.data.category}
-                    </span>
-                    <h2 class="text-3xl font-bold leading-snug tracking-tight mt-1 ">
+                    </Tag>
+                    <h2 class="text-3xl font-bold leading-tight tracking-tight mt-2">
                       {blogPostEntry.data.title}
+                      {blogPostEntry.data.updatedDate && (
+                        <Tag color='warning' class='top-[-4px] relative ml-1'>
+                          Updated
+                        </Tag>
+                      )}
                     </h2>
                     <p class="text-base mt-4 line-clamp-3">
                       {blogPostEntry.data.snippet}
                     </p>
 
-                    <div class="flex gap-2 mt-3 items-center">
-                      <span class="text-slate-400">
+                    <div class="flex gap-2 mt-4 items-center">
+                      <span class="text-slate-600 text-sm">
                         {blogPostEntry.data.author}
                       </span>
-                      <span class="text-slate-400">• </span>
+                      <span class="text-slate-600 text-sm">• </span>
                       <time
-                        class="text-slate-400"
+                        class="text-slate-600 text-sm"
                         datetime={blogPostEntry.data.publishDate.toISOString()}
                       >
                         {blogPostEntry.data.publishDate.toDateString()}
                       </time>
-                      {blogPostEntry.data.updatedDate && (
-                        <span class="inline-block px-2 py-1 text-xs uppercase text-black bg-yellow-300 rounded-md">
-                          Updated
-                        </span>
-                      )}
                     </div>
                   </div>
                 </div>
               </a>
+              <hr class="sm:hidden my-2 mt-6" />
             </li>
           ))
         }

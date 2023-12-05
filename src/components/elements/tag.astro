@@ -1,0 +1,30 @@
+---
+
+interface Props {
+  color: "success" | "info" | "warning" | "danger" | "black" | "neutral";
+  class?: string;
+  [x: string]: any;
+}
+
+const { href, color = "info", class: className, ...rest } = Astro.props;
+
+const styles = {
+  success: "text-white bg-[#00e100]",
+  info: "text-white bg-[#1212c4]",
+  warning: "text-black bg-[#e1e100]",
+  danger: "text-white bg-[#9b0000]",
+  black: "text-white bg-black",
+  neutral: "text-white bg-[#787878]",
+};
+---
+
+<span
+  class:list={[
+    "inline-block px-2 py-1 text-xs uppercase rounded-md font-normal",
+    styles[color],
+    className,
+  ]}
+  {...rest} 
+>
+  <slot />
+</span>
