@@ -4,8 +4,6 @@ import Layout from '../../layouts/layout.astro';
 import Container from '../../components/page-container.astro';
 import Tag from '../../components/elements/tag.astro';
 
-// export const prerender = true;
-
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
 	return posts.map((post) => ({
@@ -18,12 +16,43 @@ type Props = CollectionEntry<'blog'>;
 
 const post = Astro.props;
 const { Content } = await post.render();
+
+// https://docs.astro.build/en/guides/content-collections/#modifying-frontmatter-with-remark
+// const { Content, remarkPluginFrontmatter } = await post.render();
+// remarkPluginFrontmatter.readingTime
 ---
 
 <style is:global>
   /* Unscoped, delivered as-is to the browser. */
   a {
     word-break: break-word;
+  }
+  a.autolink-header {
+    display: inline-block;
+    margin-left: 8px;
+  }
+  a.autolink-header svg {
+    display: none;
+  }
+  h1:hover a.autolink-header svg,
+  h2:hover a.autolink-header svg,
+  h3:hover a.autolink-header svg,
+  h4:hover a.autolink-header svg,
+  h5:hover a.autolink-header svg,
+  h6:hover a.autolink-header svg {
+    display: block;
+  }
+
+  .visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: auto;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
   }
   .prose :where(a):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
     color: #1212c4;
@@ -65,43 +94,51 @@ const { Content } = await post.render();
 
 <Layout title={post.data.title}>
   <Container>
-    <div class="mx-auto max-w-3xl mt-8 lg:mt-16">
-      <Tag color='info'>
-        {post.data.category}
-      </Tag>
-      <h1
-        class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-1 lg:leading-tight">
-        {post.data.title}
-      </h1>
-      <div class="flex gap-2 mt-3 items-center flex-wrap md:flex-nowrap">
-        <span class="text-slate-600 whitespace-nowrap">
-          <span class="font-light italic">by</span>{' '}{post.data.author}
-        </span>
-        <span class="text-slate-600">•</span>
-        <time
-          class="text-slate-600 whitespace-nowrap"
-          datetime={post.data.publishDate.toISOString()}>
-          {post.data.publishDate.toDateString()}
-        </time>
-        <span class="text-slate-600 hidden md:block">•</span>
-        <div class="w-full md:w-auto flex flex-wrap gap-x-2">
-          {
-            post.data.tags.map((tag) => (
-              <span class="text-sm text-slate-800">#{tag}</span>
-            ))
-          }
+    <article>
+      <div class="mx-auto max-w-3xl mt-8 lg:mt-16">
+        <Tag color='info'>
+          {post.data.category}
+        </Tag>
+        <h1
+          class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-1 lg:leading-tight">
+          {post.data.title}
+        </h1>
+        <div class="flex gap-2 mt-3 items-center flex-wrap md:flex-nowrap">
+          <span class="text-slate-600 whitespace-nowrap">
+            <span class="font-light italic">by</span>{' '}{post.data.author}
+          </span>
+          <span class="text-slate-600">•</span>
+          <time
+            class="text-slate-600 whitespace-nowrap"
+            datetime={post.data.publishDate.toISOString()}>
+            {post.data.publishDate.toDateString()}
+          </time>
+          <span class="text-slate-600 hidden md:block">•</span>
+          <div class="w-full md:w-auto flex flex-wrap gap-x-2">
+            {
+              post.data.tags.map((tag) => (
+                <span class="text-sm text-slate-800">#{tag}</span>
+              ))
+            }
+          </div>
         </div>
       </div>
-    </div>
+  
+      <div class="mx-auto prose prose-md lg:prose-lg mt-6 max-w-3xl">
+        <Content />
+      </div>
+    </article>
 
-    <div class="mx-auto prose prose-md lg:prose-lg mt-6 max-w-3xl">
-      <Content />
-    </div>
-    <div class="text-center mt-8">
+    <div class="mt-6 lg:mt-12 flex justify-between mx-auto max-w-3xl">
       <a
         href="/blog"
         class="bg-gray-100 px-5 py-3 rounded-md hover:bg-gray-200 transition"
         >← Back to Blog</a
+      >
+      <a
+        href="#"
+        class="bg-gray-100 px-5 py-3 rounded-md hover:bg-gray-200 transition"
+        >&uarr; Go to top</a
       >
     </div>
   </Container>
