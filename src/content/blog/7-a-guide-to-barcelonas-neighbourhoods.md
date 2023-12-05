@@ -10,6 +10,8 @@ author: "BCN Experts"
 tags: [barcelona, neighbourhoods, barrios, living]
 ---
 
+## Contents
+
 **Quite** often when you move to a new city, you do not know where the best place to live is. In Barcelona you have a number of neighbourhoods and each has its own character and perks. It often depends a lot on what your personal circumstances are when it comes to choosing the right place to live.
 The city is divided into 10 districts, each with its own distinct character and attractions. Here is a brief overview of some of the neighbourhoods of Barcelona:
 

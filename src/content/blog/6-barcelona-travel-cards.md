@@ -10,6 +10,8 @@ author: "BCN Experts"
 tags: [travel, transport, metro, mobility]
 ---
 
+## Contents
+
 You have a few options when it comes to using public transport in Barcelona - and the tickets available represent great value when compared to other major European cities. In this article, we will give you different options.
 
 ## T-Casual 
@@ -36,9 +38,13 @@ This is a multi-person ticket, valid for 8 journeys but the ticket can be shared
 This is another card that can be shared and is valid for 70 journeys across 30 days and is not valid for the metro to the airport. At the time of writing it is €79.45 for 1 zone.
 Other tickets are:
 
-## J-Jove - This is for those under 25’s and will be retired by 01/03/23
+## J-Jove
 
-## T-Dia - This is a one-day ticket that can be used on the airport metro and is an unlimited 1 zone card for €10.50
+This is for those under 25’s and will be retired by 01/03/23
+
+## T-Dia
+
+This is a one-day ticket that can be used on the airport metro and is an unlimited 1 zone card for €10.50
 
 In addition to the regular travel cards, you also have the Hola Barcelona  cards, that are unlimited journeys across the travel network for 2/3/4/5 days. The airport metro is included and they can be brought online for the following prices (these prices are correct as of the date this was published):
 

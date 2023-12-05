@@ -10,4 +10,6 @@ author: "BCN Experts"
 tags: [coffee, barcelona]
 ---
 
+## Contents
+
 Text here

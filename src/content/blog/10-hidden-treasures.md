@@ -12,6 +12,8 @@ tags: [barcelona,city-walks,hidden-treasure,secret-spots]
 
 ![Hidden secrets](../../assets/blog/10-bcn-hidden-treasures/wall-of-kisses-ed9d0578.jpg)
 
+## Contents
+
 As an iconic global city, Barcelona brims with world-renowned sights like La Sagrada Familia, Park Güell, and Casa Batlló. However, the true essence of the Catalan capital reveals itself not in its postcard-perfect monuments, but in its local secrets. This insider’s guide will take you beyond the tourist-laden streets, unearthing the city's most delightful hidden gems.
 
 ## Secret Squares and Gardens

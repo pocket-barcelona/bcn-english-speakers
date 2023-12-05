@@ -12,6 +12,9 @@ tags: [carrer-blai,calle-blai,blai,tapas,montaditos,pintxos,poble-sec,food]
 
 ![Tapas on Carrer Blai](../../assets/blog/3-tapas-carrer-blai/tapas-bar-on-carrer-blai.jpg)
 
+## Contents
+
+
 ## The essentials
 
 Carrer de Blai (*carrer* is ‘street’ in Catalan) is found in the Poble Sec neighbourhood, and runs diagonally just to the south of a main road, Avinguda del Paral·lel. Served by the Metro stations Poble Sec (L3) and Paral·lel (L2 & L3), and various bus stops, Carrer de Blai is fairly central and easily accessed.

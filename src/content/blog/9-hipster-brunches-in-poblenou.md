@@ -10,6 +10,8 @@ author: "BCN Experts"
 tags: [hipster,coffee,brunch,lunch,poblenou,poble-nou]
 ---
 
+## Contents
+
 ## Gabby's Brunch
 C/ de Ramon Turró, 93, 08005 Barcelona
 

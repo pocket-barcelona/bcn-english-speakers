@@ -13,6 +13,7 @@ tags: [mobility, bicing, travel, transport, cycling, walking, bike, metro, bus, 
 
 ![Bicing Bikes](../../assets/blog/11-getting-around-barcelona/11-getting-around.webp)
 
+## Contents
 
 Barcelona is a big little city, which makes it the kind of place where bands would stop at a world tour, but small enough that you can walk around most of it in a day. Owing to its Mediterranean climate and 2,524 hours of sunshine each year (almost 7 hours per day) walking and cycling is a pleasant experience.
 

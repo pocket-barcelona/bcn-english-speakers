@@ -19,7 +19,9 @@ export default defineConfig({
   // }),
   markdown: {
     remarkPlugins: [
-      [remarkToc, { heading: "contents"} ]
+      [remarkToc, {
+        heading: "contents"
+      }]
     ],
     rehypePlugins: [
       rehypeSlug,

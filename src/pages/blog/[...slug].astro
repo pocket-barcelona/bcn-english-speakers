@@ -54,6 +54,17 @@ const { Content } = await post.render();
     width: 1px;
     white-space: nowrap;
   }
+
+  /* style TOC */
+  h2#contents + ul li a{
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  h2#contents + ul li {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    line-height: 1.33;
+  }
   .prose :where(a):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
     color: #1212c4;
     font-weight: 600;
@@ -124,7 +135,7 @@ const { Content } = await post.render();
         </div>
       </div>
   
-      <div class="mx-auto prose prose-md lg:prose-lg mt-6 max-w-3xl">
+      <div class="mx-auto prose prose-md lg:prose-lg mt-8 lg:mt-16 max-w-3xl">
         <Content />
       </div>
     </article>

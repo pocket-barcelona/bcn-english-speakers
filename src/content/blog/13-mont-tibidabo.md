@@ -12,6 +12,8 @@ tags: [walks,hikes,mount-tibidabo,collserola,mountain,christ]
 
 ![View from Mount Tibidabo](../../assets/blog/13-mont-tibidabo/mont-tibidabo.webp)
 
+## Contents
+
 Mount Tibidabo offers incredible breathtaking views over Barcelona with its lofty viewpoints and a curiously placed theme park for children at the top. You will also find a Christ statue, in somewhat of a similar style to the “Christ the Redeemer” statue in Rio de Janeiro, although not as large by comparison, but spectacular nonetheless. While Tibidabo is a place for tourists, there are many ways in which one can enjoy the mountain and arrive at its summit.
 
 ## The essentials
@@ -100,6 +102,6 @@ There is also the Observatori Fabra (https://observatorifabra.cat/), which is an
 
 ---
 
-### References
+## References
 
 - https://www.barcelona-tourist-guide.com/en/attractions/tibidabo-barcelona.html

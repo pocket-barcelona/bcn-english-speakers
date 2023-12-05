@@ -12,11 +12,11 @@ tags: [going-out,irish,irish-bar,bars]
 
 ![Irish bar atmosphere](../../assets/blog/16-irish-bars/irish-bar.webp)
 
+## Contents
 
 
 
-
-## _A guide for lovers of Guinness, jovial pub atmospheres and down-to-earth pub grub!_
+A guide for lovers of Guinness, jovial pub atmospheres and down-to-earth pub grub!
 
 
 **We get asked a lot the following questions:**

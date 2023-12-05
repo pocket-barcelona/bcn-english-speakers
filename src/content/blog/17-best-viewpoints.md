@@ -12,7 +12,7 @@ tags: [mirador,viewpoint,views,sunset,walking,mountain]
 
 ![Irish bar atmosphere](../../assets/blog/17-best-viewpoints/bcn-view.webp)
 
-
+## Contents
 
 > Note: Images will be after each heading
 > TODO - add location google maps sharing links

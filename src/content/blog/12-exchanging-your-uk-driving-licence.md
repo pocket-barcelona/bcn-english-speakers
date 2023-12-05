@@ -13,6 +13,8 @@ tags: [driving,licence,license,exchange,dgt,idl,cita]
 
 ![Driving photo](../../assets/blog/12-exchanging-uk-driving-licence/driving-7b2d9631.jpg)
 
+## Contents
+
 This guide is intended for people who have a UK driving licence and would like to exchange it for a Spanish in accordance with the new UK-Spain governmental agreements dated the 16th March 2023. More information can be found here: <a href="https://www.gov.uk/guidance/living-in-spain#driving-in-spain" target="_blank">https://www.gov.uk/guidance/living-in-spain#driving-in-spain</a>.
 
 Note: The below is the process that I took and you should use it as a guide only making sure to adapt it to your specific case.

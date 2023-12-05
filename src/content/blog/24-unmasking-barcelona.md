@@ -12,7 +12,7 @@ tags: [barcelona,tourism,markets,hidden-gems,gaudi,las-ramblas,old-town]
 
 ![Barcelona las ramblas](../../assets/blog/24-unmasking-barcelona/unmasking-barcelona.webp)
 
-
+## Contents
 
 As an iconic global city, Barcelona brims with world-renowned sights like La Sagrada Familia, Park Güell, and Casa Batlló. However, the true essence of the Catalan capital reveals itself not in its postcard-perfect monuments, but in its local secrets. This insider’s guide will take you beyond the tourist-laden streets, unearthing the city's most delightful hidden gems.
 
