@@ -1,7 +1,9 @@
 ---
 interface Props {
-  galleryId: string;
-  images?: any;
+  images: {
+    url: string;
+    alt: string;
+  }[];
   class?: string;
   [x: string]: any;
 }
@@ -123,59 +125,23 @@ const xData = `{
   >
     <ul
       x-ref="gallery"
-      id="gallery"
       class="custom-gallery grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
     >
-      <li>
-        <img
-          x-on:click="imageGalleryOpen"
-          src="https://images.pexels.com/photos/2356059/pexels-photo-2356059.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          class="object-cover select-none w-full h-auto bg-gray-200 rounded cursor-zoom-in aspect-[4/3]"
-          alt="photo gallery image 01"
-        />
-      </li>
-
-      <li>
-        <img
-          x-on:click="imageGalleryOpen"
-          src="https://images.pexels.com/photos/3618162/pexels-photo-3618162.jpeg"
-          class="object-cover select-none w-full h-auto bg-gray-200 rounded cursor-zoom-in aspect-[4/3]"
-          alt="photo gallery image 07"
-        />
-      </li>
-      <li>
-        <img
-          x-on:click="imageGalleryOpen"
-          src="https://images.unsplash.com/photo-1689217634234-38efb49cb664?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
-          class="object-cover select-none w-full h-auto bg-gray-200 rounded cursor-zoom-in aspect-[4/3]"
-          alt="photo gallery image 08"
-        />
-      </li>
-      <li>
-        <img
-          x-on:click="imageGalleryOpen"
-          src="https://images.unsplash.com/photo-1520350094754-f0fdcac35c1c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
-          class="object-cover select-none w-full h-auto bg-gray-200 rounded cursor-zoom-in aspect-[4/3]"
-          alt="photo gallery image 09"
-        />
-      </li>
-      <li>
-        <img
-          x-on:click="imageGalleryOpen"
-          src="https://cdn.devdojo.com/images/june2023/mountains-10.jpeg"
-          class="object-cover select-none w-full h-auto bg-gray-200 rounded cursor-zoom-in aspect-[4/3]"
-          alt="photo gallery image 10"
-        />
-      </li>
-      <li>
-        <img
-          x-on:click="imageGalleryOpen"
-          src="https://cdn.devdojo.com/images/june2023/mountains-06.jpeg"
-          class="object-cover select-none w-full h-auto bg-gray-200 rounded cursor-zoom-in aspect-[4/3]"
-          alt="photo gallery image 06"
-        />
-      </li>
-
+      {
+        images.map((image, key) => {
+          return (
+            <li>
+              <img
+                x-on:click="imageGalleryOpen"
+                src={image.url}
+                class="object-cover select-none w-full h-auto bg-gray-200 rounded cursor-zoom-in aspect-[4/3]"
+                alt={image.alt}
+                loading="lazy"
+              />
+            </li>
+          )
+        })
+      }
       
     </ul>
   </div>
