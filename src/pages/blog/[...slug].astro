@@ -70,36 +70,52 @@ const { Content } = await post.render();
     font-weight: 600;
   }
   
-  .info,
-  .success,
-  .warning,
-  .danger,
-  .neutral {
+  div.info,
+  div.success,
+  div.warning,
+  div.danger,
+  div.neutral {
     padding: 0.5rem 1rem;
     border-left: 5px solid;
   }
-  .success {
+  div.success {
     background-color: rgba(0, 225, 0, 0.1);/* #00e100 */
     border-left-color: rgba(0, 225, 0, 0.25);
   }
-  .info {
+  div.info {
     background-color: rgba(18, 18, 196, 0.1); /* #1212c4 */
     border-left-color: rgba(0, 0, 225, 0.25);
   }
-  .warning {
+  div.warning {
     background-color: rgba(225, 225, 0, 0.1);/* #e1e100 */
     border-left-color: rgba(225, 225, 0, 0.25);
   }
-  .danger {
+  div.danger {
     background-color: rgba(155, 0, 0, 0.2);/* #9b0000 */
     border-left-color: rgba(155, 0, 0, 0.3);
   }
-  .neutral {
+  div.neutral {
     background-color: rgba(120, 120, 120, 0.08);/* #787878 */
     border-left-color: rgba(120, 120, 120, 0.25);
   }
   img {
     border-radius: 0.375rem;
+  }
+
+  /* Style the TOC */
+  div.contents {
+    padding: 0.5rem 1rem;
+    background-color: rgba(0, 225, 0, 0.1);/* #00e100 */
+    border: 1px solid rgba(0, 225, 0, 0.25);
+  }
+  span.highlight {
+    /* background-color: #1212c4; */
+  }
+  a.warning {
+    color: rgb(155, 0, 0);
+  }
+  a.strikethru {
+    text-decoration: line-through;
   }
 </style>
 
