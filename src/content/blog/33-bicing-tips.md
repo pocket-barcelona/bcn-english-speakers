@@ -29,8 +29,10 @@ In order to use Bicing you must first signup for a subscription on the <a target
 Bicing costs *€50 per year (4 tariffs to choose from) and is renewed every year with a month’s notice. The tariff for 2023 is here: https://www.bicing.barcelona/es/tarifas
 
 <div class="info">
+
 - Prices for 2023. 2024 prices are here: https://www.bicing.barcelona/es/tarifas
 </div>
+
 
 ## Things to know about Bicing
 
