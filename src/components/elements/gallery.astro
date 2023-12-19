@@ -122,7 +122,7 @@ const xData = `{
   @keyup.right.window="imageGalleryNext();"
   @keyup.left.window="imageGalleryPrev();"
   x-init="imageGalleryPhotos = $refs.gallery.querySelectorAll('img');for(let i=0; i<imageGalleryPhotos.length; i++){imageGalleryPhotos[i].setAttribute('data-index', i+1);}"
-  class="w-full h-full select-none"
+  class="w-full h-full select-none my-6"
 >
   <div
     class="max-w-6xl mx-auto duration-1000 delay-300 opacity-0 select-none ease animate-fade-in-view"
