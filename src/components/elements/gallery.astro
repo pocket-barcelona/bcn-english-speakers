@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+
 interface Props {
   images: {
     url: string;
@@ -7,7 +9,10 @@ interface Props {
   class?: string;
   [x: string]: any;
 }
-const { images, class: className, ...rest } = Astro.props;
+const { images: galleryImages, class: className, ...rest } = Astro.props;
+
+// Dynamically import images - https://docs.astro.build/en/recipes/dynamically-importing-images/
+const images = import.meta.glob('/src/assets/**/*.{jpeg,jpg,png,gif}')
 
 // https://tailwindflex.com/@anonymous/image-gallery
 const xData = `{
@@ -128,15 +133,14 @@ const xData = `{
       class="custom-gallery grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
     >
       {
-        images.map((image, key) => {
+        galleryImages.map((image, _key) => {
           return (
             <li>
-              <img
+              <Image
+                src={images[image.url]()}
+                alt={image.alt || ''}
                 x-on:click="imageGalleryOpen"
-                src={image.url}
                 class="object-cover select-none w-full h-auto bg-gray-200 rounded cursor-zoom-in aspect-[4/3]"
-                alt={image.alt}
-                loading="lazy"
               />
             </li>
           )
