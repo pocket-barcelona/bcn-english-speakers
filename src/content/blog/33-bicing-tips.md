@@ -18,50 +18,115 @@ tags: [bicing,bikes,cycle,cycling]
 
 ## What is Bicing?
 
-Todo
+Bicing is a city-wide bike sharing system in Barcelona. It is intended to be used by residents of Barcelona and not aimed at tourists. Wherever you are in Barcelona, there will generally be a Bicing bike station closeby, within a few minutes' walk and in the central neighbourhoods there are bike stations on almost every other street corner.
+
+<div class="warning">
+
+Note: If you are not a resident of Barcelona, checkout <a href="#alternatives-to-bicing">these other bike/ride/moto/scooter sharing options</a>, below.
+</div>
 
 ## How does Bicing work?
 
-In order to use Bicing you must first signup for a subscription on the <a target="_blank" href="https://www.bicing.barcelona/">Bicing Website</a>
-
-## How much does Bicing cost?
-
-Bicing costs *€50 per year (4 tariffs to choose from) and is renewed every year with a month’s notice. The tariff for 2023 is here: https://www.bicing.barcelona/es/tarifas
+To use Bicing you must first signup for a subscription on the <a target="_blank" href="https://www.bicing.barcelona/">Bicing website</a>. There are 2 types of bikes: **Mechanical** and **Electrical**.
 
 <div class="info">
 
-- Prices for 2023. 2024 prices are here: https://www.bicing.barcelona/es/tarifas
+Note: it is possible to signup the same day that you want to use the bikes, provided you have the documents required. This can be done via the **Smou** app from the App/Play stores.
+
+</div>
+
+## How much does Bicing cost?
+
+Bicing costs *€50 per year (4 tariffs to choose from) and is renewed every year with a month’s notice.
+
+<div class="info">
+
+- *Note: the prices update each year. <a href="https://www.bicing.barcelona/tarifes" target="_blank">2024 Bicing prices here</a>.
+- Most people that we have spoken to take the <a href="https://www.bicing.barcelona/tarifes" target="_blank">Flat Rate tariff on here</a>, however there are different tariffs. If you live in, or will be visiting any of the following places **as well as Barcelona**, you will want to consider **Bicing + Ambici** tariffs:
+
+Sant Boi de Llobregat, Sant Joan Despí, Cornellà de Llobregat, El Prat de Llobregat, Gavà, Castelldefels, Molins de Rei, Santa Coloma, Badalona or Sant Adrià de Besos.
+
+<a href="https://www.ambici.cat/en/" target="_blank">More about Ambici here</a>.
+
 </div>
 
 
 ## Things to know about Bicing
 
-Most people enjoy free mechanical bikes or an electric bike, which costs 0,35 cents per trip (up to 30 minutes). The price then goes up - see website for details.
+In general there are more mechanical bikes than electric bikes. If you are making a longer journey, it can be better to use an electric bike. At the time of writing, a typical 30 minute journey on a mechanical bike is free and the same journey on an electric will be €0,35, assuming you have an annual subscription to the **Flat rate** tariff.
 
-When you drop a bike off, you have to wait 10 minutes before you can take the next one
+For journeys longer than 30 minutes, you will pay an additional fee for each 30 minutes of usage, according to this table:
 
-If the bike you take isn’t working, you can immediately put it back and take a new one, within a 3 minute window.
+**Mechanical Bikes** (Based on the **Flat rate** tariff)
 
-If the station is full, you can request an additional 10 minutes at the Bicing computer terminal at the station.
+| Time              | Price - Mechanical | Price - Electrical |
+| :---------------- | :----------------- | :----------------- |
+| 0 - 30 mins       | Free               | €0,35              |
+| From 30 - 60 mins | + €0,70            | + €0,90            |
+| From 60 - 90 mins | + €0,70            | + €0,90            |
+| From 90 - 12 mins | + €0,70            | + €0,90            |
+| From 120 mins     | + €5/hour          | + €5/hour          |
+
+<div class="neutral">
+
+**Example journeys**
+
+- Mechanical bike, 25 minute journey: Free.
+- Mechanical bike, 55 minute journey: €0,70.
+- Mechanical bike, 1 hour 25 minute journey: €1,40.
+- Mechanical bike, 1 hour 55 minute journey: €2,10.
+- Mechanical bike, 2 hour 25 minute journey: €7,10.
+- Electrical bike, 25 minute journey: €0,35.
+- Electrical bike, 55 minute journey: €1,25.
+- Electrical bike, 1 hour 25 minute journey: €2,15.
+- Electrical bike, 1 hour 55 minute journey: €3,05.
+- Electrical bike, 2 hour 25 minute journey: €8,05.
+
+</div>
+
+### Taking out a Bicing bike
+To take out a bike, you have 2 options. Using the official Bicing card or using the Smou app.
+
+If you use the card, you will need to place it against the card reader on the bike terminal (next to the front wheel).
+
+If you use the Smou app, you will need to open the app, then scan the QR code on the bike itself thru the app.
+
+If the bike you take out isn’t working properly, you can immediately put it back in and take out a new one. There's a 3 minute window to do the change. You can also change it more than once!
+
+<div class="info">
+
+Note: sometimes the QR codes can be scrathed or not readable. If this is the case, scanning it won't work but you can always enter the bike's code into the app, which should work, too!
+
+</div>
+
+### Returning a Bicing bike
+When you return a bike to any bike station you will have to wait 10 minutes before you can take another bike out.
+
+If the station is full, you can request an additional 10 minutes at the Bicing computer terminal at the station. This is a courtesy which allows you more time to complete your trip for no additional fee, since sometimes bike stations can be full.
+
+If the bike you are using is faulty or needs maintenance, you can report the bike as faulty usiing the terminal at the station.
+
+
 
 
 
 
 ## Bicing tips & tricks
-- If the stand is full, you can get extra time (10 mins)
-- You can change the bike within first 3 minutes if it’s bad (but not for another type). You can also change it more than once
-- You can report a bike as faulty on the terminal
-- You can use Smou app and QR codes
-- Usually a Bicing is faster than a metro
-- It’s possible to go from Poble Nou to Santa Coloma in less than 30 mins!
-- The JoTambe app has a scoring game for Bicing enthusiasts - some stations have an incentive to take bikes out at certain times 
-- Always check before you ride: flat tires, brakes are working. Handle bars and grips are good. It doesn’t hurt to give the wheel a kick!
-- Make sure that you hear the green light and sound when you check the bike back in
-- Use City Mapper bikes section for faster access to station availability 
+- Usually a Bicing is faster than a metro, especially for short journeys.
+- The **JoTambe app** has a scoring game for Bicing enthusiasts - some stations have an incentive to take bikes out at certain times of the day.
+- Before you ride, always check for flat tires and that the brakes are working. Also check that the handle bars and grips are good. It doesn’t hurt to give the wheel a kick!
+- When you check out the bike, listen for the unlocking sound and look out for the green light on the bike stand.
+- It is possible to use **City Mapper** app for checking bike availability. We find that it is faster than the Smou app, especially for station availability, but you can't use it to checkout a bike unfortunately.
 - You can reserve a bike and you have 5 minutes. The reserved bike will be flashing yellow on the panel but you can take out any bike. Red light means out of service. 
-- Some AR codes are damaged so use your card
-- You cannot bike share - inspectors are at Arc
--  Check electric power bars before riding
+- If the QR code is damaged, you can still use your Bicing card to checkout a bike.
+- You cannot bike share, meaning that the bike rider must be the Bicing user. You may encounter Bicing inspectors at places such as Arc de Triumf who will check!
+- For electric bikes, always check the electric power bars before riding - press the button to see the charge level.
+- It's possible to cycle quite far in 30 minutes. For example, it’s possible to go from Poblenou to Santa Coloma or Universitaria in less than 30 mins if you're quick!
+
+
+
+
+TODO from here...
 
 
 ## Bicing extreme tips!
@@ -80,22 +145,20 @@ If the station is full, you can request an additional 10 minutes at the Bicing c
 5. Next, if you intend to take out an electric bike, it's always better to go to a station where there's more than 1 electric bike available, so consider walking to the next station if this is not the case.
 6. 
 
-## Alternatives to Bicing
 
-Popular apps/companies include:
+<div id="alternatives-to-bicing">
 
-- Donkey Republic
-- Yego (mainly do mo-peds, but also offer electric bicycles)
-- Scooter House: https://www.scooter-house.com/
+## Alternatives to Bicing in Barcelona
 
-Electric Bicycles
 
-## Best apps for bikes and bike sharing in Barcelona
+If you are a tourist just visiting Barcelona, you will probably want to checkout one of these alternative bike, scooter, moto or ride sharing schemes.
 
-- Smou (for Bicing)
-- Donkey Republic
-- eCooltra
-- Acciona
-- Yego
-- Bolt
+- <a href="https://www.donkey.bike/" target="_blank">Donkey Republic</a>
+- <a href="https://cooltra.com/en/" target="_blank">Cooltra</a>
+- <a href="https://en.rideyego.com/" target="_blank">Yego</a>
+- <a href="https://movilidad.acciona.com/en_ES/barcelona/" target="_blank">Acciona</a>
+- <a href="https://www.scooter-house.com/" target="_blank">Scooter House</a>
+- <a href="https://bolt.eu/en-es/scooters/" target="_blank">Bolt Scooters</a>
+- In addition to these, there are many places to rent a city bike for the day in El Gótico, El Born and other central neighbourhoods.
 
+</div>
