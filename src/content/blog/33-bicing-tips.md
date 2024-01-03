@@ -2,7 +2,7 @@
 draft: false
 title: "Bicing Tips & Tricks"
 snippet: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum iure magnam aut libero possimus velit sequi odio, tenetur, repellat et necessitatibus perferendis excepturi doloremque. Beatae sed veritatis quaerat culpa maiores eius temporibus."
-cover: "../../assets/blog/33-bicing-tips/electric-bicings.jpg"
+cover: "../../assets/blog/33-bicing-tips/electric-bicings.webp"
 coverAlt: "Electric Bicing Bikes"
 publishDate: "2023-12-23 16:23"
 category: "Getting Around"
@@ -10,7 +10,7 @@ author: "BCN Experts"
 tags: [bicing,bikes,cycle,cycling]
 ---
 
-![Electric Bicing Bikes](../../assets/blog/33-bicing-tips/electric-bicings.jpg)
+![Electric Bicing Bikes](../../assets/blog/33-bicing-tips/electric-bicings.webp)
 
 
 ## Contents
@@ -109,6 +109,9 @@ If the station is full, you can request an additional 10 minutes at the Bicing c
 
 If the bike you are using is faulty or needs maintenance, you can report the bike as faulty using the terminal at the station.
 
+![Bicing maintenance mode button](../../assets/blog/33-bicing-tips/bicing-station.webp)
+
+---
 
 ## Bicing tips & tricks
 - Usually a Bicing is faster than a metro, especially for short journeys.
@@ -117,7 +120,6 @@ If the bike you are using is faulty or needs maintenance, you can report the bik
 - When you check out the bike, listen for the unlocking sound and look out for the green light on the bike stand.
 - You have to wait 10 minutes before you can use the system again after you have dropped off a bike
 - You can view how much the previous trip cost on the Smou app under the **Consumption** section. It also tells you the journey duration. You will find that you will be charged in batches - that is, they will take a payment from your bank <a href="https://www.bicing.barcelona/faqs-i-normes#reference2-2" target="_blank">once a week on Sundays</a> and sum up the usage for that duation.
-- 
 - It is possible to use **City Mapper** app for checking bike availability. We find that it is faster at loading than the Smou app, especially for station availability, but you can't use it to checkout a bike unfortunately.
 - You can reserve a bike from the Smou app and you will have 5 minutes to get to the station. You might find the reserved bike will be flashing yellow on the station panel but in theory you can take out any bike (electric or mechanical, depending on which you have reserved). Incidentally, a red light on the station panel means the bike is out of service and cannot be taken out.
 - If the QR code is damaged, you can still use your Bicing card to checkout a bike.
