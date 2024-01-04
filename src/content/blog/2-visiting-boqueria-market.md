@@ -12,6 +12,8 @@ tags: [mercat,boqueria,mercado,market,ramblas,raval,old-town,ciutat-vella]
 
 ## Contents
 
+## About Boqueria Market
+
 Located just off La Rambla in Barcelona’s Old Town, La Boqueria has been pulling in the locals for centuries and offers visitors from far and wide a fine array of quality produce and an authentic, colourful experience of the city’s vibrant culinary scene. Come to gaze at the market’s historic architecture and soak up the rich atmosphere of sights, sounds and smells; stay to taste the delights of La Boqueria’s multitude of stalls.
 
 

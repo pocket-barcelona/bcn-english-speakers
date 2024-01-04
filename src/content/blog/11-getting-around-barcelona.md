@@ -15,6 +15,8 @@ tags: [mobility, bicing, travel, transport, cycling, walking, bike, metro, bus, 
 
 ## Contents
 
+## Big little city
+
 Barcelona is a big little city, which makes it the kind of place where bands would stop on a world tour, but it’s small enough to walk around most of it in a day. Owing to its Mediterranean climate and 2,524 hours of sunshine each year (almost 7 hours a day), walking and cycling are pleasant experiences.
 
 My recommended app for public transport is CityMapper (available on both Android and iOS) –– it covers all the different options to get around the city and if you set your Barcelona home location, it will quickly tell you the best ways to get back using all available transport methods. It is not Barcelona-specific and works in a number of other European cities.

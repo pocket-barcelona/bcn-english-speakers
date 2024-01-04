@@ -15,7 +15,7 @@ tags: [going-out,irish,irish-bar,bars,footie]
 
 ## Contents
 
-
+## Irish bars in Barcelona
 
 A guide for lovers of Guinness, jovial pub atmospheres and down-to-earth pub grub!
 
@@ -26,13 +26,14 @@ A guide for lovers of Guinness, jovial pub atmospheres and down-to-earth pub gru
 - Where can I watch the match tonight?
 - Where can I get a classic English or Irish breakfast?
 
----
 
 The below is a comprehensive list of ALL the battle-tested Irish Bars in Barcelona!
 **Note: A lot of these are popular with our local experts and have been heavily tested! 🥳**
 
+
 <p style="text-align: center;font-style:oblique;">(in no particular order)</p>
 
+---
 
 ## Michael Collins (La Sagrada Familia)
 

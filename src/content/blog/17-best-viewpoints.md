@@ -14,8 +14,6 @@ tags: [mirador,viewpoint,views,sunset,walking,mountain]
 
 ## Contents
 
-> Note: Images will be after each heading
-> TODO - add location google maps sharing links
 
 ## Sants / Montjuïc & Poble Sec Neighbourhoods
 
@@ -23,14 +21,22 @@ tags: [mirador,viewpoint,views,sunset,walking,mountain]
 
 Anyone who has been to Plaza de España (Plaça d’Espanya in Catalan) will probably have noticed the former bullring building, which is now a huge indoor shopping centre - Arenas de Barcelona. There is a nice viewpoint from the top of the building. If you’re in the area, it’s definitely worth a visit.
 
-> Pro tip! You can access this viewpoint for free. Simply go inside the shopping centre and go up the escalators to the top. No need to pay for the lift outside!
+<div class="success">
+
+Pro tip! You can access this viewpoint for free. Simply go inside the shopping centre and go up the escalators to the top. No need to pay for the lift outside!
+
+</div>
 
 ### The view from the National Palace
 The ‘Palau Nacional’ as it’s locally called, is a hit with the tourists and locals alike. For almost zero effort you will be awarded a picturesque view over the Magic Fountain and other parts of Montjuïc and the city. 
 
 The classic viewing spot is from the steps right outside the MNAC - Museu Nacional d'Art de Catalunya, which is a grand Catalan contemporary art museum.
 
-> Pro tip! We also recommend walking 100 metres to the north-east of the building, where you will find another vantage point looking out over Barcelona and the Poble Sec neighbourhood.
+<div class="success">
+
+Pro tip! We also recommend walking 100 metres to the north-east of the building, where you will find another vantage point looking out over Barcelona and the Poble Sec neighbourhood.
+
+</div>
 
 ### The view from the Castle of Montjuïc
 
@@ -38,14 +44,24 @@ The Castle offers you the highest viewpoint from Montjuïc, but not the highest 
 
 For those a little short on time, the view from the castle walls is similarly stunning, especially out over the sea.
 
-> Pro tip! There is a very nice scenic trail in between the castle entrance and the ‘Mirador de l'Alcalde’ (see below) through the woodland, where you can also capture some stunning views out over the sea.
+<div class="success">
+
+Pro tip! There is a very nice scenic trail in between the castle entrance and the ‘Mirador de l'Alcalde’ (see below) through the woodland, where you can also capture some stunning views out over the sea.
+
+</div>
 
 ### The view from Mirador de l'Alcalde Montjuïc
 
 Despite being further down than that Castle, this viewpoint still offers a stunning 180 degree view out over the mediterranean. It’s a good spot for watching the birds circling over Montjuïc and the rocky terrain makes for a stunning view. Also, it’s usually not so busy as most tourists go directly to the castle. In the local vicinity you will find parking spots on the main road, if you come by car/taxi, plus there’s usually a food & snack stand selling coffees-and-the-like a few metres away.
 
-> Pro tip! Don’t forget to walk up to Jardins del Mirador. The small gardens (just up the steps) are very photogenic and people often bring a beach towel so they can have a small picnic, read or just enjoy the view.
-The view over Poble Sec Neighbourhood
+<div class="success">
+
+Pro tip! Don’t forget to walk up to Jardins del Mirador. The small gardens (just up the steps) are very photogenic and people often bring a beach towel so they can have a small picnic, read or just enjoy the view.
+
+</div>
+
+## The view over Poble Sec Neighbourhood
+
 There are many views of the Poble Sec neighbourhood from the hillside of Montjuïc. Here are a few of the best.
 
 ### Plaça de Carlos Ibáñez Mirador 
@@ -60,14 +76,23 @@ There are many views of the Poble Sec neighbourhood from the hillside of Montju�
 
 The viewpoint from ‘Migdia’ is lesser-known, even by Barcelona locals, but one of our favourites! Mainly because it’s off the beaten track and requires a bit of walking to get there (although there is a huge car parking spot nearby). If you’re visiting the Castle, you should certainly consider passing by here as it offers you one of the only views over the Cemetery and over towards the Airport. Also, it’s not much effort if you’re already at the Castle, just walk down the side of the castle walls and eventually you’ll arrive.
 
-> Pro tip! There’s a cool little secluded bar closeby (La Caseta del Migdia). Even if you don’t make it to Migdia Viewpoint, you can still have a cold beer for the effort!
+<div class="success">
+
+Pro tip! There’s a cool little secluded bar closeby (La Caseta del Migdia). Even if you don’t make it to Migdia Viewpoint, you can still have a cold beer for the effort!
+
+</div>
 
 ### View from Torre de Comunicacions de Montjuïc
 Popular with people wanting to watch the sunset, this viewpoint is often devoid of crowds, so if you’re looking for a quiet spot to watch the sunset over Barcelona then this should be high on your list. Incidentally, the whole area is photogenic, so be sure to take a long walk around the areas nearby, such as Plaça d’Europa, Palau Sant Jordi and of course the Lluís Companys Olympic Stadium, all some 100 metres apart.
 
-> Pro tip! Check to make sure there’s no major music events happening when you visit as it can get very busy and some areas are fenced off due to events taking place. Visits during the daytime are generally safe, though.
+<div class="success">
 
-—--
+Pro tip! Check to make sure there’s no major music events happening when you visit as it can get very busy and some areas are fenced off due to events taking place. Visits during the daytime are generally safe, though.
+
+</div>
+
+---
+
 
 ## Gràcia Neighbourhood
 
@@ -78,14 +103,21 @@ One of my personal favourites, and for me better than the view from the park’s
 ### El Carmel and The Bunkers (Turó de la Rovira)
 The hill itself is called Turó de la Rovira and on top you will find the village of El Carmel, but people refer to this one as “The Bunkers of Carmel” (in English, or simply just “The Bunkers”).
 
-> Pro tip! There is more than one way to get here and we have a separate Guide to The Bunkers of Carmel.
+<div class="success">
 
+Pro tip! There is more than one way to get here and we have a separate Guide to The Bunkers of Carmel.
+
+</div>
 
 ### The view from Pont de Mühlberg
 
 This viewpoint is similar to the one from the Bunkers of Carmel, but a bit further down. Depending on which way you scale the hill to reach the bunkers, you might cross the bridge on your way. The views out over Barcelona are excellent and won’t require you to reach the top!
 
-> Pro tip! There is an excellent trail which starts at Guinardó Park and ends up at Park Güell, via Carmel Park. The route offers many amazing views over Barcelona. Link to Wikiloc.
+<div class="success">
+
+Pro tip! There is an excellent trail which starts at Guinardó Park and ends up at Park Güell, via Carmel Park. The route offers many amazing views over Barcelona. Link to Wikiloc.
+
+</div>
 
 ---
 
@@ -118,8 +150,11 @@ This is an unofficial viewpoint, but we’ll give it a mention anyway! The local
 
 The location of the viewpoint is here: https://goo.gl/maps/9EbDKGcMENDPymuN7
 
-> Pro tip! There’s a little route which takes you from Camp de l’Arpa up a series of escalators and lifts, to make the walking easier. We highly recommend that you follow this route.
+<div class="success">
 
+Pro tip! There’s a little route which takes you from Camp de l’Arpa up a series of escalators and lifts, to make the walking easier. We highly recommend that you follow this route.
+
+</div>
 
 ---
 
@@ -147,4 +182,8 @@ AND Mirador dels Xiprers
 
 This viewpoint is also known as “Mirador M” (according to Google) and looks right down the beach fronts of Barcelona towards the W-Hotel. It’s usually always without other people with it being a little less obvious and requires a bit of walking to arrive.
 
-> Pro tip! Be sure to come by bike, but you can get there by walking. Also, make sure that big music festivals are not on (such as Primavera festival) otherwise you might not be able to get access.
+<div class="success">
+
+Pro tip! Be sure to come by bike, but you can get there by walking. Also, make sure that big music festivals are not on (such as Primavera festival) otherwise you might not be able to get access.
+
+</div>
