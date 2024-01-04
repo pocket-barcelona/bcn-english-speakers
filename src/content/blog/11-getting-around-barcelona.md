@@ -1,7 +1,7 @@
 ---
 draft: false
 title: "Getting Around Barcelona"
-snippet: "Subtitle: With so many travel options in Barcelona, it’s important to know which is best. Barcelona is a big little city, which makes it the kind of place where bands would stop on a world tour, but it’s small enough to walk around most of it in a day."
+snippet: "With so many travel options in Barcelona, it’s important to know which is best. Barcelona is a big little city, which makes it the kind of place where bands would stop on a world tour, but it’s small enough to walk around most of it in a day."
 cover: "../../assets/blog/11-getting-around-barcelona/11-getting-around.webp"
 coverAlt: "Barcelona bicing bikes"
 publishDate: "2023-11-08 11:39"
