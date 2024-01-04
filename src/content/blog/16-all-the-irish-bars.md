@@ -61,7 +61,7 @@ Map: https://maps.app.goo.gl/fqKSCM4YQNu5bFZX8
 
 
 ## Dunne’s Irish Bar and Restaurant (El Gótico)
-Another well-located Irish bar (and in my opinion very underrated) is Dunne’s on Via Laietana. It usually plays refuge to those visiting El Gotico and El Born areas and The Cathedral. The clientele is varied and it can be anything from empty to packed, depending on the time of day and local events. They also play major sporting events, such as the football, on one of their many screens.
+Another well-located Irish bar (and in my opinion very underrated) is Dunne’s on Via Laietana. It usually plays refuge to those visiting El Gótico and El Born areas and The Cathedral. The clientele is varied and it can be anything from empty to packed, depending on the time of day and local events. They also play major sporting events, such as the football, on one of their many screens.
 
 Address: Via Laietana, 19, 08003 Barcelona
 

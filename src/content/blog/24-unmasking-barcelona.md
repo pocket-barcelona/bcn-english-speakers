@@ -30,7 +30,7 @@ By straying from the beaten path, you can discover these and many other secret s
 
 ## Off-the-Beaten-Path Markets
 
-While the vibrancy and spectacle of Mercat de la Boqueria is undeniably appealing, a deeper and more authentic culinary exploration awaits in Barcelona's quieter, local-favored markets. Hidden from the typical tourist route, these markets serve as vibrant microcosms of the city's culture, offering fresh produce, tantalizing delicacies, and a genuine peek into the day-to-day life of Barcelona's residents.
+While the vibrancy and spectacle of [Mercat de la Boqueria](/blog/2-visiting-boqueria-market) is undeniably appealing, a deeper and more authentic culinary exploration awaits in Barcelona's quieter, local-favored markets. Hidden from the typical tourist route, these markets serve as vibrant microcosms of the city's culture, offering fresh produce, tantalizing delicacies, and a genuine peek into the day-to-day life of Barcelona's residents.
 
 A mere fifteen-minute walk from Passeig de Gràcia, nestled within the stately grid of Eixample, lies the elegant Mercat de la Concepció. Often overlooked for its more famous counterpart, this market dates back to 1888 and is an architectural gem. With its striking modernist design, it offers an atmospheric setting to browse a bounty of local produce, from colorful piles of fruits and vegetables to a variety of Catalan cheeses and meats.
 
@@ -76,7 +76,7 @@ Both Els Sortidors del Parlament and El Vaso de Oro provide not only tantalizing
 
 Exploring Barcelona's food culture is a journey of discovery, one that takes you to the heart of the city's identity. As you venture away from the well-worn tourist trail, you'll uncover the authentic tastes of Barcelona, each bite an unforgettable symphony of Catalan flavors. So, step into the local eateries and let your tastebuds lead the way.
 
-## Neighborhood Strolls
+## Neighbourhood Strolls
 
 While the Gothic Quarter's labyrinthine streets and historic buildings are iconic, the soul of Barcelona beats just as powerfully in its lesser-known neighborhoods. A stroll through these vibrant quarters allows you to feel the city's pulse, experience local culture, and find hidden gems often missed by the casual tourist.
 
@@ -106,5 +106,5 @@ Each of these festivals provides a unique and unforgettable cultural experience,
 
 Barcelona's famous sights are undeniably alluring, but the city's true magic lies in its local secrets—the enchanting, less-traveled spaces that offer a deeper understanding of its heart and soul. With this guide, you're equipped to uncover the hidden gems of Barcelona, immersing yourself in the city's authentic charm and experiencing Barcelona not as a mere visitor, but as a local. From neighborhood strolls to local festivals, prepare to embark on a captivating journey through Barcelona's less-traveled paths.
 Summary
-Barcelona's famous sights are undoubtedly worth visiting. Still, the city's magic lies in its local secrets – those enchanting, less-traveled spaces that offer a deeper understanding of its heart and soul. With this guide in hand, you're set to uncover the hidden gems of Barcelona, immersing yourself in the city's authentic charm.
 
+Barcelona's famous sights are undoubtedly worth visiting. Still, the city's magic lies in its local secrets – those enchanting, less-traveled spaces that offer a deeper understanding of its heart and soul. With this guide in hand, you're set to uncover the hidden gems of Barcelona, immersing yourself in the city's authentic charm.
