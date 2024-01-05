@@ -3,19 +3,19 @@ draft: false
 title: "Tapas on Carrer de Blai"
 snippet: "Bar-hopping along 500 metres of tapas heaven - Renowned as Barcelona's ‘Tapas Street’, Carrer de Blai serves up bar upon bar offering every conceivable variety of Spain’s iconic delicacy."
 cover: "../../assets/blog/3-tapas-carrer-blai/tapas-bar-on-carrer-blai.jpg"
-coverAlt: "Pintxos bar on Carrer Blai"
+coverAlt: "Pintxos bar on Carrer de Blai"
 publishDate: "2023-12-04 17:36"
 category: "Gastro"
 author: "BCN Experts"
 tags: [carrer-blai,calle-blai,blai,tapas,montaditos,pintxos,poble-sec,food]
 ---
 
-![Tapas on Carrer Blai](../../assets/blog/3-tapas-carrer-blai/tapas-bar-on-carrer-blai.jpg)
+![Tapas on Carrer de Blai](../../assets/blog/3-tapas-carrer-blai/tapas-bar-on-carrer-blai.jpg)
 
 ## Contents
 
 
-## The essentials
+## About Carrer de Blai
 
 Carrer de Blai (*carrer* is ‘street’ in Catalan) is found in the Poble Sec neighbourhood, and runs diagonally just to the south of a main road, Avinguda del Paral·lel. Served by the Metro stations Poble Sec (L3) and Paral·lel (L2 & L3), and various bus stops, Carrer de Blai is fairly central and easily accessed.
 

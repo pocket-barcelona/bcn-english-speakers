@@ -14,6 +14,9 @@ tags: [palau-nacional,palace,mnac,montjuic,sants,buildings,architecture]
 
 ## Contents
 
+
+## About Palau Nacional
+
 Built as the jewel in the crown of the Universal Exposition of 1929, the enormous Palau Nacional was completed in just three years and now houses the Museu Nacional d'Art de Catalunya. Perched atop a grand stone staircase at the foot of Montjuïc, the design and scale of this “National Palace” invoke the splendour of the Spanish Renaissance, and views from its esplanade and terraces are some of the finest in the city.
 
 

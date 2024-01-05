@@ -12,6 +12,8 @@ tags: [carmel, bunkers, viewpoints, mirador, walks, nature]
 
 ## Contents
 
+## About the Bunkers of El Carmel
+
 Built to defend Barcelona from aerial bombardment during the Spanish Civil War, these restored hilltop ruins today serve as a much-loved mirador with spectacular 360° views of the city.
 Still unknown to most tourists, those venturing up are rewarded with a tranquillity rare among Barcelona’s most scenic spots.
 

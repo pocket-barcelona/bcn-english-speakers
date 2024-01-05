@@ -12,7 +12,7 @@ tags: [coffee, barcelona, barrista, poblenou]
 
 ## Contents
 
-How to be a freelancer in Barcelona, Spain
+## How to be a freelancer in Barcelona, Spain
 
 Being a freelancer (autonomo) can be a big and difficult decision for people living in Spain, because it can be hard to compare and contrast the pro's and con's when compared with being employed by a company.
 To make it more complicated, the law in Spain has changed in the last few years and so self-employed people have different benefits than in previous years.

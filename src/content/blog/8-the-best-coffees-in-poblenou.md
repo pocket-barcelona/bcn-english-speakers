@@ -4,7 +4,7 @@ title: "Best Coffees in Poblenou and the @22 District"
 snippet: "Barcelona has hundreds of coffee shops and places to drink coffee. But if you’re looking for the absolute best, we highly recommend you to check out the El Poblenou neighbourhood, where you will find some of the best coffee in Barcelona!"
 cover: "../../assets/blog/8-best-coffees-in-poblenou/coffee-poblenou.jpg"
 coverAlt: "Coffee poblenou"
-publishDate: "2023-12-16 11:39"
+publishDate: "2023-12-27 11:39"
 category: "Gastro"
 author: "BCN Experts"
 tags: [coffee, barcelona, barrista, poblenou]
@@ -13,6 +13,8 @@ tags: [coffee, barcelona, barrista, poblenou]
 ![Coffee shop poblenou](../../assets/blog/8-best-coffees-in-poblenou/coffee-poblenou.jpg)
 
 ## Contents
+
+## Best coffee in Poblenou
 
 Barcelona has hundreds of coffee shops and places to drink coffee. But if you’re looking for the absolute best, we highly recommend you to check out the El Poblenou neighbourhood, where you will find some of the best coffee in Barcelona!
 
