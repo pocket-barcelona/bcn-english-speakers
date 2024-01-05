@@ -124,6 +124,14 @@ Address: C/ de la Boqueria, 15, 08002 Barcelona
 
 Map: https://maps.app.goo.gl/oeSmmifGFVFSuQMU9 
 
+## WILD ROVER (Ramblas)
+
+Just a stones’ throw away from the bottom of Las Ramblas, you’ll find the Wild Rover tucked away. Presumably connected to the popular Wild Rover hostels, which you can find all over the world, this pub is a straight up Irish pub with a sleek interior, complete with ‘match watching facilities’. If you need a break from the busyness of La Rambla, it’s worth popping down.
+
+Address: C. de Sta. Mónica, 2, Ciutat Vella, 08001 Barcelona
+
+Map: https://maps.app.goo.gl/M8xJaFRHRjX2kmnw8 
+
 
 ## McCarthy’s Bar (El Born, Via Laietana)
 McCarthy’s is a bit smaller than others in the area, but it still packs a punch on major sporting nights due to its intimate atmosphere. The space itself is a narrow but long pub and the seats at the back can be a strategic place to hide out if you can get there early enough. Also, the bar staff like a bit of banter and are pretty friendly (much like most Irish pubs), and it’s good that you can get a decent pint so close to the centre.
