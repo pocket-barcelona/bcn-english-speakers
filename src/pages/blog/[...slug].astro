@@ -131,11 +131,11 @@ const { Content } = await post.render();
           {post.data.category}
         </Tag>
         <h1
-          class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-1 lg:leading-tight">
+          class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-1 lg:leading-tight" style="text-wrap: balance;">
           {post.data.title}
         </h1>
-        <div class="flex gap-2 mt-3 items-center flex-wrap md:flex-nowrap">
-          <span class="text-slate-600 whitespace-nowrap">
+        <div class="flex gap-2 my-2 items-center flex-wrap md:flex-nowrap">
+          <span class="text-slate-600 whitespace-nowrap text-lg">
             <span class="font-light italic">by</span>{' '}{post.data.author}
           </span>
           <span class="text-slate-600">•</span>
@@ -144,14 +144,13 @@ const { Content } = await post.render();
             datetime={post.data.publishDate.toISOString()}>
             {post.data.publishDate.toDateString()}
           </time>
-          <span class="text-slate-600 hidden md:block">•</span>
-          <div class="w-full md:w-auto flex flex-wrap gap-x-2">
-            {
-              post.data.tags.map((tag) => (
-                <span class="text-sm text-slate-800">#{tag}</span>
-              ))
-            }
-          </div>
+        </div>
+        <div class="w-full md:w-auto flex flex-wrap gap-x-2">
+          {
+            post.data.tags.map((tag) => (
+              <span class="text-sm text-slate-800">#{tag}</span>
+            ))
+          }
         </div>
       </div>
   
