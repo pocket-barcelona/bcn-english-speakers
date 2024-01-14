@@ -12,6 +12,8 @@ tags: [mercat,boqueria,mercado,market,ramblas,raval,old-town,ciutat-vella]
 
 ## Contents
 
+## About Boqueria Market
+
 Located just off La Rambla in Barcelona’s Old Town, La Boqueria has been pulling in the locals for centuries and offers visitors from far and wide a fine array of quality produce and an authentic, colourful experience of the city’s vibrant culinary scene. Come to gaze at the market’s historic architecture and soak up the rich atmosphere of sights, sounds and smells; stay to taste the delights of La Boqueria’s multitude of stalls.
 
 
@@ -69,6 +71,6 @@ A permanent market has existed at La Boqueria since the 1830s, following the dem
 ## What’s nearby?
 Having visited La Boqueria, you could exit towards the side or rear into the Raval neighbourhood and head up Carrer dels Àngels towards the MACBA Museum, or enjoy a coffee at Plaça del Bonsuccés and take in the Jardins de Rubió i Lluch nearby.
 
-You might also simply leave the market back onto Las Ramblas, where you have Gran Teatre del Liceu to the south or The Gothic Quarter (El Gotico) to your east, where we recommend La Basilica de Santa Maria del Pi.
+You might also simply leave the market back onto Las Ramblas, where you have Gran Teatre del Liceu to the south or The Gothic Quarter (El Gótico) to your east, where we recommend La Basilica de Santa Maria del Pi.
 
-For those keen on hitting the shops, Carrer de la Portaferrissa and Carrer del Pi in El Gotico are both good options and within easy walking distance.
+For those keen on hitting the shops, Carrer de la Portaferrissa and Carrer del Pi in El Gótico are both good options and within easy walking distance.

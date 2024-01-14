@@ -15,7 +15,7 @@ tags: [going-out,irish,irish-bar,bars,footie]
 
 ## Contents
 
-
+## Irish bars in Barcelona
 
 A guide for lovers of Guinness, jovial pub atmospheres and down-to-earth pub grub!
 
@@ -26,13 +26,14 @@ A guide for lovers of Guinness, jovial pub atmospheres and down-to-earth pub gru
 - Where can I watch the match tonight?
 - Where can I get a classic English or Irish breakfast?
 
----
 
 The below is a comprehensive list of ALL the battle-tested Irish Bars in Barcelona!
 **Note: A lot of these are popular with our local experts and have been heavily tested! 🥳**
 
+
 <p style="text-align: center;font-style:oblique;">(in no particular order)</p>
 
+---
 
 ## Michael Collins (La Sagrada Familia)
 
@@ -61,7 +62,7 @@ Map: https://maps.app.goo.gl/fqKSCM4YQNu5bFZX8
 
 
 ## Dunne’s Irish Bar and Restaurant (El Gótico)
-Another well-located Irish bar (and in my opinion very underrated) is Dunne’s on Via Laietana. It usually plays refuge to those visiting El Gotico and El Born areas and The Cathedral. The clientele is varied and it can be anything from empty to packed, depending on the time of day and local events. They also play major sporting events, such as the football, on one of their many screens.
+Another well-located Irish bar (and in my opinion very underrated) is Dunne’s on Via Laietana. It usually plays refuge to those visiting El Gótico and El Born areas and The Cathedral. The clientele is varied and it can be anything from empty to packed, depending on the time of day and local events. They also play major sporting events, such as the football, on one of their many screens.
 
 Address: Via Laietana, 19, 08003 Barcelona
 
@@ -122,6 +123,14 @@ Map: https://maps.app.goo.gl/9wiuCR1byY2dDBC88
 Address: C/ de la Boqueria, 15, 08002 Barcelona
 
 Map: https://maps.app.goo.gl/oeSmmifGFVFSuQMU9 
+
+## WILD ROVER (Ramblas)
+
+Just a stones’ throw away from the bottom of Las Ramblas, you’ll find the Wild Rover tucked away. Presumably connected to the popular Wild Rover hostels, which you can find all over the world, this pub is a straight up Irish pub with a sleek interior, complete with ‘match watching facilities’. If you need a break from the busyness of La Rambla, it’s worth popping down.
+
+Address: C. de Sta. Mónica, 2, Ciutat Vella, 08001 Barcelona
+
+Map: https://maps.app.goo.gl/M8xJaFRHRjX2kmnw8 
 
 
 ## McCarthy’s Bar (El Born, Via Laietana)

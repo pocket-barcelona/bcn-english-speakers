@@ -14,6 +14,8 @@ tags: [plaza,reial,gothic,old-town,eating,drinking,restaurant,centre,square]
 
 ## Contents
 
+## About Plaça Reial
+
 Found just off Las Ramblas, dropping in to Plaça Reial is a must – day or night. It offers a huge range of restaurants and bars, with plenty of outdoor seating to watch the world go by, and is complete with a central fountain, fulsome palm trees, and lampposts designed by the famous Antoni Gaudí himself. In summer, most restaurants won’t stop serving until after midnight, and the area is well regarded for its clubs and live music.
 
 ## Where is Plaça Reial in Barcelona?
