@@ -66,10 +66,14 @@ There are many views of the Poble Sec neighbourhood from the hillside of Montju�
 
 ### Plaça de Carlos Ibáñez Mirador 
 
+Waiting for recommendations.
+
 ### Parque del Mirador del Poble Sec
 
+Waiting for recommendations.
 ### Mirador de la Piscina Municipal de Montjuïc
 
+Waiting for recommendations.
 
 
 ### Mirador del Migdia
@@ -125,11 +129,11 @@ Pro tip! There is an excellent trail which starts at Guinardó Park and ends up 
 
 ### Mirador 5 - Parc del Guinardó
 
-To do
+Waiting for recommendations.
 
 ### Mirador 3 - Parc del Guinardó
 
-Todo
+Waiting for recommendations.
 
 ### Mirador del Parc del Guinardó
 
@@ -137,7 +141,7 @@ Why does this one get a mention? Well, for the staggering view of La Sagrada Fam
 
 ### Mirador de Montbau
 
-To do
+Waiting for recommendations.
 
 ### View from Castell de Torre del Baró
 
@@ -177,6 +181,8 @@ AND Mirador dels Xiprers
 ## The Beaches, Diagonal & El Maresme
 
 ### Mirador Mediterraneo Montjuic
+
+Waiting for recommendations.
 
 ### Mirador Maresme
 
