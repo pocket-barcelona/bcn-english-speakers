@@ -31,7 +31,7 @@ const posts = (await getCollection("blog"))
           posts.map((blogPostEntry, _index) => (
             <li>
               <a href={`/blog/${blogPostEntry.slug}`}>
-                <div class="grid md:grid-cols-2 gap-3 md:gap-8 items-center p-2">
+                <div class="grid md:grid-cols-2 gap-2 md:gap-8 items-center py-2 md:p-2">
                   <Image
                     src={blogPostEntry.data.cover}
                     alt={blogPostEntry.data.coverAlt}
@@ -48,7 +48,7 @@ const posts = (await getCollection("blog"))
 
                   <div>
                     <Tag color="info">{blogPostEntry.data.category}</Tag>
-                    <h2 class="text-3xl font-bold leading-tight tracking-tight mt-2">
+                    <h2 class="text-2xl md:text-3xl font-bold leading-tight tracking-tight mt-1">
                       {blogPostEntry.data.title}
                       {blogPostEntry.data.updatedDate && (
                         <Tag color="warning" class="top-[-4px] relative ml-1">
@@ -56,7 +56,7 @@ const posts = (await getCollection("blog"))
                         </Tag>
                       )}
                     </h2>
-                    <p class="text-base mt-4 line-clamp-3">
+                    <p class="text-sm md:text-base mt-4 line-clamp-3">
                       {blogPostEntry.data.snippet}
                     </p>
 
@@ -75,7 +75,7 @@ const posts = (await getCollection("blog"))
                   </div>
                 </div>
               </a>
-              <hr class="sm:hidden my-2 mt-6" />
+              <hr class="sm:hidden mb-0 mt-4 md:mb-2 md:mt-6" />
             </li>
           ))
         }
