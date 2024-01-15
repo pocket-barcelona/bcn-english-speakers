@@ -1,7 +1,7 @@
 ---
 draft: false
 title: "Bicing Tips & Tricks"
-snippet: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum iure magnam aut libero possimus velit sequi odio, tenetur, repellat et necessitatibus perferendis excepturi doloremque. Beatae sed veritatis quaerat culpa maiores eius temporibus."
+snippet: "Bicing is a city-wide bike sharing system in Barcelona. It is intended to be used by residents of Barcelona and not aimed at tourists. Wherever you are in Barcelona, there will generally be a Bicing bike station closeby, within a few minutes' walk. In the central neighbourhoods there are bike stations on almost every other street corner."
 cover: "../../assets/blog/33-bicing-tips/electric-bicings.webp"
 coverAlt: "Electric Bicing Bikes"
 publishDate: "2023-12-23 16:23"

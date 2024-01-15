@@ -70,6 +70,12 @@ Odara opened in 2023 and immediately became a huge success with the Llacuna neig
 
 **Address:** C/ de la Ciutat de Granada, 68, 08005 Barcelona
 
+<div class="danger">
+
+Odara is currently closed.
+
+</div>
+
 ## Gabby's Brunch
 
 Gabby’s Brunch has mastered coffees and brunches and everything they do is super photogenic, Instagrammable and delicious! That being said, you’ll need to make the effort to get there as it’s slightly off the main path, but well worth the trip. On the weekends, you’ll be competing with a mix of locals and tourists, but it’s usually possible to get a table.

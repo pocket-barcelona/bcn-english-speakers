@@ -10,6 +10,8 @@ author: "BCN Experts"
 tags: [mercat,boqueria,mercado,market,ramblas,raval,old-town,ciutat-vella]
 ---
 
+![Tapas on Carrer de Blai](../../assets/blog/2-boqueria-market/boqueria-market-entrance.jpg)
+
 ## Contents
 
 ## About Boqueria Market
