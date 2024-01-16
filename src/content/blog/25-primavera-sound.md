@@ -86,7 +86,7 @@ A residential area that has a nice vibe and cool bars and restaurants. It is on 
 
 The festival is at the bottom right corner of Diagonal Mar on the map below and is connected by the L4 (yellow) metro line. “**El Maresme | Fòrum**” is the closest stop, approximately a 5-minute walk to the festival. 
 
-![Neighbourhood map](../../assets//blog//25-primavera-sound/neighbourhoods.jpg)
+![Primavera metro map](../../assets//blog//25-primavera-sound/primavera-metro-map.jpg)
 
 You can also get the Tram (there is a Port Fòrum stop right outside) which connects you to Poble Nou and Villa Olimpica.
 
@@ -115,12 +115,12 @@ The festival offers a free shuttle bus from the festival site to Plaça de Catal
 You can also rent electronic motorbikes and bikes from any of the following companies (using the below affiliate links will get you some promotional credit and I will earn some free credit too). Be sure to sign up in advance as you need to get your licence validated.
 
 - [Acciona](https://acciona-motosharing.onelink.me/8HVM/e50d02fb)
-- [Cooltra](https://cooltra.com/es/) (also has e-bikes)
-- [Yego](https://en.rideyego.com/) (also has e-bikes)
+- [Cooltra](https://link.cooltra.com/redeem-promo-code?code=hfrxb) (also has e-bikes)
+- [Yego](https://www.yego.mobi/deeplink/coupon/CDBIIGHGDP) (also has e-bikes)
 
-For taxis, I always recommend using an app – [FreeNow](https://www.free-now.com/es/viaja/descarga-la-app/) is the one I use most as it allows you to leave a review and track the route that is being taken, plus it uses local taxis. I am not a fan of hailing from the street as they often will try to take a longer route, and they can be quite unprofessional in my experience.
+For taxis, I always recommend using an app – [FreeNow](https://m.free-now.com/JGMc/afte6ygg) is the one I use most as it allows you to leave a review and track the route that is being taken, plus it uses local taxis. I am not a fan of hailing from the street as they often will try to take a longer route, and they can be quite unprofessional in my experience.
 
-You also have [Uber](https://apps.apple.com/us/app/uber-request-a-ride/id368677368), although you will need to sign up in advance. Uber in Barcelona is also not really very good, with long wait times and high prices. The better option is [Cabify](https://cabify.com/i/janad117), which offers good prices and cars (and also has other transport options in the app).
+You also have [Uber](https://referrals.uber.com/refer?id=wtkjxt2y8zf8), although you will need to sign up in advance. Uber in Barcelona is also not really very good, with long wait times and high prices. The better option is [Cabify](https://cabify.com/i/janad117), which offers good prices and cars (and also has other transport options in the app).
 
 
 ## Weather
