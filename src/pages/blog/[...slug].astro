@@ -65,6 +65,9 @@ const { Content } = await post.render();
       background-color: #f6f6f6;
     }
   }
+  h2#contents {
+    margin-bottom: 0;
+  }
   h2#contents + ul {
     padding-top: 0.75em;
     padding-bottom: 0.75em;
@@ -76,9 +79,14 @@ const { Content } = await post.render();
     margin-bottom: 0;
   }
   h2#contents + ul li {
-    margin-top: 8px;
-    margin-bottom: 8px;
-    line-height: 1.33;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    line-height: 1.25;
+    padding-left: 0;
+  }
+  h2#contents + ul ul {
+    margin-top: 4px;
+    margin-bottom: 4px;
   }
   .prose :where(a):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
     color: #1212c4;
