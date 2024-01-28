@@ -1,0 +1,30 @@
+---
+import Tag, { type TagColors } from './elements/tag.astro';
+
+interface Props {
+	category: string;
+}
+
+let { category } = Astro.props;
+
+const label = category ?? '';
+category = label.toLowerCase();
+
+// default color for unknown category tags
+let color: TagColors = 'info';
+
+if (category === 'going out') {
+  color = 'emerald';
+} else if (category === 'getting around') {
+  color = 'amber';
+} else if (category === 'gastro') {
+  color = 'pink';
+} else if (category === 'guides') {
+  color = 'info';
+}
+
+---
+
+<Tag color={color}>
+  {label}
+</Tag>

@@ -1,20 +1,28 @@
 ---
+export type TagColors = "success" | "info" | "warning" | "danger" | "black" | "neutral" | "yellow" | "orange" | "pink" | "eggplant" | "emerald" | "amber";
 
 interface Props {
-  color: "success" | "info" | "warning" | "danger" | "black" | "neutral";
+  color: TagColors;
   class?: string;
   [x: string]: any;
 }
 
 const { href, color = "info", class: className, ...rest } = Astro.props;
 
+// https://tailwindcss.com/docs/customizing-colors
 const styles = {
   success: "text-white bg-[#00e100]",
-  info: "text-white bg-[#1212c4]",
+  info: "text-white bg-blue-500",
   warning: "text-black bg-[#e1e100]",
   danger: "text-white bg-[#9b0000]",
   black: "text-white bg-black",
   neutral: "text-white bg-[#787878]",
+  yellow: "text-black bg-[#FFFF00]",
+  orange: "text-black bg-[#FCDD09]",
+  pink: "text-white bg-pink-800",
+  eggplant: "text-white bg-[#614051]",
+  emerald: "text-white bg-emerald-700",
+  amber: "text-white bg-amber-500",
 };
 ---
 
