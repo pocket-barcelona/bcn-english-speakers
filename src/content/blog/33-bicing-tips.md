@@ -6,7 +6,8 @@ cover: "../../assets/blog/33-bicing-tips/electric-bicings.webp"
 coverAlt: "Electric Bicing Bikes"
 publishDate: "2023-12-23 16:23"
 category: "Getting Around"
-author: "BCN Experts"
+author: "Darryl"
+authorId: "darryl"
 tags: [bicing,bikes,cycle,cycling]
 ---
 

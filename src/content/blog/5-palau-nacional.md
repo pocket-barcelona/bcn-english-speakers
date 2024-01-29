@@ -6,7 +6,8 @@ cover: "../../assets/blog/5-palau-nacional/palau-nacional.jpg"
 coverAlt: "Palau Nacional"
 publishDate: "2023-12-01 09:12"
 category: "Guides"
-author: "BCN Experts"
+author: "Darryl"
+authorId: "darryl"
 tags: [palau-nacional,palace,mnac,montjuic,sants,buildings,architecture]
 ---
 

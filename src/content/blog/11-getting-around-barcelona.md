@@ -6,7 +6,8 @@ cover: "../../assets/blog/11-getting-around-barcelona/11-getting-around.webp"
 coverAlt: "Barcelona bicing bikes"
 publishDate: "2023-11-08 11:39"
 category: "Guides"
-author: "BCN Experts"
+author: "Owen"
+authorId: "owen"
 tags: [mobility, bicing, travel, transport, cycling, walking, bike, metro, bus, tram]
 ---
 

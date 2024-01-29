@@ -6,7 +6,8 @@ cover: "../../assets/blog/4-plaza-reial/plaza-reial.jpg"
 coverAlt: "Plaza Reial"
 publishDate: "2023-12-05 11:41"
 category: "Going Out"
-author: "BCN Experts"
+author: "Darryl"
+authorId: "darryl"
 tags: [plaza,reial,gothic,old-town,eating,drinking,restaurant,centre,square]
 ---
 

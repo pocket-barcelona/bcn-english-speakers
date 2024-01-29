@@ -6,7 +6,8 @@ cover: "../../assets/blog/2-boqueria-market/boqueria-market-entrance.jpg"
 coverAlt: "Boqueria Market"
 publishDate: "2023-12-06 14:05"
 category: "Guides"
-author: "BCN Experts"
+author: "Darryl"
+authorId: "darryl"
 tags: [mercat,boqueria,mercado,market,ramblas,raval,old-town,ciutat-vella]
 ---
 

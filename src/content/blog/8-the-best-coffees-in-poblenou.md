@@ -6,7 +6,8 @@ cover: "../../assets/blog/8-best-coffees-in-poblenou/coffee-poblenou.jpg"
 coverAlt: "Coffee poblenou"
 publishDate: "2023-12-27 11:39"
 category: "Gastro"
-author: "BCN Experts"
+author: "Darryl"
+authorId: "darryl"
 tags: [coffee, barcelona, barrista, poblenou]
 ---
 

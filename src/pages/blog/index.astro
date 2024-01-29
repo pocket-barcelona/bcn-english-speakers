@@ -5,7 +5,8 @@ import Layout from "../../layouts/layout.astro";
 import Container from "../../components/page-container.astro";
 import Sectionhead from "../../components/section-head.astro";
 import Tag from "../../components/elements/tag.astro";
-import PostCategoryTag from '../../components/post-category-tag.astro';
+import PostCategoryTag from "../../components/post-category-tag.astro";
+import Avatar from "../../components/avatar.astro";
 
 // Images: https://docs.astro.build/en/guides/images/#images-in-content-collections
 // Using getImage() https://youtu.be/VsZ6feIU_bA?si=nyV2t1GsGbdaQh4t&t=760
@@ -19,9 +20,9 @@ const posts = (await getCollection("blog"))
 <Layout title={"Expert Articles"}>
   <Container>
     <Sectionhead>
-      <Fragment slot="title">Articles by experts</Fragment>
+      <Fragment slot="title">Articles by locals</Fragment>
       <Fragment slot="desc">
-        All articles written by <strong>local experts</strong>, who have lived
+        All articles written by <strong>local residents</strong>, who have lived
         in Barcelona for years.
       </Fragment>
     </Sectionhead>
@@ -48,7 +49,7 @@ const posts = (await getCollection("blog"))
                   />
 
                   <div>
-                    <PostCategoryTag category={blogPostEntry.data.category}></PostCategoryTag>
+                    <PostCategoryTag category={blogPostEntry.data.category} />
 
                     <h2 class="text-2xl md:text-3xl font-bold leading-tight tracking-tight mt-1">
                       {blogPostEntry.data.title}
@@ -63,12 +64,16 @@ const posts = (await getCollection("blog"))
                     </p>
 
                     <div class="flex gap-2 mt-4 items-center">
-                      <span class="text-slate-600 text-sm">
-                        {blogPostEntry.data.author}
+                      <Avatar
+                        authorId={blogPostEntry.data.authorId}
+                        authorName={blogPostEntry.data.author}
+                      />
+                      <span class="text-gray-700 text-sm">
+                        by {blogPostEntry.data.author}
                       </span>
-                      <span class="text-slate-600 text-sm">• </span>
+                      <span class="text-gray-700 text-sm">• </span>
                       <time
-                        class="text-slate-600 text-sm"
+                        class="text-gray-700 text-sm"
                         datetime={blogPostEntry.data.publishDate.toISOString()}
                       >
                         {blogPostEntry.data.publishDate.toDateString()}

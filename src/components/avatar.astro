@@ -1,0 +1,41 @@
+---
+import { Image } from "astro:assets";
+import authorDefault from "../assets/authors/pb.jpg";
+import authorDarryl from "../assets/authors/darryl.jpg";
+import authorOwen from "../assets/authors/owen.jpg";
+
+interface Props {
+  authorName: string;
+	authorId: string;
+}
+
+let { authorId, authorName } = Astro.props;
+
+let src = authorDefault;
+
+if (authorId === 'darryl') {
+  src = authorDarryl;
+} else if (authorId === 'owen') {
+  src = authorOwen;
+} else if (authorId === 'brata') {
+  src = authorDefault;
+} else if (authorId === 'uriel') {
+  src = authorDefault;
+} else if (authorId === 'tasha') {
+  src = authorDefault;
+}
+
+---
+
+<Image
+  src={src}
+  alt={authorName}
+  sizes="80"
+  class:list={"w-[40px] h-[40px] rounded-full object-cover"}
+  widths={[80]}
+  width={40}
+  height={80}
+  quality={"mid"}
+  loading={"lazy"}
+  format="avif"
+/>

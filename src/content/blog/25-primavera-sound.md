@@ -6,7 +6,8 @@ cover: "../../assets/blog/25-primavera-sound/primavera-singer.jpg"
 coverAlt: "Primavera Sound"
 publishDate: "2024-01-16 13:38"
 category: "Going Out"
-author: "BCN Experts"
+author: "Owen"
+authorId: "owen"
 tags: [primavera-sound, festival, barcelona, events, music]
 ---
 

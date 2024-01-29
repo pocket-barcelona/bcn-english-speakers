@@ -6,11 +6,12 @@ cover: "../../assets/blog/17-best-viewpoints/bcn-view.webp"
 coverAlt: "View over Barcelona"
 publishDate: "2023-11-12 11:39"
 category: "Going Out"
-author: "BCN Experts"
+author: "Darryl"
+authorId: "darryl"
 tags: [mirador,viewpoint,views,sunset,walking,mountain]
 ---
 
-![Irish bar atmosphere](../../assets/blog/17-best-viewpoints/bcn-view.webp)
+![View over Barcelona](../../assets/blog/17-best-viewpoints/bcn-view.webp)
 
 ## Contents
 

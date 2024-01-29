@@ -6,7 +6,8 @@ cover: "../../assets/blog/6-barcelona-travel-cards/barcelona-travel.jpg"
 coverAlt: "BCN Airport photo"
 publishDate: "2024-01-04 10:24"
 category: "Guides"
-author: "BCN Experts"
+author: "Owen"
+authorId: "owen"
 tags: [travel, transport, metro, mobility, bus]
 ---
 
