@@ -64,6 +64,7 @@ const posts = (await getCollection("blog"))
                     </p>
 
                     <div class="flex gap-2 mt-4 items-center">
+                      { /*
                       <Avatar
                         authorId={blogPostEntry.data.authorId}
                         authorName={blogPostEntry.data.author}
@@ -72,6 +73,7 @@ const posts = (await getCollection("blog"))
                         by {blogPostEntry.data.author}
                       </span>
                       <span class="text-gray-700 text-sm">• </span>
+                      */ }
                       <time
                         class="text-gray-700 text-sm"
                         datetime={blogPostEntry.data.publishDate.toISOString()}
