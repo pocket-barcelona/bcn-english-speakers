@@ -6,8 +6,8 @@ cover: "../../assets/blog/7-barcelona-neighbourhoods/barcelona-skyline.jpg"
 coverAlt: "Barcelona skyline"
 publishDate: "2024-01-05 11:26"
 category: "Guides"
-author: "Owen"
-authorId: "owen"
+author: "Bob"
+authorId: "bob"
 tags: [barcelona, neighbourhoods, barrios, living]
 ---
 

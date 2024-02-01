@@ -2,7 +2,10 @@
 import { Image } from "astro:assets";
 import authorDefault from "../assets/authors/pb.jpg";
 import authorDarryl from "../assets/authors/darryl.jpg";
-import authorOwen from "../assets/authors/owen.jpg";
+import authorBob from "../assets/authors/bob.jpg";
+import authorBrata from "../assets/authors/brata.jpg";
+import authorTasha from "../assets/authors/tasha.jpg";
+import authorUriel from "../assets/authors/uriel.jpg";
 
 interface Props {
   authorName: string;
@@ -15,14 +18,14 @@ let src = authorDefault;
 
 if (authorId === 'darryl') {
   src = authorDarryl;
-} else if (authorId === 'owen') {
-  src = authorOwen;
+} else if (authorId === 'bob') {
+  src = authorBob;
 } else if (authorId === 'brata') {
-  src = authorDefault;
+  src = authorBrata;
 } else if (authorId === 'uriel') {
-  src = authorDefault;
+  src = authorUriel;
 } else if (authorId === 'tasha') {
-  src = authorDefault;
+  src = authorTasha;
 }
 
 ---
