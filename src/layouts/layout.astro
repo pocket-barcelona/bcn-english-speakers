@@ -3,7 +3,7 @@ import { SEO } from "astro-seo";
 import Footer from "../components/page-footer.astro";
 import Navbar from "../components/nav-bar/navbar.astro";
 import "@fontsource-variable/inter/index.css";
-
+import { ViewTransitions } from 'astro:transitions';
 export interface Props {
   title: string;
 }
@@ -21,9 +21,8 @@ const makeTitle = title
   ? title + " | " + "Barcelona Experts"
   : "Barcelona Experts - Experience Barcelona like a local";
 ---
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="scroll-behavior: smooth;">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -48,6 +47,7 @@ const makeTitle = title
         },
       }}
     />
+    <ViewTransitions fallback="swap" />
   </head>
   <body class="pt-[60px] lg:pt-[72px]">
     <Navbar />

@@ -7,7 +7,8 @@ coverAlt: "Irish bar atmosphere"
 publishDate: "2024-01-02 11:39"
 updatedDate: "2024-01-02 11:39"
 category: "Going Out"
-author: "BCN Experts"
+author: "Darryl"
+authorId: "darryl"
 tags: [going-out,irish,irish-bar,bars,footie]
 ---
 

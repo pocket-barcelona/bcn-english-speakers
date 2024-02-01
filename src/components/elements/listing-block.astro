@@ -1,0 +1,32 @@
+---
+
+interface Props {
+  recommendation?: string;
+  address?: string;
+  website?: string;
+  map?: string;
+  class?: string;
+}
+
+const {
+  address,
+  recommendation,
+  website,
+  map,
+  class: className,
+  ...rest
+} = Astro.props;
+
+---
+
+<div
+  class:list={[
+    "my-6 mb-12",
+    className,
+  ]}
+  ><slot />
+  { recommendation && <p class="!my-1"><strong>👍 Recommendation</strong>: {recommendation}</p>}
+  { address && <p class="!my-1"><strong>📍 Address</strong>: {address}</p>}
+  { website && <p class="!my-1"><strong>🔗 Website</strong>: <a href={website} target="_blank">{website}</a></p>}
+  { map && <p class="!my-1"><strong>📌 Map</strong>: <a href={map} target="_blank">Link</a></p>}
+  </div>

@@ -7,7 +7,8 @@ coverAlt: "Car photo"
 publishDate: "2023-11-08 11:39"
 updatedDate: "2023-11-20 11:40"
 category: "Guides"
-author: "BCN Experts"
+author: "Darryl"
+authorId: "darryl"
 tags: [driving,licence,license,exchange,dgt,idl,cita]
 ---
 

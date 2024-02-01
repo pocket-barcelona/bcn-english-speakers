@@ -6,7 +6,8 @@ cover: "../../assets/blog/1-bunkers-of-carmel/bunkers-of-carmel-0403e5a4.jpg"
 coverAlt: "Bunkers of Carmel"
 publishDate: "2023-12-03 10:32"
 category: "Guides"
-author: "BCN Experts"
+author: "Darryl"
+authorId: "darryl"
 tags: [carmel, bunkers, viewpoints, mirador, walks, nature]
 ---
 

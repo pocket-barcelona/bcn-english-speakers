@@ -6,7 +6,8 @@ cover: "../../assets/blog/24-unmasking-barcelona/barcelona-aerial-shot.jpg"
 coverAlt: "Barcelona aerial shot"
 publishDate: "2024-01-13 11:39"
 category: "Going Out"
-author: "BCN Experts"
+author: "PocketBCN"
+authorId: "pb"
 tags: [barcelona,tourism,markets,hidden-gems,gaudi,old-town,gracia-festival,sant-joan]
 ---
 

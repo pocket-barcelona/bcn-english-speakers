@@ -18,6 +18,7 @@ const blogCollection = defineCollection({
     publishDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     author: z.string().default("BCN Experts"),
+    authorId: z.string().default("pb"),
     category: z.string(),
     tags: z.array(z.string()),
   }),

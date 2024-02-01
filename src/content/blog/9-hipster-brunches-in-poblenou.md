@@ -6,7 +6,8 @@ cover: "../../assets/blog/9-hipster-brunches/hipster-brunch.webp"
 coverAlt: "Brunch photo"
 publishDate: "2023-11-08 11:39"
 category: "Gastro"
-author: "BCN Experts"
+author: "Darryl"
+authorId: "darryl"
 tags: [hipster,coffee,brunch,lunch,poblenou,poble-nou]
 ---
 

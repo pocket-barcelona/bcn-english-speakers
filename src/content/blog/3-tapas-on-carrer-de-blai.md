@@ -6,7 +6,8 @@ cover: "../../assets/blog/3-tapas-carrer-blai/tapas-bar-on-carrer-blai.jpg"
 coverAlt: "Pintxos bar on Carrer de Blai"
 publishDate: "2023-12-04 17:36"
 category: "Gastro"
-author: "BCN Experts"
+author: "Darryl"
+authorId: "darryl"
 tags: [carrer-blai,calle-blai,blai,tapas,montaditos,pintxos,poble-sec,food]
 ---
 

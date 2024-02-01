@@ -6,7 +6,8 @@ cover: "../../assets/blog/10-bcn-hidden-treasures/wall-of-kisses-ed9d0578.jpg"
 coverAlt: "Mural in Barcelona"
 publishDate: "2023-11-08 11:39"
 category: "Guides"
-author: "BCN Experts"
+author: "PocketBCN"
+authorId: "pb"
 tags: [barcelona,city-walks,hidden-treasure,secret-spots]
 ---
 
