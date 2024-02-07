@@ -1,11 +1,11 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content';
+import { type Props as OGProps } from "astro-seo";
 import Layout from '../../layouts/layout.astro';
 import Container from '../../components/page-container.astro';
-import Tag from '../../components/elements/tag.astro';
+// import Tag from '../../components/elements/tag.astro';
 import PostCategoryTag from '../../components/post-category-tag.astro';
 import Avatar from '../../components/avatar.astro';
-
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
 	return posts.map((post) => ({
@@ -19,6 +19,17 @@ type Props = CollectionEntry<'blog'>;
 const post = Astro.props;
 const { Content } = await post.render();
 
+const resolvedImageWithDomain = new URL(post.data.cover.src, Astro.site).toString();
+const opengraph: OGProps['openGraph'] = {
+  basic: {
+    type: 'website',
+    title: post.data.title,
+    image: resolvedImageWithDomain
+  },
+  image: {
+    alt: post.data.coverAlt
+  }
+}
 // https://docs.astro.build/en/guides/content-collections/#modifying-frontmatter-with-remark
 // const { Content, remarkPluginFrontmatter } = await post.render();
 // remarkPluginFrontmatter.readingTime
@@ -145,7 +156,7 @@ const { Content } = await post.render();
   }
 </style>
 
-<Layout title={post.data.title}>
+<Layout title={post.data.title} snippet={post.data.snippet} ogData={opengraph}>
   <Container>
     <article>
       <div class="mx-auto max-w-3xl mt-8 lg:mt-16">
@@ -168,11 +179,8 @@ const { Content } = await post.render();
           class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-1 lg:leading-tight" style="text-wrap: balance;">
           {post.data.title}
         </h1>
-        
-        
         <p class="my-6 text-xl leading-normal text-gray-700">{post.data.snippet}</p>
 
-        
       </div>
   
       <div class="

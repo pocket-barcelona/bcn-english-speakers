@@ -1,27 +1,43 @@
 ---
-import { SEO } from "astro-seo";
+import { SEO, type Props as OGProps } from "astro-seo";
 import Footer from "../components/page-footer.astro";
 import Navbar from "../components/nav-bar/navbar.astro";
 import "@fontsource-variable/inter/index.css";
-import { ViewTransitions } from 'astro:transitions';
+import { ViewTransitions } from "astro:transitions";
 export interface Props {
   title: string;
+  snippet?: string;
+  ogData?: OGProps['openGraph'];
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
-const resolvedImageWithDomain = new URL(
-  "/opengraph.jpg",
-  Astro.site
-).toString();
+const resolvedImageWithDomain = new URL("/og-image.jpg", Astro.site).toString();
 
-const { title } = Astro.props;
+const { title, snippet = "", ogData = undefined } = Astro.props;
+
+let opengraph: OGProps['openGraph'] = {
+  basic: {
+    url: canonicalURL,
+    type: "website",
+    title: `Pocket Barcelona - a website run by real Barcelona based residents`,
+    image: resolvedImageWithDomain,
+    ...(ogData?.basic ?? {}),
+  },
+  image: {
+    alt: "Barcelona",
+  },
+};
 
 const makeTitle = title
   ? title + " | " + "Barcelona Experts"
   : "Barcelona Experts - Experience Barcelona like a local";
+const ogSnippet = snippet
+  ? snippet
+  : "Pocket Barcelona - run by real people who live in Barcelona. We also have a very active chat group on Whatsapp which is free to join!";
 ---
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en" style="scroll-behavior: smooth;">
   <head>
     <meta charset="UTF-8" />
@@ -33,19 +49,9 @@ const makeTitle = title
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
       title={makeTitle}
-      description="Pocket Barcelona - run by real people who live in Barcelona. We also have a very active chat group on Whatsapp which is free to join!"
+      description={ogSnippet}
       canonical={canonicalURL}
-      openGraph={{
-        basic: {
-          url: canonicalURL,
-          type: "website",
-          title: `Pocket Barcelona - a website run by real Barcelona based experts`,
-          image: resolvedImageWithDomain,
-        },
-        image: {
-          alt: "Barcelona Experts",
-        },
-      }}
+      openGraph={opengraph}
     />
     <ViewTransitions fallback="swap" />
   </head>
