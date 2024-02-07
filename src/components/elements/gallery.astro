@@ -18,15 +18,17 @@ const images = import.meta.glob('/src/assets/**/*.{jpeg,jpg,png,gif}')
 const xData = `{
     imageGalleryOpened: false,
     imageGalleryActiveUrl: null,
+    imageGalleryActiveCaption: null,
     imageGalleryImageIndex: null,
     imageGalleryOpen(event) {
         this.imageGalleryImageIndex = event.target.dataset.index;
         this.imageGalleryActiveUrl = event.target.src;
+        this.imageGalleryActiveCaption = event.target.alt ?? '';
         this.imageGalleryOpened = true;
     },
     imageGalleryClose() {
         this.imageGalleryOpened = false;
-        setTimeout(() => this.imageGalleryActiveUrl = null, 300);
+        setTimeout(() => { this.imageGalleryActiveUrl = null; this.imageGalleryActiveCaption = null; }, 300);
     },
     imageGalleryNext() {
         if(this.imageGalleryImageIndex == this.$refs.gallery.childElementCount){
@@ -35,6 +37,7 @@ const xData = `{
             this.imageGalleryImageIndex = parseInt(this.imageGalleryImageIndex) + 1;
         }
         this.imageGalleryActiveUrl = this.$refs.gallery.querySelector('[data-index="' + this.imageGalleryImageIndex + '"]').src;
+        this.imageGalleryActiveCaption = this.$refs.gallery.querySelector('[data-index="' + this.imageGalleryImageIndex + '"]').alt;
     },
     imageGalleryPrev() {
         if(this.imageGalleryImageIndex == 1){
@@ -43,6 +46,7 @@ const xData = `{
             this.imageGalleryImageIndex = parseInt(this.imageGalleryImageIndex) - 1;
         }
         this.imageGalleryActiveUrl = this.$refs.gallery.querySelector('[data-index="' + this.imageGalleryImageIndex + '"]').src;
+        this.imageGalleryActiveCaption = this.$refs.gallery.querySelector('[data-index="' + this.imageGalleryImageIndex + '"]').alt;
     },
   }`
 ---
@@ -189,11 +193,12 @@ const xData = `{
           x-transition:enter-start="opacity-0 transform scale-50"
           x-transition:leave="transition ease-in-in duration-300"
           x-transition:leave-end="opacity-0 transform scale-50"
-          class="object-contain object-center w-full h-full select-none cursor-zoom-out"
+          class="object-contain object-center w-full h-full max-h-[100vh] select-none cursor-zoom-out"
           :src="imageGalleryActiveUrl"
-          alt=""
+          :alt="imageGalleryActiveCaption"
           style="display: none;"
         />
+        <div class="absolute bottom-2 bg-[#000000cc] inline-block text-center rounded px-4 py-1 md:px-8 md:py-2 text-white shadow font-light text-xs md:text-base" x-text="imageGalleryActiveCaption"></div>
         <div
           @click="$event.stopPropagation(); $dispatch('image-gallery-next');"
           class="absolute right-0 flex items-center justify-center text-white -translate-x-10 rounded-full cursor-pointer xl:translate-x-24 2xl:translate-x-32 bg-white/10 w-14 h-14 hover:bg-white/20"
