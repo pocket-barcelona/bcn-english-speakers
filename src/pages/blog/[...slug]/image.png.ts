@@ -16,8 +16,8 @@ export const GET: APIRoute = async function get({ params, request }) {
   const fontData = await fs.readFile("./public/fonts/Inter-Bold.ttf");
   const post = await getEntryBySlug("blog", params.slug as any);
   // const poster = post?.data.cover.src;
-  const poster =
-    "./src/assets/blog/37-sitges-carnival/sitges-carnival-parade.jpg";
+  // const poster = "./src/assets/blog/37-sitges-carnival/sitges-carnival-parade.jpg";
+  const poster = "./src/assets/bcn-splash.jpg";
   const myImageBase64 = (
     await fs.readFile(poster ?? "./public/og-image.jpg")
   ).toString("base64");
@@ -57,6 +57,8 @@ export const GET: APIRoute = async function get({ params, request }) {
   //     ],
   //   }
   // );
+  
+  const bg = `url('data:image/png;base64,${myImageBase64}')`;
 
   const svg = await satori(
     {
@@ -65,13 +67,13 @@ export const GET: APIRoute = async function get({ params, request }) {
         style: {
           // backgroundImage: `url('data:image/png;base64,${myImageBase64}')`,
           // backgroundColor: "transparent",
-          backgroundImage: `url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR')`,
-
-          backgroundSize: "100%",
+          // backgroundImage: `url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR')`,
+          'backgroundImage': bg,
+          backgroundSize: "1200px 630px",
           // backgroundPosition: "center",
           display: 'flex',
-          width: '100%',
-          height: '100%'
+          width: '1200px',
+          height: '630px'
         },
         // src: `url('data:image/png;base64,${myImageBase64}')`,
         // width: 1200,
