@@ -4,11 +4,29 @@ import Container from "../components/page-container.astro";
 import Cta from "../components/cta.astro";
 import Hero from "../components/hero.astro";
 import Layout from "../layouts/layout.astro";
+import { getPosts } from '../services/post.service';
+import PostList from '../components/elements/post-list.astro';
+import PostItem from '../components/elements/post-item.astro';
+import Link from '../components/elements/link.astro';
+
+const posts = (await getPosts()).slice(0, 3);
 ---
 
 <Layout title={SITE_TITLE}>
   <Hero />
   <Container>
-    <Cta />
+    <div class="max-w-5xl mx-auto">
+      <Cta />
+
+      <h2 class="text-3xl my-4 md:my-8 md:mt-12 !mb-4 font-bold">Latest articles</h2>
+      <PostList>
+        {
+          posts.map((post, index) => <PostItem post={post} index={index} />)
+        }  
+      </PostList>
+      <div class="flex justify-end mt-4">
+        <Link href="/blog" style="outline">More articles</Link>
+      </div>
+    </div>
   </Container>
 </Layout>
