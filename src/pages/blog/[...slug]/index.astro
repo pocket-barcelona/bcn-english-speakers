@@ -1,11 +1,12 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content';
 import { type Props as OGProps } from "astro-seo";
-import Layout from '../../layouts/layout.astro';
-import Container from '../../components/page-container.astro';
+import Layout from '../../../layouts/layout.astro';
+import Container from '../../../components/page-container.astro';
 // import Tag from '../../components/elements/tag.astro';
-import PostCategoryTag from '../../components/post-category-tag.astro';
-import Avatar from '../../components/avatar.astro';
+import PostCategoryTag from '../../../components/post-category-tag.astro';
+import Avatar from '../../../components/avatar.astro';
+
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
 	return posts.map((post) => ({
