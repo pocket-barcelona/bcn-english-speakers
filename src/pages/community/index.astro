@@ -5,78 +5,79 @@ import Container from "../../components/page-container.astro";
 import Sectionhead from "../../components/section-head.astro";
 import Link from "./../../components/elements/link.astro";
 import bcnPlane from "../../assets/bcn-from-plane.jpg";
+import Images from "./images.astro";
 ---
 
 <Layout title={"Barcelona English Speakers Community"}>
-  <Container class:list={"!max-w-5xl"}>
-    <Sectionhead>
-      <Fragment slot="title">Barcelona English Speakers</Fragment>
-      <Fragment slot="desc">
-        <strong>Barcelona English Speakers</strong> is a thriving Whatsapp
-        community group run by English-speaking people living in Barcelona.
-      </Fragment>
-    </Sectionhead>
-
-    <main class="mt-8 lg:mt-16">
-      <div class="my-4 lg:my-8 mx-auto max-w-6xl rounded-lg">
-        <Picture
-          src={bcnPlane}
-          format="avif"
-          widths={[1024, 800]}
-          alt="Barcelona from the plane"
-          quality={"mid"}
-          class:list={"w-full"}
-        />
-
-        <h2
-          class="text-3xl md:text-5xl tracking-tight text-center my-8 lg:my-16 prose !max-w-none"
-        >
-          About the community
-        </h2>
-
-        <p class="text-lg md:text-xl prose my-8">
-          The group started in 2018 to offer personal experiences, tips, support
-          and general help to other English speaking people who had just moved
-          to Barcelona. Since the summer of 2023, the group has welcomed over
-          500 members and counting!
-        </p>
-
-        <p class="text-lg md:text-xl prose my-8">
-          We host monthly meet-ups, where we attract around 20-30 people and we
-          also have an active events channel on our Whatsapp group, where people
-          can propose other events such as getting together for a beer.
-        </p>
-
-        <p class="text-lg md:text-xl prose my-8">
-          Since the start of 2023 the core admin group has attracted the
-          collaboration from other foreigners living and working in Barcelona,
-          of which there are about 10 seasoned experts and together we share
-          1000’s of hours of experience. We love to share this experience with
-          the wider group and with each other and we author a set of up-to-date
-          blog posts, guides and articles, which help newcomers navigate their
-          way through life in Barcelona! Checkout our <a href="/blog">Blog</a>.
-        </p>
-
-        <h2
-          class="text-3xl md:text-5xl tracking-tight text-center my-8 lg:my-16 prose !max-w-none"
-        >
-          Join the community
-        </h2>
-
-        <p class="text-lg md:text-xl prose my-8">
-          To join our Barcelona chat group, hit the button below!
-        </p>
-
-        <div class="flex mt-4 justify-center">
-          <Link
-            href="https://chat.whatsapp.com/FZMPjvsMwFzBwUBpjauCoa"
-            style="primary"
-            target="_blank"
+  <main>
+    <Container class:list={"!max-w-5xl"}>
+      <Sectionhead>
+        <Fragment slot="title">Barcelona English Speakers</Fragment>
+        <Fragment slot="desc">
+          <strong>Barcelona English Speakers</strong> is a thriving Whatsapp community
+          group run by English-speaking people living in Barcelona.
+        </Fragment>
+      </Sectionhead>
+      <div class="my-8 md:my-16 lg:my-32">
+        <div class="my-4 lg:my-8 mx-auto max-w-6xl rounded-lg">
+  
+          <h2
+            class="text-3xl md:text-5xl tracking-tight text-center my-8 lg:my-16 !max-w-none"
           >
-            Join (Whatsapp Group)
-          </Link>
+            About the community
+          </h2>
+  
+          <p class="text-lg md:text-xl my-8">
+            The group started in 2018 to offer personal experiences, tips, support
+            and general help to other English speaking people who had just moved
+            to Barcelona. Since the summer of 2023, the group has welcomed over
+            500 members and counting!
+          </p>
+  
+          <p class="text-lg md:text-xl my-8">
+            We host monthly meet-ups, where we attract around 20-30 people and we
+            also have an active events channel on our Whatsapp group, where people
+            can propose other events such as getting together for a beer.
+          </p>
+  
+          <p class="text-lg md:text-xl my-8">
+            Since the start of 2023 the core admin group has attracted the
+            collaboration from other foreigners living and working in Barcelona,
+            of which there are about 10 seasoned experts and together we share
+            1000’s of hours of experience. We love to share this experience with
+            the wider group and with each other and we author a set of up-to-date
+            blog posts, guides and articles, which help newcomers navigate their
+            way through life in Barcelona! Checkout our <a href="/blog">Blog</a>.
+          </p>
         </div>
       </div>
-    </main>
-  </Container>
+    </Container>
+    <Container class:list={"!max-w-5xl"}>
+      <Images />
+    </Container>
+  
+    <Container class:list={"!max-w-5xl"}>
+      <h2
+        class="text-3xl md:text-5xl tracking-tight text-center my-8 lg:my-16 !max-w-none"
+      >
+        Join the community
+      </h2>
+  
+      <p class="text-lg md:text-xl prose my-8">
+        To join our Barcelona chat group, hit the button below!
+      </p>
+  
+      <div class="flex mt-6 justify-center">
+        <Link
+          href="https://chat.whatsapp.com/FZMPjvsMwFzBwUBpjauCoa"
+          style="primary"
+          target="_blank"
+          class:list={'bg-[#25D366]'}
+        >
+          Join (Whatsapp Group)
+        </Link>
+      </div>
+    </Container>
+
+  </main>
 </Layout>
