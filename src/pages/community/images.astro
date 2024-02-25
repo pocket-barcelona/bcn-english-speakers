@@ -1,0 +1,22 @@
+---
+import { getCollection } from "astro:content";
+import ImageGrid from "./../../components/elements/image-grid.astro";
+const allCommunityPosts = await getCollection("community");
+
+const post = allCommunityPosts.find((i) => i.id === "1-meetup-nov-23.md");
+let images: { src: any; alt: string }[] = [];
+let Content = undefined;
+if (post && post.data.images) {
+  images = post.data.images.map((i) => i);
+  // const { Content } = await post.render();
+}
+---
+
+{
+  images && images.length > 0 ? (
+    <section class="my-8 md:my-16">
+      <h2 class="text-center text-xl lg:text-2xl my-4">Some photos from our meetup in November '23</h2>
+      <ImageGrid images={images} class="" />
+    </section>
+  ) : null
+}

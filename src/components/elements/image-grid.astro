@@ -1,20 +1,15 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 
 interface Props {
   images: {
-    url: string;
+    src: any;
     alt: string;
   }[];
   class?: string;
-  [x: string]: any;
 }
-const { images: galleryImages, class: className, ...rest } = Astro.props;
+const { images, class: className, ...rest } = Astro.props;
 
-// Dynamically import images - https://docs.astro.build/en/recipes/dynamically-importing-images/
-const images = import.meta.glob('/src/assets/**/*.{jpeg,jpg,png,gif}')
-
-// https://tailwindflex.com/@anonymous/image-gallery
 const xData = `{
     imageGalleryOpened: false,
     imageGalleryActiveUrl: null,
@@ -132,26 +127,29 @@ const xData = `{
     class="max-w-6xl mx-auto duration-1000 delay-300 opacity-0 select-none ease animate-fade-in-view"
     style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);"
   >
-    <ul
+    <div
       x-ref="gallery"
-      class="custom-gallery grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+      class:list={[
+        "grid gap-2 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5",
+        className,
+      ]}
     >
       {
-        galleryImages.map((image, _key) => {
+        images.map((item) => {
           return (
-            <li>
+            <div class="aspect-square rounded-md bg-red-400">
               <Image
-                src={images[image.url]()}
-                alt={image.alt || ''}
+                src={item.src}
+                alt={item.alt || ""}
                 x-on:click="imageGalleryOpen"
-                class="object-cover select-none w-full h-auto bg-gray-200 rounded cursor-zoom-in aspect-[4/3]"
+                class="object-cover select-none w-full h-auto cursor-zoom-in aspect-[4/4]"
+                loading="lazy"
               />
-            </li>
-          )
+            </div>
+          );
         })
       }
-      
-    </ul>
+    </div>
   </div>
   <template x-teleport="body">
     <div
