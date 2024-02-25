@@ -171,7 +171,7 @@ const xData = `{
       >
         <div
           @click="$event.stopPropagation(); $dispatch('image-gallery-prev')"
-          class="absolute left-0 flex items-center justify-center text-white translate-x-10 rounded-full cursor-pointer xl:-translate-x-24 2xl:-translate-x-32 bg-white/10 w-14 h-14 hover:bg-white/20"
+          class="absolute z-10 left-0 flex items-center justify-center text-white translate-x-8 rounded-full cursor-pointer xl:-translate-x-24 2xl:-translate-x-32 bg-white/20 w-14 h-14 hover:bg-white/30"
         >
           <svg
             class="w-6 h-6"
@@ -201,7 +201,7 @@ const xData = `{
         <div class="absolute bottom-2 bg-[#000000cc] inline-block text-center rounded px-4 py-1 md:px-8 md:py-2 text-white shadow font-light text-xs md:text-base" x-text="imageGalleryActiveCaption"></div>
         <div
           @click="$event.stopPropagation(); $dispatch('image-gallery-next');"
-          class="absolute right-0 flex items-center justify-center text-white -translate-x-10 rounded-full cursor-pointer xl:translate-x-24 2xl:translate-x-32 bg-white/10 w-14 h-14 hover:bg-white/20"
+          class="absolute z-10 right-0 flex items-center justify-center text-white -translate-x-8 rounded-full cursor-pointer xl:translate-x-24 2xl:translate-x-32 bg-white/20 w-14 h-14 hover:bg-white/30"
         >
           <svg
             class="w-6 h-6"
