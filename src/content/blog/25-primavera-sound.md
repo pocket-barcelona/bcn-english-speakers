@@ -1,5 +1,5 @@
 ---
-draft: false
+draft: true
 title: "Primavera Sound 2024"
 snippet: "Welcome to the ultimate guide for the Primavera Sound music festival in Barcelona! This blog post is your all-in-one resource, packed with up-to-date information to help you make the most out of this vibrant event."
 cover: "../../assets/blog/25-primavera-sound/primavera-singer.jpg"
