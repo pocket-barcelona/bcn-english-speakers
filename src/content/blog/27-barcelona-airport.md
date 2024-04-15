@@ -1,5 +1,5 @@
 ---
-draft: false
+draft: true
 title: "Barcelona Airport"
 snippet: "All you need to know about travelling to and from Barcelona airport, by train, bus or taxi."
 cover: "../../assets/blog/27-barcelona-airport/barcelona-airport.jpg"

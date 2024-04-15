@@ -104,6 +104,17 @@ const { Content } = await post.render();
     border-left: 5px solid;
     font-size: 0.9375rem;
   }
+  @media screen and (max-width: 767px) {
+    div.info,
+    div.success,
+    div.warning,
+    div.danger,
+    div.neutral {
+      padding: 0.125rem 0.75rem;
+      font-size: 0.875rem;
+    }
+
+  }
   div.success {
     background-color: rgba(0, 255, 0, 0.15);/* #00e100 */
     border-left-color: rgba(0, 255, 0, 0.25);
@@ -179,7 +190,9 @@ const { Content } = await post.render();
         mx-auto mt-8 lg:mt-16 max-w-3xl
         prose prose-md lg:prose-lg
         prose-li:my-1 prose-ul:my-4
-        prose-p:leading-7
+        prose-p:leading-6 sm:prose-p:leading-7
+
+        prose-hr:my-6 sm:prose-hr:my-12 prose-hr:border-gray-300
       ">
         <Content />
       </div>

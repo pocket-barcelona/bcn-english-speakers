@@ -7,9 +7,11 @@ interface Props {
     alt: string;
   }[];
   class?: string;
+  minCols?: 2 | 3;
+  maxCols?: 2 | 3 | 4;
   [x: string]: any;
 }
-const { images: galleryImages, class: className, ...rest } = Astro.props;
+const { images: galleryImages, class: className, minCols = 2, maxCols = 4, ...rest } = Astro.props;
 
 // Dynamically import images - https://docs.astro.build/en/recipes/dynamically-importing-images/
 const images = import.meta.glob('/src/assets/**/*.{jpeg,jpg,png,gif}')
@@ -134,7 +136,12 @@ const xData = `{
   >
     <ul
       x-ref="gallery"
-      class="custom-gallery grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+      class:list={[
+        'custom-gallery grid gap-4',
+        minCols === 2 ? 'grid-cols-2' : 'grid-cols-3',
+        maxCols === 3 ? 'md:grid-cols-3' : null,
+        maxCols === 4 ? 'lg:grid-cols-4' : null
+      ]}
     >
       {
         galleryImages.map((image, _key) => {

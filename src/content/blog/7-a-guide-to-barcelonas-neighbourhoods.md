@@ -1,5 +1,5 @@
 ---
-draft: false
+draft: true
 title: "A Guide to Barcelona’s Neighbourhoods"
 snippet: "Quite often when you move to a new city, you do not know where the best place to live is. In Barcelona you have a number of neighbourhoods and each has its own character and perks. It often depends a lot on what your personal circumstances are when it comes to choosing the right place to live. The city is divided into 10 districts, each with its own distinct character and attractions."
 cover: "../../assets/blog/7-barcelona-neighbourhoods/barcelona-skyline.jpg"

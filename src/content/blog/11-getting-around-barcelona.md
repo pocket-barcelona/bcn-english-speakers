@@ -1,5 +1,5 @@
 ---
-draft: false
+draft: true
 title: "Getting Around Barcelona"
 snippet: "With so many travel options in Barcelona, it’s important to know which is best. Barcelona is a big little city, which makes it the kind of place where bands would stop on a world tour, but it’s small enough to walk around most of it in a day."
 cover: "../../assets/blog/11-getting-around-barcelona/11-getting-around.webp"
