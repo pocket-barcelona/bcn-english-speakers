@@ -1,36 +1,39 @@
-import { createDirectus, rest, } from '@directus/sdk';
+import { createDirectus, rest, graphql } from '@directus/sdk';
+import { HEADLESS_STUB } from '../consts';
 
-type Global = {
+export type HeadlessGlobal = {
   id: number;
   title: string;
   description: string;
 }
 
-type Author = {
+export type HeadlessAuthor = {
   id: number;
   name: string;
   avatar: string | null;
 }
 
-type Page = {
+export type HeadlessPage = {
   /** The page slug ID used for the unique URL */
   slug: string;
   title: string;
   content: string;
 }
 
-type Post = {
+export type HeadlessPost = {
   /** The post slug ID used for the unique URL */
   slug: string;
   status: PostStatus;
-  author: Author; // TODO
+  author: HeadlessAuthor; // TODO
   title: string;
   /** The post HTML */
   content: string;
+  snippet: string;
   /** Image UUID */
   cover: string;
   category: PostCategory;
   tags: string[];
+  published_date: string;
   user_created: string;
   user_updated: string | null;
   date_created: string;
@@ -40,13 +43,14 @@ type Post = {
 type PostStatus = 'draft' | 'published' | 'archived';
 type PostCategory = 'News' | 'Going Out' | 'Gastro' | 'Getting Around' | 'Guides';
 
-type Schema = {
-  authors: Author[];
-  posts: Post[];
-  global: Global;
-  pages: Page[];
+type HeadlessSchema = {
+  authors: HeadlessAuthor[];
+  posts: HeadlessPost[];
+  global: HeadlessGlobal;
+  pages: HeadlessPage[];
 }
 
-const directus = createDirectus<Schema>('https://content.pocketbarcelona.com/').with(rest());
+
+const directus = createDirectus<HeadlessSchema>(`${HEADLESS_STUB}/`).with(rest());
 
 export default directus;

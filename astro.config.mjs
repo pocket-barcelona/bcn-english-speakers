@@ -21,11 +21,7 @@ export default defineConfig({
   // }),
   // image: {
   //   domains: [
-  //     "http://ec2-3-79-189-20.eu-central-1.compute.amazonaws.com:8055",
-  //     "http://ec2-3-79-189-20.eu-central-1.compute.amazonaws.com",
-  //     "ec2-3-79-189-20.eu-central-1.compute.amazonaws.com:8055",
-  //     "amazonaws.com:8055",
-  //     "amazonaws.com",
+  //     "https://content.pocketbarcelona.com"
   //   ],
   // },
   markdown: {
