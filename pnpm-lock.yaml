@@ -26,6 +26,9 @@ dependencies:
   '@astrojs/tailwind':
     specifier: ^5.0.2
     version: 5.0.2(astro@3.5.5)(tailwindcss@3.3.5)
+  '@directus/sdk':
+    specifier: ^16.0.1
+    version: 16.0.1
   '@fontsource-variable/inter':
     specifier: ^5.0.15
     version: 5.0.15
@@ -33,10 +36,10 @@ dependencies:
     specifier: ^0.5.10
     version: 0.5.10(tailwindcss@3.3.5)
   '@types/alpinejs':
-    specifier: ^3.0.0
+    specifier: ^3.13.5
     version: 3.13.5
   alpinejs:
-    specifier: ^3.0.0
+    specifier: ^3.13.3
     version: 3.13.3
   astro:
     specifier: ^3.5.5
@@ -63,7 +66,7 @@ dependencies:
     specifier: ^0.32.6
     version: 0.32.6
   tailwindcss:
-    specifier: ^3.0.24
+    specifier: ^3.3.5
     version: 3.3.5
   typescript:
     specifier: ^5.2.2
@@ -508,6 +511,17 @@ packages:
       '@babel/helper-string-parser': 7.22.5
       '@babel/helper-validator-identifier': 7.22.20
       to-fast-properties: 2.0.0
+    dev: false
+
+  /@directus/sdk@16.0.1:
+    resolution: {integrity: sha512-tG9J5uBxJlzB8yoXv6Gin9PhxOoYKXsGEfr4LBNJ+jlFoqPmwlNOManJnUTqGbpNlGxH/7qv3CJyvZUXvo5hoA==}
+    engines: {node: '>=18.0.0'}
+    dependencies:
+      '@directus/system-data': 1.0.3
+    dev: false
+
+  /@directus/system-data@1.0.3:
+    resolution: {integrity: sha512-Dr7w2RZiX3/+kBOLqz8KkMHXmDhzVVraaK+CLQNgsB1FOxotuegyWfQxTi+YvDhH9gEs8/yZZBKeyQetcTQfSg==}
     dev: false
 
   /@emmetio/abbreviation@2.3.3:
@@ -1397,7 +1411,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.22.1
-      caniuse-lite: 1.0.30001563
+      caniuse-lite: 1.0.30001624
       fraction.js: 4.3.7
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -1477,7 +1491,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001563
+      caniuse-lite: 1.0.30001624
       electron-to-chromium: 1.4.588
       node-releases: 2.0.13
       update-browserslist-db: 1.0.13(browserslist@4.22.1)
@@ -1508,8 +1522,8 @@ packages:
     engines: {node: '>=14.16'}
     dev: false
 
-  /caniuse-lite@1.0.30001563:
-    resolution: {integrity: sha512-na2WUmOxnwIZtwnFI2CZ/3er0wdNzU7hN+cPYz/z2ajHThnkWjNBOpEPP4n+4r2WPM847JaMotaJE3bnfzjyKw==}
+  /caniuse-lite@1.0.30001624:
+    resolution: {integrity: sha512-0dWnQG87UevOCPYaOR49CBcLBwoZLpws+k6W37nLjWUhumP1Isusj0p2u+3KhjNloRWK9OKMgjBBzPujQHw4nA==}
     dev: false
 
   /ccount@2.0.1:
