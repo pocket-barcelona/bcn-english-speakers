@@ -3,7 +3,7 @@ import { HEADLESS_STUB } from '../consts';
 import { readItems } from "@directus/sdk";
 import directus, { type HeadlessPost } from '../lib/directus';
 
-export async function getPosts() {
+export async function getMergedPosts() {
   const internalCollection = await getCollection("blog");
   const directusCollection = await getTransformedHeadlessPosts();
 

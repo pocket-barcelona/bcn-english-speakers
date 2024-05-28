@@ -5,10 +5,12 @@ import Container from '../../components/page-container.astro';
 import Tag from '../../components/elements/tag.astro';
 import PostCategoryTag from '../../components/post-category-tag.astro';
 import Avatar from '../../components/avatar.astro';
+import { getMergedPosts } from '../../services/post.service';
 
 export async function getStaticPaths() {
-	const posts = await getCollection('blog');
-	return posts.map((post) => ({
+	// const posts = await getCollection('blog');
+  const mergedPosts = await getMergedPosts();
+	return mergedPosts.map((post) => ({
 		params: { slug: post.slug },
 		props: post,
 	}));
@@ -17,7 +19,14 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<'blog'>;
 
 const post = Astro.props;
-const { Content } = await post.render();
+
+// support for Directus or Internal posts
+let Rendered: any = null;
+if (post.render) {
+  Rendered = await post.render();
+} else {
+  // comes from Directus - use set:html
+}
 
 // https://docs.astro.build/en/guides/content-collections/#modifying-frontmatter-with-remark
 // const { Content, remarkPluginFrontmatter } = await post.render();
@@ -179,11 +188,7 @@ const { Content } = await post.render();
           class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-1 lg:leading-tight" style="text-wrap: balance;">
           {post.data.title}
         </h1>
-        
-        
         <p class="my-6 text-xl leading-normal text-gray-700">{post.data.snippet}</p>
-
-        
       </div>
   
       <div class="
@@ -191,10 +196,13 @@ const { Content } = await post.render();
         prose prose-md lg:prose-lg
         prose-li:my-1 prose-ul:my-4
         prose-p:leading-6 sm:prose-p:leading-7
-
         prose-hr:my-6 sm:prose-hr:my-12 prose-hr:border-gray-300
       ">
-        <Content />
+        {
+          Rendered ? <Rendered.Content /> : (
+            <div set:html={post.body} />
+          )
+        }
       </div>
 
       <div class="mx-auto max-w-3xl py-8 mt-8 lg:mt-16 border-t">
