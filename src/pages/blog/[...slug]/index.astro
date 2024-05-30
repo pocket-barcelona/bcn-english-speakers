@@ -1,0 +1,40 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Layout from '../../../layouts/layout.astro';
+import Container from '../../../components/page-container.astro';
+import { getMergedPosts } from '../../../services/post.service';
+import PostFooter from '../../../components/post-footer.astro';
+import PostHeader from '../../../components/post-header.astro';
+import PostBody from '../../../components/post-body.astro';
+import PostCta from '../../../components/post-cta.astro';
+import '../styles.scss';
+
+export async function getStaticPaths() {
+	const mergedPosts = await getMergedPosts();
+	return mergedPosts.map((post) => ({
+		params: { slug: post.slug },
+		props: post,
+	}));
+}
+
+type Props = CollectionEntry<'blog'>;
+
+const post = Astro.props;
+
+
+// @todo - add reading time to posts?
+// https://docs.astro.build/en/guides/content-collections/#modifying-frontmatter-with-remark
+// const { Content, remarkPluginFrontmatter } = await post.render();
+// remarkPluginFrontmatter.readingTime
+---
+
+<Layout title={post.data.title}>
+  <Container>
+    <article>
+      <PostHeader post={post} />
+      <PostBody post={post} />
+      <PostFooter post={post} />
+    </article>
+    <PostCta></PostCta>
+  </Container>
+</Layout>

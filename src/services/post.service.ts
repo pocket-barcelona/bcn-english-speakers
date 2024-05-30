@@ -77,3 +77,23 @@ function transformHeadlessPosts(posts: HeadlessPost[]): CollectionEntry<'blog'>[
     }
   }) as unknown as CollectionEntry<'blog'>[];
 }
+
+
+async function getHeadlessPostById(slug: string): Promise<{ data: HeadlessPost; }> {
+  const endpoint = `${HEADLESS_STUB}/items/posts/${slug}`;
+  const resp = await fetch(endpoint);
+  const data = await resp.json();
+  return data as Promise<{ data: HeadlessPost; }>;
+}
+
+export async function getPost(slug: string | undefined): Promise<{ data: HeadlessPost | null}> {
+  if (!slug) return { data: null };
+  
+  try {
+    const directusPost = await getHeadlessPostById(slug);
+    return directusPost;
+  } catch (e) {
+    console.error(e);
+    return { data: null };
+  }
+}
