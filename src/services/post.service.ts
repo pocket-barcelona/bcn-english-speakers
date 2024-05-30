@@ -14,13 +14,14 @@ export async function getMergedPosts() {
   });
 }
 
+/** Transform a Directus post into our blog post type */
 async function getTransformedHeadlessPosts(): Promise<CollectionEntry<'blog'>[]> {
   const posts = await directus.request(
     readItems("posts", {
       fields: [
         "slug",
         "status",
-        { author: ["name", "avatar"] },
+        { author: ["id", "name", "avatar"] },
         "title",
         "content",
         "snippet",

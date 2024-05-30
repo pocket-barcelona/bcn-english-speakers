@@ -9,7 +9,9 @@ export type HeadlessGlobal = {
 
 export type HeadlessAuthor = {
   id: number;
+  /** Formatted, like: Bob */
   name: string;
+  /** File UUID */
   avatar: string | null;
 }
 

@@ -6,39 +6,71 @@ import authorBob from "../assets/authors/bob.jpg";
 import authorBrata from "../assets/authors/brata.jpg";
 import authorTasha from "../assets/authors/tasha.jpg";
 import authorUriel from "../assets/authors/uriel.jpg";
+import { HEADLESS_STUB } from '../consts';
+import type { ImageMetadata } from 'astro';
 
 interface Props {
   authorName: string;
 	authorId: string;
+	authorAvatar?: string;
+}
+const getAuthorAvatar = (avatarId: string): ImageMetadata => {
+  return {
+    src: `${HEADLESS_STUB}/assets/${avatarId}?width=120&height=120&format=webp`,
+    width: 120,
+    height: 120,
+    format: 'webp'
+  };
 }
 
-let { authorId, authorName } = Astro.props;
+const { authorId, authorName, authorAvatar } = Astro.props;
+
+// Decide which avatar to show:
+// Markdown data is like this:
+// { authorId: 'darryl', authorName: 'Darryl', authorAvatar: undefined }
+// Directus data is like this:
+// { authorId: 1, authorName: 'Darryl', authorAvatar, 'UUID...' }
 
 let src = authorDefault;
 
-if (authorId === 'darryl') {
-  src = authorDarryl;
-} else if (authorId === 'bob') {
-  src = authorBob;
-} else if (authorId === 'brata') {
-  src = authorBrata;
-} else if (authorId === 'uriel') {
-  src = authorUriel;
-} else if (authorId === 'tasha') {
-  src = authorTasha;
+if (authorAvatar) {
+  // use Directus avatar path
+  src = getAuthorAvatar(authorAvatar);
+} else {
+  // lookup avatar from MD
+  if (authorId === 'darryl') {
+    src = authorDarryl;
+  } else if (authorId === 'bob') {
+    src = authorBob;
+  } else if (authorId === 'brata') {
+    src = authorBrata;
+  } else if (authorId === 'uriel') {
+    src = authorUriel;
+  } else if (authorId === 'tasha') {
+    src = authorTasha;
+  }
 }
+
+// @todo - might be a better way to do this...?
+const isDirectusImage = src.src.substring(0, 5).toLowerCase() === 'https';
 
 ---
 
-<Image
-  src={src}
-  alt={authorName}
-  sizes="80"
-  class:list={"w-[40px] h-[40px] rounded-full object-cover"}
-  widths={[80]}
-  width={40}
-  height={80}
-  quality={"mid"}
-  loading={"lazy"}
-  format="avif"
-/>
+{
+  isDirectusImage ? (
+    <img src={src.src} width={src.width} height={src.height} class="w-[40px] h-[40px] rounded-full object-cover" />
+  ) : (
+  <Image
+    src={src}
+    alt={authorName}
+    sizes="80"
+    class:list={"w-[40px] h-[40px] rounded-full object-cover"}
+    widths={[80]}
+    width={40}
+    height={80}
+    quality={"mid"}
+    loading={"lazy"}
+    format="avif"
+  />
+  )
+}
