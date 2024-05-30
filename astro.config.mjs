@@ -9,11 +9,12 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import { rehypeHeadingIds } from "@astrojs/markdown-remark";
 import { h, s } from 'hastscript';
 import alpinejs from "@astrojs/alpinejs";
+import preact from "@astrojs/preact";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.pocketbarcelona.com",
-  integrations: [mdx(), sitemap(), tailwind(), alpinejs()],
+  integrations: [mdx(), sitemap(), tailwind(), alpinejs(), preact()],
   output: "static",
   // https://docs.astro.build/en/guides/server-side-rendering/
   // adapter: node({
