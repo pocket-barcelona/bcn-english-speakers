@@ -50,7 +50,7 @@ function transformHeadlessPosts(posts: HeadlessPost[]): CollectionEntry<'blog'>[
       body: p.content,
       collection: 'posts',
       data: {
-        draft: p.status.toLowerCase() === 'draft',
+        draft: p.status.toLowerCase() !== 'published', // Markdown has draft:boolean, Directus has status=draft|published|archived. FE only wants to know if it should show the post, or not
         title: p.title,
         snippet: p.snippet,
         cover: `${HEADLESS_STUB}/assets/${p.cover}`,
@@ -72,7 +72,7 @@ function transformHeadlessPosts(posts: HeadlessPost[]): CollectionEntry<'blog'>[
         publishDate: new Date(p.published_date),
         createdDate: p.date_created ? new Date(p.date_created) : undefined,
         updatedDate: p.date_updated ? new Date(p.date_updated) : undefined,
-        __source: 'HEADLESS'
+        __source: 'HEADLESS' // inject identifier, if needed explicitly
       }
     }
   }) as unknown as CollectionEntry<'blog'>[];
