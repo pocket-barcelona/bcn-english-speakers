@@ -4,12 +4,12 @@ import Container from "../components/page-container.astro";
 import Cta from "../components/cta.astro";
 import Hero from "../components/hero.astro";
 import Layout from "../layouts/layout.astro";
-import { getPosts } from '../services/post.service';
+import { getMergedPosts } from '../services/post.service';
 import PostList from '../components/elements/post-list.astro';
 import PostItem from '../components/elements/post-item.astro';
 import Link from '../components/elements/link.astro';
 
-const posts = (await getPosts()).slice(0, 3);
+const posts = (await getMergedPosts()).slice(0, 3);
 ---
 
 <Layout title={SITE_TITLE}>

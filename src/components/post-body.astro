@@ -1,0 +1,32 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+type Props = {
+	post: CollectionEntry<"blog">;
+};
+
+const { post } = Astro.props;
+
+// support for Directus or Internal posts
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+let Rendered: any = null;
+if (post.render) {
+	Rendered = await post.render();
+} else {
+	// comes from Directus - use set:html
+}
+---
+
+<div class="
+  mx-auto mt-8 lg:mt-16 max-w-3xl
+  prose prose-md lg:prose-lg
+  prose-li:my-1 prose-ul:my-4
+  prose-p:leading-6 sm:prose-p:leading-7
+  prose-hr:my-6 sm:prose-hr:my-12 prose-hr:border-gray-300
+">
+{
+  Rendered ? <Rendered.Content /> : (
+    <div set:html={post.body} />
+  )
+}
+</div>
