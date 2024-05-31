@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 title: "Barcelona Travel Cards"
 snippet: "You have a few options when it comes to using public transport in Barcelona - and the tickets available represent great value when compared to other major European cities"
 cover: "../../assets/blog/6-barcelona-travel-cards/barcelona-travel.jpg"
