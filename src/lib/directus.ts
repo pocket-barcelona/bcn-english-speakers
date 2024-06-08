@@ -64,6 +64,11 @@ type HeadlessSchema = {
   groups: HeadlessGroup[];
 }
 
+/** Convert a Directus file/image asset UUID to a full URL */
+export function convertAssetIdToUrl(assetId: string): string {
+  return `${HEADLESS_STUB}/assets/${assetId}` // Astro needs the full URL for Directus image assets
+}
+
 
 const directus = createDirectus<HeadlessSchema>(`${HEADLESS_STUB}/`).with(rest());
 
