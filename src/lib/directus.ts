@@ -45,11 +45,23 @@ export type HeadlessPost = {
 type PostStatus = 'draft' | 'published' | 'archived';
 type PostCategory = 'News' | 'Going Out' | 'Gastro' | 'Getting Around' | 'Guides';
 
+
+export type HeadlessGroup = {
+  /** The group ID used for the unique URL */
+  id: string;
+  icon: string;
+  link: string;
+  name: string;
+  slug: string;
+  description: string;
+}
+
 type HeadlessSchema = {
   authors: HeadlessAuthor[];
   posts: HeadlessPost[];
   global: HeadlessGlobal;
   pages: HeadlessPage[];
+  groups: HeadlessGroup[];
 }
 
 

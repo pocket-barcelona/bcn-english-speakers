@@ -1,0 +1,17 @@
+---
+import Layout from "../../layouts/layout.astro";
+import Container from "../../components/page-container.astro";
+import directus from "../../lib/directus";
+import { readItems } from "@directus/sdk";
+
+export async function getStaticPaths() {
+  const pages = await directus.request(readItems("groups"));
+  return pages.map((page) => ({
+    params: { slug: page.slug },
+    props: page,
+  }));
+}
+const page = Astro.props;
+
+return Astro.redirect(page.link);
+---

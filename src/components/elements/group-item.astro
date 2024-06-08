@@ -1,0 +1,44 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import { Image, Picture } from "astro:assets";
+import Tag from "../../components/elements/tag.astro";
+import PostCategoryTag from "../../components/post-category-tag.astro";
+import Avatar from "../../components/avatar.astro";
+import Link from "./link.astro";
+
+interface Props {
+  group: CollectionEntry<'group'>;
+  index: number;
+}
+
+const { group, index } = Astro.props;
+
+---
+
+<li>
+  <a href={`/community/${group.slug}`}>
+    <div class="grid md:grid-cols-2 gap-2 md:gap-2 items-center py-2">
+      <Image
+        src={group.data.icon}
+        alt="Group icon for " + {group.data.name}
+        sizes="(max-width: 150) 150px, 150px"
+        style="object-fit: cover; border-radius: 50%; float:left"
+        decoding={"async"}
+        widths={[150]}
+        width={150}
+        height={150}
+        quality={"mid"}
+        loading={index >= 3 ? "lazy" : "eager"}
+        format="avif"
+      />
+
+      <div>
+        <div class="text-xl">
+          {group.data.name}
+        </div>
+        {group.data.description}
+      </div>
+    </div>
+  </a>
+  <hr class="sm:hidden mb-0 mt-4 md:mb-2 md:mt-6" />
+</li>
