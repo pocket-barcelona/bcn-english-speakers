@@ -40,28 +40,8 @@ const communityCollection = defineCollection({
   }),
 });
 
-
-const groupCollection = defineCollection({
-  // Type-check frontmatter using a schema
-  schema: ({ image }) => z.object({
-    id: z.boolean(),
-    name: z.string(),
-    link: z.string(),
-    slug: z.string(),
-    description: z.string(),
-    /** The cover image
-     * https://docs.astro.build/en/guides/images/#images-in-content-collections
-     */
-    icon: image().refine((img) => img.width >= 720, {
-      message: "Image width must be at least 720px",
-
-    }),
-  }),
-});
-
-
 export const collections = {
   blog: blogCollection,
   community: communityCollection,
-  group: groupCollection
+  // group: groupCollection
 };
