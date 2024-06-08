@@ -1,11 +1,10 @@
 ---
 import Layout from "../../layouts/layout.astro";
 import Container from "../../components/page-container.astro";
-import directus from "../../lib/directus";
-import { readItems } from "@directus/sdk";
+import { getGroups } from '../../services/group.service';
 
 export async function getStaticPaths() {
-  const pages = await directus.request(readItems("groups"));
+  const pages = await getGroups();
   return pages.map((page) => ({
     params: { slug: page.slug },
     props: page,

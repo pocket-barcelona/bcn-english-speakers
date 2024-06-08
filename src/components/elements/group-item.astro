@@ -1,38 +1,37 @@
 ---
-import type { CollectionEntry } from 'astro:content'
 import { Image } from "astro:assets";
+import { convertAssetIdToUrl, type HeadlessGroup } from "../../lib/directus";
 
 interface Props {
-  group: CollectionEntry<'group'>;
-  index: number;
+	group: HeadlessGroup;
+	index: number;
 }
 
 const { group, index } = Astro.props;
-
 ---
 
 <li>
   <a href={`/community/${group.slug}`}>
-    <div class="grid md:grid-cols-2 gap-2 md:gap-2 items-center py-2">
+
+    <div class="grid md:grid-cols-2 gap-2 md:gap-2 items-center justify-center py-2">
       <Image
-        src={group.data.icon}
-        alt={"Group icon for ${group.data.name}"}
+        src={convertAssetIdToUrl(group.icon)}
+        alt={`Group icon for ${group.name}`}
         sizes="(max-width: 150) 150px, 150px"
-        class="rounded-full object-cover"
+        class="rounded-full object-cover aspect-square m-auto border"
         decoding={"async"}
         widths={[150]}
         width={150}
         height={150}
         quality={"mid"}
-        loading={index >= 3 ? "lazy" : "eager"}
+        loading={"lazy"}
         format="avif"
       />
-
       <div>
-        <div class="text-xl">
-          {group.data.name}
+        <div class="text-xl font-semibold mb-2 text-center md:text-left">
+          {group.name}
         </div>
-        {group.data.description}
+        {group.description}
       </div>
     </div>
   </a>

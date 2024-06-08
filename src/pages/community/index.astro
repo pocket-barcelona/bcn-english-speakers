@@ -3,7 +3,7 @@ import Layout from "../../layouts/layout.astro";
 import Container from "../../components/page-container.astro";
 import Sectionhead from "../../components/section-head.astro";
 import Images from "./images.astro";
-import {getGroups} from "../../services/group.service";
+import { getGroups } from "../../services/group.service";
 import GroupItem from "../../components/elements/group-item.astro";
 
 const groups = await getGroups();
