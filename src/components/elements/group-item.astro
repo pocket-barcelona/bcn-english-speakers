@@ -16,9 +16,9 @@ const { group, index } = Astro.props;
     <div class="grid md:grid-cols-2 gap-2 md:gap-2 items-center py-2">
       <Image
         src={group.data.icon}
-        alt="Group icon for " + {group.data.name}
+        alt={"Group icon for ${group.data.name}"}
         sizes="(max-width: 150) 150px, 150px"
-        style="object-fit: cover; border-radius: 50%; float:left"
+        class="rounded-full object-cover"
         decoding={"async"}
         widths={[150]}
         width={150}
