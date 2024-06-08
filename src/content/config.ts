@@ -40,8 +40,8 @@ const communityCollection = defineCollection({
   }),
 });
 
-
 export const collections = {
   blog: blogCollection,
-  community: communityCollection
+  community: communityCollection,
+  // group: groupCollection
 };

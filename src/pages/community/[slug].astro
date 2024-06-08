@@ -1,0 +1,16 @@
+---
+import Layout from "../../layouts/layout.astro";
+import Container from "../../components/page-container.astro";
+import { getGroups } from '../../services/group.service';
+
+export async function getStaticPaths() {
+  const pages = await getGroups();
+  return pages.map((page) => ({
+    params: { slug: page.slug },
+    props: page,
+  }));
+}
+const page = Astro.props;
+
+return Astro.redirect(page.link);
+---

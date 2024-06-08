@@ -1,0 +1,39 @@
+---
+import { Image } from "astro:assets";
+import { convertAssetIdToUrl, type HeadlessGroup } from "../../lib/directus";
+
+interface Props {
+	group: HeadlessGroup;
+	index: number;
+}
+
+const { group, index } = Astro.props;
+---
+
+<li>
+  <a href={`/community/${group.slug}`}>
+
+    <div class="grid md:grid-cols-2 gap-2 md:gap-2 items-center justify-center py-2">
+      <Image
+        src={convertAssetIdToUrl(group.icon)}
+        alt={`Group icon for ${group.name}`}
+        sizes="(max-width: 150) 150px, 150px"
+        class="rounded-full object-cover aspect-square m-auto border"
+        decoding={"async"}
+        widths={[150]}
+        width={150}
+        height={150}
+        quality={"mid"}
+        loading={"lazy"}
+        format="avif"
+      />
+      <div>
+        <div class="text-xl font-semibold mb-2 text-center md:text-left">
+          {group.name}
+        </div>
+        {group.description}
+      </div>
+    </div>
+  </a>
+  <hr class="sm:hidden mb-0 mt-4 md:mb-2 md:mt-6" />
+</li>

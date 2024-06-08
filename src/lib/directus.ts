@@ -45,11 +45,28 @@ export type HeadlessPost = {
 type PostStatus = 'draft' | 'published' | 'archived';
 type PostCategory = 'News' | 'Going Out' | 'Gastro' | 'Getting Around' | 'Guides';
 
+
+export type HeadlessGroup = {
+  /** The group ID used for the unique URL */
+  id: string;
+  icon: string;
+  link: string;
+  name: string;
+  slug: string;
+  description: string;
+}
+
 type HeadlessSchema = {
   authors: HeadlessAuthor[];
   posts: HeadlessPost[];
   global: HeadlessGlobal;
   pages: HeadlessPage[];
+  groups: HeadlessGroup[];
+}
+
+/** Convert a Directus file/image asset UUID to a full URL */
+export function convertAssetIdToUrl(assetId: string): string {
+  return `${HEADLESS_STUB}/assets/${assetId}` // Astro needs the full URL for Directus image assets
 }
 
 
