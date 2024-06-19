@@ -1,0 +1,16 @@
+---
+import Layout from '../../layouts/layout.astro';
+import Container from '../../components/page-container.astro';
+import PostCta from '../../components/post-cta.astro';
+import PreviewPost from './PreviewPost';
+import './styles.scss';
+---
+
+<Layout title={'Previewing Draft Post'}>
+  <Container>
+    <article>
+      <PreviewPost client:load />
+    </article>
+    <PostCta></PostCta>
+  </Container>
+</Layout>
