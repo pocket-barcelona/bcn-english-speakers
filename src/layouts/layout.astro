@@ -18,7 +18,7 @@ const resolvedImageWithDomain = new URL(
 const { title } = Astro.props;
 
 const makeTitle = title
-  ? title + " | " + "Barcelona Experts"
+  ? `${title} | Barcelona Experts`
   : "Barcelona Experts - Experience Barcelona like a local";
 ---
 <!DOCTYPE html>
