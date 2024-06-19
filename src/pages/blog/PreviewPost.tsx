@@ -31,6 +31,9 @@ export default function PreviewPost() {
             post?.content ?? "<p>Loaded but post content not found.</p>"
           );
         }
+      }).catch(e => {
+        console.error(e);
+        setContent("<p>Error: Unable to fetch post - check CORS.</p>");
       });
     } catch (error) {
       console.debug({ error });
