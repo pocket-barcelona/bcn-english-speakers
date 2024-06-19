@@ -58,9 +58,6 @@ const groups = await getGroups();
         </div>
       </div>
     </Container>
-    <Container class:list={"!max-w-5xl"}>
-      <Images/>
-    </Container>
 
     <Container class="!justify-center !max-w-5xl">
       <h2 class="text-3xl md:text-5xl text-center my-8 lg:my-16 !max-w-none">
@@ -75,6 +72,10 @@ const groups = await getGroups();
           }
         </ul>
       </div>
+    </Container>
+
+    <Container class:list={"!max-w-5xl"}>
+      <Images/>
     </Container>
   </main>
 </Layout>
