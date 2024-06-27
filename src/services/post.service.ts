@@ -5,7 +5,15 @@ import directus, { type HeadlessPost } from '../lib/directus';
 
 export async function getMergedPosts() {
   const internalCollection = await getCollection("blog");
-  const directusCollection = await getTransformedHeadlessPosts();
+  
+  let directusCollection: CollectionEntry<'blog'>[] = [];
+  // Local dev: If Directus CMS is down, comment out the below try->catch to bypass the external post content!
+  try {
+    directusCollection = await getTransformedHeadlessPosts();
+  } catch (error) {
+    console.error(error);
+    throw new Error('Headless CMS is not responding...is Directus down?');
+  }
 
   return [...directusCollection, ...internalCollection]
   .filter((b) => b.data.draft !== true)

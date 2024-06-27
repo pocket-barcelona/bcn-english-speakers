@@ -158,14 +158,6 @@ Address: C/ dels Tallers, 72, 08001 Barcelona
 Map: https://maps.app.goo.gl/E8UdKmW5tY5R2cba6 
 
 
-## Obama (Rambla de Catalunya)
-<div class="warning">Awaiting recommendations.</div>
-
-Address: Gran Via de les Corts Catalanes, 603, 08007 Barcelona
-
-Map: https://maps.app.goo.gl/LZKJi4VrPPwmBU6WA 
-
-
 ## Scobies Irish Pub (near Pl. Catalunya)
 With Scobies, you already begin to notice that you’re no longer in the Barcelona Old Town and instead you’ve ventured into the Eixample neighbourhood. It’s worth a visit if you want a bit of a break from shopping, and this pub is often unknown to a lot of expats in our experience. Still, the Guinness is solid.
 
