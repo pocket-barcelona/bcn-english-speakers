@@ -31,8 +31,8 @@ const xData = `{
         } else {
             this.imageGalleryImageIndex = parseInt(this.imageGalleryImageIndex) + 1;
         }
-        this.imageGalleryActiveUrl = this.$refs.gallery.querySelector('[data-index="' + this.imageGalleryImageIndex + '"]').src;
-        this.imageGalleryActiveCaption = this.$refs.gallery.querySelector('[data-index="' + this.imageGalleryImageIndex + '"]').alt;
+        this.imageGalleryActiveUrl = this.$refs.gallery.querySelector('[data-index="' + this.imageGalleryImageIndex + '"]')?.src;
+        this.imageGalleryActiveCaption = this.$refs.gallery.querySelector('[data-index="' + this.imageGalleryImageIndex + '"]')?.alt;
     },
     imageGalleryPrev() {
         if(this.imageGalleryImageIndex == 1){
@@ -40,8 +40,8 @@ const xData = `{
         } else {
             this.imageGalleryImageIndex = parseInt(this.imageGalleryImageIndex) - 1;
         }
-        this.imageGalleryActiveUrl = this.$refs.gallery.querySelector('[data-index="' + this.imageGalleryImageIndex + '"]').src;
-        this.imageGalleryActiveCaption = this.$refs.gallery.querySelector('[data-index="' + this.imageGalleryImageIndex + '"]').alt;
+        this.imageGalleryActiveUrl = this.$refs.gallery.querySelector('[data-index="' + this.imageGalleryImageIndex + '"]')?.src;
+        this.imageGalleryActiveCaption = this.$refs.gallery.querySelector('[data-index="' + this.imageGalleryImageIndex + '"]')?.alt;
     },
   }`
 ---
