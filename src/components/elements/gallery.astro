@@ -38,8 +38,8 @@ const xData = `{
         } else {
             this.imageGalleryImageIndex = parseInt(this.imageGalleryImageIndex) + 1;
         }
-        this.imageGalleryActiveUrl = this.$refs.gallery.querySelector('[data-index="' + this.imageGalleryImageIndex + '"]').src;
-        this.imageGalleryActiveCaption = this.$refs.gallery.querySelector('[data-index="' + this.imageGalleryImageIndex + '"]').alt;
+        this.imageGalleryActiveUrl = this.$refs.gallery.querySelector('[data-index="' + this.imageGalleryImageIndex + '"]')?.src;
+        this.imageGalleryActiveCaption = this.$refs.gallery.querySelector('[data-index="' + this.imageGalleryImageIndex + '"]')?.alt;
     },
     imageGalleryPrev() {
         if(this.imageGalleryImageIndex == 1){
@@ -47,12 +47,12 @@ const xData = `{
         } else {
             this.imageGalleryImageIndex = parseInt(this.imageGalleryImageIndex) - 1;
         }
-        this.imageGalleryActiveUrl = this.$refs.gallery.querySelector('[data-index="' + this.imageGalleryImageIndex + '"]').src;
-        this.imageGalleryActiveCaption = this.$refs.gallery.querySelector('[data-index="' + this.imageGalleryImageIndex + '"]').alt;
+        this.imageGalleryActiveUrl = this.$refs.gallery.querySelector('[data-index="' + this.imageGalleryImageIndex + '"]')?.src;
+        this.imageGalleryActiveCaption = this.$refs.gallery.querySelector('[data-index="' + this.imageGalleryImageIndex + '"]')?.alt;
     },
   }`
 ---
-<style>
+<style is:inline>
   /* @tailwind base;
   @tailwind components;
   @tailwind utilities; */
@@ -114,6 +114,7 @@ const xData = `{
   .custom-gallery li {
     padding: 0;
     margin: 0;
+    list-style: none;
   }
   .custom-gallery img {
     margin-top: 0;

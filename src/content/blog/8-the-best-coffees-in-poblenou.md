@@ -5,6 +5,7 @@ snippet: "Barcelona has hundreds of coffee shops and places to drink coffee. But
 cover: "../../assets/blog/8-best-coffees-in-poblenou/coffee-poblenou.jpg"
 coverAlt: "Coffee poblenou"
 publishDate: "2023-12-27 11:39"
+updatedDate: "2024-07-03 14:36"
 category: "Gastro"
 author: "Darryl"
 authorId: "darryl"
@@ -65,17 +66,11 @@ Following the success of the other Federal Cafes, Poblenou is lucky enough to ha
 
 **Address:** C/ del Taulat, 109, 08005 Barcelona
 
-## Odara Café
+## Mono Café - Poblenou
 
-Odara opened in 2023 and immediately became a huge success with the Llacuna neighbours. It was also a much needed coworking/coffee shop in Llacuna and will hopefully be here to stay. You’ll be able to enjoy a decent coffee from a laid back, hip coffee shop –– we also recommend popping by at lunchtime for their healthy dishes.
+Mono Café opened in spring 2024, when Odara cafe (in the same place) suddenly closed down! Immediately it became a huge success with the Llacuna neighbours. It was also a much needed coworking/coffee shop in Llacuna and will hopefully be here to stay. You’ll be able to enjoy a decent coffee from a laid back, hip coffee shop –– we also recommend popping by at lunchtime for their healthy dishes.
 
-**Address:** C/ de la Ciutat de Granada, 68, 08005 Barcelona
-
-<div class="danger">
-
-Odara is currently closed.
-
-</div>
+**Address:** C. de Pujades, 134, Sant Martí, 08005 Barcelona
 
 ## Gabby's Brunch
 
