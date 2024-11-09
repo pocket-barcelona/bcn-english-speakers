@@ -9,6 +9,7 @@ import {
   submitRsvp,
   type SubmitRsvpPayloadResponse,
 } from "../services/meetup.service";
+import { authLogin, type AuthData } from "../services/auth.service";
 
 function createAppState(appState: AppState) {
   const restartApp = () => {
@@ -106,7 +107,27 @@ function createAppState(appState: AppState) {
   };
 
   // USER LOGIN STUFF...CREATE A NEW PROVIDER?
-  const user = signal(appState.user)
+  const user = signal(appState.user);
+  const setUser = (newUser: AppState["user"]) => {
+    if (!newUser) return;
+    user.value = { ...newUser };
+  };
+
+  const userLogin = async (payload: AuthData) => {
+    const resp = await authLogin(payload);
+    if (resp === null) {
+      // error logging in
+    } else if (typeof resp === "string") {
+      // api error
+    } else {
+      // success
+      setUser({
+        ...user.value,
+        ...resp,
+      });
+      setCurrentScreen("DASHBOARD");
+    }
+  };
 
   const addToStorage = (newState: AppState) => {
     if (typeof window.localStorage === "undefined") return;
@@ -160,6 +181,10 @@ function createAppState(appState: AppState) {
     handleCloseAttendModal,
     handleSubmitRsvp,
     restartApp,
+
+    // AUTH
+    user,
+    userLogin,
   };
 }
 
@@ -185,6 +210,10 @@ export type Api = {
   handleCloseAttendModal: () => void;
   handleSubmitRsvp: () => void;
   restartApp: () => void;
+
+  // AUTH
+  user: Signal<AppState["user"]>;
+  userLogin: (data: { email: string; password: string }) => void;
 };
 
 export type AppStateProps = {
@@ -227,6 +256,9 @@ export function AppStateProvider({ children }: AppStateProviderProps) {
     handleShowAttendModal,
     handleSubmitRsvp,
     restartApp,
+
+    user,
+    userLogin,
   } = createAppState(storedAppState);
   return (
     <AppStateContext.Provider
@@ -253,6 +285,9 @@ export function AppStateProvider({ children }: AppStateProviderProps) {
           handleSubmitRsvp,
 
           restartApp,
+
+          user,
+          userLogin,
         },
       }}
     >

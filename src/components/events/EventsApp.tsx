@@ -35,6 +35,8 @@ export default function EventsApp() {
     setMeetups: () => { },
     handleCloseModals: () => {},
     restartApp: () => { },
+    user: computed(() => storedAppState.user),
+    userLogin: () => { },
   }
 
   return (
