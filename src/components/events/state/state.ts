@@ -24,6 +24,7 @@ export const initialState: AppState = {
     },
     currentStep: 0,
   },
+  user: undefined,
 };
 
 export type AppState = {

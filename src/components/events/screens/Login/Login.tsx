@@ -1,12 +1,18 @@
+import { signal } from '@preact/signals';
 import useAppStateContext from "../../contexts/AppStateProvider";
-import type { MeetupGroupItem, MeetupItem } from "../../types/types";
+import type { MeetupGroupItem } from "../../types/types";
+
+const loginForm = signal({
+  email: "",
+  password: "",
+});
 
 type LoginProps = {
   group: MeetupGroupItem | null;
 };
 export default function Login({ group }: LoginProps) {
   const {
-    api: { handleSubmitRsvp },
+    api: { userLogin },
   } = useAppStateContext();
 
   if (!group) {
@@ -16,6 +22,21 @@ export default function Login({ group }: LoginProps) {
       </div>
     );
   }
+
+  const handleInputChange = (event: Event, field: 'email' | 'password') => {
+    const target = event.target as HTMLInputElement;
+    loginForm.value = {
+      ...loginForm.value,
+      [field]: target.value,
+    };
+  };
+
+  const handleLogin = () => {
+    userLogin({
+      email: loginForm.value.email,
+      password: loginForm.value.password,
+    });
+  };
 
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -46,6 +67,8 @@ export default function Login({ group }: LoginProps) {
                 type="email"
                 required
                 autoComplete="email"
+                onChange={(e) => handleInputChange(e, 'email')}
+                value={loginForm.value.email}
                 className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6"
               />
             </div>
@@ -59,14 +82,6 @@ export default function Login({ group }: LoginProps) {
               >
                 Password
               </label>
-              <div className="text-sm">
-                <a
-                  href="/reset-password"
-                  className="font-semibold text-indigo-600 hover:text-indigo-500"
-                >
-                  Forgot password?
-                </a>
-              </div>
             </div>
             <div className="mt-2">
               <input
@@ -75,14 +90,27 @@ export default function Login({ group }: LoginProps) {
                 type="password"
                 required
                 autoComplete="current-password"
+                onChange={(e) => handleInputChange(e, 'password')}
+                value={loginForm.value.password}
                 className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6"
               />
+            </div>
+            <div className="flex items-center justify-end mt-2">
+              <div className="text-sm">
+                <button
+                  type="button"
+                  className="font-semibold text-indigo-600 hover:text-indigo-500"
+                >
+                  Forgot password?
+                </button>
+              </div>
             </div>
           </div>
 
           <div>
             <button
               type="submit"
+              onClick={handleLogin}
               className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
               Sign in
