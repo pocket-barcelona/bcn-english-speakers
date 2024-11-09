@@ -30,6 +30,7 @@
     "astro": "^3.5.5",
     "astro-navbar": "^2.3.0",
     "astro-seo": "^0.8.0",
+    "jwt-decode": "^4.0.0",
     "preact": "^10.6.5",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-slug": "^6.0.0",
