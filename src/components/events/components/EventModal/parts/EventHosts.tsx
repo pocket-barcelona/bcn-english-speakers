@@ -1,4 +1,4 @@
-import { RiAccountCircleFill } from "../../../components/Icons/Icons";
+import { RiAccountCircleFill } from "../../Icons/Icons";
 import type { MeetupGroupItem, MeetupItem } from '../../../types/types';
 
 type EventHostsProps = {

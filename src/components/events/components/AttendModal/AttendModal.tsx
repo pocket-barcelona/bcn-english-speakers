@@ -1,7 +1,7 @@
 import cn from "classnames";
 import { signal } from "@preact/signals";
-import Button from "../../components/Button/Button";
-import ModalDrawer from "../../components/ModalDrawer/ModalDrawer";
+import Button from "../Button/Button";
+import ModalDrawer from "../ModalDrawer/ModalDrawer";
 import useAppStateContext from "../../contexts/AppStateProvider";
 import EventDateTime from "../EventModal/parts/EventDateTime";
 import FormStepper from "./parts/FormStepper";

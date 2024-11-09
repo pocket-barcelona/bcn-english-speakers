@@ -105,6 +105,9 @@ function createAppState(appState: AppState) {
       });
   };
 
+  // USER LOGIN STUFF...CREATE A NEW PROVIDER?
+  const user = signal(appState.user)
+
   const addToStorage = (newState: AppState) => {
     if (typeof window.localStorage === "undefined") return;
     window.localStorage.setItem(
@@ -161,7 +164,7 @@ function createAppState(appState: AppState) {
 }
 
 export type Api = {
-  currentScreen: Signal<string>;
+  currentScreen: Signal<ScreensType>;
   setCurrentScreen: (newScreen: ScreensType) => void;
   currentEvent: Signal<AppState["currentEvent"]>;
   setCurrentEvent: (newEvent: AppState["currentEvent"]) => void;
