@@ -1,10 +1,10 @@
-import EventItem from "./EventItem";
+import EventItem from "../../components/EventItem/EventItem";
 import SkeletonShape from "../../components/Skeleton/SkeletonShape";
 import SkeletonText from "../../components/Skeleton/SkeletonText";
-import EventModal from "../EventModal/EventModal";
+import EventModal from "../../components/EventModal/EventModal";
 import useAppStateContext from "../../contexts/AppStateProvider";
-import AttendModal from "../AttendModal/AttendModal";
-import type { MeetupGroupItem, MeetupItem } from '../../types/types';
+import AttendModal from "../../components/AttendModal/AttendModal";
+import type { MeetupGroupItem, MeetupItem } from "../../types/types";
 
 type EventsListProps = {
   meetups: MeetupItem[];
@@ -17,7 +17,12 @@ export default function EventsList({
   viewEvent,
 }: EventsListProps) {
   const {
-    api: { handleCloseModals, handleCloseAttendModal, handleSubmitRsvp },
+    api: {
+      handleCloseModals,
+      handleCloseAttendModal,
+      handleSubmitRsvp,
+      setCurrentScreen,
+    },
   } = useAppStateContext();
 
   if (!meetups || !group) {
@@ -43,7 +48,16 @@ export default function EventsList({
         />
       ))}
       <EventModal onClose={handleCloseModals} />
-      <AttendModal onClose={handleCloseAttendModal} onSignup={handleSubmitRsvp} />
+      <AttendModal
+        onClose={handleCloseAttendModal}
+        onSignup={handleSubmitRsvp}
+      />
+
+      <p>
+        <button type={"button"} onClick={() => setCurrentScreen("LOGIN")}>
+          Organiser Login
+        </button>
+      </p>
     </div>
   );
 }

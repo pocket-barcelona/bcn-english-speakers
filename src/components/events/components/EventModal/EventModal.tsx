@@ -1,7 +1,7 @@
-import Button from "../../components/Button/Button";
-import HeroImage from "../../components/HeroImage/HeroImage";
-import { RiAccountCircleFill } from "../../components/Icons/Icons";
-import ModalDrawer from "../../components/ModalDrawer/ModalDrawer";
+import Button from "../Button/Button";
+import HeroImage from "../HeroImage/HeroImage";
+import { RiAccountCircleFill } from "../Icons/Icons";
+import ModalDrawer from "../ModalDrawer/ModalDrawer";
 import useAppStateContext from "../../contexts/AppStateProvider";
 import { eventPriceIsFree, eventRSVPStatus, getFeaturedMediaItem, getRsvpButtonLabel, PLACEHOLDER_HERO } from "../../utils/utils";
 import EventDateTime from "./parts/EventDateTime";

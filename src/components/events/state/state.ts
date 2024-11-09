@@ -1,8 +1,9 @@
 import { API_CALL_REFRESH_PERIOD, type GuestItem } from '../services/meetup.service';
-import { MeetupRsvpAttendanceStatusEnum, type MeetupGroupItem, type MeetupItem } from '../types/types';
+import { MeetupRsvpAttendanceStatusEnum, type MeetupGroupItem, type MeetupItem, type ScreensType } from '../types/types';
+import type { UserSession } from '../types/user-session.type';
 
 export const initialState: AppState = {
-  currentScreen: "HOME",
+  currentScreen: "EVENTS",
   groupInfo: {
     data: null,
     lastFetched: Date.now() - API_CALL_REFRESH_PERIOD,
@@ -26,7 +27,7 @@ export const initialState: AppState = {
 };
 
 export type AppState = {
-  currentScreen: string;
+  currentScreen: ScreensType;
   groupInfo: ApiFetchInfo<MeetupGroupItem | null>;
   meetups: ApiFetchInfo<MeetupItem[]>;
   currentEvent: MeetupItem | null;
@@ -44,6 +45,9 @@ export type AppState = {
       isAttending: MeetupRsvpAttendanceStatusEnum;
     }
   };
+
+  // LOGGED IN
+  user?: UserSession;
 };
 
 /** Generic type for storing fetch data */

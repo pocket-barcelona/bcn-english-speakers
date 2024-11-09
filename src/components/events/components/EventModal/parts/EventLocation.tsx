@@ -1,5 +1,5 @@
 import cn from "classnames";
-import { RiInformation2Line } from "../../../components/Icons/Icons";
+import { RiInformation2Line } from "../../Icons/Icons";
 import type { MeetupItem } from "../../../types/types";
 import {
   getMeetupMapLink,
