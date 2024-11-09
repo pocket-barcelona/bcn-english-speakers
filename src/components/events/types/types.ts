@@ -1,4 +1,4 @@
-export type ScreensType = "EVENTS";
+export type ScreensType = "EVENTS" | "LOGIN" | "DASHBOARD";
 
 // COPIED TYPES FOR NOW!
 export type GenericMediaItem = {

@@ -1,4 +1,4 @@
-import { RiAccountCircleFill } from "../../../components/Icons/Icons";
+import { RiAccountCircleFill } from "../../Icons/Icons";
 import { MeetupRsvpAttendanceStatusEnum, type MeetupGroupItem, type MeetupItem } from '../../../types/types';
 import { getGuestList } from '../../../utils/utils';
 
