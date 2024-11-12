@@ -1,6 +1,6 @@
 ---
 draft: true
-title: "Primavera Sound 2024"
+title: "[Archive] Primavera Sound Festival 2024"
 snippet: "Welcome to the ultimate guide for the Primavera Sound music festival in Barcelona! This blog post is your all-in-one resource, packed with up-to-date information to help you make the most out of this vibrant event."
 cover: "../../assets/blog/25-primavera-sound/primavera-singer.jpg"
 coverAlt: "Primavera Sound"
@@ -10,6 +10,8 @@ author: "Bob"
 authorId: "bob"
 tags: [primavera-sound, festival, barcelona, events, music]
 ---
+
+**This is a blog post for Primavera Sound 2024. There is a new and updated blog post available [here](https://pocketbarcelona.com/blog/primavera-sound-2025-guide/).**
 
 ![Primavera Sound](../../assets/blog/25-primavera-sound/primavera-singer.jpg)
 
@@ -32,13 +34,7 @@ Welcome to the ultimate guide for the Primavera Sound music festival in Barcelon
 
 ![Primavera Prices 2024](../../assets//blog//25-primavera-sound/primavera-prices.png)
 
-<div class="info">
-
-**Tickets**
-
-[Tickets can be checked here](https://www.primaverasound.com/en/tickets?e=primavera-sound-barcelona-2024-may-30-jun-01-2024).
-
-</div>
+**Tickets**: [Tickets can be checked here](https://www.primaverasound.com/en/tickets?e=primavera-sound-barcelona-2024-may-30-jun-01-2024).
 
 ### Accommodation
 
@@ -91,14 +87,13 @@ The festival is at the bottom right corner of Diagonal Mar on the map below and 
 
 You can also get the Tram (there is a Port Fòrum stop right outside) which connects you to Poble Nou and Villa Olimpica.
 
-I highly recommend getting <a href="https://citymapper.com/" target="_blank">Citymapper</a> (on iOS and Android) to get around the city. It has all the public transport options, even those for rental bikes by some companies.
+I highly recommend getting [Citymapper](https://citymapper.com/) (on iOS and Android) to get around the city. It has all the public transport options, even those for rental bikes by some companies.
 
 You have a few different [travel card options](/blog/6-barcelona-travel-cards), but most people will be fine with a **T-Casual**, which is around €11 and includes 10 trips across the public transport network (including the overland train to the airport T2 with a free connection to T1, as well as the 46 bus which goes to both terminals). 
 
 ### Festival free shuttle bus
 
 The festival offers a free shuttle bus from the festival site to Plaça de Catalunya. Below are the shuttle bus details:
-
 
 ### Parc del Fòrum -> Plaça de Catalunya:
 
@@ -109,7 +104,6 @@ The festival offers a free shuttle bus from the festival site to Plaça de Catal
 ### Plataforma marina (main stages) -> Plaça de Catalunya:
 
 - Thursday, Friday and Saturday from midnight to 4 am
-
 
 ## Motos & Bikes
 
@@ -123,12 +117,10 @@ For taxis, I always recommend using an app – [FreeNow](https://m.free-now.com/
 
 You also have [Uber](https://referrals.uber.com/refer?id=wtkjxt2y8zf8), although you will need to sign up in advance. Uber in Barcelona is also not really very good, with long wait times and high prices. The better option is [Cabify](https://cabify.com/i/janad117), which offers good prices and cars (and also has other transport options in the app).
 
-
 ## Weather
 
 **Temperature Range**: During late May and early June, Barcelona typically experiences average high temperatures around 21.5°C (71°F) and average lows around 13.7°C (57°F)​​.
 **Sunshine and Rain**: Expect around eight hours of sunshine daily with only a moderate chance of rain, averaging about 5 days in May​​.
-
 
 ## Food & Drink
 
@@ -140,7 +132,6 @@ You also have [Uber](https://referrals.uber.com/refer?id=wtkjxt2y8zf8), although
 
 ## Band Announcements
 **Lineup**: The lineup has been announced (on 21st November 2023), with other artists usually added as we get closer to the festival.
-
 
 ![Primavera Sound Poster](../../assets//blog//25-primavera-sound/primavera-poster.jpg)
 
