@@ -11,6 +11,10 @@ authorId: "bob"
 tags: [primavera-sound, festival, barcelona, events, music]
 ---
 
+<div class="notice">
+    <p><strong>This is a blog post for Primavera Sound 2024.</strong> There is a new and updated blog post available <a href="https://pocketbarcelona.com/blog/primavera-sound-2025-guide/">here</a>.</p>
+</div>
+
 ![Primavera Sound](../../assets/blog/25-primavera-sound/primavera-singer.jpg)
 
 ## Contents
@@ -139,11 +143,4 @@ You also have [Uber](https://referrals.uber.com/refer?id=wtkjxt2y8zf8), although
 **Costs**: Drink prices at the festival are reasonable. A small beer costs around €3.50, a large one €5, and a glass of wine approximately €4 (plus a €1 deposit for the reusable cup)​​.
 
 ## Band Announcements
-**Lineup**: The lineup has been announced (on 21st November 2023), with other artists usually added as we get closer to the festival.
-
-
-![Primavera Sound Poster](../../assets//blog//25-primavera-sound/primavera-poster.jpg)
-
-## Summary
-
-[Primavera Sound](https://www.primaverasound.com/) in Barcelona is an extraordinary event that merges world-class music with the charm of a vibrant city. The 2024 edition promises an unforgettable experience, set against the beautiful backdrop of Barcelona from May 29th to June 1st. With a variety of ticket options, plentiful accommodation choices, and a city buzzing with cultural attractions, it’s an event not to be missed. Keep in mind the moderate drink prices, and plan for a range of weather conditions. While the excitement builds, the artist lineup remains a highly anticipated announcement. Stay tuned for more updates as they become available. Get ready for an amazing festival experience in one of the world’s most enchanting cities!
+**Lineup**:
