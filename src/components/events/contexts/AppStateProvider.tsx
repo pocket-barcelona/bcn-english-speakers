@@ -1,6 +1,6 @@
 import { createContext, type ComponentChildren } from "preact";
 import { useContext } from "preact/hooks";
-import { computed, effect, signal, type Signal } from "@preact/signals";
+import { computed, effect, signal, type ReadonlySignal, type Signal } from "@preact/signals";
 import { initialState, type AppState } from "../state/state";
 import type { MeetupItem, ScreensType } from "../types/types";
 import { LOCAL_STORAGE_KEYS } from "../config/config";
@@ -189,22 +189,22 @@ function createAppState(appState: AppState) {
 }
 
 export type Api = {
-  currentScreen: Signal<ScreensType>;
+  currentScreen: ReadonlySignal<ScreensType>;
   setCurrentScreen: (newScreen: ScreensType) => void;
-  currentEvent: Signal<AppState["currentEvent"]>;
+  currentEvent: ReadonlySignal<AppState["currentEvent"]>;
   setCurrentEvent: (newEvent: AppState["currentEvent"]) => void;
-  modalState: Signal<AppState["modalState"]>;
+  modalState: ReadonlySignal<AppState["modalState"]>;
   setModalState: (newState: AppState["modalState"]) => void;
-  attendModalState: Signal<AppState["attendModalState"]>;
+  attendModalState: ReadonlySignal<AppState["attendModalState"]>;
   setAttendModalState: (newState: AppState["attendModalState"]) => void;
-  attendModalCanSubmitForm: Signal<boolean>;
+  attendModalCanSubmitForm: ReadonlySignal<boolean>;
 
   handleShowEventModal: (newEvent: MeetupItem) => void;
   handleShowAttendModal: (newEvent: MeetupItem) => void;
 
-  group: Signal<AppState["groupInfo"]>;
+  group: ReadonlySignal<AppState["groupInfo"]>;
   setGroup: (newGroup: AppState["groupInfo"]) => void;
-  meetups: Signal<AppState["meetups"]>;
+  meetups: ReadonlySignal<AppState["meetups"]>;
   setMeetups: (newMeetups: AppState["meetups"]) => void;
   handleCloseModals: () => void;
   handleCloseAttendModal: () => void;
