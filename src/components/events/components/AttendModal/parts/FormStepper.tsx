@@ -5,7 +5,11 @@ import type {
   AttendFormState,
   GuestItem,
 } from "../../../services/meetup.service";
-import { getRsvpEmojiList, getRsvpOptionLabel, getRSVPOptionsByCertainty } from '../../../utils/utils';
+import {
+  getRsvpEmojiList,
+  getRsvpOptionLabel,
+  getRSVPOptionsByCertainty,
+} from "../../../utils/utils";
 
 export default function FormStepper() {
   const {
@@ -29,14 +33,24 @@ export default function FormStepper() {
     }
     const parsedValue = Number.parseInt(value, 10);
     if (attendModalState.value.formData.isAttending === parsedValue) return;
-    attendModalState.value = {
+
+    setAttendModalState({
       ...attendModalState.value,
       formData: {
         ...attendModalState.value.formData,
         isAttending: parsedValue,
       },
       // currentStep: attendModalState.value.currentStep + 1,
-    };
+    });
+
+    // attendModalState.value = {
+    //   ...attendModalState.value,
+    //   formData: {
+    //     ...attendModalState.value.formData,
+    //     isAttending: parsedValue,
+    //   },
+    //   // currentStep: attendModalState.value.currentStep + 1,
+    // };
   };
 
   const handleFieldChange = (ev: Event, fieldName: keyof GuestItem) => {
@@ -47,13 +61,14 @@ export default function FormStepper() {
       ...newRsvps[0],
       [fieldName]: value,
     };
-    attendModalState.value = {
+
+    setAttendModalState({
       ...attendModalState.value,
       formData: {
         ...attendModalState.value.formData,
         guests: newRsvps,
       },
-    };
+    });
   };
 
   const avatarsList = getRsvpEmojiList();
@@ -101,7 +116,7 @@ export default function FormStepper() {
         currentStep={currentStep}
       >
         <div class="space-y-6">
-          <h2 class="text-base">Guest 1 (Main)</h2>
+          <h2 class="text-base">Person 1 (Main)</h2>
           <div class="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
             {/* First name */}
             <div class="sm:col-span-3">
@@ -224,7 +239,7 @@ export default function FormStepper() {
       <div>
         {formData.guests.length > 0 && (
           <div class="flex flex-col gap-2 mb-4">
-            <h2 class="text-sm">Guests ({formData.guests.length})</h2>
+            <h2 class="text-sm">Attendees ({formData.guests.length})</h2>
 
             {formData.guests.map((rsvp, index) => {
               return (
