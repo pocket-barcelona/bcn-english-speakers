@@ -55,4 +55,7 @@ export type AppState = {
 export type ApiFetchInfo<T = unknown> = {
   lastFetched: number;
   data: T;
+  /** If set to true, must set an errorMessage also */
+  isError?: boolean;
+  errorMessage?: string;
 };

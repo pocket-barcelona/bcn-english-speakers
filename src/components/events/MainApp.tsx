@@ -9,6 +9,7 @@ import {
   hasUpdatedRecently,
 } from "./services/meetup.service";
 import Login from './screens/Login/Login';
+import Dashboard from './screens/Dashboard/Dashboard';
 
 export default function MainApp() {
   console.log("Rendering MainApp.tsx");
@@ -32,6 +33,7 @@ export default function MainApp() {
   useEffect(() => {
     if (
       group.value.data === null &&
+      group.value.isError !== true &&
       hasUpdatedRecently(group.value.lastFetched)
     ) {
       return;
@@ -41,16 +43,32 @@ export default function MainApp() {
     const p2 = getEventsByOrganiserId;
     (async () => {
       // @todo - try-catch here if fails getting group info
-      const groupInfo = await p1();
-
-      if (!groupInfo || !groupInfo.data) {
-        throw new Error("Failed to fetch group");
+      try {
+        const groupInfo = await p1();
+  
+        if (!groupInfo || !groupInfo.data) {
+          throw new Error("Failed to fetch group");
+        }
+        setGroup(groupInfo);
+  
+        // @todo - try-catch here if fails getting events
+        const meetups = await p2();
+        setMeetups(meetups);
+        
+      } catch (error) {
+        setGroup({
+          data: null,
+          lastFetched: -1,
+          isError: true,
+          errorMessage: 'Could not fetch group info'
+        });
+        setMeetups({
+          data: [],
+          lastFetched: -1,
+          isError: true,
+          errorMessage: 'Could not fetch events'
+        });
       }
-      setGroup(groupInfo);
-
-      // @todo - try-catch here if fails getting events
-      const meetups = await p2();
-      setMeetups(meetups);
     })();
   }, []);
 
@@ -60,17 +78,34 @@ export default function MainApp() {
         <div>
           {currentScreen.value === "EVENTS" && (
             <>
-              <GroupHeader group={group.value.data} />
+              {group.value.isError && (
+                <div class="p-4 min-h-24 text-center">
+                  <h2>{group.value.errorMessage}</h2>
+                </div>
+              )}
+              {!group.value.isError && <GroupHeader group={group.value.data} />}
               <hr />
-              <EventsList
-                meetups={meetups.value.data}
-                group={group.value.data}
-                viewEvent={(newMeetup) => handleViewEvent(newMeetup)}
-              />
+              {meetups.value.isError && (
+                <div class="p-4 min-h-48 text-center">
+                  <p>{meetups.value.errorMessage}</p>
+                </div>
+              )}
+              {!meetups.value.isError && (
+                <EventsList
+                  meetups={meetups.value.data}
+                  group={group.value.data}
+                  viewEvent={(newMeetup) => handleViewEvent(newMeetup)}
+                />
+              )}
             </>
           )}
           {currentScreen.value === "LOGIN" && (
             <Login
+              group={group.value.data}
+            />
+          )}
+          {currentScreen.value === "DASHBOARD" && (
+            <Dashboard
               group={group.value.data}
             />
           )}

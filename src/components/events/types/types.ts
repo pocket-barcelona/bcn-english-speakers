@@ -119,6 +119,8 @@ export type MeetupConfig = {
   /** Allow meetup organisers to customise the RSVP join button when users join the event */
   rsvpButtonCtaType?: RsvpButtonCtaTypes;
   enableWaitingList?: boolean;
+  /** If waiting list is enabled, the max number of guests which can be in waiting */
+  maxWaitingListGuests?: number;
 };
 // export const RsvpButtonCtas = {
 //   JOIN: 'Join',
@@ -204,6 +206,10 @@ export type MeetupLocation = {
   locationPrecision: 1 | 2 | 3 | number;
   /** Ex: a google maps URL to the meetup location */
   mapsLink: string;
+  /** If set, the location of the event will be hidden completely */
+  locationIsHidden: boolean;
+  /** @type Date string. If set, the location will only be visible after this point in time */
+  locationAvailableFrom: string;
 };
 export type MeetupPrice = {
   /** Like 1050 = €10,50. 0=Free. -1=TBC */
