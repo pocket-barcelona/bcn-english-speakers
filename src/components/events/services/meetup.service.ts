@@ -33,7 +33,9 @@ export type SubmitRsvpPayloadResponse = SubmitRsvpPayload & {
   // @todo - do we need the meetup data again?
 };
 
-const BCN_ENG_SPEAKERS_GROUP_ID = "a9989daa-d864-4b3a-82e3-899df9baccc1";
+const BCN_ENG_SPEAKERS_GROUP_ID = "a9989daa-d864-4b3a-82e3-899df9baccc1"; // bcn eng speakers
+// const BCN_ENG_SPEAKERS_GROUP_ID = "d47fa82b-ee32-4e54-81bc-057322074186"; // fake corgi club
+
 // export const API_CALL_REFRESH_PERIOD = 60000; // 1 minute
 export const API_CALL_REFRESH_PERIOD = 6000000; // local testing
 
