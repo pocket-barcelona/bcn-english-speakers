@@ -94,6 +94,15 @@ function createAppState(appState: AppState) {
     MeetupService.submitRsvp(payload)
       .then((resp: MeetupService.SubmitRsvpPayloadResponse) => {
         // CORRECT
+        const { rsvpId } = resp;
+        attendModalState.value = {
+          ...attendModalState.value,
+          currentStep: attendModalState.value.currentStep + 1,
+          hasSubmitted: true,
+          isLoading: false,
+          rsvpId
+        }
+        
       })
       .catch((resp: MeetupService.SubmitRsvpPayloadResponse) => {
         // INCORRECT
