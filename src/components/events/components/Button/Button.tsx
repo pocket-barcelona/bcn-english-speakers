@@ -3,8 +3,11 @@ import { twMerge } from "tailwind-merge";
 
 export type ButtonProps = HTMLAttributes<HTMLButtonElement> & {
   variant?: "primary" | "secondary" | "tertiary" | "link" | "outline";
+  /** The button text */
   text?: string;
+  /** The button icon */
   icon?: string;
+  /** Additional button classes */
   classes?: string;
   type?: "button" | "submit" | "reset";
   showLoading?: boolean;
