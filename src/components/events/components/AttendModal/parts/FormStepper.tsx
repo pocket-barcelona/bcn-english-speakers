@@ -10,6 +10,7 @@ import {
   getRsvpOptionLabel,
   getRSVPOptionsByCertainty,
 } from "../../../utils/utils";
+import { twMerge } from "tailwind-merge";
 
 export default function FormStepper() {
   const {
@@ -77,8 +78,9 @@ export default function FormStepper() {
   return (
     <div>
       <Step
-        currentStep={0}
+        // currentStep={currentStep}
         stepIndex={0}
+        stepDisabled={attendModalState.value.hasSubmitted}
         stepTitle="Attendance"
         stepDescription="Please let us know if you can make it."
         fieldsetTitle="Are you coming?"
@@ -110,10 +112,10 @@ export default function FormStepper() {
       </Step>
 
       <Step
+        stepIndex={1}
+        stepDisabled={attendModalState.value.hasSubmitted}
         stepTitle="Personal Information"
         stepDescription="Please tell us who you are."
-        stepIndex={1}
-        currentStep={currentStep}
       >
         <div class="space-y-6">
           <h2 class="text-base">Person 1 (Main)</h2>
@@ -234,59 +236,76 @@ export default function FormStepper() {
             </div>
           </div>
         </div>
-      </Step>
+        <div>
+          {formData.guests.length > 0 && (
+            <div class="flex flex-col gap-2 mb-4">
+              <h2 class="text-sm">Attendees ({formData.guests.length})</h2>
 
-      <div>
-        {formData.guests.length > 0 && (
-          <div class="flex flex-col gap-2 mb-4">
-            <h2 class="text-sm">Attendees ({formData.guests.length})</h2>
-
-            {formData.guests.map((rsvp, index) => {
-              return (
-                // <div class="flex flex-row gap-1" key={index}>
-                //   <div>{rsvp.avatar}</div>
-                //   <div>Name: {rsvp.name}</div>
-                //   <div>Surname: {rsvp.lastname || '-'}</div>
-                //   <div>Mobile: {rsvp.mobile || '-'}</div>
-                // </div>
-                // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-                <div class="col-span-full" key={index}>
-                  <div class="mt-1 flex items-center gap-x-3">
-                    {rsvp.avatar ? (
-                      <span class="h-12 w-12 text-5xl rounded-full text-center overflow-hidden">
-                        {rsvp.avatar}
+              {formData.guests.map((rsvp, index) => {
+                return (
+                  // <div class="flex flex-row gap-1" key={index}>
+                  //   <div>{rsvp.avatar}</div>
+                  //   <div>Name: {rsvp.name}</div>
+                  //   <div>Surname: {rsvp.lastname || '-'}</div>
+                  //   <div>Mobile: {rsvp.mobile || '-'}</div>
+                  // </div>
+                  // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+                  <div class="col-span-full" key={index}>
+                    <div class="mt-1 flex items-center gap-x-3">
+                      {rsvp.avatar ? (
+                        <span class="h-12 w-12 text-5xl rounded-full text-center overflow-hidden">
+                          {rsvp.avatar}
+                        </span>
+                      ) : (
+                        <svg
+                          class="h-12 w-12 text-gray-300"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          aria-hidden="true"
+                          data-slot="icon"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M18.685 19.097A9.723 9.723 0 0 0 21.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 0 0 3.065 7.097A9.716 9.716 0 0 0 12 21.75a9.716 9.716 0 0 0 6.685-2.653Zm-12.54-1.285A7.486 7.486 0 0 1 12 15a7.486 7.486 0 0 1 5.855 2.812A8.224 8.224 0 0 1 12 20.25a8.224 8.224 0 0 1-5.855-2.438ZM15.75 9a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      )}
+                      <span>
+                        {rsvp.name} {rsvp.lastname}
                       </span>
-                    ) : (
-                      <svg
-                        class="h-12 w-12 text-gray-300"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        aria-hidden="true"
-                        data-slot="icon"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M18.685 19.097A9.723 9.723 0 0 0 21.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 0 0 3.065 7.097A9.716 9.716 0 0 0 12 21.75a9.716 9.716 0 0 0 6.685-2.653Zm-12.54-1.285A7.486 7.486 0 0 1 12 15a7.486 7.486 0 0 1 5.855 2.812A8.224 8.224 0 0 1 12 20.25a8.224 8.224 0 0 1-5.855-2.438ZM15.75 9a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
-                          clip-rule="evenodd"
-                        />
-                      </svg>
-                    )}
-                    <span>
-                      {rsvp.name} {rsvp.lastname}
-                    </span>
-                    {/* <button
+                      {/* <button
                       type="button"
                       class="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                     >
                       Change
                     </button> */}
+                    </div>
                   </div>
-                </div>
-              );
-            })}
-          </div>
-        )}
-      </div>
+                );
+              })}
+            </div>
+          )}
+        </div>
+      </Step>
+
+      <Step
+        stepIndex={2}
+        stepDisabled={!attendModalState.value.hasSubmitted}
+        stepTitle="Tickets"
+        stepDescription="Download your entrance tickets below"
+      >
+        <div
+          class={twMerge(
+            "space-y-6",
+            !attendModalState.value.hasSubmitted &&
+              "opacity-50 pointer-events-none"
+          )}
+        >
+          <h2 class="text-base">Present this QR code at the door</h2>
+          <div>QR here</div>
+        </div>
+      </Step>
     </div>
   );
 }
