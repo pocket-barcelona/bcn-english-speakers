@@ -1,4 +1,4 @@
-import { signal } from '@preact/signals';
+import { signal } from "@preact/signals";
 import useAppStateContext from "../../contexts/AppStateProvider";
 import type { MeetupGroupItem } from "../../types/types";
 
@@ -12,7 +12,7 @@ type LoginProps = {
 };
 export default function Login({ group }: LoginProps) {
   const {
-    api: { userLogin },
+    api: { userLogin, setCurrentScreen },
   } = useAppStateContext();
 
   if (!group) {
@@ -23,7 +23,7 @@ export default function Login({ group }: LoginProps) {
     );
   }
 
-  const handleInputChange = (event: Event, field: 'email' | 'password') => {
+  const handleInputChange = (event: Event, field: "email" | "password") => {
     const target = event.target as HTMLInputElement;
     loginForm.value = {
       ...loginForm.value,
@@ -37,6 +37,8 @@ export default function Login({ group }: LoginProps) {
       password: loginForm.value.password,
     });
   };
+
+  const goToEvents = () => setCurrentScreen("EVENTS");
 
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -67,7 +69,7 @@ export default function Login({ group }: LoginProps) {
                 type="email"
                 required
                 autoComplete="email"
-                onChange={(e) => handleInputChange(e, 'email')}
+                onChange={(e) => handleInputChange(e, "email")}
                 value={loginForm.value.email}
                 className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6"
               />
@@ -90,7 +92,7 @@ export default function Login({ group }: LoginProps) {
                 type="password"
                 required
                 autoComplete="current-password"
-                onChange={(e) => handleInputChange(e, 'password')}
+                onChange={(e) => handleInputChange(e, "password")}
                 value={loginForm.value.password}
                 className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6"
               />
@@ -124,6 +126,15 @@ export default function Login({ group }: LoginProps) {
               Start a 14 day free trial
             </a>
           </p> */}
+        <p className="mt-10 text-center text-sm/6 text-gray-500">
+          <button
+            type="button"
+            onClick={goToEvents}
+            className="font-semibold text-indigo-600 hover:text-indigo-500"
+          >
+            &laquo; Back to events
+          </button>
+        </p>
       </div>
     </div>
   );

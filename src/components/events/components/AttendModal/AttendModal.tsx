@@ -60,8 +60,8 @@ export default function AttendModal({ onClose, onSignup }: AttendModalProps) {
 
           {readMore.value === false && (
             <p class="text-right mt-0">
-              <button type="button" onClick={handleReadMore} class="text-sky-700">
-                show all...
+              <button type="button" onClick={handleReadMore} class="text-sky-700 text-xs font-medium underline">
+                read more...
               </button>
             </p>
           )}
