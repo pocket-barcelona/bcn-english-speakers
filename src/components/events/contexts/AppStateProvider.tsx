@@ -13,6 +13,8 @@ function createAppState(appState: AppState) {
     window.location.reload();
   };
 
+  const siteUrl = signal(appState.siteUrl);
+
   const currentScreen = signal(appState.currentScreen);
   const setCurrentScreen = (newScreen: ScreensType) => {
     currentScreen.value = newScreen;
@@ -163,6 +165,7 @@ function createAppState(appState: AppState) {
   });
 
   return {
+    siteUrl,
     currentScreen,
     setCurrentScreen,
     modalState,
@@ -194,6 +197,7 @@ function createAppState(appState: AppState) {
 }
 
 export type Api = {
+  siteUrl: ReadonlySignal<AppState['siteUrl']>;
   currentScreen: ReadonlySignal<ScreensType>;
   setCurrentScreen: (newScreen: ScreensType) => void;
   currentEvent: ReadonlySignal<AppState["currentEvent"]>;
@@ -222,6 +226,7 @@ export type Api = {
 };
 
 export type AppStateProps = {
+  websiteUrl: string;
   api: Api;
 };
 const AppStateContext = createContext<AppStateProps | undefined>(undefined);
@@ -229,11 +234,11 @@ const AppStateContext = createContext<AppStateProps | undefined>(undefined);
 type AppStateProviderProps = AppStateProps & {
   children: ComponentChildren;
 };
-export function AppStateProvider({ children }: AppStateProviderProps) {
+export function AppStateProvider({ children, websiteUrl }: AppStateProviderProps) {
   const getStoredAppData = (): AppState => {
-    if (typeof window.localStorage === "undefined") return { ...initialState };
+    if (typeof window.localStorage === "undefined") return { ...initialState, siteUrl: websiteUrl };
     const value = window.localStorage.getItem(LOCAL_STORAGE_KEYS.APP_STATE);
-    if (value === null) return { ...initialState };
+    if (value === null) return { ...initialState, siteUrl: websiteUrl };
     // @todo - validate with Zod to prevent tampering?
     return JSON.parse(value);
   };
@@ -241,6 +246,7 @@ export function AppStateProvider({ children }: AppStateProviderProps) {
   const storedAppState = getStoredAppData();
 
   const {
+    siteUrl,
     currentScreen,
     setCurrentScreen,
     modalState,
@@ -268,7 +274,9 @@ export function AppStateProvider({ children }: AppStateProviderProps) {
   return (
     <AppStateContext.Provider
       value={{
+        websiteUrl,
         api: {
+          siteUrl,
           currentScreen,
           setCurrentScreen,
           currentEvent,
