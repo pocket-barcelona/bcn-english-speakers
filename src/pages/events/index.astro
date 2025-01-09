@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/layout.astro";
 import EventsApp from '../../components/events/EventsApp';
+const site = Astro.site;
 ---
 <style is:global>
 ::-webkit-scrollbar {
@@ -19,5 +20,5 @@ import EventsApp from '../../components/events/EventsApp';
 </style>
 
 <Layout title={"Events - Barcelona English Speakers Community"}>
-  <EventsApp client:only="preact"></EventsApp>
+  <EventsApp client:only="preact" siteUrl={site ? site.toString() : 'notset'}></EventsApp>
 </Layout>

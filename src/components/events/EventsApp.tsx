@@ -4,18 +4,22 @@ import { initialState, type AppState } from "./state/state";
 import { LOCAL_STORAGE_KEYS } from './config/config';
 import MainApp from './MainApp';
 
-export default function EventsApp() {
+type EventsAppProps = {
+  siteUrl: string;
+}
+export default function EventsApp({ siteUrl }: EventsAppProps) {
   console.log('Rendering EventsApp.tsx');
   
-  const getStoredAppData = (): AppState => {
-    if (typeof window.localStorage === "undefined") return { ...initialState };
+  const getStoredAppData = (siteUrl: string): AppState => {
+    if (typeof window.localStorage === "undefined") return { ...initialState, siteUrl };
     const value = window.localStorage.getItem(LOCAL_STORAGE_KEYS.APP_STATE);
-    if (value === null) return { ...initialState };
+    if (value === null) return { ...initialState, siteUrl };
     return JSON.parse(value);
   };
-  const storedAppState = getStoredAppData();
+  const storedAppState = getStoredAppData(siteUrl);
 
   const api: Api = {
+    siteUrl: computed(() => storedAppState.siteUrl),
     currentScreen: computed(() => storedAppState.currentScreen),
     setCurrentScreen: () => {},
     currentEvent: computed(() => storedAppState.currentEvent),
@@ -40,7 +44,7 @@ export default function EventsApp() {
   }
 
   return (
-    <AppStateProvider api={api}>
+    <AppStateProvider api={api} websiteUrl={siteUrl}>
       <MainApp />
     </AppStateProvider>
   );
