@@ -4,11 +4,7 @@ import { computed, effect, signal, type ReadonlySignal, type Signal } from "@pre
 import { initialState, type AppState } from "../state/state";
 import type { MeetupItem, ScreensType } from "../types/types";
 import { LOCAL_STORAGE_KEYS } from "../config/config";
-import {
-  buildRsvpPayload,
-  submitRsvp,
-  type SubmitRsvpPayloadResponse,
-} from "../services/meetup.service";
+import * as MeetupService from "../services/meetup.service";
 import { authLogin, type AuthData } from "../services/auth.service";
 
 function createAppState(appState: AppState) {
@@ -90,16 +86,16 @@ function createAppState(appState: AppState) {
     if (!currentEvent.value?.meetupId) {
       return;
     }
-    const payload = buildRsvpPayload(
+    const payload = MeetupService.buildRsvpPayload(
       attendModalState.value.formData.isAttending,
       attendModalState.value.formData.guests,
       currentEvent.value?.meetupId
     );
-    submitRsvp(payload)
-      .then((resp: SubmitRsvpPayloadResponse) => {
+    MeetupService.submitRsvp(payload)
+      .then((resp: MeetupService.SubmitRsvpPayloadResponse) => {
         // CORRECT
       })
-      .catch((resp: SubmitRsvpPayloadResponse) => {
+      .catch((resp: MeetupService.SubmitRsvpPayloadResponse) => {
         // INCORRECT
         // setTimeout(() => {
         // }, 500);
