@@ -23,6 +23,9 @@ export const initialState: AppState = {
       isAttending: MeetupRsvpAttendanceStatusEnum.Cannot,
     },
     currentStep: 0,
+    isLoading: false,
+    hasSubmitted: false,
+    rsvpId: undefined,
   },
   user: undefined,
 };
@@ -44,7 +47,13 @@ export type AppState = {
     formData: {
       guests: GuestItem[]; // an array of RSVP info for people signing up
       isAttending: MeetupRsvpAttendanceStatusEnum;
-    }
+    };
+    /** If true, will show loading spinner on submit button and disable it */
+    isLoading: boolean;
+    /** True when form has been successfully submitted */
+    hasSubmitted: boolean;
+    /** Will be the RSVP ID from the backend */
+    rsvpId: string | undefined;
   };
 
   // LOGGED IN
