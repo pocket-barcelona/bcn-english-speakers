@@ -90,29 +90,35 @@ export async function submitRsvp(
   payload: SubmitRsvpPayload
 ): Promise<SubmitRsvpPayloadResponse> {
   console.debug("Creating RSVP", {payload});
-  const { meetupId } = payload;
-  const endpoint = `${API_STUB_LOCAL}/api/meetup/${meetupId}/rsvp`;
-  const resp = await fetch(endpoint, {
-    method: "POST",
-    body: JSON.stringify(payload),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  const data = await resp.json() as ApiCall<MeetupRsvpModel>;;
-
-  return data.data;
-
-  // return new Promise((resolve, reject) => {
-  //   return resolve({
-  //     rsvpId: "XXX",
-  //     meetupId: payload.meetupId,
-  //     response: payload.response,
-  //     guests: payload.guests,
-  //     responseCode: 200,
-  //   });
-    
+  // const { meetupId } = payload;
+  // const endpoint = `${API_STUB_LOCAL}/api/meetup/${meetupId}/rsvp`;
+  // const resp = await fetch(endpoint, {
+  //   method: "POST",
+  //   body: JSON.stringify(payload),
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //   },
   // });
+  // const data = await resp.json() as ApiCall<MeetupRsvpModel>;;
+
+  // return data.data;
+
+  return new Promise((resolve, reject) => {
+    return resolve({
+      rsvpId: "XXX",
+      avatar: '👨‍🍳',
+      changedTimes: 0,
+      comment: '',
+      lastname: '',
+      mobile: '612345678',
+      name: 'Bonzo',
+      rsvpTimestampInitial: Date.now(),
+      rsvpTimestampUpdated: Date.now(),
+      response: 1 as MeetupRsvpAttendanceStatusEnum,
+      userId: 'XYZ',
+    });
+    
+  });
 }
 
 export function buildRsvpPayload(
