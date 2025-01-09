@@ -11,10 +11,11 @@ import {
   getRSVPOptionsByCertainty,
 } from "../../../utils/utils";
 import { twMerge } from "tailwind-merge";
+import QRCode from '../../QRCode/QRCode';
 
 export default function FormStepper() {
   const {
-    api: { currentEvent, group, attendModalState, setAttendModalState },
+    api: { siteUrl, currentEvent, group, attendModalState, setAttendModalState },
   } = useAppStateContext();
 
   const event = currentEvent.value;
@@ -295,16 +296,20 @@ export default function FormStepper() {
         stepTitle="Tickets"
         stepDescription="Download your entrance tickets below"
       >
-        <div
-          class={twMerge(
-            "space-y-6",
-            !attendModalState.value.hasSubmitted &&
-              "opacity-50 pointer-events-none"
-          )}
-        >
-          <h2 class="text-base">Present this QR code at the door</h2>
-          <div>QR here</div>
-        </div>
+        {
+          attendModalState.value && (
+            <div
+              class={twMerge(
+                "space-y-6",
+                !attendModalState.value.hasSubmitted &&
+                  "opacity-50 pointer-events-none"
+              )}
+            >
+              <h2 class="text-base">Present this QR code at the door:</h2>
+              <QRCode url={siteUrl.value} />
+            </div>
+          )
+        }
       </Step>
     </div>
   );
