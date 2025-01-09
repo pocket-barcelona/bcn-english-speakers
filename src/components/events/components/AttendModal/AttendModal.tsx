@@ -5,7 +5,7 @@ import ModalDrawer from "../ModalDrawer/ModalDrawer";
 import useAppStateContext from "../../contexts/AppStateProvider";
 import EventDateTime from "../EventModal/parts/EventDateTime";
 import FormStepper from "./parts/FormStepper";
-import { eventRSVPStatus } from '../../utils/utils';
+import { eventRSVPStatus } from "../../utils/utils";
 
 const readMore = signal(false);
 
@@ -16,7 +16,13 @@ type AttendModalProps = {
 };
 export default function AttendModal({ onClose, onSignup }: AttendModalProps) {
   const {
-    api: { attendModalState, currentEvent, group, attendModalCanSubmitForm },
+    api: {
+      attendModalState,
+      currentEvent,
+      group,
+      attendModalCanSubmitForm,
+      setAttendModalState,
+    },
   } = useAppStateContext();
 
   const event = currentEvent.value;
@@ -33,6 +39,14 @@ export default function AttendModal({ onClose, onSignup }: AttendModalProps) {
   const rsvpStatus = eventRSVPStatus(event);
   const handleReadMore = () => {
     readMore.value = !readMore.value;
+  };
+
+  const handleSignup = () => {
+    setAttendModalState({
+      ...attendModalState.value,
+      isLoading: true,
+    });
+    onSignup();
   };
 
   return (
@@ -60,7 +74,11 @@ export default function AttendModal({ onClose, onSignup }: AttendModalProps) {
 
           {readMore.value === false && (
             <p class="text-right mt-0">
-              <button type="button" onClick={handleReadMore} class="text-sky-700 text-xs font-medium underline">
+              <button
+                type="button"
+                onClick={handleReadMore}
+                class="text-sky-700 text-xs font-medium underline"
+              >
                 read more...
               </button>
             </p>
@@ -73,25 +91,33 @@ export default function AttendModal({ onClose, onSignup }: AttendModalProps) {
         </div>
 
         <FormStepper />
+
+        
       </div>
       <ModalDrawer.Footer>
         <div class="flex flex-row items-center justify-center gap-4 py-4 px-6">
           <Button
             onClick={onClose}
-            type='reset'
+            type="reset"
             text="CANCEL"
             variant="tertiary"
             classes="flex-shrink-0 flex-grow basis-1/2"
           />
           <Button
-            onClick={onSignup}
-            text={"SUBMIT"}
+            onClick={handleSignup}
+            text={
+              attendModalState.value.isLoading === true ? "LOADING" : "SUBMIT"
+            }
             // text={rsvpButtonLabel}
             variant="primary"
             classes="flex-shrink-0 flex-grow basis-1/2"
-            disabled={!rsvpStatus.isAcceptingRSVPs || !attendModalCanSubmitForm.value}
+            disabled={
+              !rsvpStatus.isAcceptingRSVPs || !attendModalCanSubmitForm.value
+            }
+            showLoading={attendModalState.value.isLoading === true}
           />
         </div>
+
         {!rsvpStatus.isAcceptingRSVPs && (
           <div class="py-4 pt-0 px-6 text-center font-semibold">
             Event RSVP-ing is closed for this event.
