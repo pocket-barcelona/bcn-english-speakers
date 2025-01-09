@@ -1,4 +1,5 @@
 import type { ComponentChildren } from "preact";
+import { twMerge } from 'tailwind-merge';
 
 type StepProps = {
   children: ComponentChildren;
@@ -6,14 +7,16 @@ type StepProps = {
   stepDescription?: string;
   fieldsetTitle?: string;
   stepIndex: number;
-  currentStep: number;
+  // currentStep: number;
+  stepDisabled?: boolean;
 };
 export default function Step({
   stepTitle,
   stepDescription,
   fieldsetTitle,
   stepIndex,
-  currentStep,
+  // currentStep,
+  stepDisabled,
   children,
 }: StepProps) {
   return (
@@ -25,7 +28,10 @@ export default function Step({
         <p class="mt-1 mb-4 text-sm/6 text-gray-600">{stepDescription}</p>
       )}
       <div class="p-4 py-6 bg-slate-100 border border-slate-200 rounded-md space-y-10">
-        <fieldset class="text-xl mb-2 font-semibold tracking-tight">
+        <fieldset disabled={stepDisabled} class={twMerge(
+          "text-xl mb-2 font-semibold tracking-tight",
+          stepDisabled && "opacity-40"
+        )}>
           {fieldsetTitle && (
             <legend class="text-base/6 font-semibold mb-4">
               {fieldsetTitle}
