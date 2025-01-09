@@ -3,6 +3,7 @@ import { MeetupRsvpAttendanceStatusEnum, type MeetupGroupItem, type MeetupItem, 
 import type { UserSession } from '../types/user-session.type';
 
 export const initialState: AppState = {
+  siteUrl: "",
   currentScreen: "EVENTS",
   groupInfo: {
     data: null,
@@ -31,6 +32,7 @@ export const initialState: AppState = {
 };
 
 export type AppState = {
+  siteUrl: string;
   currentScreen: ScreensType;
   groupInfo: ApiFetchInfo<MeetupGroupItem | null>;
   meetups: ApiFetchInfo<MeetupItem[]>;
