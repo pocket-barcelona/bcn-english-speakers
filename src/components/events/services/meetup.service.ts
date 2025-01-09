@@ -1,17 +1,18 @@
 import type { ApiFetchInfo } from "../state/state";
-import type { MeetupGroupItem, MeetupItem, MeetupRsvpAttendanceStatusEnum } from '../types/types';
+import type { MeetupGroupItem, MeetupItem, MeetupRsvpAttendanceStatusEnum, MeetupRsvpModel } from '../types/types';
 import { API_STUB_LOCAL } from '../../../consts';
+import type { ApiCall } from './types';
 
 // RSVP FORM STATE
 export type GuestItem = {
   isMainGuest: boolean;
+  response: MeetupRsvpAttendanceStatusEnum | undefined;
   name: string;
   mobile: string;
   avatar: string;
   lastname?: string;
   email?: string;
   barrio?: number;
-  response: MeetupRsvpAttendanceStatusEnum | undefined;
   comment?: string;
 };
 
@@ -23,15 +24,18 @@ export type AttendFormState = {
   guests: GuestItem[];
 };
 
+// @todo...
 type SubmitRsvpPayload = Pick<AttendFormState, "guests" | "meetupId" | 'response'>;
 
-export type SubmitRsvpPayloadResponse = SubmitRsvpPayload & {
-  /** The saved RSVP ID */
-  rsvpId: string;
-  /** Whether or not the rsvp was confirmed */
-  responseCode: number;
-  // @todo - do we need the meetup data again?
-};
+// export type SubmitRsvpPayloadResponse = SubmitRsvpPayload & {
+//   /** The saved RSVP ID */
+//   rsvpId: string;
+//   /** Whether or not the rsvp was confirmed */
+//   responseCode: number;
+//   // @todo - do we need the meetup data again?
+// };
+export type SubmitRsvpPayloadResponse = MeetupRsvpModel;
+
 
 const BCN_ENG_SPEAKERS_GROUP_ID = "a9989daa-d864-4b3a-82e3-899df9baccc1"; // bcn eng speakers
 // const BCN_ENG_SPEAKERS_GROUP_ID = "d47fa82b-ee32-4e54-81bc-057322074186"; // fake corgi club
@@ -85,17 +89,30 @@ export async function getGroupInfo(): Promise<
 export async function submitRsvp(
   payload: SubmitRsvpPayload
 ): Promise<SubmitRsvpPayloadResponse> {
-  console.log(payload);
-  return new Promise((resolve, reject) => {
-    return resolve({
-      rsvpId: "XXX",
-      meetupId: payload.meetupId,
-      response: payload.response,
-      guests: payload.guests,
-      responseCode: 200,
-    });
-    
+  console.debug("Creating RSVP", {payload});
+  const { meetupId } = payload;
+  const endpoint = `${API_STUB_LOCAL}/api/meetup/${meetupId}/rsvp`;
+  const resp = await fetch(endpoint, {
+    method: "POST",
+    body: JSON.stringify(payload),
+    headers: {
+      "Content-Type": "application/json",
+    },
   });
+  const data = await resp.json() as ApiCall<MeetupRsvpModel>;;
+
+  return data.data;
+
+  // return new Promise((resolve, reject) => {
+  //   return resolve({
+  //     rsvpId: "XXX",
+  //     meetupId: payload.meetupId,
+  //     response: payload.response,
+  //     guests: payload.guests,
+  //     responseCode: 200,
+  //   });
+    
+  // });
 }
 
 export function buildRsvpPayload(
