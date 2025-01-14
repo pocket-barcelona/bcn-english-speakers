@@ -56,12 +56,15 @@ export default function EventItem({ item, group, viewEvent }: EventItemProps) {
       <article>
         <div class="flex flex-row justify-between gap-2">
           <div class="flex-grow">
-            <time datetime={new Date(item.startTime).toISOString()}>{getEventFromToDate(item)}</time>
-            <h2 class="my-1 text-xl tracking-tight">{item.title}</h2>
-            <p>By <strong>{group?.groupName ?? ''}</strong></p>
-            <h3>Icon Location: <strong>{locationString}</strong></h3>
+            <p class="flex gap-1">
+              <span class="tracking-tight text-xs md:text-sm">📅</span>
+              <time class="tracking-tight text-xs md:text-sm" datetime={new Date(item.startTime).toISOString()}>{getEventFromToDate(item)}</time>
+            </p>
+            <h2 class="my-1 mb-2 text-base md:text-lg tracking-tight">{item.title}</h2>
+            <p class="tracking-tight text-xs md:text-sm my-1">Owner: <strong>{group?.groupName ?? ''}</strong></p>
+            <h3 class="tracking-tight text-xs md:text-sm my-1">Location 📍 {locationString}</h3>
           </div>
-          <div class="basis-1/3">
+          <div class="basis-1/3 flex-shrink-0">
             {mainPhoto && (
               <img
                 src={mainPhoto.url}
