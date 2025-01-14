@@ -116,7 +116,7 @@ export default function ModalDrawer({
                 <RiCloseLargeFill width={28} height={28} />
               </button>
             </header>
-            <div class="flex flex-col overflow-y-auto flex-shrink flex-grow px-6 pt-6 my-0">
+            <div class="flex flex-col overflow-y-auto flex-shrink flex-grow px-6 pt-6 my-0 bg-white">
               <div>{children}</div>
             </div>
             {footer && <footer class="bg-slate-100 shadow-sm p-0">{footer}</footer>}
