@@ -82,6 +82,9 @@ export default function EventModal({ onClose }: EventModalProps) {
         isAttending: MeetupRsvpAttendanceStatusEnum.Cannot,
       },
       currentStep: 0,
+      hasSubmitted: false,
+      isLoading: false,
+      rsvpId: ''
     });
     // onClose();
     // // wait for modal to close...
