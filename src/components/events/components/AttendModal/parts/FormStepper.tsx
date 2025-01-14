@@ -305,8 +305,23 @@ export default function FormStepper() {
                   "opacity-50 pointer-events-none"
               )}
             >
-              <h2 class="text-base">Present this QR code at the door:</h2>
-              <QRCode url={siteUrl.value} />
+              {
+                attendModalState.value.hasSubmitted && (
+                  <>
+                    <h2 class="text-base">Present this QR code at the event:</h2>
+                    <QRCode url={siteUrl.value} />
+                  </>
+                )
+              }
+              {
+                !attendModalState.value.hasSubmitted && (
+                  <h2 class="text-base">Waiting...</h2>
+                )
+              }
+              
+
+              {/* @todo - add another QR code to this page so user can check their attendance
+              or view the address, if the event info has not revealed the address yet... */}
             </div>
           )
         }

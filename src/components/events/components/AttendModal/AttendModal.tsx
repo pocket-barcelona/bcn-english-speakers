@@ -49,6 +49,18 @@ export default function AttendModal({ onClose, onSignup }: AttendModalProps) {
     onSignup();
   };
 
+
+  let ctaButtonText = '';
+  if (attendModalState.value.isLoading === true) {
+    ctaButtonText = "LOADING";
+  } else if (attendModalState.value.hasSubmitted === true) {
+    ctaButtonText = "DONE";
+  } else {
+    ctaButtonText = "SUBMIT";
+  }
+
+  const submitButtonDisabled = attendModalState.value.hasSubmitted || !rsvpStatus.isAcceptingRSVPs || !attendModalCanSubmitForm.value;
+
   return (
     <ModalDrawer
       title="Attend event"
@@ -105,15 +117,11 @@ export default function AttendModal({ onClose, onSignup }: AttendModalProps) {
           />
           <Button
             onClick={handleSignup}
-            text={
-              attendModalState.value.isLoading === true ? "LOADING" : "SUBMIT"
-            }
+            text={ctaButtonText}
             // text={rsvpButtonLabel}
             variant="primary"
             classes="flex-shrink-0 flex-grow basis-1/2"
-            disabled={
-              !rsvpStatus.isAcceptingRSVPs || !attendModalCanSubmitForm.value
-            }
+            disabled={submitButtonDisabled}
             showLoading={attendModalState.value.isLoading === true}
           />
         </div>
