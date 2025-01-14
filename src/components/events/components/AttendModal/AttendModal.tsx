@@ -49,8 +49,7 @@ export default function AttendModal({ onClose, onSignup }: AttendModalProps) {
     onSignup();
   };
 
-
-  let ctaButtonText = '';
+  let ctaButtonText = "";
   if (attendModalState.value.isLoading === true) {
     ctaButtonText = "LOADING";
   } else if (attendModalState.value.hasSubmitted === true) {
@@ -59,7 +58,10 @@ export default function AttendModal({ onClose, onSignup }: AttendModalProps) {
     ctaButtonText = "SUBMIT";
   }
 
-  const submitButtonDisabled = attendModalState.value.hasSubmitted || !rsvpStatus.isAcceptingRSVPs || !attendModalCanSubmitForm.value;
+  const submitButtonDisabled =
+    attendModalState.value.hasSubmitted ||
+    !rsvpStatus.isAcceptingRSVPs ||
+    !attendModalCanSubmitForm.value;
 
   return (
     <ModalDrawer
@@ -104,7 +106,14 @@ export default function AttendModal({ onClose, onSignup }: AttendModalProps) {
 
         <FormStepper />
 
-        
+        {attendModalState.value.hasSubmitted && (
+          <div class="flex flex-col items-center justify-center gap-4 py-4 px-6 mb-4">
+            <p class="text-center text-gray-500">
+              You are now signed up for this event.
+            </p>
+            <Button onClick={onClose} text="Finish" variant="outline" />
+          </div>
+        )}
       </div>
       <ModalDrawer.Footer>
         <div class="flex flex-row items-center justify-center gap-4 py-4 px-6">
