@@ -146,15 +146,19 @@ function getDateParts(theDate: Date): {
 }
 
 export const meetupLocationIsDisclosedYet = ({
-  locationDisclosureAt,
+  locationDisclosureAt, location: { locationIsHidden }
 }: MeetupItem): boolean => {
-  let locationIsDisclosed = true;
+  let isDisclosed = true;
+
+  if (locationIsHidden) {
+    return false;
+  }
 
   if (locationDisclosureAt) {
     const disclosedDate = new Date(locationDisclosureAt);
-    locationIsDisclosed = disclosedDate.getTime() < Date.now();
+    isDisclosed = disclosedDate.getTime() < Date.now();
   }
-  return locationIsDisclosed;
+  return isDisclosed;
 };
 
 export const getRsvpButtonLabel = ({ eventConfig }: MeetupItem): string => {
