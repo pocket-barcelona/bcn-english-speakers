@@ -104,16 +104,8 @@ export default function AttendModal({ onClose, onSignup }: AttendModalProps) {
           <EventDateTime event={event} />
         </div>
 
-        <FormStepper />
+        <FormStepper onFinish={onClose} />
 
-        {attendModalState.value.hasSubmitted && (
-          <div class="flex flex-col items-center justify-center gap-4 py-4 px-6 mb-4">
-            <p class="text-center text-gray-500">
-              You are now signed up for this event.
-            </p>
-            <Button onClick={onClose} text="Finish" variant="outline" />
-          </div>
-        )}
       </div>
       <ModalDrawer.Footer>
         <div class="flex flex-row items-center justify-center gap-4 py-4 px-6">

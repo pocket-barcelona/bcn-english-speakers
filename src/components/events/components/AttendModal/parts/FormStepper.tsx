@@ -11,21 +11,33 @@ import {
   getRSVPOptionsByCertainty,
 } from "../../../utils/utils";
 import { twMerge } from "tailwind-merge";
-import QRCode from '../../QRCode/QRCode';
+import QRCode from "../../QRCode/QRCode";
+import Button from "../../Button/Button";
 
-export default function FormStepper() {
+export type FormStepperProps = {
+  onFinish: () => void;
+};
+export default function FormStepper({ onFinish }: FormStepperProps) {
   const {
-    api: { siteUrl, currentEvent, group, attendModalState, setAttendModalState },
+    api: {
+      siteUrl,
+      currentEvent,
+      group,
+      attendModalState,
+      setAttendModalState,
+    },
   } = useAppStateContext();
 
   const event = currentEvent.value;
   const groupInfo = group.value.data;
-
+  
   if (!event || !groupInfo) {
     return null;
   }
-
+  
   const { meetupId, rsvpType, eventConfig } = event;
+  const hasStepThree = eventConfig.requiresQRCodeEntry === true;
+
   const responseOptions = getRSVPOptionsByCertainty(rsvpType);
 
   const handleRadioClick = (ev: Event) => {
@@ -44,15 +56,6 @@ export default function FormStepper() {
       },
       // currentStep: attendModalState.value.currentStep + 1,
     });
-
-    // attendModalState.value = {
-    //   ...attendModalState.value,
-    //   formData: {
-    //     ...attendModalState.value.formData,
-    //     isAttending: parsedValue,
-    //   },
-    //   // currentStep: attendModalState.value.currentStep + 1,
-    // };
   };
 
   const handleFieldChange = (ev: Event, fieldName: keyof GuestItem) => {
@@ -79,7 +82,6 @@ export default function FormStepper() {
   return (
     <div>
       <Step
-        // currentStep={currentStep}
         stepIndex={0}
         stepDisabled={attendModalState.value.hasSubmitted}
         stepTitle="Attendance"
@@ -244,12 +246,6 @@ export default function FormStepper() {
 
               {formData.guests.map((rsvp, index) => {
                 return (
-                  // <div class="flex flex-row gap-1" key={index}>
-                  //   <div>{rsvp.avatar}</div>
-                  //   <div>Name: {rsvp.name}</div>
-                  //   <div>Surname: {rsvp.lastname || '-'}</div>
-                  //   <div>Mobile: {rsvp.mobile || '-'}</div>
-                  // </div>
                   // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
                   <div class="col-span-full" key={index}>
                     <div class="mt-1 flex items-center gap-x-3">
@@ -290,42 +286,61 @@ export default function FormStepper() {
         </div>
       </Step>
 
-      <Step
-        stepIndex={2}
-        stepDisabled={!attendModalState.value.hasSubmitted}
-        stepTitle="Tickets"
-        stepDescription="Download your entrance tickets below"
-      >
-        {
-          attendModalState.value && (
-            <div
-              class={twMerge(
-                "space-y-6",
-                !attendModalState.value.hasSubmitted &&
-                  "opacity-50 pointer-events-none"
-              )}
-            >
-              {
-                attendModalState.value.hasSubmitted && (
-                  <>
-                    <h2 class="text-base">Present this QR code at the event:</h2>
-                    <QRCode url={siteUrl.value} />
-                  </>
-                )
-              }
-              {
-                !attendModalState.value.hasSubmitted && (
-                  <h2 class="text-base">Waiting...</h2>
-                )
-              }
-              
+      {attendModalState.value.hasSubmitted && (
+        <>
+          {
+            hasStepThree && (
+              <Step
+                stepIndex={2}
+                stepDisabled={!attendModalState.value.hasSubmitted}
+                stepTitle="Tickets"
+                stepDescription="Download your entrance tickets below."
+              >
+                {attendModalState.value && (
+                  <div
+                    class={twMerge(
+                      "space-y-6",
+                      !attendModalState.value.hasSubmitted &&
+                        "opacity-50 pointer-events-none"
+                    )}
+                  >
+                    {attendModalState.value.hasSubmitted && (
+                      <>
+                        <h2 class="text-base">
+                          Present this QR code at the event:
+                        </h2>
+                        <QRCode url={siteUrl.value} />
+                      </>
+                    )}
+                    {!attendModalState.value.hasSubmitted && (
+                      <h2 class="text-base">Waiting...</h2>
+                    )}
 
-              {/* @todo - add another QR code to this page so user can check their attendance
-              or view the address, if the event info has not revealed the address yet... */}
+                    {/* @todo - add another QR code to this page so user can check their attendance
+                  or view the address, if the event info has not revealed the address yet... */}
+                  </div>
+                )}
+              </Step>
+            )
+          }
+          <Step
+            stepIndex={hasStepThree ? 3 : 2}
+            stepDisabled={!attendModalState.value.hasSubmitted}
+            stepTitle="Finished"
+            stepDescription="You are now signed up for this event."
+          >
+            <div class="space-y-6">
+              <h2 class="text-base">Finished!</h2>
+              <p class="text-sm my-6 font-normal">The event organiser will be notified about your attendance.</p>
+              {attendModalState.value.hasSubmitted && (
+                <div class="flex flex-col items-center justify-center gap-4 py-4 px-6 mb-4">
+                  <Button onClick={onFinish} text="Finish" variant="outline" />
+                </div>
+              )}
             </div>
-          )
-        }
-      </Step>
+          </Step>
+        </>
+      )}
     </div>
   );
 }
