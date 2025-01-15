@@ -62,7 +62,7 @@ export default function EventItem({ item, group, viewEvent }: EventItemProps) {
             </p>
             <h2 class="my-1 mb-2 text-base md:text-lg tracking-tight">{item.title}</h2>
             <p class="tracking-tight text-xs md:text-sm my-1">Owner: <strong>{group?.groupName ?? ''}</strong></p>
-            <h3 class="tracking-tight text-xs md:text-sm my-1">Location 📍 {locationString}</h3>
+            {locationString && <h3 class="tracking-tight text-xs md:text-sm my-1">Location 📍 {locationString}</h3>}
           </div>
           <div class="basis-1/3 flex-shrink-0">
             {mainPhoto && (
