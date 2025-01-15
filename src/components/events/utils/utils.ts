@@ -59,12 +59,13 @@ export const getFeaturedMediaItem = (
 };
 
 export function getLocationInfo(event: MeetupItem): string {
-  const { location, locationDisclosureAt } = event;
-
-  // make sure can show location yet
-  if (locationDisclosureAt && locationDisclosureAt.getTime() < Date.now()) {
-    return "Location revealed closer to the time";
+  const isDisclosed = meetupLocationIsDisclosedYet(event);
+  if (!isDisclosed) {
+    return "";
   }
+
+  const { location } = event;
+
   const fullLocation = [
     location.address1,
     location.address2,
@@ -80,7 +81,7 @@ export function getLocationInfo(event: MeetupItem): string {
     case 3:
       return location.town;
     case 4:
-      return "Location hidden";
+      return "Location hidden"; // is this right?
     default:
       return "Location unknown";
   }
