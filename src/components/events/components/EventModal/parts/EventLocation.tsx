@@ -52,7 +52,7 @@ export default function EventLocation({ event }: EventLocationProps) {
       {locationDisclosed && (
         <>
           <h2 class="text-base tracking-tight">
-            Some fancy location name here
+            {location.locationName}
           </h2>
           <p class="text-base tracking-tight">{locationString}</p>
           {location.locationPrecision !== 1 && (
