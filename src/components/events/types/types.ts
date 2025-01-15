@@ -56,6 +56,7 @@ export interface MeetupRsvpModel {
   mobile: string;
   /** Personal message from the guest, if provided */
   comment: string;
+  isMainGuest: boolean;
 }
 
 

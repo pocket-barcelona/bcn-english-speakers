@@ -107,6 +107,7 @@ function createAppState(appState: AppState) {
         
       })
       .catch((resp: MeetupService.SubmitRsvpPayloadResponse) => {
+        console.log(resp);
         // INCORRECT
         // setTimeout(() => {
         // }, 500);
