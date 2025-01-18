@@ -102,6 +102,7 @@ export default function EventModal({ onClose }: EventModalProps) {
       isOpen={modalState.value.openId === "EVENTS"}
       onClose={onClose}
       maxHeightMobile={100}
+      modalSize='large'
     >
       <div class="flex flex-col justify-center gap-2 mb-2">
         <HeroImage image={eventImage} class="aspect-video rounded-md" />
