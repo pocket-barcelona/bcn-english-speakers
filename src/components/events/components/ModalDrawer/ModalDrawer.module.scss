@@ -1,5 +1,5 @@
 $animationDurationSecs: 0.5s;
-$backDropBackground: rgba(23, 23, 26, 0.5);
+$backDropBackground: rgba(23, 23, 26, 0.6);
 $backDropBackgroundAlmostOpaque: rgba(23, 23, 26, 0.9);
 $dialogHeights: 25, 33, 50, 66, 75, 87, 100;
 
@@ -73,7 +73,6 @@ $dialogHeights: 25, 33, 50, 66, 75, 87, 100;
 
 // presented as a modal
 .modal {
-  width: min(680px, 100vw);
   max-width: none;
   max-height: none;
   height: clamp(80vh, 60vh, 600px); // Safari needs a height
@@ -82,6 +81,16 @@ $dialogHeights: 25, 33, 50, 66, 75, 87, 100;
   border-radius: 1rem 1rem 0 0;
   background: #fff;
   padding: 0;
+
+  &.small {
+    width: min(480px, 100vw);
+  }
+  &.medium {
+    width: min(680px, 100vw);
+  }
+  &.large {
+    width: min(900px, 100vw);
+  }
 
   &[open] {
     animation: showModal $animationDurationSecs ease normal;
@@ -207,9 +216,18 @@ $dialogHeights: 25, 33, 50, 66, 75, 87, 100;
     margin-left: auto;
     max-height: 100vh;
     height: 100vh;
-    width: 520px;
     border-radius: 16px 0 0 16px;
     padding: 0;
+
+    &.small {
+      width: 420px;
+    }
+    &.medium {
+      width: 520px;
+    }
+    &.large {
+      width: 620px;
+    }
   }
   .modal {
     // @todo

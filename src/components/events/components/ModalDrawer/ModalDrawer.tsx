@@ -20,6 +20,8 @@ export type ModalDrawerProps = {
   onClose?: () => void;
   preventClose?: boolean;
   presentationMode?: 'modal' | 'drawer';
+  modalSize?: 'small' | 'medium' | 'large';
+  class?: string;
 };
 
 export default function ModalDrawer({
@@ -30,6 +32,8 @@ export default function ModalDrawer({
   maxHeightMobile = 75,
   preventClose = false,
   presentationMode = 'drawer',
+  class: className,
+  modalSize = 'medium',
   onClose = () => {},
 }: ModalDrawerProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -97,7 +101,12 @@ export default function ModalDrawer({
       class={cn(
         presentationMode === 'drawer' ? styles.drawer : styles.modal,
         { [styles.isClosing]: isClosing },
-        styles[`h${maxHeightMobile}`])}
+        styles[`h${maxHeightMobile}`],
+        modalSize === 'small' && styles.small,
+        modalSize === 'medium' && styles.medium,
+        modalSize === 'large' && styles.large,
+        className
+      )}
     >
       {(isOpen || isClosing) && (
         //  max-h-[calc(100vh-2rem)]
