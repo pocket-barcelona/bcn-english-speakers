@@ -1,0 +1,82 @@
+---
+import Layout from "../../layouts/layout.astro";
+import Container from "../../components/page-container.astro";
+import Sectionhead from "../../components/section-head.astro";
+import GroupItem from "../../components/elements/group-item.astro";
+import Avatar from "../../components/avatar.astro";
+
+const writers: {
+	id: string;
+	name: string;
+	avatar?: string;
+	bio: string;
+}[] = [
+	{
+		id: "darryl",
+		name: "Darryl",
+		// avatar: 'e739e934-a814-4cb9-831b-4411d1b86592',
+		bio: "Darryl moved to Barcelona in early 2016 and has extensive experience in living in Barcelona as a foreigner, the bar & restaurant scene and travel - particularly the Costa Brava.",
+	},
+	{
+		id: "owen",
+		name: "Owen",
+		avatar: "830d67aa-2e4c-4240-90b4-9847bc005187",
+		bio: "Owen moved to Barcelona in early 20XX and has many a tale to tell about central Barcelona living. He is also the creator of the BCN English Speakers community WhatsApp group.",
+	},
+	{
+		id: "brata",
+		name: "Brata",
+		// avatar: '830d67aa-2e4c-4240-90b4-9847bc005187',
+		bio: "Brata moved to Barcelona in early 2016 and has a taste for Guinness. In his spare time he drinks beers on the beach during the day, while everyone else is working.",
+	},
+	{
+		id: "tasha",
+		name: "Tasha",
+		bio: "Tasha moved to Barcelona in early 20XX and has extensive experience in X. She has specialist knowledge in X. She is also our post proofreader and copywriter.",
+	},
+];
+---
+
+<Layout title={"Pocket Barcelona - Writers"}>
+  <main>
+    <Container class:list={"!max-w-3xl"}>
+      <Sectionhead>
+        <Fragment slot="title">Expert Writers &amp; Editors</Fragment>
+        <Fragment slot="desc">
+          The <strong>Pocket Barcelona</strong> team works hard to create current, useful and informational articles for people living in, or visiting Barcelona. They do this in their spare time and rely solely on personal experiences.
+        </Fragment>
+      </Sectionhead>
+      <div class="my-12 md:my-182 lg:my-24">
+        <h2 class="text-2xl md:text-4xl font-bold tracking-tight lg:text-center">
+          Pocket Barcelona Writers
+        </h2>
+
+        <div class="grid md:grid-cols-2 max-w-2xl gap-4 mx-auto my-6 mb-16">
+          {
+            writers.map((person) => {
+              // gradient borders: https://dev.to/tailus/how-to-create-gradient-borders-with-tailwindcss-4gk2
+              return (
+                <article id={`writer-${person.id.toLowerCase()}`} class="md:aspect-square rounded-3xl p-px bg-gradient-to-b from-cyan-300 to-cyan-100 shadow-md">
+                  <div class="bg-slate-50 p-4 rounded-[calc(1.5rem-1px)]">
+                    <div class=" flex flex-col gap-2 justify-center items-center p-4">
+                      <div class="flex justify-center mt-4">
+                        <Avatar authorId={person.id} authorName={person.name} authorAvatar={person.avatar} size='medium'></Avatar>
+                      </div>
+                      <h2 class="text-center text-xl text-slate-900 tracking-tight font-semibold my-2">{person.name}</h2>
+                      <p class="my-2 text-sm text-center px-4 text-slate-700">{person.bio}</p>
+                    </div>
+                  </div>
+                </article>
+              )
+            })
+          }
+        </div>
+        
+        <h3 class="my-6 text-xl md:text-3xl font-bold tracking-tight lg:text-center">Join the Pocket Barcelona team!</h3>
+        <p class="my-6 text-xl">
+          We are always on the lookout for people to join the team - please drop us a message on the <a class="text-blue-700" href="/community">WhatsApp community</a> for collaboration opportunities.
+        </p>
+      </div>
+    </Container>
+  </main>
+</Layout>
