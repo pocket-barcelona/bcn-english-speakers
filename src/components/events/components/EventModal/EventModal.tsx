@@ -9,8 +9,10 @@ import EventHosts from "./parts/EventHosts";
 import EventLocation from "./parts/EventLocation";
 import EventHeading from "./parts/EventHeading";
 import EventRegistration from "./parts/EventRegistration";
-import { MeetupRsvpAttendanceStatusEnum } from '../../types/types';
+import type { MeetupRsvpAttendanceStatusEnum } from '../../types/types';
 import EventGuests from './parts/EventGuests';
+import FormStepper from '../AttendModal/parts/FormStepper';
+import Notification from '../Notification/Notification';
 
 type EventModalProps = {
   onClose: () => void;
@@ -79,7 +81,7 @@ export default function EventModal({ onClose }: EventModalProps) {
       isOpen: true,
       formData: {
         guests: [],
-        isAttending: MeetupRsvpAttendanceStatusEnum.Cannot,
+        isAttending: 0 as MeetupRsvpAttendanceStatusEnum,
       },
       currentStep: 0,
       hasSubmitted: false,
@@ -101,7 +103,7 @@ export default function EventModal({ onClose }: EventModalProps) {
       title="View event"
       isOpen={modalState.value.openId === "EVENTS"}
       onClose={onClose}
-      maxHeightMobile={100}
+      maxHeightMobile={87}
       modalSize='large'
     >
       <div class="flex flex-col justify-center gap-2 mb-2">
@@ -120,7 +122,7 @@ export default function EventModal({ onClose }: EventModalProps) {
           <p class="text-sm flex items-center gap-2">
             <RiAccountCircleFill width={24} height={24} />{" "}
             <span>
-              Hosted by: <strong>{groupInfo.groupName}</strong>
+              Organised by: <strong>{groupInfo.groupName}</strong>
             </span>
           </p>
         </div>
@@ -132,7 +134,13 @@ export default function EventModal({ onClose }: EventModalProps) {
         <div class="my-4">
           <EventDateTime event={event} />
         </div>
+        <EventRegistration event={event} />
         <hr />
+        <EventHeading label="Location" />
+        <EventLocation event={event} />
+        <hr />
+
+        
         <EventHeading label="About the event" />
         <p
           class="prose tracking-tight"
@@ -141,12 +149,6 @@ export default function EventModal({ onClose }: EventModalProps) {
             __html: description,
           }}
         />
-        <hr />
-
-        <EventHeading label="Location" />
-        <EventLocation event={event} />
-        <hr />
-        <EventRegistration event={event} />
         <hr />
 
         <EventHosts event={event} group={group.value.data} />
@@ -181,15 +183,18 @@ export default function EventModal({ onClose }: EventModalProps) {
             Event Short URL
           </a>
         </div>
+
+        <FormStepper onFinish={onClose} />
+        <Notification message='Help me!' />
       </div>
       <ModalDrawer.Footer>
         <div class="flex flex-row items-center justify-center gap-4 py-4 px-6">
-          <Button
+          {/* <Button
             onClick={onClose}
-            text="CANCEL"
+            text="CLOSE"
             variant="tertiary"
             classes="flex-shrink-0 flex-grow basis-1/2"
-          />
+          /> */}
           <Button
             onClick={handleRSVP}
             text={rsvpButtonLabel}
