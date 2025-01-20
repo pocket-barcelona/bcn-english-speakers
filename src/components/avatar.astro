@@ -13,6 +13,7 @@ interface Props {
   authorName: string;
 	authorId: string;
 	authorAvatar?: string;
+  size?: 'small' | 'medium';
 }
 const getAuthorAvatar = (avatarId: string): ImageMetadata => {
   return {
@@ -23,7 +24,7 @@ const getAuthorAvatar = (avatarId: string): ImageMetadata => {
   };
 }
 
-const { authorId, authorName, authorAvatar } = Astro.props;
+const { authorId, authorName, authorAvatar, size = 'small' } = Astro.props;
 
 // Decide which avatar to show:
 // Markdown data is like this:
@@ -54,20 +55,30 @@ if (authorAvatar) {
 // @todo - might be a better way to do this...?
 const isDirectusImage = src.src.substring(0, 5).toLowerCase() === 'https';
 
+const sizeClasses = {
+  'small': 'w-[40px] h-[40px]',
+  'medium': 'w-[80px] h-[80px]'
+}
 ---
 
 {
   isDirectusImage ? (
-    <img src={src.src} width={src.width} height={src.height} class="w-[40px] h-[40px] rounded-full object-cover" />
+    <img src={src.src} width={src.width} height={src.height} class:list={[
+      "rounded-full object-cover",
+      sizeClasses[size]
+    ]} />
   ) : (
   <Image
     src={src}
     alt={authorName}
     sizes="80"
-    class:list={"w-[40px] h-[40px] rounded-full object-cover"}
+    class:list={[
+      "rounded-full object-cover",
+      sizeClasses[size]
+    ]}
     widths={[80]}
-    width={40}
-    height={80}
+    width={size === 'medium' ? 80 : 40}
+    height={size === 'medium' ? 80 : 40}
     quality={"mid"}
     loading={"lazy"}
     format="avif"
