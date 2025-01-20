@@ -8,3 +8,9 @@
 4. ✅ Submit actual RSVP
 5. Handle bad RSVP submission cases - full, waiting list, ticket type not available? Bad event data - name, last name?
 6. Event data - redact hosts array, promo codes, rsvps list
+7. Endpoint for publishing events - Postman
+8. Store events user has already signed up for
+9. Add email to form inputs on signup
+10. Make compulsory fields appear with asterisk, based on event config
+11. Handle backend 400 errors on signup - show notification
+12. 

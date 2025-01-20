@@ -75,7 +75,7 @@ export default function AttendModal({ onClose, onSignup }: AttendModalProps) {
     >
       <div class="flex flex-col justify-center gap-2 mb-2">
         <h2 class="mt-4 text-3xl font-semibold tracking-tight">{title}</h2>
-        <div class="flex flex-col">
+        {/* <div class="flex flex-col">
           <div
             // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
             dangerouslySetInnerHTML={{
@@ -103,7 +103,7 @@ export default function AttendModal({ onClose, onSignup }: AttendModalProps) {
         <div class="border-b border-gray-900/10 pb-6 mt-6">
           <h2 class="text-xl/7 font-semibold text-gray-900 mb-4">Date/time</h2>
           <EventDateTime event={event} />
-        </div>
+        </div> */}
 
         <FormStepper onFinish={onClose} />
 
