@@ -26,7 +26,7 @@ export default function EventRegistration({ event }: EventRegistrationProps) {
 
   return (
     <div class="my-2 rounded-md overflow-hidden border border-slate-100">
-      <h3 class="bg-slate-100 m-0 p-1 px-4">Registration</h3>
+      <h3 class="bg-slate-100 m-0 p-1 px-4">Event Details</h3>
       <div class="p-4 flex flex-col gap-2">
         <div class="flex flex-row items-center gap-2">
           <span class="text-sm">Price:</span>
