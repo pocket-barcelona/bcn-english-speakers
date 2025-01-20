@@ -1,5 +1,5 @@
 import { API_CALL_REFRESH_PERIOD, type GuestItem } from '../services/meetup.service';
-import { MeetupRsvpAttendanceStatusEnum, type MeetupGroupItem, type MeetupItem, type ScreensType } from '../types/types';
+import type { MeetupRsvpAttendanceStatusEnum, MeetupGroupItem, MeetupItem, ScreensType } from '../types/types';
 import type { UserSession } from '../types/user-session.type';
 
 export const initialState: AppState = {
@@ -21,7 +21,7 @@ export const initialState: AppState = {
     isOpen: false,
     formData: {
       guests: [],
-      isAttending: MeetupRsvpAttendanceStatusEnum.Cannot,
+      isAttending: 0 as MeetupRsvpAttendanceStatusEnum,
     },
     currentStep: 0,
     isLoading: false,
