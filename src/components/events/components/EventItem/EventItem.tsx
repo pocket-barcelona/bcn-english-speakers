@@ -51,7 +51,7 @@ export default function EventItem({ item, group, viewEvent }: EventItemProps) {
   return (
     <button onClick={viewEvent} type="button" class={cn(
       "text-left border hover:bg-cyan-100 hover:border-cyan-300 hover:shadow-lg",
-      "p-4 my-6 rounded-lg bg-cyan-50 border border-cyan-200 text-sm md:text-base"
+      "p-4 rounded-lg bg-cyan-50 border border-cyan-200 text-sm md:text-base"
     )}>
       <article>
         <div class="flex flex-row justify-between gap-2">

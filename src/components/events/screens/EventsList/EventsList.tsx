@@ -39,14 +39,16 @@ export default function EventsList({
     <div class="py-6 px-4 mt-4">
       <h2 class="text-3xl font-bold">Events</h2>
 
-      {meetups.map((item) => (
-        <EventItem
-          item={item}
-          key={item.meetupId}
-          group={group}
-          viewEvent={() => viewEvent(item)}
-        />
-      ))}
+      <div class="flex flex-col gap-4 my-4">
+        {meetups.map((item) => (
+          <EventItem
+            item={item}
+            key={item.meetupId}
+            group={group}
+            viewEvent={() => viewEvent(item)}
+          />
+        ))}
+      </div>
       <EventModal onClose={handleCloseModals} />
       <AttendModal
         onClose={handleCloseAttendModal}
