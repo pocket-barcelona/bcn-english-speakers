@@ -20,11 +20,11 @@ export default defineConfig({
   // adapter: node({
   //   mode: "standalone"
   // }),
-  // image: {
-  //   domains: [
-  //     "https://content.pocketbarcelona.com"
-  //   ],
-  // },
+  image: {
+    domains: [
+      "https://content.pocketbarcelona.com"
+    ],
+  },
   markdown: {
     remarkPlugins: [[remarkToc, {
       heading: "contents"
