@@ -81,7 +81,7 @@ export default function FormStepper({ onFinish }: FormStepperProps) {
 
   return (
     <div>
-      <Step
+      {/* <Step
         stepIndex={0}
         stepDisabled={attendModalState.value.hasSubmitted}
         stepTitle="Attendance"
@@ -112,17 +112,45 @@ export default function FormStepper({ onFinish }: FormStepperProps) {
             );
           })}
         </div>
-      </Step>
+      </Step> */}
 
       <Step
-        stepIndex={1}
-        stepDisabled={attendModalState.value.hasSubmitted}
-        stepTitle="Personal Information"
+        stepIndex={0}
+        stepDisabled={!attendModalState.value.formData.isAttending || attendModalState.value.hasSubmitted}
+        stepTitle="Your information"
         stepDescription="Please tell us who you are."
       >
         <div class="space-y-6">
           <h2 class="text-base">Person 1 (Main)</h2>
           <div class="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+            {/* Avatar */}
+            <div class="sm:col-span-3">
+              <label
+                for="avatar"
+                class="block text-sm/6 font-medium text-gray-900"
+              >
+                Choose your avatar
+              </label>
+              <div class="mt-2">
+                <select
+                  name="rsvpAvatar"
+                  id="rsvpAvatar"
+                  onChange={(e) => handleFieldChange(e, "avatar")}
+                  value={formData.guests[0]?.avatar}
+                  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm/6"
+                >
+                  <option value="">- choose -</option>
+                  {avatarsList.map((emoji, key) => {
+                    return (
+                      <option key={emoji} value={emoji}>
+                        {emoji}
+                      </option>
+                    );
+                  })}
+                </select>
+              </div>
+            </div>
+
             {/* First name */}
             <div class="sm:col-span-3">
               <label
@@ -188,33 +216,7 @@ export default function FormStepper({ onFinish }: FormStepperProps) {
               </div>
             </div>
 
-            {/* Avatar */}
-            <div class="sm:col-span-3">
-              <label
-                for="avatar"
-                class="block text-sm/6 font-medium text-gray-900"
-              >
-                Avatar (optional)
-              </label>
-              <div class="mt-2">
-                <select
-                  name="rsvpAvatar"
-                  id="rsvpAvatar"
-                  onChange={(e) => handleFieldChange(e, "avatar")}
-                  value={formData.guests[0]?.avatar}
-                  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm/6"
-                >
-                  <option value="">- choose -</option>
-                  {avatarsList.map((emoji, key) => {
-                    return (
-                      <option key={emoji} value={emoji}>
-                        {emoji}
-                      </option>
-                    );
-                  })}
-                </select>
-              </div>
-            </div>
+            
 
             <div class="col-span-full">
               <label
@@ -291,7 +293,7 @@ export default function FormStepper({ onFinish }: FormStepperProps) {
           {
             hasStepThree && (
               <Step
-                stepIndex={2}
+                stepIndex={1}
                 stepDisabled={!attendModalState.value.hasSubmitted}
                 stepTitle="Tickets"
                 stepDescription="Download your entrance tickets below."
@@ -324,7 +326,7 @@ export default function FormStepper({ onFinish }: FormStepperProps) {
             )
           }
           <Step
-            stepIndex={hasStepThree ? 3 : 2}
+            stepIndex={hasStepThree ? 2 : 1}
             stepDisabled={!attendModalState.value.hasSubmitted}
             stepTitle="Finished"
             stepDescription="You are now signed up for this event."
