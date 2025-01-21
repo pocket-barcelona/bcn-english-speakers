@@ -9,9 +9,24 @@ const { post } = Astro.props;
 ---
 
 {
-  post.data.relatedPost ? (
-  <div class="mx-auto max-w-3xl py-8 mt-8 lg:mt-16 border-t">
-    <p><a class="font-bold text-blue-800 text-xl" href={`/blog${post.data.relatedPost}`}>View the related post</a>.</p>
-  </div>
+  post.data.nextPost || post.data.prevPost ? (
+    <div class="mx-auto max-w-3xl py-8 px-4 my-6 mb-0 rounded-md bg-slate-100 border-slate-200">
+      <div class="mx-auto max-w-xl">
+        <p class="text-base font-bold mb-4 text-center">This post is part of a series.</p>
+        <div class="flex justify-between">
+          <div>{post.data.prevPost ? (<a class="text-blue-700 font-bold" href={`/blog${post.data.prevPost}`}>&lsaquo; Prev Post</a>) : undefined}</div>
+          <div>{post.data.nextPost ? (<a class="text-blue-700 font-bold" href={`/blog${post.data.nextPost}`}>Next Post &rsaquo;</a>) : undefined}</div>
+        </div>
+
+        {
+          post.data.relatedPost ? (
+
+            <div class="mx-auto mt-8">
+              <p class="text-center"><a class="font-bold text-blue-700 text-xl" href={`/blog${post.data.relatedPost}`}>View the main post</a></p>
+            </div>
+          ) : undefined
+        }
+      </div>
+    </div>
   ) : undefined
 }
