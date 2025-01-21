@@ -21,8 +21,10 @@ const blogCollection = defineCollection({
     authorAvatar: z.string().default("../assets/authors/pb.jpg").optional(),
     category: z.string(),
     tags: z.array(z.string()),
-    relatedPost: z.string().optional(),
-    /** Hide post from the main lists, but will still appear as a direct link, like: /blog/my-post */
+    relatedPost: z.string().optional(), // for series posts
+    nextPost: z.string().optional(), // for series posts
+    prevPost: z.string().optional(), // for series posts
+    /** For series posts. Hide post from the main blog list, but will still appear as a direct link, like: /blog/my-post */
     hidePost: z.boolean().optional(),
   }),
 });
