@@ -9,16 +9,18 @@ import PostHeader from '../../../components/post-header.astro';
 import PostBody from '../../../components/post-body.astro';
 import PostCta from '../../../components/post-cta.astro';
 import '../styles.scss';
+import "../styles.scss";
+
 
 export async function getStaticPaths() {
-	const mergedPosts = await getMergedPosts(true);
-	return mergedPosts.map((post) => ({
+  const mergedPosts = await getMergedPosts(true);
+	return (mergedPosts ?? []).map((post) => ({
 		params: { slug: post.slug },
 		props: post,
 	}));
 }
 
-type Props = CollectionEntry<'blog'>;
+type Props = CollectionEntry<"blog">;
 
 const post = Astro.props;
 
@@ -52,8 +54,37 @@ const seo: LayoutProps['seo'] = {
     }
   },
 }
+const getRelatedNetPrevPosts = (
+	postData: Props,
+	allPosts: Props[],
+): {
+	next: Props | undefined;
+	prev: Props | undefined;
+  related: Props | undefined;
+} => {
+	let next = undefined;
+  let prev = undefined;
+	let related = undefined;
 
+	if (postData.data.nextPost) {
+		next = allPosts.find((p) => p.slug === postData.data.nextPost);
+	}
+	if (postData.data.prevPost) {
+		prev = allPosts.find((_p) => _p.slug === postData.data.prevPost);
+	}
+  if (postData.data.relatedPost) {
+		related = allPosts.find((_p) => _p.slug === postData.data.relatedPost);
+	}
+	return {
+		next,
+		prev,
+    related
+	};
+};
 
+// get related/next/prev post
+const mergedPosts = await getMergedPosts(true);
+const { next, prev, related } = getRelatedNetPrevPosts(post, mergedPosts);
 // @todo - add reading time to posts?
 // https://docs.astro.build/en/guides/content-collections/#modifying-frontmatter-with-remark
 // const { Content, remarkPluginFrontmatter } = await post.render();
@@ -65,7 +96,7 @@ const seo: LayoutProps['seo'] = {
     <article>
       <PostHeader post={post} />
       <PostBody post={post} />
-      <PostRelatedPost post={post} />
+      <PostRelatedPost post={post} next={next} prev={prev} related={related} />
       <PostFooter post={post} />
     </article>
     <PostCta></PostCta>
