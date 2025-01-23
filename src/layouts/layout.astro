@@ -3,23 +3,24 @@ import { SEO } from "astro-seo";
 import Footer from "../components/page-footer.astro";
 import Navbar from "../components/nav-bar/navbar.astro";
 import "@fontsource-variable/inter/index.css";
-import { ViewTransitions } from 'astro:transitions';
+import { ViewTransitions } from "astro:transitions";
+import Analytics from './analytics.astro';
 export interface Props {
-  title: string;
+	title: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
 const resolvedImageWithDomain = new URL(
-  "/opengraph.jpg",
-  Astro.site
+	"/opengraph.jpg",
+	Astro.site,
 ).toString();
 
 const { title } = Astro.props;
 
 const makeTitle = title
-  ? `${title} | Barcelona Experts`
-  : "Barcelona Experts - Experience Barcelona like a local";
+	? `${title} | Barcelona Experts`
+	: "Barcelona Experts - Experience Barcelona like a local";
 ---
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth scroll-pt-[60px] md:scroll-pt-[72px]">
@@ -31,6 +32,10 @@ const makeTitle = title
     <!-- <ImageSupportDetection /> -->
 
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css"
+    />
     <SEO
       title={makeTitle}
       description="Pocket Barcelona - run by real people who live in Barcelona. We also have a very active chat group on Whatsapp which is free to join!"
@@ -49,7 +54,10 @@ const makeTitle = title
     />
     <ViewTransitions fallback="swap" />
   </head>
+  <Analytics />
+  
   <body class="pt-[60px] lg:pt-[72px]">
+    <script is:inline type="module" src="/src/scripts/cookieconsent-config.js"></script>
     <Navbar />
     <main>
       <slot />

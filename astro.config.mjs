@@ -10,11 +10,21 @@ import { rehypeHeadingIds } from "@astrojs/markdown-remark";
 import { h, s } from 'hastscript';
 import alpinejs from "@astrojs/alpinejs";
 import preact from "@astrojs/preact";
+import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.pocketbarcelona.com",
-  integrations: [mdx(), sitemap(), tailwind(), alpinejs(), preact()],
+  integrations: [
+    mdx(),
+    sitemap(),
+    tailwind(),
+    alpinejs(),
+    preact(),
+    partytown({
+      config: { forward: ["dataLayer.push"] }
+    })
+  ],
   output: "static",
   // https://docs.astro.build/en/guides/server-side-rendering/
   // adapter: node({
