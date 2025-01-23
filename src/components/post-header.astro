@@ -12,7 +12,11 @@ const { post } = Astro.props;
 ---
 
 <div class="mx-auto max-w-3xl mt-8 lg:mt-16">
-  <a href="/blog" class="mb-4 tracking-tight block underline font-semibold">&laquo; Back to Blog</a>
+  <a
+    href="/blog"
+    class="bg-gray-100 px-5 py-3 mb-4 rounded-md inline-block hover:bg-gray-200 transition"
+    >← Back to Blog</a
+  >
   <div class="justify-between flex flex-row items-center mb-4">
     <PostCategoryTag category={post.data.category} size='small'></PostCategoryTag>
     <div class="flex gap-1 my-2 items-center justify-end flex-wrap md:flex-nowrap">
