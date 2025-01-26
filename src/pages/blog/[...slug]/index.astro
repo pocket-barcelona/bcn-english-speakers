@@ -25,19 +25,19 @@ const resolvedImageWithDomain = new URL(
 	"/og.jpg",
 	Astro.site,
 ).toString();
-
+const image = typeof post.data.cover === 'object' ? new URL(post.data.cover.src, Astro.site).toString() : typeof post.data.cover === 'string' ? post.data.cover : '';
 const seo: LayoutProps['seo'] = {
   openGraph: {
     basic: {
-      image: post.data.cover.src ? new URL(post.data.cover.src, Astro.site).toString() : resolvedImageWithDomain,
+      image: image || resolvedImageWithDomain,
       title: post.data.title,
       type: 'article',
       url: new URL(`/blog/${post.slug}`, Astro.site).toString(),
     },
     image: {
-      url: post.data.cover.src ? new URL(post.data.cover.src, Astro.site).toString() : resolvedImageWithDomain,
+      url: image || resolvedImageWithDomain,
       alt: post.data.coverAlt ?? post.data.title,
-      secureUrl: post.data.cover.src ? new URL(post.data.cover.src, Astro.site).toString() : resolvedImageWithDomain,
+      secureUrl: image || resolvedImageWithDomain,
       type: 'image/jpeg',
       width: post.data.cover.width,
       height: post.data.cover.height,

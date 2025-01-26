@@ -45,8 +45,7 @@ async function getTransformedHeadlessPosts(): Promise<CollectionEntry<'blog'>[]>
       sort: ["-published_date"],
     })
   );
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  return transformHeadlessPosts(posts as any);
+  return transformHeadlessPosts(posts);
 }
 
 /** Transform REST response to Astro Collection */
