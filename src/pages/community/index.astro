@@ -1,5 +1,5 @@
 ---
-import Layout from "../../layouts/layout.astro";
+import Layout, { type Props as LayoutProps } from "../../layouts/layout.astro";
 import Container from "../../components/page-container.astro";
 import Sectionhead from "../../components/section-head.astro";
 import Images from "./images.astro";
@@ -7,9 +7,25 @@ import { getGroups } from "../../services/group.service";
 import GroupItem from "../../components/elements/group-item.astro";
 
 const groups = await getGroups();
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+const resolvedImageWithDomain = new URL(
+	"/og.jpg",
+	Astro.site,
+).toString();
+
+const seo: LayoutProps['seo'] = {
+  openGraph: {
+    basic: {
+      image: resolvedImageWithDomain,
+      title: 'Pocket Barcelona - Community',
+      type: 'website',
+      url: canonicalURL,
+    },
+  },
+}
 ---
 
-<Layout title={"Barcelona English Speakers Community"}>
+<Layout title={"Barcelona English Speakers Community"} seo={seo}>
   <main>
     <Container class:list={"!max-w-5xl"}>
       <Sectionhead>

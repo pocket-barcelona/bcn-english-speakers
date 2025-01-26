@@ -1,5 +1,5 @@
 ---
-import { SEO } from "astro-seo";
+import { SEO, type Props as SEOProps } from "astro-seo";
 import Footer from "../components/page-footer.astro";
 import Navbar from "../components/nav-bar/navbar.astro";
 import "@fontsource-variable/inter/index.css";
@@ -7,16 +7,17 @@ import { ViewTransitions } from "astro:transitions";
 import Analytics from './analytics.astro';
 export interface Props {
 	title: string;
+  seo?: SEOProps;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
 const resolvedImageWithDomain = new URL(
-	"/opengraph.jpg",
+	"/og.jpg",
 	Astro.site,
 ).toString();
 
-const { title } = Astro.props;
+const { title, seo } = Astro.props;
 
 const makeTitle = title
 	? `${title} | Barcelona Experts`
@@ -38,6 +39,7 @@ const makeTitle = title
       href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css"
     />
     <SEO
+      {...seo}
       title={makeTitle}
       description="Pocket Barcelona - run by real people who live in Barcelona. We also have a very active chat group on Whatsapp which is free to join!"
       canonical={canonicalURL}
@@ -47,8 +49,10 @@ const makeTitle = title
           type: "website",
           title: `Pocket Barcelona - a website run by real Barcelona based experts`,
           image: resolvedImageWithDomain,
+          ...seo?.openGraph?.basic ?? {},
         },
         image: {
+          ...seo?.openGraph?.image ?? {},
           alt: "Barcelona Experts",
         },
       }}

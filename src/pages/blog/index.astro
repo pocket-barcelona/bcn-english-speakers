@@ -1,5 +1,5 @@
 ---
-import Layout from "../../layouts/layout.astro";
+import Layout, { type Props as LayoutProps } from "../../layouts/layout.astro";
 import Container from "../../components/page-container.astro";
 import Sectionhead from "../../components/section-head.astro";
 import PostItem from '../../components/elements/post-item.astro';
@@ -9,8 +9,23 @@ import PostList from '../../components/elements/post-list.astro';
 // Using getImage() https://youtu.be/VsZ6feIU_bA?si=nyV2t1GsGbdaQh4t&t=760
 const posts = await getMergedPosts();
 
+const resolvedImageWithDomain = new URL(
+	"/og.jpg",
+	Astro.site,
+).toString();
+const seo: LayoutProps['seo'] = {
+  openGraph: {
+    basic: {
+      image: resolvedImageWithDomain,
+      title: 'Pocket Barcelona - Blog',
+      type: 'website',
+      url: new URL("/blog", Astro.site).toString(),
+    },
+  },
+}
+
 ---
-<Layout title={"Expert Articles"}>
+<Layout title={"Expert Articles"} seo={seo}>
   <Container>
     <Sectionhead>
       <Fragment slot="title">Articles by locals</Fragment>

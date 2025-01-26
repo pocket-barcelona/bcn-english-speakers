@@ -14,7 +14,7 @@ import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://www.pocketbarcelona.com",
+  site: "https://pocketbarcelona.com",
   integrations: [
     mdx(),
     sitemap(),

@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import Layout from '../../../layouts/layout.astro';
+import Layout, { type Props as LayoutProps } from '../../../layouts/layout.astro';
 import Container from '../../../components/page-container.astro';
 import { getMergedPosts } from '../../../services/post.service';
 import PostFooter from '../../../components/post-footer.astro';
@@ -21,6 +21,36 @@ type Props = CollectionEntry<'blog'>;
 
 const post = Astro.props;
 
+const resolvedImageWithDomain = new URL(
+	"/og.jpg",
+	Astro.site,
+).toString();
+
+const seo: LayoutProps['seo'] = {
+  openGraph: {
+    basic: {
+      image: post.data.cover.src ? new URL(post.data.cover.src, Astro.site).toString() : resolvedImageWithDomain,
+      title: post.data.title,
+      type: 'article',
+      url: new URL(`/blog/${post.slug}`, Astro.site).toString(),
+    },
+    image: {
+      url: post.data.cover.src ? new URL(post.data.cover.src, Astro.site).toString() : resolvedImageWithDomain,
+      alt: post.data.coverAlt ?? post.data.title,
+      secureUrl: post.data.cover.src ? new URL(post.data.cover.src, Astro.site).toString() : resolvedImageWithDomain,
+      type: 'image/jpeg',
+      width: post.data.cover.width,
+      height: post.data.cover.height,
+    },
+    article: {
+      publishedTime: post.data.publishDate.toISOString(),
+      authors: [ post.data.author ],
+      modifiedTime: post.data.updatedDate ? new Date(post.data.updatedDate).toISOString() : undefined,
+      tags: [...post.data.tags],
+      section: 'Travel'
+    }
+  },
+}
 
 // @todo - add reading time to posts?
 // https://docs.astro.build/en/guides/content-collections/#modifying-frontmatter-with-remark
@@ -28,7 +58,7 @@ const post = Astro.props;
 // remarkPluginFrontmatter.readingTime
 ---
 
-<Layout title={post.data.title}>
+<Layout title={post.data.title} seo={seo}>
   <Container>
     <article>
       <PostHeader post={post} />
