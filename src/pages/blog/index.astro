@@ -35,14 +35,12 @@ const seo: LayoutProps['seo'] = {
       </Fragment>
     </Sectionhead>
 
-    <main class="mt-12 lg:mt-16">
-      <div class="max-w-5xl mx-auto">
-        <PostList>
-          {
-            posts.map((post, index) => <PostItem post={post} index={index} />)
-          }  
-        </PostList>
-      </div>
-    </main>
+    <div class="max-w-5xl mx-auto">
+      <PostList>
+        {
+          posts.map((post, index) => <PostItem post={post} index={index} />)
+        }  
+      </PostList>
+    </div>
   </Container>
 </Layout>

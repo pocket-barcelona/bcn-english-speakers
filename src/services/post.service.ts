@@ -51,6 +51,16 @@ async function getTransformedHeadlessPosts(): Promise<CollectionEntry<'blog'>[]>
 /** Transform REST response to Astro Collection */
 function transformHeadlessPosts(posts: HeadlessPost[]): CollectionEntry<'blog'>[] {
   return posts.map(p => {
+    // make sure the post was updated more than a whole day after the original post date
+    // this protects against all directus posts showing as updated just because we changed that post status to published!
+    const oneDayInMs = 24 * 60 * 60 * 1000;
+    const createdDate = p.date_created ? new Date(p.date_created) : undefined;
+    const updatedDate = p.date_updated ? new Date(p.date_updated) : undefined;
+    let updatedAfterPublished = false;
+    if (updatedDate && createdDate) {
+      updatedAfterPublished = updatedDate.valueOf() - createdDate.valueOf() > oneDayInMs;
+    }
+
     return {
       id: p.slug, // MD uses ID?
       slug: p.slug,
@@ -78,7 +88,7 @@ function transformHeadlessPosts(posts: HeadlessPost[]): CollectionEntry<'blog'>[
         authorAvatar: p.author.avatar,
         publishDate: new Date(p.published_date),
         createdDate: p.date_created ? new Date(p.date_created) : undefined,
-        updatedDate: p.date_updated ? new Date(p.date_updated) : undefined,
+        updatedDate: p.date_updated && updatedAfterPublished ? new Date(p.date_updated) : undefined,
         __source: 'HEADLESS' // inject identifier, if needed explicitly
       }
     }
