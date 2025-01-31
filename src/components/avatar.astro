@@ -58,7 +58,7 @@ const isDirectusImage = src.src.substring(0, 5).toLowerCase() === 'https';
 
 {
   isDirectusImage ? (
-    <img src={src.src} width={src.width} height={src.height} class="w-[40px] h-[40px] rounded-full object-cover" />
+    <img src={src.src} alt={authorName || 'Post author avatar'} width={src.width} height={src.height} class="w-[40px] h-[40px] rounded-full object-cover" />
   ) : (
   <Image
     src={src}

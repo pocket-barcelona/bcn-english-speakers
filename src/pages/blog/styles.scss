@@ -67,7 +67,9 @@ h2#contents + ul ul {
   color: #1212c4;
   font-weight: 600;
 }
-
+.prose iframe {
+  max-width: 100%;
+}
 div.info,
 div.success,
 div.warning,
