@@ -4,11 +4,12 @@ import Footer from "../components/page-footer.astro";
 import Navbar from "../components/nav-bar/navbar.astro";
 import "@fontsource-variable/inter/index.css";
 import { ViewTransitions } from "astro:transitions";
-import Analytics from './analytics.astro';
+import CookieConsent from './CookieConsent.astro';
 export interface Props {
 	title: string;
   seo?: SEOProps;
 }
+
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
@@ -58,97 +59,57 @@ const makeTitle = title
       }}
     />
     <ViewTransitions fallback="swap" />
+    <script
+    is:inline
+    src="https://www.googletagmanager.com/gtag/js?id=G-80HL5SXRY7"></script>
+
+  <script>
+    // We need a global definition to avoid type warnings
+    declare global {
+      interface Window {
+        dataLayer: Record<string, any>[];
+        gtag: (...args: any[]) => void;
+      }
+    }
+
+    document.addEventListener("astro:page-load", () => {
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function gtag(...args: any[]) {
+        window.dataLayer.push(arguments);
+      };
+      window.gtag("js", new Date());
+      window.gtag("consent", "default", {
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+        analytics_storage: "denied",
+      });
+      window.gtag("config", "G-80HL5SXRY7");
+    });
+
+    // Initialize dataLayer
+    window.dataLayer = window.dataLayer || [];
+
+    // Define gtag function
+    window.gtag = function gtag(...args: any[]) {
+      window.dataLayer.push(arguments);
+    };
+
+    // Load GA4 with denied default consents
+    window.gtag("js", new Date());
+    window.gtag("consent", "default", {
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+      analytics_storage: "denied",
+    });
+    window.gtag("config", "G-80HL5SXRY7");
+  </script>
   </head>
-  <Analytics />
   
   <body class="pt-[60px] lg:pt-[72px]">
-    <script is:inline transition:persist="persist">
-    // Enable dark mode
-    document.documentElement.classList.add('cc--darkmode');
-    window.addEventListener('load', function () {
-      CookieConsent.run({
-          guiOptions: {
-              consentModal: {
-                  layout: "box",
-                  position: "bottom right",
-                  equalWeightButtons: true,
-                  flipButtons: false
-              },
-              preferencesModal: {
-                  layout: "box",
-                  position: "right",
-                  equalWeightButtons: true,
-                  flipButtons: false
-              }
-          },
-          categories: {
-              necessary: {
-                  readOnly: true
-              },
-              functionality: {},
-              analytics: {},
-              marketing: {}
-          },
-          language: {
-              default: "en",
-              autoDetect: "browser",
-              translations: {
-                  en: {
-                      consentModal: {
-                          title: "Welcome to Pocket Barcelona",
-                          description: "We use cookies to better understand our audiences and to improve and personalise your experience.",
-                          closeIconLabel: "",
-                          acceptAllBtn: "Accept all",
-                          acceptNecessaryBtn: "Reject all",
-                          showPreferencesBtn: "Manage preferences",
-                          footer: "<a href=\"/privacy\">Privacy Policy</a>\n<a href=\"/terms-and-conditions\">Terms and conditions</a>"
-                      },
-                      preferencesModal: {
-                          title: "Consent Preferences Center",
-                          closeIconLabel: "Close modal",
-                          acceptAllBtn: "Accept all",
-                          acceptNecessaryBtn: "Reject all",
-                          savePreferencesBtn: "Save preferences",
-                          serviceCounterLabel: "Service|Services",
-                          sections: [
-                              {
-                                  title: "Cookie Usage",
-                                  description: "We use basic cookies to provide an excellent website experience."
-                              },
-                              {
-                                  title: "Strictly Necessary Cookies <span class=\"pm__badge\">Always Enabled</span>",
-                                  description: "These cookies are always on and do not include tracking, analytics, advertising or marketing.",
-                                  linkedCategory: "necessary"
-                              },
-                              {
-                                  title: "Functionality Cookies",
-                                  description: "Supercharge your website experience!",
-                                  linkedCategory: "functionality"
-                              },
-                              {
-                                  title: "Analytics Cookies",
-                                  description: "Allow us to implement analytics so we can help to improve the user experience for all.",
-                                  linkedCategory: "analytics"
-                              },
-                              {
-                                  title: "Advertisement Cookies",
-                                  description: "Allow a personalised advertising experience, using personalised cookies.",
-                                  linkedCategory: "marketing"
-                              },
-                              {
-                                  title: "More information",
-                                  description: "For any query in relation to our policy on cookies and your choices, please <a class=\"cc__link\" href=\"/community\">contact us</a>."
-                              }
-                          ]
-                      }
-                  }
-              }
-          }
-      });
-    })
-    </script>
     <Navbar />
-    <main class="pt-[60px] lg:pt-[72px]">
+    <main>
       <slot />
     </main>
     <Footer />
@@ -159,5 +120,23 @@ const makeTitle = title
         content-visibility: auto;
       }
     </style>
+    <div transition:persist="find-me-on-the-other-side" id="cc-container">
+      <CookieConsent />
+      <script is:inline>
+        // Restore the `show--consent` class if it was present before the page swap
+        document.addEventListener("astro:before-preparation", event => {
+          const htmlClassName = window.document.documentElement.className;
+          const consentClassPresent = htmlClassName.includes("show--consent")
+            ? true
+            : false;
+          window._showConsentClass = consentClassPresent;
+        });
+  
+        document.addEventListener("astro:before-swap", event => {
+          const showConsent = window._showConsentClass ? ` show--consent` : "";
+          event.newDocument.documentElement.className += showConsent;
+        });
+      </script>
+    </div>
   </body>
 </html>

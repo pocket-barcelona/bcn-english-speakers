@@ -1,7 +1,12 @@
 ---
 import Container from './page-container.astro';
 ---
-
+<script is:inline>
+  const showPreferencesButton = document.getElementById('ccPreferencesModal');
+  showPreferencesButton && showPreferencesButton.addEventListener(() => {
+    CookieConsent.showPreferences();
+  })
+</script>
 <footer class="py-16 mt-8 lg:mt-16 bg-[#191919]">
   <Container>
     <div class="flex flex-col lg:flex-row items-center justify-start gap-4">
@@ -10,6 +15,9 @@ import Container from './page-container.astro';
         <p class="text-center text-sm text-white">
           Made in Barcelona&nbsp;&nbsp;❤️&nbsp;&nbsp;Copyright © {new Date().getFullYear()}.<br />All rights reserved.
         </p>
+      </div>
+      <div class="my-2 text-center">
+        <button id="ccPreferencesModal" type="button" data-cc="show-preferencesModal" class="text-sm text-white">🍪 Cookies</button>
       </div>
     </div>
   </Container>
