@@ -20,9 +20,6 @@ importers:
       '@astrojs/mdx':
         specifier: ^4.0.8
         version: 4.0.8(astro@5.2.5(jiti@1.21.0)(rollup@4.34.4)(sass@1.77.3)(typescript@5.2.2)(yaml@2.7.0))
-      '@astrojs/partytown':
-        specifier: ^2.1.3
-        version: 2.1.3
       '@astrojs/preact':
         specifier: ^4.0.4
         version: 4.0.4(@babel/core@7.23.3)(jiti@1.21.0)(preact@10.22.0)(sass@1.77.3)(yaml@2.7.0)
@@ -35,9 +32,6 @@ importers:
       '@astrojs/tailwind':
         specifier: ^6.0.0
         version: 6.0.0(astro@5.2.5(jiti@1.21.0)(rollup@4.34.4)(sass@1.77.3)(typescript@5.2.2)(yaml@2.7.0))(tailwindcss@3.3.5)
-      '@astrolib/analytics':
-        specifier: ^0.6.1
-        version: 0.6.1(astro@5.2.5(jiti@1.21.0)(rollup@4.34.4)(sass@1.77.3)(typescript@5.2.2)(yaml@2.7.0))
       '@directus/sdk':
         specifier: ^16.0.1
         version: 16.0.1
@@ -86,6 +80,9 @@ importers:
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
+      vanilla-cookieconsent:
+        specifier: ^3.1.0
+        version: 3.1.0
     devDependencies:
       hastscript:
         specifier: ^8.0.0
@@ -143,9 +140,6 @@ packages:
     peerDependencies:
       astro: ^5.0.0
 
-  '@astrojs/partytown@2.1.3':
-    resolution: {integrity: sha512-pkGsV6/GUTph4oLgvrpbrGnu4+9JuG8fOCzBCI2dQKtpBYQ6XAZKHrPA3evQoB5vDbfUZGVCoWe95MnSoPbVtQ==}
-
   '@astrojs/preact@4.0.4':
     resolution: {integrity: sha512-XQjT/q1R/P8NxJqwpAaOEfaRiaXmBLgKesIQQn3iFdozdMPXJjej3R0hnvtWoIcYY8puHkOIOhAFK9vD+I+1Yg==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0}
@@ -174,11 +168,6 @@ packages:
 
   '@astrojs/yaml2ts@0.2.2':
     resolution: {integrity: sha512-GOfvSr5Nqy2z5XiwqTouBBpy5FyI6DEe+/g/Mk5am9SjILN1S5fOEvYK0GuWHg98yS/dobP4m8qyqw/URW35fQ==}
-
-  '@astrolib/analytics@0.6.1':
-    resolution: {integrity: sha512-BrOGe88JuprEXhvLg1eJxaGcR9ZzuYPZE00QwcvQ1EBAucODxbg4FJG57G5yoAYjyXjr7GsPy4+46X2jB+64hg==}
-    peerDependencies:
-      astro: ^1.2.1 || ^2.0.0 || ^3.0.0-beta.0 || ^3.0.0 || ^4.0.0 || ^5.0.0-beta.0 || ^5.0.0
 
   '@babel/code-frame@7.22.13':
     resolution: {integrity: sha512-XktuhWlJ5g+3TJXc5upd9Ks1HutSArik6jf2eAjYFyIOf4ej3RN+184cZbzDvbPnuTJIUhPKKJE3cIsYTiAT3w==}
@@ -699,11 +688,6 @@ packages:
     peerDependencies:
       preact: ^10.4.0
       vite: '>=2.0.0'
-
-  '@qwik.dev/partytown@0.11.0':
-    resolution: {integrity: sha512-MHime7cxj7KGrapGZ1VqLkXXq5BLNqvjNZndRJVvMkUWn92F2bsezlWW1lKDoFaKCKu2xv9LRUZL99RYOs+ccA==}
-    engines: {node: '>=18.0.0'}
-    hasBin: true
 
   '@rollup/pluginutils@4.2.1':
     resolution: {integrity: sha512-iKnFXr7NkdZAIHiIWE+BX5ULi/ucVFYWD6TbAV+rZctiRTY2PL6tsIKhoIOaoskiWAkgu+VsbXgUVDNLHf+InQ==}
@@ -1286,10 +1270,6 @@ packages:
 
   domutils@3.1.0:
     resolution: {integrity: sha512-H78uMmQtI2AhgDJjWeQmHwJJ2bLPD3GMmO7Zja/ZZh84wkm+4ut+IUnUdRa8uCGX88DiVx1j6FRe1XfxEgjEZA==}
-
-  dotenv@16.4.7:
-    resolution: {integrity: sha512-47qPchRCykZC03FhkYAhrvwU4xDBFIj1QPqaarj6mdM/hgUzfPHcpkHJOn3mJAufFeeAxAzeGsr5X0M4k6fLZQ==}
-    engines: {node: '>=12'}
 
   dset@3.1.4:
     resolution: {integrity: sha512-2QF/g9/zTaPDc3BjNcVTGoBbXBgYfMTTceLaYcFJ/W9kggFUkhxD/hMEeuLKbugyef9SqAx8cpgwlIP/jinUTA==}
@@ -2675,6 +2655,9 @@ packages:
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
+  vanilla-cookieconsent@3.1.0:
+    resolution: {integrity: sha512-/McNRtm/3IXzb9dhqMIcbquoU45SzbN2VB+To4jxEPqMmp7uVniP6BhGLjU8MC7ZCDsNQVOp27fhQTM/ruIXAA==}
+
   vfile-location@5.0.2:
     resolution: {integrity: sha512-NXPYyxyBSH7zB5U6+3uDdd6Nybz6o6/od9rk8bp9H8GR3L+cm/fC0uUTbqBmUTnMCUDslAGBOIKNfvvb+gGlDg==}
 
@@ -3036,11 +3019,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/partytown@2.1.3':
-    dependencies:
-      '@qwik.dev/partytown': 0.11.0
-      mrmime: 2.0.0
-
   '@astrojs/preact@4.0.4(@babel/core@7.23.3)(jiti@1.21.0)(preact@10.22.0)(sass@1.77.3)(yaml@2.7.0)':
     dependencies:
       '@babel/plugin-transform-react-jsx': 7.25.9(@babel/core@7.23.3)
@@ -3106,10 +3084,6 @@ snapshots:
   '@astrojs/yaml2ts@0.2.2':
     dependencies:
       yaml: 2.7.0
-
-  '@astrolib/analytics@0.6.1(astro@5.2.5(jiti@1.21.0)(rollup@4.34.4)(sass@1.77.3)(typescript@5.2.2)(yaml@2.7.0))':
-    dependencies:
-      astro: 5.2.5(jiti@1.21.0)(rollup@4.34.4)(sass@1.77.3)(typescript@5.2.2)(yaml@2.7.0)
 
   '@babel/code-frame@7.22.13':
     dependencies:
@@ -3621,10 +3595,6 @@ snapshots:
       vite: 6.1.0(jiti@1.21.0)(sass@1.77.3)(yaml@2.7.0)
     transitivePeerDependencies:
       - supports-color
-
-  '@qwik.dev/partytown@0.11.0':
-    dependencies:
-      dotenv: 16.4.7
 
   '@rollup/pluginutils@4.2.1':
     dependencies:
@@ -4271,8 +4241,6 @@ snapshots:
       dom-serializer: 2.0.0
       domelementtype: 2.3.0
       domhandler: 5.0.3
-
-  dotenv@16.4.7: {}
 
   dset@3.1.4: {}
 
@@ -6155,6 +6123,8 @@ snapshots:
       picocolors: 1.1.1
 
   util-deprecate@1.0.2: {}
+
+  vanilla-cookieconsent@3.1.0: {}
 
   vfile-location@5.0.2:
     dependencies:
