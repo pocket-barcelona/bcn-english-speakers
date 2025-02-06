@@ -9,10 +9,11 @@ const blogCollection = defineCollection({
     /** The cover image
      * https://docs.astro.build/en/guides/images/#images-in-content-collections
      */
-    cover: image().refine((img) => img.width >= 720, {
-      message: "Image width must be at least 720px",
+    cover: image(),
+    // .refine((img) => img.width >= 720, {
+    //   message: "Image width must be at least 720px",
       
-    }),
+    // }),
     coverAlt: z.string(),
     // Transform string to Date object
     publishDate: z.coerce.date(),
@@ -31,9 +32,10 @@ const communityCollection = defineCollection({
     draft: z.boolean().optional(),
     images: z.array(
       z.object({
-        src: image().refine((img) => img.width >= 500, {
-          message: "Image width must be at least 500px",
-        }),
+        src: image(),
+        // .refine((img) => img.width >= 500, {
+        //   message: "Image width must be at least 500px",
+        // }),
         alt: z.string()
       })
     )
