@@ -9,12 +9,15 @@ interface Props {
   class?: string;
   minCols?: 2 | 3;
   maxCols?: 2 | 3 | 4;
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   [x: string]: any;
 }
-const { images: galleryImages, class: className, minCols = 2, maxCols = 4, ...rest } = Astro.props;
+const { images: galleryImages, class: className, minCols = 2, maxCols = 4 } = Astro.props;
 
 // Dynamically import images - https://docs.astro.build/en/recipes/dynamically-importing-images/
-const images = import.meta.glob('/src/assets/**/*.{jpeg,jpg,png,gif}')
+// const images = import.meta.glob('/src/assets/**/*.{jpeg,jpg,png,gif}')
+// <Image
+//   src={images[image.url]()}
 
 // https://tailwindflex.com/@anonymous/image-gallery
 const xData = `{
@@ -131,10 +134,7 @@ const xData = `{
   x-init="imageGalleryPhotos = $refs.gallery.querySelectorAll('img');for(let i=0; i<imageGalleryPhotos.length; i++){imageGalleryPhotos[i].setAttribute('data-index', i+1);}"
   class="w-full h-full select-none my-6"
 >
-  <div
-    class="max-w-6xl mx-auto duration-1000 delay-300 opacity-0 select-none ease animate-fade-in-view"
-    style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);"
-  >
+  <div class="max-w-6xl mx-auto duration-1000 delay-300 opacity-0 select-none ease animate-fade-in-view" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
     <ul
       x-ref="gallery"
       class:list={[
@@ -143,22 +143,22 @@ const xData = `{
         maxCols === 3 ? 'md:grid-cols-3' : null,
         maxCols === 4 ? 'lg:grid-cols-4' : null
       ]}
-    >
+      >
       {
         galleryImages.map((image, _key) => {
           return (
             <li>
               <Image
-                src={images[image.url]()}
+                src={image.url}
+                width={400}
+                height={300}
                 alt={image.alt || ''}
                 x-on:click="imageGalleryOpen"
-                class="object-cover select-none w-full h-auto bg-gray-200 rounded cursor-zoom-in aspect-[4/3]"
-              />
+                class="object-cover select-none w-full h-auto bg-gray-200 rounded cursor-zoom-in aspect-[4/3]" />
             </li>
           )
         })
       }
-      
     </ul>
   </div>
   <template x-teleport="body">
