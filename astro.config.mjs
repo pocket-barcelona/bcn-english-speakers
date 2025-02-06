@@ -10,10 +10,6 @@ import { rehypeHeadingIds } from "@astrojs/markdown-remark";
 import { h, s } from "hastscript";
 import alpinejs from "@astrojs/alpinejs";
 import preact from "@astrojs/preact";
-import partytown from "@astrojs/partytown";
-
-const whenExternalScripts = (items = []) =>
-  Array.isArray(items) ? items.map((item) => item()) : [items()];
 
 // https://astro.build/config
 export default defineConfig({
@@ -44,6 +40,7 @@ export default defineConfig({
   // },
   image: {
     service: passthroughImageService(),
+    domains: ["content.pocketbarcelona.com"],
   },
   markdown: {
     remarkPlugins: [

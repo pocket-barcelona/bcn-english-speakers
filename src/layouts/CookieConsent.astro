@@ -1,0 +1,14 @@
+---
+// See: https://daniel.es/blog/the-ultimate-astro-google-analytics-guide/#23-the-advanced-way-with-consents and https://stackblitz.com/edit/withastro-astro-mvdsyj?file=src%2Fcomponents%2FCookieConsentConfig.ts
+import 'vanilla-cookieconsent/dist/cookieconsent.css';
+import './CookieConsent.css';
+---
+<script>
+    import { run } from 'vanilla-cookieconsent';
+    import { config } from './CookieConsentConfig';
+
+    // toggle custom black theme
+    document.body.classList.add('cc--elegant-black');
+
+    run(config);
+</script>
