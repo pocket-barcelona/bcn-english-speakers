@@ -3,16 +3,17 @@ export type TagColors = "success" | "info" | "warning" | "danger" | "black" | "n
 
 interface Props {
   color: TagColors;
+  size?: 'small' | 'medium';
   class?: string;
   [x: string]: any;
 }
 
-const { href, color = "info", class: className, ...rest } = Astro.props;
+const { href, color = "info", size = 'medium', class: className, ...rest } = Astro.props;
 
 // https://tailwindcss.com/docs/customizing-colors
 const styles = {
   success: "text-white bg-[#00e100]",
-  info: "text-white bg-blue-500",
+  info: "text-white bg-blue-600",
   warning: "text-black bg-[#e1e100]",
   danger: "text-white bg-[#9b0000]",
   black: "text-white bg-black",
@@ -25,12 +26,18 @@ const styles = {
   amber: "text-white bg-amber-500",
   blue: "text-white bg-blue-900",
 };
+
+const sizes = {
+  small: "px-2 py-1 text-[10px]",
+  medium: "px-2 py-1 text-xs"
+}
 ---
 
 <span
   class:list={[
-    "inline-block px-2 py-1 text-xs uppercase rounded-md font-normal",
+    "inline-block uppercase rounded-md font-normal leading-tight",
     styles[color],
+    sizes[size],
     className,
   ]}
   {...rest} 

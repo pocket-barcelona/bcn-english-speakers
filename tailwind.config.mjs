@@ -8,6 +8,9 @@ export default {
 			fontFamily: {
         sans: ["Inter Variable", "Inter", ...defaultTheme.fontFamily.sans],
       },
+			fontSize: {
+				"2xs": "0.625rem",
+			},
 			aspectRatio: {
 				"4/3": "4 / 3",
 				"3/4": "3 / 4",

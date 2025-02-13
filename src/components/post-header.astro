@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import PostCategoryTag from './post-category-tag.astro';
+import Button from './elements/button.astro';
 
 type Props = {
   post: CollectionEntry<'blog'>;
@@ -10,16 +11,20 @@ const { post } = Astro.props;
 
 ---
 
-<div class="mx-auto max-w-3xl mt-8 lg:mt-16">
-        
+<div class="mx-auto max-w-4xl mt-8 lg:mt-16">
+  <a
+    href="/blog"
+    class="bg-gray-100 px-5 py-3 mb-4 rounded-md inline-block hover:bg-gray-200 transition"
+    >← Back to Blog</a
+  >
   <div class="justify-between flex flex-row items-center mb-4">
-    <PostCategoryTag category={post.data.category}></PostCategoryTag>
-    <div class="flex gap-2 my-2 items-center justify-end flex-wrap md:flex-nowrap">
-      <span class="text-gray-700 whitespace-nowrap text-base">
-        <span class="font-medium">Published:</span>{' '}
+    <PostCategoryTag category={post.data.category} size='small'></PostCategoryTag>
+    <div class="flex gap-1 my-2 items-center justify-end flex-wrap md:flex-nowrap">
+      <span class="text-slate-800 tracking-tight whitespace-nowrap font-medium text-xs">
+        Published:
       </span>
       <time
-        class="text-gray-700 whitespace-nowrap text-base font-light"
+        class="text-gray-700 whitespace-nowrap tracking-tight text-xs font-light"
         datetime={post.data.publishDate.toISOString()}>
         {post.data.publishDate.toDateString()}
       </time>
@@ -27,8 +32,8 @@ const { post } = Astro.props;
   </div>
   
   <h1
-    class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-1 lg:leading-tight" style="text-wrap: balance;">
+    class="text-3xl md:text-4xl lg:text-5xl font-bold lg:tracking-tight mt-0 lg:leading-tight" style="text-wrap: balance;">
     {post.data.title}
   </h1>
-  <p class="my-6 text-xl leading-normal text-gray-700">{post.data.snippet}</p>
+  <p class="my-4 text-lg md:text-xl leading-snug tracking-tight prose">{post.data.snippet}</p>
 </div>

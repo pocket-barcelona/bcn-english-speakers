@@ -3,9 +3,10 @@ import Tag, { type TagColors } from './elements/tag.astro';
 
 interface Props {
 	category: string;
+  size?: 'small' | 'medium';
 }
 
-let { category } = Astro.props;
+let { category, size = 'medium' } = Astro.props;
 
 const label = category ?? '';
 category = label.toLowerCase();
@@ -27,6 +28,6 @@ if (category === 'going out') {
 
 ---
 
-<Tag color={color}>
+<Tag color={color} size={size}>
   {label}
 </Tag>
