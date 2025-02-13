@@ -22,6 +22,17 @@ h6:hover a.autolink-header svg {
   display: block;
 }
 
+h3,
+h4,
+h5,
+h6 {
+  // make the link icon a bit small for these headings
+  a.autolink-header svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
 .visually-hidden {
   border: 0;
   clip: rect(0 0 0 0);
