@@ -21,16 +21,18 @@ const {
   ...rest
 } = Astro.props;
 
+const addressMapsLink = `http://maps.google.com/?q=${encodeURIComponent(address ?? '')}`;
 ---
 
 <div
   class:list={[
     "my-4 mb-8",
+    "text-sm md:text-base tracking-tight",
     className,
   ]}
   ><slot />
   { placeName && <p class="!my-1"><strong>🔍 Place</strong>: {placeName}</p>}
-  { address && <p class="!my-1"><strong>📍 Address</strong>: {address}</p>}
+  { address && <address class="!my-1 not-italic"><strong>📍 Address</strong>: <a href={addressMapsLink} target="_blank" rel="nofollow">{address}</a></address>}
   { website && <p class="!my-1"><strong>🔗 Website</strong>: <a href={website} target="_blank">{website}</a></p>}
   { map && <p class="!my-1"><strong>📌 Map</strong>: <a href={map.trim()} target="_blank">Link</a></p>}
   { seating && <p class="!my-1"><strong>🪑 Seating</strong>: {seating}</p>}
