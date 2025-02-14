@@ -46,10 +46,6 @@ const xData = `{
   }`
 ---
 <style>
-  /* @tailwind base;
-  @tailwind components;
-  @tailwind utilities; */
-
   [x-cloak] { display: none; }
 
   :root {
@@ -57,27 +53,6 @@ const xData = `{
     --c-scrollbar: lightsteelblue;
     --c-scrollbar-hover: #000;
   }
-  /* html {
-    background-color: var(--c-bg);
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-  }
-
-  html.dark {
-    --c-bg: #050505;
-    --c-scrollbar: #111;
-    --c-scrollbar-hover: #222;
-  } */
-
-  /* body {
-    height: 100%;
-    overflow-y: scroll;
-  }
-
-  ::selection {
-    background: #8884;
-  } */
   * {
     scrollbar-color: var(--c-scrollbar) var(--c-bg);
   }
@@ -195,6 +170,7 @@ const xData = `{
           :src="imageGalleryActiveUrl"
           :alt="imageGalleryActiveCaption"
           style="display: none;"
+          src=""
         />
         <div class="absolute bottom-2 bg-[#000000cc] inline-block text-center rounded px-4 py-1 md:px-8 md:py-2 text-white shadow font-light text-xs md:text-base" x-text="imageGalleryActiveCaption"></div>
         <div

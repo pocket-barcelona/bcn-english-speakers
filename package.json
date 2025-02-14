@@ -9,6 +9,7 @@
     "check": "astro check",
     "build": "astro check && astro build",
     "preview": "astro preview",
+    "validate": "html-validate 'dist/**/*.html'",
     "astro": "astro"
   },
   "dependencies": {
@@ -23,7 +24,6 @@
     "@directus/sdk": "^16.0.1",
     "@fontsource-variable/inter": "^5.0.15",
     "@tailwindcss/typography": "^0.5.10",
-    "@types/alpinejs": "^3.13.5",
     "alpinejs": "^3.13.3",
     "astro": "^5.2.5",
     "astro-navbar": "^2.3.0",
@@ -39,7 +39,9 @@
     "vanilla-cookieconsent": "^3.1.0"
   },
   "devDependencies": {
+    "@types/alpinejs": "^3.13.11",
     "hastscript": "^8.0.0",
+    "html-validate": "^9.2.2",
     "sass": "^1.77.3"
   }
 }
