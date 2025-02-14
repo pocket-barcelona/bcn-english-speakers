@@ -31,7 +31,9 @@ const { group, index } = Astro.props;
         <div class="text-xl font-semibold mb-2 text-center md:text-left">
           {group.name}
         </div>
-        {group.description}
+        <div class="line-clamp-6">
+          {group.description}
+        </div>
       </div>
     </div>
   </a>

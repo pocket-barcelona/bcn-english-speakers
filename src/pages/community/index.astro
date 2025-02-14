@@ -8,26 +8,23 @@ import GroupItem from "../../components/elements/group-item.astro";
 
 const groups = await getGroups();
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
-const resolvedImageWithDomain = new URL(
-	"/og.jpg",
-	Astro.site,
-).toString();
+const resolvedImageWithDomain = new URL("/og.jpg", Astro.site).toString();
 
-const seo: LayoutProps['seo'] = {
-  openGraph: {
-    basic: {
-      image: resolvedImageWithDomain,
-      title: 'Pocket Barcelona - Community',
-      type: 'website',
-      url: canonicalURL,
-    },
-  },
-}
+const seo: LayoutProps["seo"] = {
+	openGraph: {
+		basic: {
+			image: resolvedImageWithDomain,
+			title: "Pocket Barcelona - Community",
+			type: "website",
+			url: canonicalURL,
+		},
+	},
+};
 ---
 
 <Layout title={"Barcelona English Speakers Community"} seo={seo}>
   <main>
-    <Container class:list={"!max-w-5xl"}>
+    <Container class:list={"!max-w-4xl"}>
       <Sectionhead>
         <Fragment slot="title">Barcelona English Speakers</Fragment>
         <Fragment slot="desc">
@@ -80,8 +77,8 @@ const seo: LayoutProps['seo'] = {
         Join the community
       </h2>
 
-      <div class="max-w-xl mx-auto my-0">
-        <ul class="grid gap-4 lg:gap-16">
+      <div class="max-w-xl xl:max-w-4xl mx-auto my-0">
+        <ul class="grid gap-4 xl:gap-x-2 lg:gap-16 grid-cols-1 xl:grid-cols-2 justify-center">
           {
             groups.map((group, index) =>
                 <GroupItem group={group} index={index}/>)
