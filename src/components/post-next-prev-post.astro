@@ -1,0 +1,42 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+type Props = {
+	next?: CollectionEntry<"blog">;
+	prev?: CollectionEntry<"blog">;
+};
+
+const { next, prev } = Astro.props;
+---
+
+{
+  next || prev ? (
+    <div class="mx-auto max-w-3xl my-6 md:my-12"><hr /></div>
+    <div class="mx-auto max-w-3xl">
+      <div class="flex justify-between mb-8 w-full gap-4 md:gap-8">
+        <div class="basis-1/2 flex justify-start">
+          {prev ? (
+            <div class="flex flex-col">
+              <span class="text-base md:text-lg tracking-tight text-center font-semibold mb-2">Previous post</span>
+              <a class="flex flex-col gap-2 w-full font-bold text-blue-700" href={`/blog/${prev.slug}`} title={prev.data.title}>
+                <img src={prev.data.cover.src} alt={prev.data.coverAlt ?? prev.data.title} class="mx-auto object-cover aspect-16/9" />
+                <span class="text-center text-xs md:text-base px-2 md:px-4 tracking-tight">&laquo; {prev.data.title}</span>
+              </a>
+            </div>
+          ) : undefined}
+        </div>
+        <div class="basis-1/2 flex justify-end">
+          {next ? (
+            <div class="flex flex-col">
+              <span class="text-base md:text-lg tracking-tight text-center font-semibold mb-2">Next post</span>
+              <a class="flex flex-col gap-2 w-full font-bold text-blue-700" href={`/blog/${next.slug}`} title={next.data.title}>
+                <img src={next.data.cover.src} alt={next.data.coverAlt ?? next.data.title} class="mx-auto object-cover aspect-16/9" />
+                <span class="text-center text-xs md:text-base px-2 md:px-4 tracking-tight">{next.data.title} &raquo;</span>
+              </a>
+            </div>
+          ) : undefined}
+        </div>
+      </div>
+    </div>
+  ) : undefined
+}

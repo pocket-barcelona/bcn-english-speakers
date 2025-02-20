@@ -1,5 +1,5 @@
 ---
-draft: false
+draft: true
 title: "Barcelona Travel Cards"
 snippet: "You have a few options when it comes to using public transport in Barcelona - and the tickets available represent great value when compared to other major European cities"
 cover: "../../assets/blog/6-barcelona-travel-cards/barcelona-travel.jpg"
@@ -10,6 +10,8 @@ author: "Bob"
 authorId: "bob"
 tags: [travel, transport, metro, mobility, bus]
 ---
+
+# THIS POST IS NOW IN DIRECTUS!
 
 ![BCN Airport photo](../../assets/blog/6-barcelona-travel-cards/barcelona-travel.jpg)
 

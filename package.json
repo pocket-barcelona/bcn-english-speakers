@@ -7,6 +7,7 @@
     "dev:host": "astro dev --host",
     "start": "astro dev",
     "check": "astro check",
+    "test": "vitest",
     "build": "astro check && astro build",
     "preview": "astro preview",
     "validate": "html-validate 'dist/**/*.html'",
@@ -42,6 +43,7 @@
     "@types/alpinejs": "^3.13.11",
     "hastscript": "^8.0.0",
     "html-validate": "^9.2.2",
-    "sass": "^1.77.3"
+    "sass": "^1.77.3",
+    "vitest": "^3.0.6"
   }
 }

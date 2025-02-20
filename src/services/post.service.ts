@@ -3,15 +3,11 @@ import { HEADLESS_STUB } from '../consts';
 import { readItems } from "@directus/sdk";
 import directus, { type HeadlessPost } from '../lib/directus';
 
+/**
+ * @param includeHiddenPosts Allow posts to be hidden in the main feed but included in getStaticPaths()
+ */
 export async function getMergedPosts(includeHiddenPosts = false) {
   const internalCollection = await getCollection("blog");
-  // support for internal posts to be hidden in the feed
-  const internalCollectionFiltered = internalCollection.filter((p) => {
-    if (includeHiddenPosts) {
-      return true;
-    }
-    return p.data.hidePost !== true;
-  });
   let directusCollection: CollectionEntry<'blog'>[] = [];
   // Local dev: If Directus CMS is down, comment out the below try->catch to bypass the external post content!
   try {
@@ -20,13 +16,28 @@ export async function getMergedPosts(includeHiddenPosts = false) {
     console.error(error);
     throw new Error('Headless CMS is not responding...is Directus down?');
   }
+  return filterAndSortPosts(
+    [
+      ...directusCollection,
+      ...internalCollection,
+    ], includeHiddenPosts
+  )
+}
 
-
-  return [...directusCollection, ...internalCollectionFiltered]
-  .filter((b) => b.data.draft !== true)
-  .sort((a, b) => {
-    return b.data.publishDate.valueOf() > a.data.publishDate.valueOf() ? 1 : -1;
-  });
+export function filterAndSortPosts(posts: CollectionEntry<'blog'>[], includeHiddenPosts = false): CollectionEntry<'blog'>[] {
+  return posts
+    .filter(({ data }) => {
+      if (data.draft === true) {
+        return false;
+      }
+      if (data.hidePost === true && includeHiddenPosts !== true) {
+        return false;
+      }
+      return true;
+    })
+    .sort((a, b) => {
+      return b.data.publishDate.valueOf() > a.data.publishDate.valueOf() ? 1 : -1;
+    });
 }
 
 /** Transform a Directus post into our blog post type */
@@ -121,3 +132,64 @@ export async function getPost(slug: string | undefined): Promise<{ data: Headles
     return { data: null };
   }
 }
+
+
+export function getRelatedNextPrevPosts(
+	postData: CollectionEntry<"blog">,
+	allPosts: CollectionEntry<"blog">[],
+): {
+	next: CollectionEntry<"blog"> | undefined;
+	prev: CollectionEntry<"blog"> | undefined;
+  related: CollectionEntry<"blog"> | undefined;
+} {
+	let next = undefined;
+  let prev = undefined;
+	let related = undefined;
+
+	if (postData.data.nextPost) {
+		next = allPosts.find((p) => p.slug === postData.data.nextPost);
+	}
+	if (postData.data.prevPost) {
+		prev = allPosts.find((_p) => _p.slug === postData.data.prevPost);
+	}
+  if (postData.data.relatedPost) {
+		related = allPosts.find((_p) => _p.slug === postData.data.relatedPost);
+	}
+	return {
+		next,
+		prev,
+    related
+	};
+};
+
+/** Note: Assumes `allPosts` are already filtered and sorted */
+export function getChronologicalNextPrevPosts(
+	postData: CollectionEntry<"blog">,
+	allPosts: CollectionEntry<"blog">[],
+): {
+	nextPost: CollectionEntry<"blog"> | undefined;
+	prevPost: CollectionEntry<"blog"> | undefined;
+} {
+	let nextPost = undefined;
+  let prevPost = undefined;
+
+  const currentPostIndex = allPosts.findIndex((p) => p.id === postData.id);
+  if (currentPostIndex !== -1) {
+    const nextPostIndex = currentPostIndex - 1;
+    const prevPostIndex = currentPostIndex + 1;
+
+    if (nextPostIndex >= 0 && nextPostIndex < allPosts.length) {
+      nextPost = allPosts[nextPostIndex];
+    }
+
+    if (prevPostIndex >= 0 && prevPostIndex < allPosts.length) {
+      prevPost = allPosts[prevPostIndex];
+    }
+  }
+	
+	return {
+		nextPost,
+		prevPost
+	};
+};
+
