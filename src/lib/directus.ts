@@ -1,4 +1,4 @@
-import { createDirectus, rest, graphql } from '@directus/sdk';
+import { createDirectus, rest } from '@directus/sdk';
 import { HEADLESS_STUB } from '../consts';
 
 export type HeadlessGlobal = {
@@ -22,17 +22,27 @@ export type HeadlessPage = {
   content: string;
 }
 
+export type HeadlessFile = {
+  id: string;
+  /** Good for image alt text */
+  title: string;
+  width: number;
+  height: number;
+  /** Like image/jpeg */
+  type: string;
+}
+
 export type HeadlessPost = {
   /** The post slug ID used for the unique URL */
   slug: string;
   status: PostStatus;
-  author: HeadlessAuthor; // TODO
+  author: HeadlessAuthor; // provided Directus fields are set: https://content.pocketbarcelona.com/items/posts/primavera-sound-festival?fields[]=*&fields[]=author.id&fields[]=author.name&fields[]=author.avatar
   title: string;
   /** The post HTML */
   content: string;
   snippet: string;
   /** Image UUID */
-  cover: string;
+  cover: HeadlessFile;
   category: PostCategory;
   tags: string[];
   published_date: string;
@@ -59,7 +69,8 @@ export type HeadlessGroup = {
 }
 
 type HeadlessSchema = {
-  authors: HeadlessAuthor[];
+  authors: HeadlessAuthor[]; // set schema so readItems knows relation structure
+  cover: HeadlessFile[]; // set schema so readItems knows relation structure
   posts: HeadlessPost[];
   global: HeadlessGlobal;
   pages: HeadlessPage[];

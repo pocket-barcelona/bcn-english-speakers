@@ -23,7 +23,6 @@ const filteredAndSortedPosts = filterAndSortPosts([
   TESTPOST7,
 ]);
 
-
 test("should filter and sort posts", () => {
   const filteredAndSorted = filteredAndSortedPosts.map((p) => p.id);
   const expected = [
@@ -37,15 +36,18 @@ test("should filter and sort posts", () => {
 });
 
 test("should filter and sort posts, but include hidden posts for getStaticPaths()", () => {
-  const filtersAndSorted = filterAndSortPosts([
-    TESTPOST1,
-    TESTPOST2,
-    TESTPOST3,
-    TESTPOST4,
-    TESTPOST5,
-    TESTPOST6,
-    TESTPOST7
-  ], true).map((p) => p.id);
+  const filtersAndSorted = filterAndSortPosts(
+    [
+      TESTPOST1,
+      TESTPOST2,
+      TESTPOST3,
+      TESTPOST4,
+      TESTPOST5,
+      TESTPOST6,
+      TESTPOST7,
+    ],
+    true
+  ).map((p) => p.id);
 
   const expected = [
     TESTPOST3.id, // newest first
