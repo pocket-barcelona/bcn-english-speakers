@@ -16,7 +16,7 @@ export type ModalDrawerProps = {
   children: ComponentChild;
   closeIconAltText?: string;
   isOpen?: boolean;
-  maxHeightMobile?: 25 | 33 | 50 | 66 | 75 | 87 | 100;
+  maxHeightMobile?: 25 | 33 | 50 | 66 | 75 | 87 | 95 | 100;
   onClose?: () => void;
   preventClose?: boolean;
   presentationMode?: 'modal' | 'drawer';
@@ -113,7 +113,7 @@ export default function ModalDrawer({
         //  max-h-[calc(100vh-2rem)]
         <article class="flex flex-col h-full">
           <Context.Provider value={parentContext}>
-            <header class="flex flex-row items-center py-6 px-6 bg-slate-100 shadow-sm">
+            <header class="flex flex-row items-center py-4 md:py-6 px-6 bg-slate-100 shadow-sm">
               <h2 class="font-barlow text-2xl flex-grow min-w-0 m-0 leading-normal">{title}</h2>
               <button
                 class="flex items-center justify-center cursor-pointer rounded-full h-9 w-9 flex-[2rem 0 0] border-none outline-none p-2 m-0 hover:bg-slate-300 transition-all delay-75"

@@ -1,7 +1,7 @@
 $animationDurationSecs: 0.5s;
 $backDropBackground: rgba(23, 23, 26, 0.6);
 $backDropBackgroundAlmostOpaque: rgba(23, 23, 26, 0.9);
-$dialogHeights: 25, 33, 50, 66, 75, 87, 100;
+$dialogHeights: 25, 33, 50, 66, 75, 87, 95, 100;
 
 @mixin dialogMaxHeight($height) {
   max-height: #{$height}dvh;

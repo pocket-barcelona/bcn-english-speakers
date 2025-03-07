@@ -103,7 +103,7 @@ export default function EventModal({ onClose }: EventModalProps) {
       title="View event"
       isOpen={modalState.value.openId === "EVENTS"}
       onClose={onClose}
-      maxHeightMobile={87}
+      maxHeightMobile={95}
       modalSize='large'
     >
       <div class="flex flex-col justify-center gap-2 mb-2">
@@ -185,7 +185,7 @@ export default function EventModal({ onClose }: EventModalProps) {
         </div>
 
         <FormStepper onFinish={onClose} />
-        <Notification message='Help me!' />
+        {/* <Notification message='Help me!' /> */}
       </div>
       <ModalDrawer.Footer>
         <div class="flex flex-row items-center justify-center gap-4 py-4 px-6">
