@@ -56,10 +56,9 @@ export default function EventRegistration({ event }: EventRegistrationProps) {
 
             {eventAttendeesCriteria.max > 0 && (
               <div class="flex flex-row items-center gap-2">
-                <span class="text-sm">Max guests</span>
+                <span class="text-sm">Max capacity:</span>
                 <span class="text-sm font-bold">
-                  You can bring {eventAttendeesCriteria.max} friend/s to this
-                  event
+                  Up to {eventAttendeesCriteria.max} people can attend this event.
                 </span>
               </div>
             )}

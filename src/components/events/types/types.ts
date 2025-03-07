@@ -210,7 +210,7 @@ export type MeetupLocation = {
   /** If set, the location of the event will be hidden completely */
   locationIsHidden: boolean;
   /** @type Date string. If set, the location will only be visible after this point in time */
-  locationAvailableFrom: string;
+  locationAvailableFrom: number;
 };
 export type MeetupPrice = {
   /** Like 1050 = €10,50. 0=Free. -1=TBC */

@@ -361,11 +361,19 @@ export const getEventDateReadout = (
 
 export const getMeetupMapLink = (event: MeetupItem) => {
   const { location } = event;
-  if (location.mapsLink) {
-    return location.mapsLink;
+  
+  if (location.locationIsHidden) {
+    return '';
   }
   if (!location.lat || !location.lng) {
     return "";
   }
+  if (location.lat === -1 && location.lng === -1) {
+    return "";
+  }
+  if (location.mapsLink) {
+    return location.mapsLink;
+  }
+  // build maps link based on lat/lng
   return `https://www.google.com/maps/search/?api=1&query=${location.lat},${location.lng}`;
 };
