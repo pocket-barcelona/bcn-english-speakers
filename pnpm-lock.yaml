@@ -70,7 +70,7 @@ importers:
         version: 10.22.0
       qr-code-styling:
         specifier: ^1.9.0
-        version: 1.9.0
+        version: 1.9.1
       rehype-autolink-headings:
         specifier: ^7.1.0
         version: 7.1.0
@@ -2379,8 +2379,8 @@ packages:
   pump@3.0.0:
     resolution: {integrity: sha512-LwZy+p3SFs1Pytd/jYct4wpv49HiYCqd9Rlc5ZVdk0V+8Yzv6jR5Blk3TRmPL1ft69TxP0IMZGJ+WPFU2BFhww==}
 
-  qr-code-styling@1.9.0:
-    resolution: {integrity: sha512-YwPf9iCQ4XESEDfErIqHtmGOE3EwFm7SMpRzwmjDnanH+JjaxMhAmWERJeJola20Bq4+zwWPid97qFtb+Ct5dw==}
+  qr-code-styling@1.9.1:
+    resolution: {integrity: sha512-T/VxQchuZkQwYhIcyyMUmtXHPeDT6lJBYHfqGD5CBDyIjswxS7JZKf443q+SXO1K/9SUswi6JpXEUQ5AoMCpyg==}
     engines: {node: '>=18.18.0'}
 
   qrcode-generator@1.4.4:
@@ -5958,7 +5958,7 @@ snapshots:
       end-of-stream: 1.4.4
       once: 1.4.0
 
-  qr-code-styling@1.9.0:
+  qr-code-styling@1.9.1:
     dependencies:
       qrcode-generator: 1.4.4
 
