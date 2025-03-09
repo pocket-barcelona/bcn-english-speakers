@@ -6,7 +6,7 @@ import type {
   GuestItem,
 } from "../../../services/meetup.service";
 import {
-  getRsvpEmojiList,
+  RSVP_EMOJI_LIST,
   getRsvpOptionLabel,
   getRSVPOptionsByCertainty,
 } from "../../../utils/utils";
@@ -76,7 +76,6 @@ export default function FormStepper({ onFinish }: FormStepperProps) {
     });
   };
 
-  const avatarsList = getRsvpEmojiList();
   const { formData, currentStep } = attendModalState.value;
 
   return (
@@ -140,7 +139,7 @@ export default function FormStepper({ onFinish }: FormStepperProps) {
                   class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm/6"
                 >
                   <option value="">- choose -</option>
-                  {avatarsList.map((emoji, key) => {
+                  {RSVP_EMOJI_LIST.map((emoji, key) => {
                     return (
                       <option key={emoji} value={emoji}>
                         {emoji}

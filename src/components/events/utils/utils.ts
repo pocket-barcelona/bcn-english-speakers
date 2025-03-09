@@ -194,6 +194,7 @@ export const getPaymentSchemeReadout = ({
   return "Unknown";
 };
 
+export const DEFAULT_MAX_MEETUP_SPACES_LEFT = 1000;
 export const eventRSVPStatus = ({
   eventConfig = {} as MeetupItem["eventConfig"],
   rsvps = [],
@@ -204,20 +205,17 @@ export const eventRSVPStatus = ({
   if (!eventConfig.maxAttendees || eventConfig.maxAttendees === 0) {
     return {
       isAcceptingRSVPs: true,
-      spacesLeft: Number.MAX_SAFE_INTEGER,
+      spacesLeft: DEFAULT_MAX_MEETUP_SPACES_LEFT,
     };
   }
 
-  // filter out No's!
+  // filter out No's. (Can also include "Maybe" status!)
   const confirmedRSVPs = rsvps.filter(
     (r) => r.response !== MeetupRsvpAttendanceStatusEnum.Cannot
   );
 
-  // make sure there's space for 1 more
-  if (
-    eventConfig.maxAttendees &&
-    confirmedRSVPs.length - 1 >= eventConfig.maxAttendees
-  ) {
+  // check if event is now full
+  if (confirmedRSVPs.length >= eventConfig.maxAttendees) {
     return {
       isAcceptingRSVPs: false,
       spacesLeft: 0,
@@ -279,39 +277,37 @@ export const getRsvpOptionLabel = (
   }
 };
 
-export const getRsvpEmojiList = (): string[] => {
-  return [
-    "👤",
-    "🧔‍♂️",
-    "👩‍🦳",
-    "👩‍🎤",
-    "👩‍🌾",
-    "👷‍♀️",
-    "🧕",
-    "🕵️‍♂️",
-    "👩‍🍳",
-    "👨‍💻",
-    "🧑‍🎨",
-    "🫅",
-    "🦹",
-    "🧟‍♀️",
-    "🧙‍♀️",
-    "🧛‍♀️",
-    "🧚‍♀️",
-    "🙋‍♂️",
-    "🧖",
-    "💃",
-    "🕺",
-    "💇‍♂️",
-    "🧜",
-    "🥷",
-    "🧑‍🚀",
-    "🧑‍🚒",
-    "🧑‍✈️",
-    "🧑‍🎓",
-    "👩",
-  ];
-};
+export const RSVP_EMOJI_LIST = [
+  "👤",
+  "🧔‍♂️",
+  "👩‍🦳",
+  "👩‍🎤",
+  "👩‍🌾",
+  "👷‍♀️",
+  "🧕",
+  "🕵️‍♂️",
+  "👩‍🍳",
+  "👨‍💻",
+  "🧑‍🎨",
+  "🫅",
+  "🦹",
+  "🧟‍♀️",
+  "🧙‍♀️",
+  "🧛‍♀️",
+  "🧚‍♀️",
+  "🙋‍♂️",
+  "🧖",
+  "💃",
+  "🕺",
+  "💇‍♂️",
+  "🧜",
+  "🥷",
+  "🧑‍🚀",
+  "🧑‍🚒",
+  "🧑‍✈️",
+  "🧑‍🎓",
+  "👩",
+];
 
 export function getGuestList(
   guests: MeetupRsvpModel[],
