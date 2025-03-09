@@ -47,11 +47,12 @@
   "devDependencies": {
     "@iconify-json/ri": "^1.2.2",
     "@types/alpinejs": "^3.13.11",
+    "@vitest/coverage-v8": "^3.0.8",
     "classnames": "^2.5.1",
     "hastscript": "^8.0.0",
     "html-validate": "^9.2.2",
     "sass": "^1.77.3",
     "tailwind-merge": "^2.5.4",
-    "vitest": "^3.0.6"
+    "vitest": "^3.0.8"
   }
 }
