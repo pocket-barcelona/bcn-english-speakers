@@ -51,6 +51,30 @@ describe("Should handle maps logic", () => {
     );
     expect(link).toBe("");
   });
+
+  test("Should return no link when lat/lng not set", () => {
+    const link = getMeetupMapLink({
+      ...visibleLocation,
+      location: {
+        ...visibleLocation.location,
+        lat: -1,
+        lng: -1,
+      },
+    } as MeetupItem);
+    expect(link).toBe("");
+  });
+  
+  test("Should return no link when lat/lng not set", () => {
+    const link = getMeetupMapLink({
+      ...visibleLocation,
+      location: {
+        ...visibleLocation.location,
+        lat: 0,
+        lng: 0,
+      },
+    } as MeetupItem);
+    expect(link).toBe("");
+  });
 });
 
 describe("Should handle date logic", () => {
@@ -237,7 +261,7 @@ describe("Should handle RSVP logic", () => {
         ...meetupPublishedTest.eventConfig,
         maxAttendees: 10,
       },
-      rsvps: []
+      rsvps: [],
     });
 
     const expected: ReturnType<typeof eventRSVPStatus> = {
@@ -259,7 +283,7 @@ describe("Should handle RSVP logic", () => {
         meetupRsvpComingMainGuest,
         meetupRsvpComingMainGuest,
         meetupRsvpComingMainGuest,
-      ]
+      ],
     });
 
     const expected: ReturnType<typeof eventRSVPStatus> = {
@@ -281,7 +305,7 @@ describe("Should handle RSVP logic", () => {
         meetupRsvpComingMainGuest,
         meetupRsvpComingMainGuest,
         meetupRsvpComingMainGuest,
-      ]
+      ],
     });
 
     const expected: ReturnType<typeof eventRSVPStatus> = {
@@ -290,5 +314,4 @@ describe("Should handle RSVP logic", () => {
     };
     expect(rsvpStatus).toEqual(expected);
   });
-  
 });
