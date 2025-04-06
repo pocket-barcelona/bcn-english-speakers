@@ -9,7 +9,7 @@ import PostList from '../components/elements/post-list.astro';
 import PostItem from '../components/elements/post-item.astro';
 import Link from '../components/elements/link.astro';
 
-const posts = (await getMergedPosts()).slice(0, 3);
+const posts = (await getMergedPosts()).slice(0, 4);
 ---
 
 <Layout title={SITE_TITLE}>
@@ -24,8 +24,9 @@ const posts = (await getMergedPosts()).slice(0, 3);
           posts.map((post, index) => <PostItem post={post} index={index} />)
         }  
       </PostList>
+      <hr class="hidden xl:block my-12" />
       <div class="flex justify-end mt-4">
-        <Link href="/blog" style="outline">More articles</Link>
+        <Link href="/blog" style="outline">More articles &rsaquo;</Link>
       </div>
     </div>
   </Container>

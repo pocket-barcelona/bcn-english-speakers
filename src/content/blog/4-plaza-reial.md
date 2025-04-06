@@ -57,4 +57,4 @@ It is said that the lampposts, erected in 1879 and designed by a young Antoni Ga
 
 Plaça Reial is very conveniently located and a great starting point for exploring the city. In close proximity is, of course, Las Ramblas, which connects to the square via a side street.
 
-Barcelona Cathedral is just a short walk away through the gothic streets, as is [Mercat de la Boqueria](/blog/2-visiting-boqueria-market/) – just a little further along Las Ramblas. Being in the Gothic Quarter, the square is also within walking distance of Barceloneta and the beach, with many bars, restaurants and shops to discover close by.
+Barcelona Cathedral is just a short walk away through the gothic streets, as is [Mercat de la Boqueria](/blog/visiting-boqueria-market/) – just a little further along Las Ramblas. Being in the Gothic Quarter, the square is also within walking distance of Barceloneta and the beach, with many bars, restaurants and shops to discover close by.

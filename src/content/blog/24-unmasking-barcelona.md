@@ -37,7 +37,7 @@ By straying from the beaten path, you can discover these and many other secret s
 
 ## Off-the-Beaten-Path Markets
 
-While the vibrancy and spectacle of [Mercat de la Boqueria](/blog/2-visiting-boqueria-market) is undeniably appealing, a deeper and more authentic culinary exploration awaits in Barcelona's quieter, local-favoured markets. Hidden from the typical tourist route, these markets serve as vibrant microcosms of the city's culture, offering fresh produce, tantalising delicacies and a genuine peek into the day-to-day life of Barcelona's residents.
+While the vibrancy and spectacle of [Mercat de la Boqueria](/blog/visiting-boqueria-market) is undeniably appealing, a deeper and more authentic culinary exploration awaits in Barcelona's quieter, local-favoured markets. Hidden from the typical tourist route, these markets serve as vibrant microcosms of the city's culture, offering fresh produce, tantalising delicacies and a genuine peek into the day-to-day life of Barcelona's residents.
 
 A mere fifteen-minute walk from Passeig de Gràcia, nestled within the stately grid of Eixample, lies the elegant Mercat de la Concepció. Often overlooked for its more famous counterpart, this market dates back to 1888 and is an architectural gem. With its striking modernist design, it offers an atmospheric setting to browse a bounty of local produce, from colourful piles of fruits and vegetables to a variety of Catalan cheeses and meats.
 
