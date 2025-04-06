@@ -16,7 +16,7 @@ const { post, index } = Astro.props;
 
 <li>
   <a href={`/blog/${post.slug}`}>
-    <div class="grid md:grid-cols-2 gap-2 md:gap-8 items-center py-2">
+    <div class="grid md:grid-cols-2 gap-2 md:gap-8 xl:gap-6 items-center py-2">
       <Image
         src={post.data.cover}
         alt={post.data.coverAlt}
@@ -34,7 +34,7 @@ const { post, index } = Astro.props;
       <div>
         <PostCategoryTag category={post.data.category} />
 
-        <h2 class="text-2xl md:text-3xl font-bold leading-tight tracking-tight mt-1.5">
+        <h2 class="text-2xl lg:text-3xl font-bold leading-tight tracking-tight mt-1.5">
           {post.data.title}
           {post.data.updatedDate && (
             <Tag color="warning" class="top-[-4px] relative ml-1">
@@ -42,7 +42,7 @@ const { post, index } = Astro.props;
             </Tag>
           )}
         </h2>
-        <p class="text-sm md:text-base mt-4 line-clamp-3">
+        <p class="text-sm md:text-base mt-4 line-clamp-3 md:line-clamp-4 xl:line-clamp-3">
           {post.data.snippet}
         </p>
 
