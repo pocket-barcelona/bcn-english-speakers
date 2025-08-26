@@ -6,7 +6,8 @@ const directusPostPublished: HeadlessPost = {
   author: {
     id: 1,
     name: "Darryl",
-    avatar: "abc-123-uuid"
+    avatar: "abc-123-uuid",
+    author_type: "Pro Contributor"
   },
   title: "Test",
   content: "<p>Test</p>",

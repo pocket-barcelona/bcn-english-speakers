@@ -3,4 +3,4 @@
 
 export const SITE_TITLE = 'Pocket Barcelona';
 export const SITE_DESCRIPTION = 'Experience Barcelona like a local';
-export const HEADLESS_STUB = 'https://content.pocketbarcelona.com';
+export const HEADLESS_STUB = 'https://cms.pocketbarcelona.com';
