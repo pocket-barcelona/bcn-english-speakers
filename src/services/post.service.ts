@@ -128,7 +128,7 @@ export function transformHeadlessPosts(
     const mapped: { __source: string } & UnifiedBlogPost = {
       id: p.slug,
       slug: p.slug,
-      body: p.content,
+      body: p.content.replaceAll('\\&quot;', ''),
       collection: "blog",
       data: {
         draft: p.status.toLowerCase() !== "published", // Markdown has draft:boolean, Directus has status=draft|published|archived. FE only wants to know if it should show the post, or not
@@ -226,17 +226,21 @@ export function getChronologicalNextPrevPosts(
   let nextPost: CollectionEntry<"blog"> | undefined;
   let prevPost: CollectionEntry<"blog"> | undefined;
 
-  const currentPostIndex = allPosts.findIndex((p) => p.id === postData.id);
+  // need to ignore hidden posts which are part of a series.
+  // these have their own next/prev nav
+  const filteredPosts = allPosts.filter(post => post.data.hidePost !== true);
+
+  const currentPostIndex = filteredPosts.findIndex((p) => p.id === postData.id);
   if (currentPostIndex !== -1) {
     const nextPostIndex = currentPostIndex - 1;
     const prevPostIndex = currentPostIndex + 1;
 
-    if (nextPostIndex >= 0 && nextPostIndex < allPosts.length) {
-      nextPost = allPosts[nextPostIndex];
+    if (nextPostIndex >= 0 && nextPostIndex < filteredPosts.length) {
+      nextPost = filteredPosts[nextPostIndex];
     }
 
-    if (prevPostIndex >= 0 && prevPostIndex < allPosts.length) {
-      prevPost = allPosts[prevPostIndex];
+    if (prevPostIndex >= 0 && prevPostIndex < filteredPosts.length) {
+      prevPost = filteredPosts[prevPostIndex];
     }
   }
 
