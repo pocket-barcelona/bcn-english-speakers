@@ -1,9 +1,9 @@
 ---
+import { Astronav, MenuIcon, MenuItems } from "astro-navbar";
 import Container from "../page-container.astro";
 // import Link from "../../components/elements/link.astro";
 import Dropdown from "./navbar-dropdown.astro";
-import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
-import { menuItems } from "./navItems"
+import { menuItems } from "./navItems";
 ---
 
 <div class="bg-[#191919e0] py-4 fixed z-[99999] top-0 left-0 right-0 h-[60px] lg:h-[72px]">
@@ -25,7 +25,7 @@ import { menuItems } from "./navItems"
         </div>
 
         <MenuItems class="hidden w-full lg:w-auto mt-4 lg:flex lg:mt-0">
-          <ul class="flex flex-col lg:flex-row lg:gap-3">
+          <ul class="flex flex-col lg:flex-row lg:gap-3 bg-[#191919e0] lg:bg-transparent px-4 lg:px-0">
             {
               menuItems.map((item, index) => (
                 <>
