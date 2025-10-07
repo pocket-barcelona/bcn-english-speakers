@@ -1,5 +1,5 @@
 ---
-draft: false
+draft: true
 title: "Best Viewpoints in Barcelona"
 snippet: "Barcelona is full of amazing views and almost all of them are free. Let us take you on a tour of Barcelona and show you the best jaw-dropping views it has to offer!"
 cover: "../../assets/blog/17-best-viewpoints/bcn-view.webp"

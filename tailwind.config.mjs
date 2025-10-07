@@ -22,6 +22,10 @@ export default {
 				"3/2": "3 / 2",
 				"2/3": "2 / 3",
 			},
+			maxWidth: {
+				"8xl": "90rem",
+				"9xl": "100rem",
+			},
 		},
 	},
 	plugins: [require("@tailwindcss/typography")],

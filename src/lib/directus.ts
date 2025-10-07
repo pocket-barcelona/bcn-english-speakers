@@ -13,6 +13,7 @@ export type HeadlessAuthor = {
   name: string;
   /** File UUID */
   avatar: string | null;
+  author_type: string;
 }
 
 export type HeadlessPage = {
@@ -36,7 +37,7 @@ export type HeadlessPost = {
   /** The post slug ID used for the unique URL */
   slug: string;
   status: PostStatus;
-  author: HeadlessAuthor; // provided Directus fields are set: https://content.pocketbarcelona.com/items/posts/primavera-sound-festival?fields[]=*&fields[]=author.id&fields[]=author.name&fields[]=author.avatar
+  author: HeadlessAuthor; // provided Directus fields are set: https://cms.pocketbarcelona.com/items/posts/primavera-sound-festival?fields[]=*&fields[]=author.id&fields[]=author.name&fields[]=author.avatar
   title: string;
   /** The post HTML */
   content: string;

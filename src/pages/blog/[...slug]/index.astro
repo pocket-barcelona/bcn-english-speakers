@@ -1,18 +1,24 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import Layout, { type Props as LayoutProps } from '../../../layouts/layout.astro';
-import Container from '../../../components/page-container.astro';
-import { getChronologicalNextPrevPosts, getMergedPosts, getRelatedNextPrevPosts } from '../../../services/post.service';
-import PostRelatedSeriesPost from '../../../components/post-related-series-post.astro';
-import PostNextPrevPost from '../../../components/post-next-prev-post.astro';
-import PostFooter from '../../../components/post-footer.astro';
-import PostHeader from '../../../components/post-header.astro';
-import PostBody from '../../../components/post-body.astro';
-import PostCta from '../../../components/post-cta.astro';
-import '../_styles.scss';
+import type { CollectionEntry } from "astro:content";
+import Container from "../../../components/page-container.astro";
+import PostBody from "../../../components/post-body.astro";
+import PostCta from "../../../components/post-cta.astro";
+import PostFooter from "../../../components/post-footer.astro";
+import PostHeader from "../../../components/post-header.astro";
+import PostNextPrevPost from "../../../components/post-next-prev-post.astro";
+import PostRelatedSeriesPost from "../../../components/post-related-series-post.astro";
+import Layout, {
+	type Props as LayoutProps,
+} from "../../../layouts/layout.astro";
+import {
+	getChronologicalNextPrevPosts,
+	getMergedPosts,
+	getRelatedNextPrevPosts,
+} from "../../../services/post.service";
+import "../_styles.scss";
 
 export async function getStaticPaths() {
-  const mergedPosts = await getMergedPosts(true);
+	const mergedPosts = await getMergedPosts(true);
 	return (mergedPosts ?? []).map((post) => ({
 		params: { slug: post.slug },
 		props: post,
@@ -23,41 +29,51 @@ type Props = CollectionEntry<"blog">;
 
 const post = Astro.props;
 
-const resolvedImageWithDomain = new URL(
-	"/og.jpg",
-	Astro.site,
-).toString();
-const image = typeof post.data.cover === 'object' ? new URL(post.data.cover.src, Astro.site).toString() : typeof post.data.cover === 'string' ? post.data.cover : '';
-const seo: LayoutProps['seo'] = {
-  openGraph: {
-    basic: {
-      image: image || resolvedImageWithDomain,
-      title: post.data.title,
-      type: 'article',
-      url: new URL(`/blog/${post.slug}`, Astro.site).toString(),
-    },
-    image: {
-      url: image || resolvedImageWithDomain,
-      alt: post.data.coverAlt ?? post.data.title,
-      secureUrl: image || resolvedImageWithDomain,
-      type: 'image/jpeg',
-      width: post.data.cover.width,
-      height: post.data.cover.height,
-    },
-    article: {
-      publishedTime: post.data.publishDate.toISOString(),
-      authors: [ post.data.author ],
-      modifiedTime: post.data.updatedDate ? new Date(post.data.updatedDate).toISOString() : undefined,
-      tags: [...post.data.tags],
-      section: 'Travel'
-    }
-  },
-}
+const resolvedImageWithDomain = new URL("/og.jpg", Astro.site).toString();
+const image =
+	typeof post.data.cover === "object"
+		? new URL(post.data.cover.src, Astro.site).toString()
+		: typeof post.data.cover === "string"
+			? post.data.cover
+			: "";
+const seo: LayoutProps["seo"] = {
+	openGraph: {
+		basic: {
+			image: image || resolvedImageWithDomain,
+			title: post.data.title,
+			type: "article",
+			url: new URL(`/blog/${post.slug}`, Astro.site).toString(),
+		},
+		image: {
+			url: image || resolvedImageWithDomain,
+			alt: post.data.coverAlt ?? post.data.title,
+			secureUrl: image || resolvedImageWithDomain,
+			type: "image/jpeg",
+			width: post.data.cover.width,
+			height: post.data.cover.height,
+		},
+		article: {
+			publishedTime: post.data.publishDate.toISOString(),
+			authors: [post.data.author],
+			modifiedTime: post.data.updatedDate
+				? new Date(post.data.updatedDate).toISOString()
+				: undefined,
+			tags: [...post.data.tags],
+			section: "Travel",
+		},
+	},
+};
 
 // get related/next/prev post
-const mergedPosts = await getMergedPosts(true);
-const { next, prev, related } = getRelatedNextPrevPosts(post, mergedPosts);
-const { nextPost, prevPost } = getChronologicalNextPrevPosts(post, mergedPosts);
+const mergedAndHiddenPosts = await getMergedPosts(true);
+const { next, prev, related } = getRelatedNextPrevPosts(
+	post,
+	mergedAndHiddenPosts,
+);
+const { nextPost, prevPost } = getChronologicalNextPrevPosts(
+	post,
+	mergedAndHiddenPosts,
+);
 
 // @todo - if Directus post, build TOC if told to. Pass into <PostBody>
 

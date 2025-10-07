@@ -1,15 +1,15 @@
 ---
-import Layout from "../layouts/layout.astro";
-import Container from "../components/page-container.astro";
-import directus from "../lib/directus";
 import { readItems } from "@directus/sdk";
+import Container from "../components/page-container.astro";
+import Layout from "../layouts/layout.astro";
+import directus from "../lib/directus";
 
 export async function getStaticPaths() {
-  const pages = await directus.request(readItems("pages"));
-  return pages.map((page) => ({
-    params: { slug: page.slug },
-    props: page,
-  }));
+	const pages = await directus.request(readItems("pages"));
+	return pages.map((page) => ({
+		params: { slug: page.slug },
+		props: page,
+	}));
 }
 const page = Astro.props;
 ---
