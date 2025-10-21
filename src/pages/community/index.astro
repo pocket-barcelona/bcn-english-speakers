@@ -1,10 +1,10 @@
 ---
-import Layout, { type Props as LayoutProps } from "../../layouts/layout.astro";
+import GroupItem from "../../components/elements/group-item.astro";
 import Container from "../../components/page-container.astro";
 import Sectionhead from "../../components/section-head.astro";
-import Images from "./images.astro";
+import Layout, { type Props as LayoutProps } from "../../layouts/layout.astro";
 import { getGroups } from "../../services/group.service";
-import GroupItem from "../../components/elements/group-item.astro";
+import Images from "./images.astro";
 
 const groups = await getGroups();
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
@@ -43,8 +43,8 @@ const seo: LayoutProps["seo"] = {
           <p class="my-6">
             The group started in 2020 to offer tips, support, personal
             experiences and general help to other English-speaking people who
-            have just moved to Barcelona. Since the summer of 2023, the group
-            has welcomed over 500 members, and counting!
+            have just moved to Barcelona. Since the summer of 2025, the group
+            has welcomed over 1800+ members, and counting!
           </p>
 
           <p class="my-6">
