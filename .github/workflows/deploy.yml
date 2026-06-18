@@ -22,9 +22,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
       - name: Install, build, and upload your site
-        uses: withastro/action@v2
+        uses: withastro/action@v6
         with:
           path: . # The root location of your Astro project inside the repository. (optional)
           node-version: 22 # The specific version of Node that should be used to build your site. Defaults to 18. (optional)
