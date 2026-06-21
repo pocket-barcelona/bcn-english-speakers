@@ -1,14 +1,13 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import PostCategoryTag from './post-category-tag.astro';
 import Button from './elements/button.astro';
+import PostCategoryTag from './post-category-tag.astro';
 
 type Props = {
   post: CollectionEntry<'blog'>;
 };
 
 const { post } = Astro.props;
-
 ---
 
 <div class="mx-auto max-w-4xl mt-8 lg:mt-16">

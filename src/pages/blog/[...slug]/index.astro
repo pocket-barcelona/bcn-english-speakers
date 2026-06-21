@@ -20,7 +20,7 @@ import "../_styles.scss";
 export async function getStaticPaths() {
 	const mergedPosts = await getMergedPosts(true);
 	return (mergedPosts ?? []).map((post) => ({
-		params: { slug: post.slug },
+		params: { slug: post.id },
 		props: post,
 	}));
 }
@@ -42,7 +42,7 @@ const seo: LayoutProps["seo"] = {
 			image: image || resolvedImageWithDomain,
 			title: post.data.title,
 			type: "article",
-			url: new URL(`/blog/${post.slug}`, Astro.site).toString(),
+			url: new URL(`/blog/${post.id}`, Astro.site).toString(),
 		},
 		image: {
 			url: image || resolvedImageWithDomain,

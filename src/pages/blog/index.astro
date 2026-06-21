@@ -1,29 +1,42 @@
 ---
-import Layout, { type Props as LayoutProps } from "../../layouts/layout.astro";
-import Container from "../../components/page-container.astro";
-import Sectionhead from "../../components/section-head.astro";
+import type { CollectionEntry } from 'astro:content';
 import PostItem from '../../components/elements/post-item.astro';
-import { getMergedPosts } from '../../services/post.service';
 import PostList from '../../components/elements/post-list.astro';
+import Container from '../../components/page-container.astro';
+import Sectionhead from '../../components/section-head.astro';
+import Layout, { type Props as LayoutProps } from '../../layouts/layout.astro';
+import { getMergedPosts } from '../../services/post.service';
+
 // Images: https://docs.astro.build/en/guides/images/#images-in-content-collections
 // Using getImage() https://youtu.be/VsZ6feIU_bA?si=nyV2t1GsGbdaQh4t&t=760
 const posts = await getMergedPosts();
 
-const resolvedImageWithDomain = new URL(
-	"/og.jpg",
-	Astro.site,
-).toString();
+const resolvedImageWithDomain = new URL('/og.jpg', Astro.site).toString();
 const seo: LayoutProps['seo'] = {
   openGraph: {
     basic: {
       image: resolvedImageWithDomain,
       title: 'Pocket Barcelona - Blog',
       type: 'website',
-      url: new URL("/blog", Astro.site).toString(),
+      url: new URL('/blog', Astro.site).toString(),
     },
   },
-}
+};
+const getYearBreaks = (postItems: CollectionEntry<'blog'>[]): number[] => {
+  const breaks: number[] = [];
+  let lastYear: number = -1;
 
+  postItems.forEach((post, index) => {
+    const currentYear = new Date(post.data.publishDate).getFullYear();
+    if (lastYear !== null && currentYear !== lastYear) {
+      breaks.push(index);
+    }
+    lastYear = currentYear;
+  });
+
+  return breaks;
+};
+const yearBreaks = getYearBreaks(posts);
 ---
 <Layout title={"Expert Articles"} seo={seo}>
   <Container>
@@ -31,15 +44,23 @@ const seo: LayoutProps['seo'] = {
       <Fragment slot="title">Articles by locals</Fragment>
       <Fragment slot="desc">
         All articles written by <strong>local residents</strong>, who have lived
-        in Barcelona for years.
+        in Barcelona for many years.
       </Fragment>
     </Sectionhead>
 
     <div class="max-w-10xl mx-auto xl:mt-12">
       <PostList>
         {
-          posts.map((post, index) => <PostItem post={post} index={index} />)
-        }  
+          posts.map((post, index) => {
+            const isYearBreak = yearBreaks.includes(index);
+            return (
+              <>
+                {isYearBreak && <li class="mt-8 col-span-1 xl:col-span-2 w-full"><h2 class="text-3xl text-center text-black font-bold underline">Posts from {post.data.publishDate.getFullYear()}</h2></li>}
+                <PostItem post={post} index={index} />
+              </>
+            );
+          })
+        }
       </PostList>
     </div>
   </Container>

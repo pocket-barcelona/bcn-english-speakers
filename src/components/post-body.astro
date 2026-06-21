@@ -1,19 +1,20 @@
 ---
-import type { CollectionEntry } from "astro:content";
+import { type CollectionEntry, render } from 'astro:content';
 
 type Props = {
-	post: CollectionEntry<"blog">;
+  post: CollectionEntry<'blog'>;
 };
 
 const { post } = Astro.props;
+const { Content } = await render(post);
 
-// support for Directus or Internal posts
-// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+// Content coming from the headless CMS is just rendered markup
+// Content from Astro/MDX needs rendering
+// biome-ignore lint/suspicious/noExplicitAny: Can improve type
 let Rendered: any = null;
-if (post.render) {
-	Rendered = await post.render();
-} else {
-	// comes from Directus - use set:html
+// biome-ignore lint/suspicious/noExplicitAny: Can improve type
+if ((post as any).filePath !== undefined) {
+  Rendered = Content;
 }
 ---
 
@@ -27,7 +28,7 @@ if (post.render) {
   prose-headings:mt-9 prose-headings:mb-2
 ">
 {
-  Rendered ? <Rendered.Content /> : (
+  Rendered ? <Rendered /> : (
     <div set:html={post.body} />
   )
 }

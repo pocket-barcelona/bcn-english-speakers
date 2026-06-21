@@ -30,7 +30,7 @@ Yes, that’s right, I said it!
 
 If you absolutely have to, then make sure to not eat at a touristy restaurant as the paella won’t be traditional and it’ll just be expensive (and probably from the freezer). Also, the locals don’t eat paella for dinner, it’s a lunch thing! And one last thing –– paella in Barcelona will be more seafood-based, which some argue isn’t the traditional recipe. But we’ll leave those arguments to the locals!
 
-(Insert link to Paella guide here)
+Checkout my [Barceloneta Paella guide](/blog/best-paella-restaurants-in-barceloneta).
 
 ## Don’t order black rice (arroz negro)!
 Arroz negro, while very tasty, is also originally from Valencia. Having said that, you will find some decent black rice here in Barcelona.

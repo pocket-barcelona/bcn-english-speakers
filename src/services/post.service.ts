@@ -127,7 +127,7 @@ export function transformHeadlessPosts(
 
     const mapped: { __source: string } & UnifiedBlogPost = {
       id: p.slug,
-      slug: p.slug,
+      // slug: p.slug,
       body: p.content.replaceAll('\\&quot;', ''),
       collection: "blog",
       data: {
@@ -156,8 +156,8 @@ export function transformHeadlessPosts(
             ? new Date(p.date_updated)
             : undefined,
       },
-      // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-      render: undefined as unknown as any,
+      // biome-ignore lint/suspicious/noExplicitAny: Not needed for headless post
+      rendered: undefined as unknown as any,
       __source: "HEADLESS", // inject identifier, if needed explicitly
     };
     return mapped;
@@ -200,13 +200,13 @@ export function getRelatedNextPrevPosts(
   let related: CollectionEntry<"blog"> | undefined;
 
   if (postData.data.nextPost) {
-    next = allPosts.find((p) => p.slug === postData.data.nextPost);
+    next = allPosts.find((p) => p.id === postData.data.nextPost);
   }
   if (postData.data.prevPost) {
-    prev = allPosts.find((_p) => _p.slug === postData.data.prevPost);
+    prev = allPosts.find((_p) => _p.id === postData.data.prevPost);
   }
   if (postData.data.relatedPost) {
-    related = allPosts.find((_p) => _p.slug === postData.data.relatedPost);
+    related = allPosts.find((_p) => _p.id === postData.data.relatedPost);
   }
   return {
     next,

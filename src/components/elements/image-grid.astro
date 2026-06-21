@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 
 interface Props {
   images: {
+    // biome-ignore lint/suspicious/noExplicitAny: Will be astro image proxy object
     src: any;
     alt: string;
   }[];

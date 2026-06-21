@@ -1,27 +1,27 @@
 ---
-import { Image } from "astro:assets";
-import authorDefault from "../assets/authors/pb.jpg";
-import authorDarryl from "../assets/authors/darryl.jpg";
-import authorBob from "../assets/authors/bob.jpg";
-import authorBrata from "../assets/authors/brata.jpg";
-import authorTasha from "../assets/authors/tasha.jpg";
-import authorUriel from "../assets/authors/uriel.jpg";
-import { HEADLESS_STUB } from '../consts';
+import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
+import authorBob from '../assets/authors/bob.jpg';
+import authorBrata from '../assets/authors/brata.jpg';
+import authorDarryl from '../assets/authors/darryl.jpg';
+import authorDefault from '../assets/authors/pb.jpg';
+import authorTasha from '../assets/authors/tasha.jpg';
+import authorUriel from '../assets/authors/uriel.jpg';
+import { HEADLESS_STUB } from '../consts';
 
 interface Props {
   authorName: string;
-	authorId: string;
-	authorAvatar?: string;
+  authorId: string;
+  authorAvatar?: string;
 }
 const getAuthorAvatar = (avatarId: string): ImageMetadata => {
   return {
     src: `${HEADLESS_STUB}/assets/${avatarId}?width=120&height=120&format=webp`,
     width: 120,
     height: 120,
-    format: 'webp'
+    format: 'webp',
   };
-}
+};
 
 const { authorId, authorName, authorAvatar } = Astro.props;
 
@@ -53,7 +53,6 @@ if (authorAvatar) {
 
 // @todo - might be a better way to do this...?
 const isDirectusImage = src.src.substring(0, 5).toLowerCase() === 'https';
-
 ---
 
 {

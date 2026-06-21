@@ -18,8 +18,8 @@ const { next, prev } = Astro.props;
           {prev ? (
             <div class="flex flex-col">
               <span class="text-base md:text-lg tracking-tight text-center font-semibold mb-2">Previous post</span>
-              <a class="flex flex-col gap-2 w-full font-bold text-blue-700" href={`/blog/${prev.slug}`} title={prev.data.title}>
-                <img src={prev.data.cover.src} alt={prev.data.coverAlt ?? prev.data.title} class="mx-auto object-cover aspect-16/9" />
+              <a class="flex flex-col gap-2 w-full font-bold text-blue-700" href={`/blog/${prev.id}`} title={prev.data.title}>
+                <img src={prev.data.cover.src} alt={prev.data.coverAlt ?? prev.data.title} class="mx-auto object-cover aspect-4/3" />
                 <span class="text-center text-xs md:text-base px-2 md:px-4 tracking-tight">&laquo; {prev.data.title}</span>
               </a>
             </div>
@@ -29,8 +29,8 @@ const { next, prev } = Astro.props;
           {next ? (
             <div class="flex flex-col">
               <span class="text-base md:text-lg tracking-tight text-center font-semibold mb-2">Next post</span>
-              <a class="flex flex-col gap-2 w-full font-bold text-blue-700" href={`/blog/${next.slug}`} title={next.data.title}>
-                <img src={next.data.cover.src} alt={next.data.coverAlt ?? next.data.title} class="mx-auto object-cover aspect-16/9" />
+              <a class="flex flex-col gap-2 w-full font-bold text-blue-700" href={`/blog/${next.id}`} title={next.data.title}>
+                <img src={next.data.cover.src} alt={next.data.coverAlt ?? next.data.title} class="mx-auto object-cover aspect-4/3" />
                 <span class="text-center text-xs md:text-base px-2 md:px-4 tracking-tight">{next.data.title} &raquo;</span>
               </a>
             </div>

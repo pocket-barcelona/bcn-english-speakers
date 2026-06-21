@@ -71,7 +71,6 @@ function PostBody({ content }: PostBodyProps) {
         prose-p:leading-6 sm:prose-p:leading-7
         prose-hr:my-6 sm:prose-hr:my-12 prose-hr:border-gray-300
       "
-      // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
       dangerouslySetInnerHTML={{
         __html: content,
       }}
