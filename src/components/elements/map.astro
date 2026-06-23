@@ -1,0 +1,88 @@
+---
+import type { PlaceType } from '../../types';
+
+// Google Maps: https://developers.google.com/maps/documentation/javascript/using-typescript
+// Clickable markers: https://developers.google.com/maps/documentation/javascript/advanced-markers/graphic-markers
+
+interface Props {
+  center?: {
+    lat: number;
+    lng: number;
+    zoom: number;
+  };
+  items: PlaceType[];
+}
+
+const { center, items } = Astro.props;
+
+// const addressMapsLink = `http://maps.google.com/?q=${encodeURIComponent(address ?? '')}`;
+
+const mapCenter: string = center
+  ? `${center.lat}, ${center.lng}`
+  : '41.38703093661932, 2.170055707928692'; // plaza cat
+const mapZoom: number = center?.zoom ?? 15;
+---
+<style>
+gmp-map {
+  height: 540px;
+}
+</style>
+<gmp-map
+    center={mapCenter}
+    zoom={mapZoom}
+    map-id="MY_MAP_ID" />
+
+<script>
+  import { setOptions, importLibrary } from '@googlemaps/js-api-loader';
+  
+  const mapElement = document.querySelector('gmp-map')!;
+  let innerMap: google.maps.Map;
+
+  async function init() {
+    // Request needed libraries
+
+    const [{ MapTypeControlStyle }, { ControlPosition }, { AdvancedMarkerElement }] = await Promise.all([
+      // google.maps.importLibrary('maps'),
+      // google.maps.importLibrary('core'),
+      // google.maps.importLibrary("marker"),
+      importLibrary('maps'),
+      importLibrary('core'),
+      importLibrary("marker"),
+    ]);
+
+    // Get the inner map
+    innerMap = mapElement.innerMap;
+
+    // https://developers.google.com/maps/documentation/javascript/controls
+    innerMap.setOptions({
+      mapTypeControl: true,
+      mapTypeControlOptions: {
+        style: MapTypeControlStyle.HORIZONTAL_BAR,
+        position: ControlPosition.BLOCK_START_INLINE_CENTER,
+      },
+      zoomControl: true,
+      zoomControlOptions: {
+        position: ControlPosition.INLINE_END_BLOCK_CENTER,
+      },
+      scaleControl: true,
+      streetViewControl: true,
+      streetViewControlOptions: {
+        position: ControlPosition.INLINE_START_BLOCK_START,
+      },
+      fullscreenControl: true,
+    });
+
+    const customMarkerImage = document.createElement('img');
+    customMarkerImage.src = new URL('/marker.png', import.meta.url).href;
+    const beachFlagMarker = new AdvancedMarkerElement({
+      position: { lat: 41.38703093661932, lng: 2.170055707928692 },
+      title: 'A marker using a custom Image',
+      anchorLeft: '0px',
+      anchorTop: '100%',
+    });
+    beachFlagMarker.append(customMarkerImage);
+    mapElement.append(beachFlagMarker);
+  }
+
+  void init();
+</script>
