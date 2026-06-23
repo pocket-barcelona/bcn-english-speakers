@@ -42,6 +42,7 @@
   "devDependencies": {
     "@biomejs/biome": "2.5.0",
     "@types/alpinejs": "^3.13.11",
+    "@types/google.maps": "^3.65.2",
     "hastscript": "^8.0.0",
     "html-validate": "^9.2.2",
     "sass": "^1.77.3",
