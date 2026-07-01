@@ -1,5 +1,6 @@
 ---
 import type { PlaceType } from '../../types';
+import ListingBlock from './listing-block.astro';
 
 // Google Maps: https://developers.google.com/maps/documentation/javascript/using-typescript
 // Clickable markers: https://developers.google.com/maps/documentation/javascript/advanced-markers/graphic-markers
@@ -33,6 +34,14 @@ gmp-map {
     map-id="MY_MAP_ID"
     data-points={JSON.stringify(items ?? [])} />
 
+<div>
+  {items.map((item, index) => (
+    <div>
+        <h2>{index + 1}. {item.placeName}</h2>
+        <ListingBlock {...item} />
+    </div>
+  ))}
+</div>
 <script>
   // import { setOptions, importLibrary } from '@googlemaps/js-api-loader';
   import type { PlaceType } from "../../types";
