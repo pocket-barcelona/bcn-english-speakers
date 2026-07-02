@@ -38,7 +38,7 @@ gmp-map {
   {items.map((item, index) => (
     <div>
         <h2>{index + 1}. {item.placeName}</h2>
-        <ListingBlock {...item} />
+        <ListingBlock {...item}>{item.copy}</ListingBlock>
     </div>
   ))}
 </div>

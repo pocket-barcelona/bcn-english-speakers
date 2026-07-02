@@ -3,7 +3,7 @@ import type { PlaceType } from "../types";
 const data: PlaceType[] = [
   {
     placeName: "Restaurant Barceloneta",
-    recommendation:
+    copy:
       "This somewhat straightforwardly named restaurant by the water is a great place to take guests, friends and family and has space for hundreds of people.",
     address: "Moll dels Pescador, Port Vell, Carrer de l'Escar, 22, Ciutat Vella, 08039 Barcelona",
     website: "http://www.restaurantbarceloneta.com/",
@@ -14,7 +14,8 @@ const data: PlaceType[] = [
   },
   {
     placeName: "Maná 75",
-    recommendation:
+    recommendation: "Be sure to go inside and look at the row of paellas cooking!",
+    copy:
       "If you're looking for a glamorous and luxurious place to eat paella in Barceloneta, you should definitely consider Maná 75 restaurant. Certainly handy if you're staying in the nearby W Barcelona -- an iconic 5-star hotel a stone's throw away.",
     address: "Pg. de Joan de Borbó, 101, Ciutat Vella, 08039 Barcelona",
     website: "https://mana75.es/",
@@ -25,7 +26,7 @@ const data: PlaceType[] = [
   },
   {
     placeName: "Merendero de la Mari",
-    recommendation: "",
+    copy: "",
     address: "Plaça de Pau Vila, 1, Ciutat Vella, 08039 Barcelona",
     website: "https://www.merenderodelamari.com/es/",
     map: "https://maps.app.goo.gl/23xypbbGtH2GoDPJA",
@@ -35,7 +36,8 @@ const data: PlaceType[] = [
   },
   {
     placeName: "Restaurant Salamanca",
-    recommendation:
+    recommendation: "Their seafood platter is awesome",
+    copy:
       "This restaurant has been here for years and also has a great selection of fish dishes to try. You will likely see it if you are just walking past and it's usually full at lunch time in the warmer months.",
     address: "C/ de Pepe Rubianes, 34, Ciutat Vella, 08003 Barcelona",
     website: "https://restaurantesalamanca.es/menus/",
@@ -46,7 +48,8 @@ const data: PlaceType[] = [
   },
   {
     placeName: "Can Ramonet",
-    recommendation:
+    recommendation: "One of the most traditional restaurants in Barceloneta. Try to choose a good seat as there are several rooms",
+    copy:
       "Can Ramonet has a very local, authentic feel and the interior decor creates an amazing, energetic but comfortable eating experience. The waiters are all old-timers and were probably installed from the very beginning. In recent years the prices have increased a bit but probably due to the tourist demands passing by Barceloneta.",
     address: "Carrer de la Maquinista, 17, Ciutat Vella, 08003 Barcelona",
     website: "http://www.canramonet.es/",
@@ -57,7 +60,7 @@ const data: PlaceType[] = [
   },
   {
     placeName: "Restaurant Ca La Montse",
-    recommendation: "",
+    copy: "",
     address: "C/ de Balboa, 14, Ciutat Vella, 08003 Barcelona",
     website: "https://restaurantcalamontse.com/carta-restaurante-barceloneta/",
     map: "https://maps.app.goo.gl/oA1d6ziSPiVkkdWf7",
@@ -67,7 +70,7 @@ const data: PlaceType[] = [
   },
   {
     placeName: "Restaurant Cheriff",
-    recommendation: "",
+    copy: "",
     address: "C/ de Ginebra, 15, Ciutat Vella, 08003 Barcelona",
     website: "http://cheriffrestaurant.es/",
     map: "https://maps.app.goo.gl/DjfmDkbf5Ex7uqgQ8",
@@ -77,7 +80,7 @@ const data: PlaceType[] = [
   },
   {
     placeName: "Camping Mar",
-    recommendation: "",
+    copy: "",
     address: "Marina Vela, Pg. de Joan de Borbó, 103, Ciutat Vella, 08039 Barcelona",
     website: "https://grupotragaluz.com/restaurantes/camping-mar/",
     map: "https://maps.app.goo.gl/99NZEVasAUPq4Xpk9",
@@ -87,7 +90,7 @@ const data: PlaceType[] = [
   },
   {
     placeName: "Peix Vela",
-    recommendation: "",
+    copy: "",
     address: "Passeig del Mare Nostrum, 19, 21, Ciutat Vella, 08039 Barcelona",
     website: "https://grupotragaluz.com/restaurantes/pez-vela/",
     map: "https://maps.app.goo.gl/9BZSnm6ak6Fmboaa7",
@@ -97,7 +100,7 @@ const data: PlaceType[] = [
   },
   {
     placeName: "Gallito",
-    recommendation: "",
+    copy: "",
     address: "Passeig del Mare Nostrum, 19, 21, Ciutat Vella, 08039 Barcelona",
     website: "https://grupotragaluz.com/restaurantes/gallito/",
     map: "https://maps.app.goo.gl/JzThQqZSseK3h7Sp9",

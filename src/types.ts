@@ -1,5 +1,6 @@
 export type PlaceType = {
   placeName: string;
+  copy?: string;
   lat: number;
   lng: number;
   
