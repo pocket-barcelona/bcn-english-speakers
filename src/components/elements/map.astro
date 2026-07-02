@@ -1,0 +1,146 @@
+---
+import type { PlaceType } from '../../types';
+import ListingBlock from './listing-block.astro';
+
+// Google Maps: https://developers.google.com/maps/documentation/javascript/using-typescript
+// Clickable markers: https://developers.google.com/maps/documentation/javascript/advanced-markers/graphic-markers
+
+interface Props {
+  center?: {
+    lat: number;
+    lng: number;
+    zoom: number;
+  };
+  items: PlaceType[];
+}
+
+const { center, items } = Astro.props;
+
+// const addressMapsLink = `http://maps.google.com/?q=${encodeURIComponent(address ?? '')}`;
+
+const mapCenter: string = center
+  ? `${center.lat}, ${center.lng}`
+  : '41.38703093661932, 2.170055707928692'; // plaza cat
+const mapZoom: number = center?.zoom ?? 15;
+---
+<style>
+gmp-map {
+  height: 540px;
+}
+</style>
+<gmp-map
+    center={mapCenter}
+    zoom={mapZoom}
+    map-id="MY_MAP_ID"
+    data-points={JSON.stringify(items ?? [])} />
+
+<div>
+  {items.map((item, index) => (
+    <div>
+        <h2>{index + 1}. {item.placeName}</h2>
+        <ListingBlock {...item}>{item.copy}</ListingBlock>
+    </div>
+  ))}
+</div>
+<script>
+  // import { setOptions, importLibrary } from '@googlemaps/js-api-loader';
+  import type { PlaceType } from "../../types";
+  
+  const mapElement = document.querySelector('gmp-map')!;
+  const dataPointsString = mapElement.dataset.points;
+  const dataPoints = JSON.parse(dataPointsString!) as PlaceType[]
+  // const innerMap: google.maps.Map;
+  
+  // TODO - interactive markers: Build this: https://developers.google.com/maps/documentation/javascript/advanced-markers/html-markers#maps_advanced_markers_html-javascript
+
+  async function init() {
+    // Request needed libraries.
+    var [{ InfoWindow }, { AdvancedMarkerElement, PinElement }] =
+      await Promise.all([
+        google.maps.importLibrary('maps'),
+        google.maps.importLibrary('marker'),
+      ]);
+
+    // Set LatLng and title text for the markers. The first marker (Boynton Pass)
+    // receives the initial focus when tab is pressed. Use arrow keys to move
+    // between markers; press tab again to cycle through the map controls.
+    const mapMarkers = dataPoints.filter(i => i.lat && i.lng && i.placeName).map(i => {
+      return {
+        position: { lat: i.lat, lng: i.lng },
+        title: i.placeName,
+      }
+    });
+
+    // Create an info window to share between markers.
+    const infoWindow = new InfoWindow();
+
+    // Create the markers.
+    mapMarkers.forEach(({ position, title }, i) => {
+      const pin = new PinElement({
+        glyphText: `${i + 1}`,
+        scale: 1.5,
+      });
+      const marker = new AdvancedMarkerElement({
+        position,
+        title: `${i + 1}. ${title}`,
+        gmpClickable: true,
+      });
+      marker.append(pin);
+      mapElement.append(marker);
+      // Add a click listener for each marker, and set up the info window.
+      marker.addEventListener('gmp-click', () => {
+        infoWindow.close();
+        infoWindow.setContent(marker.title);
+        infoWindow.open(marker.map, marker);
+      });
+    });
+  }
+
+  // async function init() {
+  //   // Request needed libraries
+
+  //   const [{ MapTypeControlStyle }, { ControlPosition }, { AdvancedMarkerElement }] = await Promise.all([
+  //     // google.maps.importLibrary('maps'),
+  //     // google.maps.importLibrary('core'),
+  //     // google.maps.importLibrary("marker"),
+  //     importLibrary('maps'),
+  //     importLibrary('core'),
+  //     importLibrary("marker"),
+  //   ]);
+
+  //   // Get the inner map
+  //   innerMap = mapElement.innerMap;
+
+  //   // https://developers.google.com/maps/documentation/javascript/controls
+  //   innerMap.setOptions({
+  //     mapTypeControl: true,
+  //     mapTypeControlOptions: {
+  //       style: MapTypeControlStyle.HORIZONTAL_BAR,
+  //       position: ControlPosition.BLOCK_START_INLINE_CENTER,
+  //     },
+  //     zoomControl: true,
+  //     zoomControlOptions: {
+  //       position: ControlPosition.INLINE_END_BLOCK_CENTER,
+  //     },
+  //     scaleControl: true,
+  //     streetViewControl: true,
+  //     streetViewControlOptions: {
+  //       position: ControlPosition.INLINE_START_BLOCK_START,
+  //     },
+  //     fullscreenControl: true,
+  //   });
+
+  //   const customMarkerImage = document.createElement('img');
+  //   customMarkerImage.src = new URL('/marker.png', import.meta.url).href;
+  //   const beachFlagMarker = new AdvancedMarkerElement({
+  //     position: { lat: 41.38703093661932, lng: 2.170055707928692 },
+  //     title: 'A marker using a custom Image',
+  //     anchorLeft: '0px',
+  //     anchorTop: '100%',
+  //   });
+  //   beachFlagMarker.append(customMarkerImage);
+  //   mapElement.append(beachFlagMarker);
+  // }
+
+  void init();
+</script>
