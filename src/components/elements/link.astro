@@ -1,11 +1,11 @@
 ---
 interface Props {
   href: string;
-  size?: "md" | "lg";
+  size?: "md" | "lg" | "xl";
   block?: boolean;
   style?: "outline" | "primary" | "inverted" | "muted" | "success";
   class?: string;
-  [x: string]: any;
+  [x: string]: unknown;
 }
 
 const {
@@ -19,7 +19,8 @@ const {
 
 const sizes = {
   md: "px-2 md:px-4 py-1 md:py-2 text-xs",
-  lg: "px-3 md:px-5 py-1.5 md:py-2.5 text-md",
+  lg: "px-3 md:px-5 py-1.5 md:py-2.5 text-md md:text-lg",
+  xl: "px-4 md:px-6 py-2 md:py-3 text-lg md:text-xl",
 };
 
 const styles = {
@@ -35,7 +36,7 @@ const styles = {
   href={href}
   {...rest}
   class:list={[
-    "rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200",
+    "rounded-lg text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200",
     block && "w-full",
     sizes[size],
     styles[style],

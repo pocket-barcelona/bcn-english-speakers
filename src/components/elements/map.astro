@@ -27,13 +27,12 @@ const mapZoom: number = center?.zoom ?? 15;
 gmp-map {
   height: 540px;
 }
+@media (max-width: 767px) {
+  gmp-map {
+    height: 400px;
+  }
+}
 </style>
-<gmp-map
-    center={mapCenter}
-    zoom={mapZoom}
-    map-id="MY_MAP_ID"
-    data-points={JSON.stringify(items ?? [])} />
-
 <div>
   {items.map((item, index) => (
     <div>
@@ -42,6 +41,15 @@ gmp-map {
     </div>
   ))}
 </div>
+<hr />
+
+<h2>Map view</h2>
+<gmp-map
+    center={mapCenter}
+    zoom={mapZoom}
+    map-id="MY_MAP_ID"
+    data-points={JSON.stringify(items ?? [])} />
+
 <script>
   // import { setOptions, importLibrary } from '@googlemaps/js-api-loader';
   import type { PlaceType } from "../../types";

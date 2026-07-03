@@ -19,10 +19,10 @@ export const menuItems: NavItem[] = [
     title: "Expert Blog",
     path: "/blog",
   },
-  {
-    title: "Community",
-    path: "/community",
-  },
+  // {
+  //   title: "Community",
+  //   path: "/community",
+  // },
   // {
   //   title: "Contact",
   //   path: "/contact",

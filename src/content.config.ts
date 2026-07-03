@@ -34,26 +34,26 @@ const blogCollection = defineCollection({
     }),
 });
 
-const communityCollection = defineCollection({
-  loader: glob({ pattern: ['*.md', '*.mdx'], base: 'src/content/community' }),
-  // Type-check frontmatter using a schema
-  schema: ({ image }) =>
-    z.object({
-      draft: z.boolean().optional(),
-      images: z.array(
-        z.object({
-          src: image(),
-          // .refine((img) => img.width >= 500, {
-          //   message: "Image width must be at least 500px",
-          // }),
-          alt: z.string(),
-        }),
-      ),
-    }),
-});
+// const communityCollection = defineCollection({
+//   loader: glob({ pattern: ['*.md', '*.mdx'], base: 'src/content/community' }),
+//   // Type-check frontmatter using a schema
+//   schema: ({ image }) =>
+//     z.object({
+//       draft: z.boolean().optional(),
+//       images: z.array(
+//         z.object({
+//           src: image(),
+//           // .refine((img) => img.width >= 500, {
+//           //   message: "Image width must be at least 500px",
+//           // }),
+//           alt: z.string(),
+//         }),
+//       ),
+//     }),
+// });
 
 export const collections = {
   blog: blogCollection,
-  community: communityCollection,
+  // community: communityCollection,
   // group: groupCollection
 };

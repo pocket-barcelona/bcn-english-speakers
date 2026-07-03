@@ -1,11 +1,12 @@
 import type { CollectionEntry } from "astro:content";
 
-// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-const render = () => null as unknown as any;
+// biome-ignore lint/suspicious/noExplicitAny: WIP
+// biome-ignore lint/correctness/noUnusedVariables: WIP
+const rendered = () => null as unknown as any;
 
 const post1: CollectionEntry<"blog"> = {
   id: "0001",
-  slug: "my-first-post",
+  filePath: "my-first-post.md",
   data: {
     title: "First post",
     snippet: "This is my first post",
@@ -25,12 +26,12 @@ const post1: CollectionEntry<"blog"> = {
   },
   body: "",
   collection: "blog",
-  render,
+  // rendered,
 };
 
 const post2: CollectionEntry<"blog"> = {
   id: "0002",
-  slug: "my-second-post",
+  filePath: "my-second-post.md",
   data: {
     title: "Second post",
     snippet: "This is my second post",
@@ -50,12 +51,12 @@ const post2: CollectionEntry<"blog"> = {
   },
   body: "",
   collection: "blog",
-  render,
+  // render,
 };
 
 const post3: CollectionEntry<"blog"> = {
   id: "0003",
-  slug: "my-third-post",
+  filePath: "my-third-post.md",
   data: {
     title: "Third post",
     snippet: "This is my third post",
@@ -75,12 +76,12 @@ const post3: CollectionEntry<"blog"> = {
   },
   body: "",
   collection: "blog",
-  render,
+  // render,
 };
 
 const post4Updated: CollectionEntry<"blog"> = {
   id: "0004",
-  slug: "my-fourth-post",
+  filePath: "my-fourth-post.md",
   data: {
     title: "Fourth post",
     snippet: "This is my fourth post",
@@ -101,12 +102,12 @@ const post4Updated: CollectionEntry<"blog"> = {
   },
   body: "",
   collection: "blog",
-  render,
+  // render,
 };
 
 const post5Draft: CollectionEntry<"blog"> = {
   id: "0005",
-  slug: "my-fifth-post",
+  filePath: "my-fifth-post.md",
   data: {
     title: "Fifth post",
     snippet: "This is my fifth post",
@@ -126,12 +127,12 @@ const post5Draft: CollectionEntry<"blog"> = {
   },
   body: "",
   collection: "blog",
-  render,
+  // render,
 };
 
 const post6DraftPost: CollectionEntry<"blog"> = {
   id: "0006",
-  slug: "my-draft-post",
+  filePath: "my-draft-post.md",
   data: {
     title: "Draft post",
     snippet: "This is my draft post",
@@ -152,12 +153,12 @@ const post6DraftPost: CollectionEntry<"blog"> = {
   },
   body: "",
   collection: "blog",
-  render,
+  // render,
 };
 
 const post7HiddenPost: CollectionEntry<"blog"> = {
   id: "0007",
-  slug: "my-hidden-post",
+  filePath: "my-hidden-post.md",
   data: {
     title: "Hidden post",
     snippet: "This is my hidden post",
@@ -178,7 +179,7 @@ const post7HiddenPost: CollectionEntry<"blog"> = {
   },
   body: "",
   collection: "blog",
-  render,
+  // render,
 };
 
 export {
