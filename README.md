@@ -1,7 +1,6 @@
 # Pocket Barcelona: Blog
 
-Helpful articles for English-speaking people living and working in Barcelona. Powered by the BCN English Speakers WhatsApp group members.
-
+Helpful articles for English-speaking people living and working in Barcelona.
 
 ## Tech stuff
 
