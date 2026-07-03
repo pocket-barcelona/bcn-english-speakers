@@ -5,7 +5,7 @@ snippet: "Have you ever wondered where the best Irish pub is in Barcelona? Check
 cover: "../../assets/blog/16-irish-bars/irish-bar.webp"
 coverAlt: "Irish bar atmosphere"
 publishDate: "2024-01-02 11:39"
-updatedDate: "2024-01-02 11:39"
+updatedDate: "2026-07-02 17:41"
 category: "Going Out"
 author: "Darryl"
 authorId: "darryl"
@@ -204,3 +204,11 @@ This is a personal favourite and one of the best places to watch the football sa
 Address: Plaça de Narcís Oller, 9, 08006 Barcelona
 
 Map: https://maps.app.goo.gl/ReMv9UhXSZ2iHNtU6
+
+## Don Patricio's
+This recently opened Irish pub (2025-2026) seemed to crop-up out of nowhere and took the premises of an old Mexican restaurant, which seemed to be pretty popular. Nonetheless, it's now a relatively small, relaxed joint and still finding its feet in the Poble Sec neighbourhood. They have only a small range of beers, but Guinness is of course a solid option, plus they have a little semi-outside porch/smoking area by the entrance. They have a few TV's inside and so undoubtedly will show sports, so it could be a good bet if you wanted a more low-key Irish bar during footie night.
+
+Address: Carrer de Margarit, 18, Sants-Montjuïc, 08004 Barcelona
+
+Map: https://maps.app.goo.gl/NEcEHYfEtdQmGFHZ6
+

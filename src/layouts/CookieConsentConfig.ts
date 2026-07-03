@@ -3,10 +3,8 @@ import type { CookieConsentConfig } from 'vanilla-cookieconsent';
 // Extend the Window interface to include the dataLayer object
 declare global {
   interface Window {
-    // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-    dataLayer: Record<string, any>[];
-    // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-    gtag: (...args: any[]) => void;
+    dataLayer: Record<string, unknown>[];
+    gtag: (...args: unknown[]) => void;
   }
 }
 
@@ -116,7 +114,7 @@ export const config: CookieConsentConfig = {
             {
               title: 'More information',
               description:
-                'For any query in relation to our policy on cookies and your choices, please <a class="cc__link" href="/community">contact us</a>.',
+                'For any query in relation to our policy on cookies and your choices, please <a class="cc__link" href="/contact">contact us</a>.',
             },
           ],
         },
