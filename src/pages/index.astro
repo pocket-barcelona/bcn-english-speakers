@@ -15,18 +15,21 @@ const posts = (await getMergedPosts()).slice(0, 4);
 <Layout title={SITE_TITLE}>
   <Hero />
   <Container>
-    <div class="max-w-7xl mx-auto">
-      <Cta />
-
-      <h2 class="text-3xl my-4 md:my-8 md:mt-12 !mb-4 font-bold">Latest articles</h2>
-      <PostList>
-        {
-          posts.map((post, index) => <PostItem post={post} index={index} />)
-        }  
-      </PostList>
-      <hr class="hidden xl:block my-12" />
-      <div class="flex justify-end mt-4">
-        <Link href="/blog" style="outline">More articles &rsaquo;</Link>
+    <div class="mx-auto">
+      <div class="max-w-7xl mx-auto">
+        <Cta />
+      </div>
+      <div class="max-w-10xl mx-auto">
+        <h2 class="text-3xl my-4 md:my-8 md:mt-12 !mb-4 font-bold">Latest articles</h2>
+        <PostList>
+          {
+            posts.map((post, index) => <PostItem post={post} index={index} />)
+          }  
+        </PostList>
+        <hr class="hidden xl:block my-12" />
+        <div class="flex justify-end mt-4">
+          <Link href="/blog" style="outline">More articles &rsaquo;</Link>
+        </div>
       </div>
     </div>
   </Container>
