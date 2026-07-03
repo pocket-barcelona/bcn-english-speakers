@@ -13,9 +13,9 @@ interface Props {
 const { post, index } = Astro.props;
 ---
 
-<li>
+<li class="p-2 shadow hover:shadow-lg 2xl:hover:scale-105 border border-zinc-200 transition">
   <a href={`/blog/${post.id}`}>
-    <div class="grid md:grid-cols-2 gap-2 md:gap-8 xl:gap-6 items-start py-2">
+    <div class="grid md:grid-cols-2 gap-2 md:gap-8 xl:gap-6 items-start relative">
       <Image
         src={post.data.cover}
         alt={post.data.coverAlt}
@@ -29,42 +29,41 @@ const { post, index } = Astro.props;
         loading={index >= 3 ? "lazy" : "eager"}
         format="avif"
       />
-
+      {post.data.updatedDate && (
+        <Tag color="warning" size="small" class="top-2 absolute ml-2 z-10">
+          Updated
+        </Tag>
+      )}
       <div>
-        <PostCategoryTag category={post.data.category} />
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2 pr-1">
+          <PostCategoryTag category={post.data.category} />
+          <div class="flex gap-2 items-start justify-end mt-1 text-zinc-500">
+            { /*
+            <Avatar
+              authorId={post.data.authorId}
+              authorName={post.data.author}
+            />
+            <span class="text-gray-700 text-sm">
+              by {post.data.author}
+            </span>
+            <span class="text-gray-700 text-sm">• </span>
+            */ }
+            <time
+              class="text-xs italic"
+              datetime={post.data.publishDate.toISOString()}
+            >
+              {post.data.publishDate.toDateString()}
+            </time>
+          </div>
+        </div>
 
-        <h2 class="text-2xl lg:text-3xl font-bold leading-tight tracking-tight mt-1.5">
+        <h2 class="text-2xl xl:text-3xl font-bold leading-tight tracking-tight mt-1.5">
           {post.data.title}
-          {post.data.updatedDate && (
-            <Tag color="warning" class="top-[-4px] relative ml-1">
-              Updated
-            </Tag>
-          )}
         </h2>
-        <p class="text-sm md:text-base mt-4 line-clamp-3 md:line-clamp-4 xl:line-clamp-3">
+        <p class="text-sm md:text-base mt-4 line-clamp-6 xl:line-clamp-3">
           {post.data.snippet}
         </p>
-
-        <div class="flex gap-2 mt-4 items-center">
-          { /*
-          <Avatar
-            authorId={post.data.authorId}
-            authorName={post.data.author}
-          />
-          <span class="text-gray-700 text-sm">
-            by {post.data.author}
-          </span>
-          <span class="text-gray-700 text-sm">• </span>
-          */ }
-          <time
-            class="text-gray-700 text-sm"
-            datetime={post.data.publishDate.toISOString()}
-          >
-            {post.data.publishDate.toDateString()}
-          </time>
-        </div>
       </div>
     </div>
   </a>
-  <hr class="sm:hidden mb-0 mt-4 md:mb-2 md:mt-6" />
 </li>

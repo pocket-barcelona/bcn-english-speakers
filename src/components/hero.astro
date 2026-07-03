@@ -1,48 +1,43 @@
 ---
-import { Picture } from "astro:assets";
-import bcnImage from "../assets/bcn-splash.jpg";
+import { Image } from "astro:assets";
+import bcnImage from "../assets/barcelona-old-town.jpg";
 import Link from "./elements/link.astro";
 // Picture tag sizes: https://webdesign.tutsplus.com/quick-tip-how-to-use-html5-picture-for-responsive-images--cms-21015t#toc-kl8w-using-sizes-to-control-image-layout
 ---
 
 <div
-  class="relative overflow-hidden flex items-center justify-center px-[20px] py-4 aspect-video lg:aspect-[initial]"
+  class="relative overflow-hidden flex items-end justify-center px-[20px] py-4 aspect-square lg:aspect-16/9 h-full max-h-screen min-w-full mx-auto"
 >
-  <div class="absolute inset-0 w-full h-fit z-0">
-    <Picture
+  <div class="absolute inset-0 w-full h-[inherit] max-h-[inherit] z-0 aspect-[inherit]">
+    <Image
       src={bcnImage}
+      alt="Restaurant in Barcelona old town"
+      class:list={"w-full h-full aspect-4/3 object-cover"}
+      quality={"mid"}
+      loading={"lazy"}
       format="avif"
-      widths={[400, 1200]}
-      alt="Barcelona view"
-      quality={'mid'}
     />
   </div>
-  <div class="z-[1] grid lg:grid-cols-2 md:place-items-center py-6 md:py-[15vw] max-h-[92vh] max-w-7xl">
-    <div class="max-w-5xl mx-auto">
+  <div class="z-[1] grid grid-cols-1 lg:grid-cols-3 lg:place-items-center lg:pb-8 max-h-[92vh] lg:max-h-full max-w-full lg:max-w-7xl mx-auto">
+    <div class="max-w-6xl mx-auto">
       <h1
-        class="text-2xl md:text-5xl lg:text-7xl xl:text-8xl font-semibold leading-snug lg:tracking-tight xl:tracking-tighter text-white"
+        class="text-3xl md:text-5xl lg:text-7xl xl:text-8xl font-semibold leading-tighter text-white text-center lg:text-left"
       >
-        Pocket <span class="text-[#F6FB0F]">Barcelona</span><br /><span
+        Barcelona <br class="hidden lg:block" />tips<br /> <span class="text-[#F6FB0F]">from a local</span><br />
+        <!-- <span
           class="font-normal text-xl md:text-3xl lg:text-4xl tracking-normal !leading-none"
-          >Powered by local residents</span
-        >
+          >🚀 Tips by a local resident</span
+        > -->
       </h1>
 
-      <div class="mt-4 md:mt-24 flex flex-col sm:flex-row gap-3">
+      <div class="mt-4 mb-6 lg:mt-8 flex flex-col lg:flex-row gap-3">
         <Link
           size="lg"
           style="outline"
           href="/blog"
           class="flex gap-1 items-center justify-center"
         >
-          View our blog
-        </Link>
-        <Link
-          href="/community"
-          class="flex gap-1 items-center justify-center"
-          size="lg"
-        >
-          Join the community
+          Explore the blog
         </Link>
       </div>
     </div>
