@@ -1,8 +1,4 @@
-import { expect, test } from "vitest";
-import {
-  filterAndSortPosts,
-  getChronologicalNextPrevPosts,
-} from "./post.service";
+import { expect, test } from 'vitest';
 import {
   TESTPOST1,
   TESTPOST2,
@@ -11,7 +7,8 @@ import {
   TESTPOST5,
   TESTPOST6,
   TESTPOST7,
-} from "./fixtures/blog";
+} from './fixtures/blog';
+import { filterAndSortPosts, getChronologicalNextPrevPosts } from './post.service';
 
 const filteredAndSortedPosts = filterAndSortPosts([
   TESTPOST1,
@@ -23,7 +20,7 @@ const filteredAndSortedPosts = filterAndSortPosts([
   TESTPOST7,
 ]);
 
-test("should filter and sort posts", () => {
+test('should filter and sort posts', () => {
   const filteredAndSorted = filteredAndSortedPosts.map((p) => p.id);
   const expected = [
     TESTPOST3.id, // newest first
@@ -35,18 +32,10 @@ test("should filter and sort posts", () => {
   expect(filteredAndSorted).toEqual(expected);
 });
 
-test("should filter and sort posts, but include hidden posts for getStaticPaths()", () => {
+test('should filter and sort posts, but include hidden posts for getStaticPaths()', () => {
   const filtersAndSorted = filterAndSortPosts(
-    [
-      TESTPOST1,
-      TESTPOST2,
-      TESTPOST3,
-      TESTPOST4,
-      TESTPOST5,
-      TESTPOST6,
-      TESTPOST7,
-    ],
-    true
+    [TESTPOST1, TESTPOST2, TESTPOST3, TESTPOST4, TESTPOST5, TESTPOST6, TESTPOST7],
+    true,
   ).map((p) => p.id);
 
   const expected = [
@@ -60,29 +49,20 @@ test("should filter and sort posts, but include hidden posts for getStaticPaths(
   expect(filtersAndSorted).toEqual(expected);
 });
 
-test("should get next/prev posts", () => {
-  const { prevPost, nextPost } = getChronologicalNextPrevPosts(
-    TESTPOST1,
-    filteredAndSortedPosts
-  );
+test('should get next/prev posts', () => {
+  const { prevPost, nextPost } = getChronologicalNextPrevPosts(TESTPOST1, filteredAndSortedPosts);
   expect(prevPost).toEqual(TESTPOST4);
   expect(nextPost).toEqual(TESTPOST2);
 });
 
-test("should get next/prev posts with no next", () => {
-  const { prevPost, nextPost } = getChronologicalNextPrevPosts(
-    TESTPOST3,
-    filteredAndSortedPosts
-  );
+test('should get next/prev posts with no next', () => {
+  const { prevPost, nextPost } = getChronologicalNextPrevPosts(TESTPOST3, filteredAndSortedPosts);
   expect(prevPost).toEqual(TESTPOST2);
   expect(nextPost).toEqual(undefined);
 });
 
-test("should get next/prev posts with no prev", () => {
-  const { prevPost, nextPost } = getChronologicalNextPrevPosts(
-    TESTPOST4,
-    filteredAndSortedPosts
-  );
+test('should get next/prev posts with no prev', () => {
+  const { prevPost, nextPost } = getChronologicalNextPrevPosts(TESTPOST4, filteredAndSortedPosts);
   expect(prevPost).toEqual(undefined);
   expect(nextPost).toEqual(TESTPOST1);
 });
