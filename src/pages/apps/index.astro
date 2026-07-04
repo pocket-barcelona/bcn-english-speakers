@@ -1,0 +1,65 @@
+---
+import { Image } from 'astro:assets';
+import PostList from '../../components/elements/post-list.astro';
+import Container from '../../components/page-container.astro';
+import Sectionhead from '../../components/section-head.astro';
+import Layout, { type Props as LayoutProps } from '../../layouts/layout.astro';
+import AppsData from './_data';
+
+const resolvedImageWithDomain = new URL('/og.jpg', Astro.site).toString();
+const seo: LayoutProps['seo'] = {
+  openGraph: {
+    basic: {
+      image: resolvedImageWithDomain,
+      title: 'Pocket Barcelona - Blog',
+      type: 'website',
+      url: new URL('/apps', Astro.site).toString(),
+    },
+  },
+};
+
+---
+<Layout title={"Barcelona Mini Apps"} seo={seo}>
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Mini Apps & Experiments</Fragment>
+      <Fragment slot="desc">
+        This is a collection of little mini-app projects that are useful for Barcelona
+      </Fragment>
+    </Sectionhead>
+
+    <div class="max-w-7xl mx-auto xl:mt-12">
+      <PostList>
+        {
+          AppsData.map((item, index) => {
+            return (
+              <li class="p-2 shadow hover:shadow-lg 2xl:hover:scale-105 border border-zinc-200 transition">
+                <a href={`/apps/${item.id}`}>
+                  <article class="grid md:grid-cols-2 gap-2 md:gap-8 xl:gap-6 items-start relative">
+                    {/* <Image
+                      src={item.image.src}
+                      alt={item.image.alt}
+                      sizes="(max-width: 767px) 700px, 428px"
+                      class:list={"w-full aspect-4/3 object-cover shadow-md"}
+                      decoding={"async"}
+                      widths={[700, 428]}
+                      width={428}
+                      height={240}
+                      quality={"mid"}
+                      loading={index >= 6 ? "lazy" : "eager"}
+                      format="avif"
+                    /> */}
+                    <div>
+                      <h2 class="text-2xl xl:text-3xl font-bold leading-tight tracking-tight mt-1.5">{item.title}</h2>
+                      <p class="text-sm md:text-base mt-4 line-clamp-6 xl:line-clamp-3">{item.description}</p>
+                    </div>
+                  </article>
+                </a>
+              </li>
+            );
+          })
+        }
+      </PostList>
+    </div>
+  </Container>
+</Layout>

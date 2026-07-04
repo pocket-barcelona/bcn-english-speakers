@@ -1,0 +1,46 @@
+---
+import BarrioApp from '../../apps/barrios/App';
+import Container from '../../components/page-container.astro';
+import Layout from '../../layouts/layout.astro';
+import Apps, { getAppById } from './_data';
+
+export function getStaticPaths() {
+  return Apps.map((app) => ({
+    params: { id: app.id },
+    props: app,
+  }));
+}
+
+const page = Astro.props;
+const app = getAppById(page.id);
+---
+{
+  app ? (
+    <Layout title={app.title}>
+      <Container>
+        <div class="max-w-5xl mx-auto mt-24">
+          <div class="prose prose-lg my-12">
+            <h1>{app.title}</h1>
+            <div set:html={app.description} />
+            {
+              app.id === 'barrio-lookup' && (
+                <BarrioApp client:load />
+              )
+            }
+          </div>
+        </div>
+      </Container>
+    </Layout>
+  ) : (
+    <Layout title="App not found">
+      <Container>
+        <div class="max-w-5xl mx-auto mt-24">
+          <div class="prose prose-lg my-12">
+            <h1>404 - Not found</h1>
+            <p>We could not find that app.</p>
+          </div>
+        </div>
+      </Container>
+    </Layout>
+  )
+}
