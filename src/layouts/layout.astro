@@ -6,6 +6,7 @@ import '@fontsource-variable/inter/index.css';
 import { ClientRouter } from "astro:transitions";
 import CookieConsent from './CookieConsent.astro';
 import "../styles/global.css";
+import { SITE_TITLE } from '../consts';
 
 export interface Props {
   title: string;
@@ -34,13 +35,19 @@ const makeTitle = title
     <!-- <ImageSupportDetection /> -->
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={SITE_TITLE}
+      href={new URL("rss.xml", Astro.site)}
+    />
+    <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css"
     />
     <SEO
       {...seo}
       title={makeTitle}
-      description="Pocket Barcelona - run by real people who live in Barcelona. We also have a very active chat group on Whatsapp which is free to join!"
+      description="Pocket Barcelona - run by real people who live in Barcelona."
       canonical={canonicalURL}
       openGraph={{
         basic: {

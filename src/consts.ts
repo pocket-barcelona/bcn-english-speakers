@@ -2,5 +2,5 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 export const SITE_TITLE = 'Pocket Barcelona';
-export const SITE_DESCRIPTION = 'Experience Barcelona like a local';
+export const SITE_DESCRIPTION = 'Amazing, local tips and trips from an expert';
 export const HEADLESS_STUB = 'https://cms.pocketbarcelona.com';
