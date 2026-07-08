@@ -1,10 +1,7 @@
-/*
-  The CSS in this style tag is based off of Bear Blog's default CSS.
-  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
-  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
- */
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
-:root {
+/* :root {
 	--accent: #2337ff;
 	--accent-dark: #000d8a;
 	--black: 15, 18, 25;
@@ -14,8 +11,8 @@
 	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
 	--box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
 		0 16px 32px rgba(var(--gray), 33%);
-}
-@font-face {
+} */
+/* @font-face {
 	font-family: 'Atkinson';
 	src: url('/fonts/atkinson-regular.woff') format('woff');
 	font-weight: 400;
@@ -28,81 +25,38 @@
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
+} */
+html {
+	scroll-behavior: smooth;
+	-webkit-font-smoothing: antialiased;
 }
 body {
-	font-family: 'Atkinson', sans-serif;
+	font-family: 'Inter Variable', sans-serif;
 	margin: 0;
 	padding: 0;
-	text-align: left;
-	background: linear-gradient(var(--gray-gradient)) no-repeat;
-	background-size: 100% 600px;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
-	color: rgb(var(--gray-dark));
-	font-size: 20px;
-	line-height: 1.7;
-}
-main {
-	width: 720px;
-	max-width: calc(100% - 2em);
-	margin: auto;
-	padding: 3em 1em;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin: 0 0 0.5rem 0;
-	color: rgb(var(--black));
-	line-height: 1.2;
-}
-h1 {
-	font-size: 3.052em;
-}
-h2 {
-	font-size: 2.441em;
-}
-h3 {
-	font-size: 1.953em;
-}
-h4 {
-	font-size: 1.563em;
-}
-h5 {
-	font-size: 1.25em;
-}
-strong,
-b {
-	font-weight: 700;
-}
-a {
-	color: var(--accent);
-}
-a:hover {
-	color: var(--accent);
 }
 p {
 	margin-bottom: 1em;
 }
-.prose p {
-	margin-bottom: 2em;
-}
+
 textarea {
 	width: 100%;
 	font-size: 16px;
 }
+
 input {
 	font-size: 16px;
 }
+
 table {
 	width: 100%;
 }
+
 img {
 	max-width: 100%;
 	height: auto;
-	border-radius: 8px;
 }
 code {
 	padding: 2px 5px;
@@ -126,14 +80,6 @@ hr {
 	border: none;
 	border-top: 1px solid rgb(var(--gray-light));
 }
-@media (max-width: 720px) {
-	body {
-		font-size: 18px;
-	}
-	main {
-		padding: 1em;
-	}
-}
 
 .sr-only {
 	border: 0;
@@ -151,4 +97,150 @@ hr {
 	clip-path: inset(50%);
 	/* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
+}
+
+/* Unscoped, delivered as-is to the browser. */
+a {
+  word-break: break-word;
+}
+a.autolink-header {
+  display: inline-block;
+  margin-left: 8px;
+}
+a.autolink-header svg {
+  display: none;
+}
+.help {
+  text-decoration: underline;
+  cursor: help;
+}
+h1:hover a.autolink-header svg,
+h2:hover a.autolink-header svg,
+h3:hover a.autolink-header svg,
+h4:hover a.autolink-header svg,
+h5:hover a.autolink-header svg,
+h6:hover a.autolink-header svg {
+  display: block;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  // make the link icon a bit small for these headings
+  a.autolink-header svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+/* style TOC */
+@media screen and (max-width: 1023px) {
+  h2#contents + ul {
+    background-color: #f6f6f6;
+  }
+}
+h2#contents {
+  margin-bottom: 0;
+}
+h2#contents + ul {
+  padding-top: 0.75em;
+  padding-bottom: 0.75em;
+  margin-bottom: 0;
+  border-radius: 0.375rem;
+}
+h2#contents + ul li a{
+  margin-top: 0;
+  margin-bottom: 0;
+}
+h2#contents + ul li {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  line-height: 1.25;
+  padding-left: 0;
+}
+h2#contents + ul ul {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+.prose p {
+	margin-bottom: 2em;
+}
+.prose :where(a):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  color: #1212c4;
+  font-weight: 600;
+}
+.prose iframe {
+  max-width: 100%;
+}
+div.info,
+div.success,
+div.warning,
+div.danger,
+div.neutral {
+  padding: 0.5rem 1rem;
+  border-left: 5px solid;
+  font-size: 0.9375rem;
+}
+@media screen and (max-width: 767px) {
+  div.info,
+  div.success,
+  div.warning,
+  div.danger,
+  div.neutral {
+    padding: 0.125rem 0.75rem;
+    font-size: 0.875rem;
+  }
+
+}
+div.success {
+  background-color: rgba(0, 255, 0, 0.15);/* #00e100 */
+  border-left-color: rgba(0, 255, 0, 0.25);
+}
+div.info {
+  background-color: rgba(18, 18, 196, 0.1); /* #1212c4 */
+  border-left-color: rgba(0, 0, 225, 0.25);
+}
+div.warning {
+  background-color: rgba(225, 225, 0, 0.1);/* #e1e100 */
+  border-left-color: rgba(225, 225, 0, 0.25);
+}
+div.danger {
+  background-color: rgba(155, 0, 0, 0.2);/* #9b0000 */
+  border-left-color: rgba(155, 0, 0, 0.3);
+}
+div.neutral {
+  background-color: rgba(120, 120, 120, 0.08);/* #787878 */
+  border-left-color: rgba(120, 120, 120, 0.25);
+}
+img {
+  border-radius: 0.375rem;
+}
+
+/* Style the TOC */
+div.contents {
+  padding: 0.5rem 1rem;
+  background-color: rgba(0, 225, 0, 0.1);/* #00e100 */
+  border: 1px solid rgba(0, 225, 0, 0.25);
+}
+span.highlight {
+  /* background-color: #1212c4; */
+}
+a.warning {
+  color: rgb(155, 0, 0);
+}
+a.strikethru {
+  text-decoration: line-through;
 }

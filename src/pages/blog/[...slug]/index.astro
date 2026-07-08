@@ -15,7 +15,6 @@ import {
 	getMergedPosts,
 	getRelatedNextPrevPosts,
 } from "../../../services/post.service";
-import "../_styles.scss";
 
 export async function getStaticPaths() {
 	const mergedPosts = await getMergedPosts(true);

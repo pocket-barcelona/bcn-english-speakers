@@ -5,6 +5,8 @@ import Footer from '../components/page-footer.astro';
 import '@fontsource-variable/inter/index.css';
 import { ClientRouter } from "astro:transitions";
 import CookieConsent from './CookieConsent.astro';
+import "../styles/global.css";
+
 export interface Props {
   title: string;
   seo?: SEOProps;
@@ -22,7 +24,7 @@ const makeTitle = title
 
 ---
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth scroll-pt-[60px] md:scroll-pt-[72px]">
+<html lang="en" class="scroll-smooth scroll-pt-15 md:scroll-pt-18">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -30,7 +32,6 @@ const makeTitle = title
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <!-- <ImageSupportDetection /> -->
-    
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <link
       rel="stylesheet"

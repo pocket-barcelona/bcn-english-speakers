@@ -20,7 +20,7 @@ const posts = (await getMergedPosts()).slice(0, 4);
         <Cta />
       </div>
       <div class="max-w-10xl mx-auto">
-        <h2 class="text-3xl my-4 md:my-8 md:mt-12 !mb-4 font-bold">Latest articles</h2>
+        <h2 class="text-3xl my-4 md:my-8 md:mt-12 mb-4! font-bold text-center">Latest articles</h2>
         <PostList>
           {
             posts.map((post, index) => <PostItem post={post} index={index} />)

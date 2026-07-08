@@ -1,6 +1,7 @@
 ---
-import { Dropdown as DropdownContainer, DropdownItems } from "astro-navbar";
+import { Dropdown as DropdownContainer, DropdownItems } from 'astro-navbar';
 import type { NavItem } from './navItems';
+
 const { title, lastItem, children } = Astro.props;
 ---
 
@@ -32,7 +33,7 @@ const { title, lastItem, children } = Astro.props;
             : "lg:left-0 origin-top-left",
         ]}>
         <div
-          class="px-3 lg:py-2 lg:bg-[#191919] lg:rounded-md lg:shadow lg:border border-cyan-950 flex flex-col">
+          class="px-3 lg:py-2 lg:bg-[#191919] lg:rounded-md lg:shadow-xs lg:border border-cyan-950 flex flex-col">
           {
             children.map((item: NavItem) => (
               <a
