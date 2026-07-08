@@ -19,7 +19,7 @@ export default defineConfig({
     mdx(),
     sitemap(),
     alpinejs(),
-    preact(),
+    preact({ compat: true }),
     // ...whenExternalScripts(() =>
     //   partytown({
     //     config: {

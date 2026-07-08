@@ -1,7 +1,11 @@
 ---
 import BarrioApp from '../../apps/barrios/App';
+import ComparePlacesApp from '../../apps/compare-places/App';
+import Link from '../../components/elements/link.astro';
 import Container from '../../components/page-container.astro';
 import Layout from '../../layouts/layout.astro';
+import type { HeadlessPlace } from '../../lib/directus';
+import { getPlaces } from '../../services/place.service';
 import Apps, { getAppById } from './_data';
 
 export function getStaticPaths() {
@@ -13,18 +17,37 @@ export function getStaticPaths() {
 
 const page = Astro.props;
 const app = getAppById(page.id);
+
+const pageContext: {
+  places?: HeadlessPlace[];
+} = {};
+
+// put in a page context file...
+if (app?.id === 'compare-places') {
+  const data = await getPlaces();
+  pageContext.places = data ?? [];
+}
+
 ---
 {
   app ? (
     <Layout title={app.title}>
       <Container>
         <div class="max-w-5xl mx-auto mt-24">
+          <div class="flex justify-start">
+            <Link href="/apps" style="outline">&lsaquo; All apps</Link>
+          </div>
           <div class="prose prose-lg my-12">
             <h1>{app.title}</h1>
             <div set:html={app.description} />
             {
               app.id === 'barrio-lookup' && (
                 <BarrioApp client:load />
+              )
+            }
+            {
+              app.id === 'compare-places' && (
+                <ComparePlacesApp client:load={true} pageContext={pageContext} />
               )
             }
           </div>

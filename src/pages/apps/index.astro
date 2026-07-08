@@ -17,7 +17,6 @@ const seo: LayoutProps['seo'] = {
     },
   },
 };
-
 ---
 <Layout title={"Barcelona Mini Apps"} seo={seo}>
   <Container>
@@ -33,7 +32,7 @@ const seo: LayoutProps['seo'] = {
         {
           AppsData.map((item, index) => {
             return (
-              <li class="p-2 shadow-xs hover:shadow-lg 2xl:hover:scale-105 border border-zinc-200 transition">
+              <li class="p-2 shadow-xs hover:shadow-lg 2xl:hover:scale-105 border border-zinc-200 transition rounded-2xl duration-300 ease-in-out">
                 <a href={`/apps/${item.id}`}>
                   <article class="grid md:grid-cols-2 gap-2 md:gap-8 xl:gap-6 items-start relative">
                     {/* <Image
@@ -51,7 +50,7 @@ const seo: LayoutProps['seo'] = {
                     /> */}
                     <div>
                       <h2 class="text-2xl xl:text-3xl font-bold leading-tight tracking-tight mt-1.5">{item.title}</h2>
-                      <p class="text-sm md:text-base mt-4 line-clamp-6 xl:line-clamp-3">{item.description}</p>
+                      <p class="text-sm md:text-base mt-4 line-clamp-6 xl:line-clamp-6">{item.description}</p>
                     </div>
                   </article>
                 </a>

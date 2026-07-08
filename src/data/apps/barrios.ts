@@ -2,6 +2,7 @@ type Barrio = {
   id: number;
   par: number;
   bar: string;
+  children?: Barrio[];
 };
 
 export const Barrios: Barrio[] = [
@@ -99,6 +100,16 @@ export const getBarrioById = (id: number) => Barrios.find((b) => b.id === id);
 
 export const searchBarrios = (searchText: string) =>
   Barrios.filter((b) => b.bar.toLowerCase().includes(searchText.toLowerCase()));
+
+export const getAllBarrios = (): Barrio[] => {
+  const parents = getParentBarrios();
+  const all: Barrio[] = [...parents];
+  parents.forEach((p, index) => {
+    const children = getBarriosByParent(p.id);
+    all[index].children = children;
+  });
+  return all;
+};
 
 // functionalities:
 // 1. Search for a barrio by name
