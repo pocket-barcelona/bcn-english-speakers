@@ -19,7 +19,7 @@ export default defineConfig({
     mdx(),
     sitemap(),
     alpinejs(),
-    preact({ compat: true }),
+    preact({ compat: true, devtools: true }),
     // ...whenExternalScripts(() =>
     //   partytown({
     //     config: {
@@ -92,5 +92,11 @@ export default defineConfig({
 
   vite: {
     plugins: [tailwindcss()],
+    resolve: {
+      alias: {
+        'react': 'preact/compat',
+        'react-dom': 'preact/compat',
+      }
+    }
   },
 });
