@@ -1,7 +1,7 @@
+import type { Barrio } from "../../data/apps/barrios";
 import type { HeadlessPlace } from "../../lib/directus";
 
 export interface PageContext {
-  pageContext: {
-    places?: HeadlessPlace[];
-  }
+  places?: HeadlessPlace[];
+  barrios: Barrio[];
 };

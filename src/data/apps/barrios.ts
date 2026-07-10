@@ -1,4 +1,4 @@
-type Barrio = {
+export type Barrio = {
   id: number;
   par: number;
   bar: string;

@@ -95,6 +95,9 @@ const apps: AppItem[] = [
       alt: "compare places",
     },
   },
+  // use Google sheets vocab list for others:
+  // do you know your meats, fishes, veg, fruit and pulses? Test yourself now...!
+  // etc...
 ];
 
 export const getAppById = (id: AppItem["id"]): AppItem | undefined => {

@@ -1,7 +1,9 @@
-import { getAllBarrios } from "../../data/apps/barrios";
+import type { PageContext } from "../_common/types";
 
-export default function App() {
-  const allBarrios = getAllBarrios();
+interface Props extends PageContext {}
+
+export default function App({ barrios }: Props) {
+  
   return (
     <div>
       <div class="border-b border-gray-900/10 pb-12">
@@ -108,7 +110,7 @@ export default function App() {
               Barrios
             </legend>
             <div class="mt-6 space-y-6 flex flex-col gap-y-1">
-              {allBarrios.map((district) => (
+              {barrios.map((district) => (
                 <details key={district.id} class="flex flex-col items-stretch my-0">
                   <summary class="text-sm/6 font-medium leading-6 text-gray-900 cursor-pointer bg-olive-300 py-1 px-4 rounded-md">
                     {district.bar} {district.children?.length ? `(Barrios ${district.children.length})` : ""}

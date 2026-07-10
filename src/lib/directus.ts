@@ -1,5 +1,6 @@
 import { createDirectus, rest } from '@directus/sdk';
 import { HEADLESS_STUB } from '../consts';
+import type { Barrio } from '../data/apps/barrios';
 
 // const base = import.meta.env.DEV ? '' : HEADLESS_STUB;
 // const base = import.meta.env.DEV ? 'http://localhost:4321/api' : HEADLESS_STUB;
@@ -71,6 +72,15 @@ export type HeadlessGroup = {
   name: string;
   slug: string;
   description: string;
+}
+
+export type ImageSizes = "thumb" | "small" | "medium" | "large" | "xlarge";
+export type ImageAssetsSize = "thumb" | "medium" | "large";
+export interface ImageAssets {
+  size: ImageAssetsSize;
+  url: string;
+  /** For ordering */
+  order?: number;
 }
 
 // @todo - COPIED FROM BACKEND!
@@ -178,6 +188,20 @@ export type HeadlessPlace = {
 	tags: string;
 	/** From Google Places API - also use for our local places list */
 	status: string;
+
+	// mapped...
+	images: ImageAssets[];
+	category: string;
+	barrio: Barrio;
+	metrics: {
+		teenagerSuitability: string[],
+		childrenSuitability: string[],
+		commitmentRequired: string[],
+		price: string[],
+		bestTod: string[],
+		timeRecommended: string[],
+		booking: string[]
+	}
 }
 
 type HeadlessSchema = {
@@ -194,7 +218,6 @@ type HeadlessSchema = {
 export function convertAssetIdToUrl(assetId: string): string {
   return `${HEADLESS_STUB}/assets/${assetId}` // Astro needs the full URL for Directus image assets
 }
-
 
 const directus = createDirectus<HeadlessSchema>(`${base}/`).with(rest());
 

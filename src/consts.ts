@@ -4,3 +4,4 @@
 export const SITE_TITLE = 'Pocket Barcelona';
 export const SITE_DESCRIPTION = 'Amazing, local tips and trips from an expert';
 export const HEADLESS_STUB = 'https://cms.pocketbarcelona.com';
+export const CDN_STUB = 'https://cdn.pocketbarcelona.com';
