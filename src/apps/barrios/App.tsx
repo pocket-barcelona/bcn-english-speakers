@@ -111,24 +111,24 @@ export default function App({ barrios }: Props) {
             </legend>
             <div class="mt-6 space-y-6 flex flex-col gap-y-1">
               {barrios.map((district) => (
-                <details key={district.id} class="flex flex-col items-stretch my-0">
+                <details key={district.barrioId} class="flex flex-col items-stretch my-0">
                   <summary class="text-sm/6 font-medium leading-6 text-gray-900 cursor-pointer bg-olive-300 py-1 px-4 rounded-md">
-                    {district.bar} {district.children?.length ? `(Barrios ${district.children.length})` : ""}
+                    {district.officialName} {district.children?.length ? `(Barrios ${district.children.length})` : ""}
                   </summary>
                   {district.children?.map((barrio) => (
-                    <div key={barrio.id} class="flex items-center py-1 px-4 gap-x-3">
+                    <div key={barrio.barrioId} class="flex items-center py-1 px-4 gap-x-3">
                       <input
-                        id={`barrios-${barrio.id}`}
+                        id={`barrios-${barrio.barrioId}`}
                         name="barrios"
                         type="radio"
-                        value={barrio.id}
+                        value={barrio.barrioId}
                         class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
                       />
                       <label
-                        for={`barrios-${barrio.id}`}
+                        for={`barrios-${barrio.barrioId}`}
                         class="block text-sm/6 font-medium leading-6 text-gray-900"
                       >
-                        {barrio.bar}
+                        {barrio.officialName}
                       </label>
                     </div>
                   ))}

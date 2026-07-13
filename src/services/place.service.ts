@@ -17,22 +17,29 @@ export const getBarrioByPlace = (place: HeadlessPlace): Barrio => {
   const id = place.barrioId;
   for (let i = 0; i < BARRIOS.length; i++) {
     const b = BARRIOS[i];
-    if (b.id === id) {
+    if (b.barrioId === id) {
       return b;
     }
     if (b.children) {
       for (let j = 0; j < b.children.length; j++) {
         const child = b.children[j];
-        if (child.id === id) {
+        if (child.barrioId === id) {
           return child;
         }
       }
     }
   }
   return {
-    id: 0,
-    par: 0,
-    bar: 'Unknown',
+    barrioId: 0,
+    parentId: 0,
+    officialName: 'Unknown',
+    officialNameAccentless: 'Unknown',
+    urlSlug: '/unknown',
+    barrioZone: 0,
+    centre: {
+      lat: 0,
+      lng: 0,
+    },
   };
 };
 

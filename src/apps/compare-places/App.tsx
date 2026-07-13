@@ -121,7 +121,7 @@ function Comparison({
 
   // prettier-ignore
   const items: Array<{ title: string; value1: string; value2: string }> = [
-    { title: '📍 Barrio', value1: place1.barrio.bar, value2: place2.barrio.bar },
+    { title: '📍 Barrio', value1: place1.barrio.officialName, value2: place2.barrio.officialName },
     { title: '🎫 Type/Category', value1: place1.category.value, value2: place2.category.value },
     { title: '🌍 Town', value1: place1.town, value2: place2.town },
     { title: '🚇 Metro Zone', value1: place1MetroZone, value2: place2MetroZone },
