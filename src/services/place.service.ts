@@ -7,6 +7,8 @@ import directus, {
   type ImageAssets,
   type ImageAssetsSize,
   type ImageSizes,
+  PLACE_CATEGORIES,
+  type PlaceCategory,
 } from '../lib/directus';
 
 const BARRIOS = getAllBarrios();
@@ -121,27 +123,11 @@ const getPoster = (place: HeadlessPlace, size: ImageAssetsSize): string => {
   return path;
 };
 
-const PLACE_CATEGORIES: { id: number; value: string }[] = [
-  { id: 0, value: 'Unknown' },
-  { id: 1, value: 'Beaches' },
-  { id: 2, value: 'Bars & Restaurants' },
-  { id: 3, value: 'Experiences' }, // Tourist Attractions?
-  { id: 4, value: 'Festivals' },
-  { id: 5, value: 'Plazas' },
-  { id: 6, value: 'Trips' },
-  { id: 7, value: 'Museums' },
-  { id: 8, value: 'Viewpoints' },
-  { id: 9, value: 'Buildings' },
-  { id: 10, value: 'Shopping' },
-  { id: 11, value: 'Parks' },
-  { id: 12, value: 'Sports' },
-];
-
-export const getPlaceCategory = (place: HeadlessPlace): string => {
+export const getPlaceCategory = (place: HeadlessPlace): PlaceCategory => {
   const category = PLACE_CATEGORIES.find((cat) => (place.categoryId = cat.id));
-  if (category) return category.value;
+  if (category) return category;
   const unknownCategory = PLACE_CATEGORIES.find((c) => c.id === 0);
-  return unknownCategory!.value;
+  return unknownCategory!;
 };
 
 const PLACE_PRICES: { weight: number; value: string }[] = [

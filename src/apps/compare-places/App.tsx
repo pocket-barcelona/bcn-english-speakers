@@ -21,7 +21,8 @@ export default function App({ places = [] }: Props) {
     .map((place) => ({
       label: place.labelCat,
       value: place.placeId.toString(),
-    })).sort((a, b) => a.label.localeCompare(b.label));
+    }))
+    .sort((a, b) => a.label.localeCompare(b.label));
 
   if (!places || places.length === 0) {
     return <div class="text-center text-lg">No places available.</div>;
@@ -49,7 +50,7 @@ export default function App({ places = [] }: Props) {
   const card2 = selected[1] !== null ? selected[1] : null;
 
   return (
-    <div class="dark:bg-slate-900 not-dark:bg-amber-50 not-prose">
+    <div class="dark:bg-slate-900 not-dark:bg-amber-50 not-prose max-w-3xl mx-auto my-4">
       <div class="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
         <div class="flex flex-col gap-4">
           <Combobox
@@ -113,54 +114,40 @@ function Comparison({
   place2: HeadlessPlace | null;
 }) {
   if (!place1 || !place2) return null;
+  const place1MetroZone =
+    place1.metroZone <= 0 ? "Not in Barcelona" : place1.metroZone.toString();
+  const place2MetroZone =
+    place2.metroZone <= 0 ? "Not in Barcelona" : place2.metroZone.toString();
+
+  // prettier-ignore
+  const items: Array<{ title: string; value1: string; value2: string }> = [
+    { title: '📍 Barrio', value1: place1.barrio.bar, value2: place2.barrio.bar },
+    { title: '🎫 Type/Category', value1: place1.category.value, value2: place2.category.value },
+    { title: '🌍 Town', value1: place1.town, value2: place2.town },
+    { title: '🚇 Metro Zone', value1: place1MetroZone, value2: place2MetroZone },
+    { title: '🎟️ Booking required', value1: place1.metrics.booking.join(', '), value2: place2.metrics.booking.join(', ') },
+    { title: '⏱️ Day trip required', value1: place1.daytrip ? 'Yes' : 'No', value2: place2.daytrip ? 'Yes' : 'No' },
+    { title: '💶 Price', value1: place1.metrics.price.join(', '), value2: place2.metrics.price.join(', ') },
+    { title: '🎯 Physical commitment required to visit', value1: place1.metrics.commitmentRequired.join(', '), value2: place2.metrics.commitmentRequired.join(', ') },
+    { title: '🎯 Recommended time to spend at place', value1: place1.metrics.timeRecommended.join(', '), value2: place2.metrics.timeRecommended.join(', ') },
+    { title: '🌓 Best time of day to visit', value1: place1.metrics.bestTod.join(', '), value2: place2.metrics.bestTod.join(', ') },
+    { title: '❤️ Free to visit', value1: place1.freeToVisit ? 'Yes' : 'No', value2: place2.freeToVisit ? 'Yes' : 'No' }, // TODO...
+    { title: '📅 Seasonal', value1: place1.seasonal ? 'Yes' : 'No', value2: place2.seasonal ? 'Yes' : 'No' },
+    { title: '🎯 Tourist Attraction', value1: place1.touristAttraction ? 'Yes' : 'No', value2: place2.touristAttraction ? 'Yes' : 'No' },
+    { title: '👨‍👩‍👧‍👦 Suitable for children/parents', value1: place1.metrics.childrenSuitability.join(', '), value2: place2.metrics.childrenSuitability.join(', ') },
+    { title: '💁‍♂️ Suitable for teenagers', value1: place1.metrics.teenagerSuitability.join(', '), value2: place2.metrics.teenagerSuitability.join(', ') },
+    // { title: '📏 Distance', value1: '0.5km', value2: '1.2km' },
+  ]
 
   return (
-    <div class="p-4 grid grid-cols-2 gap-4 text-white">
-      <ComparisonItem
-        title="Barrio"
-        value1={place1.barrio.bar}
-        value2={place2.barrio.bar}
-      />
-      <ComparisonItem
-        title="Category"
-        value1={place1.category}
-        value2={place2.category}
-      />
-      <ComparisonItem
-        title="Price"
-        value1={place1.metrics.price.join(', ')}
-        value2={place2.metrics.price.join(', ')}
-      />
-      <ComparisonItem
-        title="Best time of day to visit"
-        value1={place1.metrics.bestTod.join(', ')}
-        value2={place2.metrics.bestTod.join(', ')}
-      />
-      <ComparisonItem
-        title="Physical commitment required to visit"
-        value1={place1.metrics.commitmentRequired.join(', ')}
-        value2={place2.metrics.commitmentRequired.join(', ')}
-      />
-      <ComparisonItem
-        title="Recommended time to spend at place"
-        value1={place1.metrics.timeRecommended.join(', ')}
-        value2={place2.metrics.timeRecommended.join(', ')}
-      />
-      <ComparisonItem
-        title="Booking required"
-        value1={place1.metrics.booking.join(', ')}
-        value2={place2.metrics.booking.join(', ')}
-      />
-      <ComparisonItem
-        title="Suitability for children/parents"
-        value1={place1.metrics.childrenSuitability.join(', ')}
-        value2={place2.metrics.childrenSuitability.join(', ')}
-      />
-      <ComparisonItem
-        title="Suitability for teenagers"
-        value1={place1.metrics.teenagerSuitability.join(', ')}
-        value2={place2.metrics.teenagerSuitability.join(', ')}
-      />
+    <div class="p-4 grid grid-cols-2 gap-2 text-white">
+      {items.map((item) => (
+        <ComparisonItem
+          title={item.title}
+          value1={item.value1}
+          value2={item.value2}
+        />
+      ))}
     </div>
   );
 }
@@ -175,14 +162,16 @@ function ComparisonItem({ title, value1, value2 }: ComparisonProps) {
   const isSame = value1 === value2;
   return (
     <>
-      <div class="col-span-2 border-b border-dashed border-slate-400">
+      <div class="col-span-2 border-b border-t border-dashed border-slate-400">
         <h2 class="text-lg text-white font-semibold text-center">{title}</h2>
       </div>
       <div class="flex flex-col gap-1">
         <p class="text-sm">{value1}</p>
       </div>
       <div class="flex flex-col gap-1">
-        <p class="text-sm my-0 text-right">{value2} {isSame ? '(Same)' : ''}</p>
+        <p class="text-sm my-0 text-right">
+          {value2} {isSame ? "(Same)" : ""}
+        </p>
       </div>
     </>
   );

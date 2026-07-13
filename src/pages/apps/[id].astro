@@ -2,6 +2,7 @@
 import type { PageContext } from '../../apps/_common/types';
 import BarrioApp from '../../apps/barrios/App';
 import ComparePlacesApp from '../../apps/compare-places/App';
+import WhatsAppApp from '../../apps/whatsapp/App';
 import Link from '../../components/elements/link.astro';
 import Container from '../../components/page-container.astro';
 import { getAllBarrios } from '../../data/apps/barrios';
@@ -34,7 +35,7 @@ if (app?.id === 'compare-places') {
   app ? (
     <Layout title={app.title}>
       <Container>
-        <div class="max-w-5xl mx-auto mt-24">
+        <div class="max-w-none mx-auto mt-24">
           <div class="flex justify-start">
             <Link href="/apps" style="outline">&lsaquo; All apps</Link>
           </div>
@@ -51,6 +52,11 @@ if (app?.id === 'compare-places') {
                 <ComparePlacesApp client:only="preact" {...pageContext} />
               )
             }
+            {
+              app.id === 'whatsapp-recommendations' && (
+                <WhatsAppApp client:only="preact" {...pageContext} />
+              )
+            }
           </div>
         </div>
       </Container>
@@ -58,7 +64,7 @@ if (app?.id === 'compare-places') {
   ) : (
     <Layout title="App not found">
       <Container>
-        <div class="max-w-5xl mx-auto mt-24">
+        <div class="max-w-7xl mx-auto mt-24">
           <div class="prose prose-lg my-12">
             <h1>404 - Not found</h1>
             <p>We could not find that app.</p>

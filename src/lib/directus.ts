@@ -83,6 +83,24 @@ export interface ImageAssets {
   order?: number;
 }
 
+export type PlaceCategory = { id: number; value: string; emoji: string; };
+export const PLACE_CATEGORIES: PlaceCategory[] = [
+  { id: 0, value: 'Unknown', emoji: '?' },
+  { id: 1, value: 'Beaches', emoji: '🏖️' },
+  { id: 2, value: 'Bars & Restaurants', emoji: '🍸' },
+  { id: 3, value: 'Experiences', emoji: '🎭' }, // Tourist Attractions?
+  { id: 4, value: 'Festivals', emoji: '🎉' },
+  { id: 5, value: 'Plazas', emoji: '🏠' },
+  { id: 6, value: 'Trips', emoji: '🚊' },
+  { id: 7, value: 'Museums', emoji: '🎟️' },
+  { id: 8, value: 'Viewpoints', emoji: '🌅' },
+  { id: 9, value: 'Buildings', emoji: '🕌' },
+  { id: 10, value: 'Shopping', emoji: '🛍️' },
+  { id: 11, value: 'Parks', emoji: '🌳' },
+  { id: 12, value: 'Sports', emoji: '🏓' },
+];
+
+
 // @todo - COPIED FROM BACKEND!
 export type HeadlessPlace = {
   /** The place ID */
@@ -191,7 +209,7 @@ export type HeadlessPlace = {
 
 	// mapped...
 	images: ImageAssets[];
-	category: string;
+	category: PlaceCategory;
 	barrio: Barrio;
 	metrics: {
 		teenagerSuitability: string[],
