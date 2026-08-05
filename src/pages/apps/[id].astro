@@ -44,7 +44,7 @@ if (app?.id === 'compare-places') {
             <div set:html={app.description} />
             {
               app.id === 'barrio-lookup' && (
-                <BarrioApp client:load  {...pageContext} />
+                <BarrioApp client:load {...pageContext} />
               )
             }
             {

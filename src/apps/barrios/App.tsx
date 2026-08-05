@@ -1,4 +1,5 @@
 import type { PageContext } from "../_common/types";
+import GoogleMap from "./Map";
 
 interface Props extends PageContext {}
 
@@ -153,6 +154,8 @@ export default function App({ barrios }: Props) {
           Save
         </button>
       </div>
+
+      <GoogleMap />
     </div>
   );
 }
